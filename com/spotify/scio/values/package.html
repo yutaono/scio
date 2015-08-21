@@ -1,0 +1,461 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>values - com.spotify.scio.values</title>
+          <meta name="description" content="values - com.spotify.scio.values" />
+          <meta name="keywords" content="values com.spotify.scio.values" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'com.spotify.scio.values.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.spotify">spotify</a>.<a href="../package.html" class="extype" name="com.spotify.scio">scio</a></p>
+        <h1>values</h1><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">values</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="com.spotify.scio.values.Accumulator" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Accumulator[T]extendsSerializable"></a>
+      <a id="Accumulator[T]:Accumulator[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Accumulator.html"><span class="name">Accumulator</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@Accumulator[T]extendsSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Encapsulate an accumulator, similar to Hadoop counters.</p>
+    </li><li name="com.spotify.scio.values.AccumulatorContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AccumulatorContextextendsAnyVal"></a>
+      <a id="AccumulatorContext:AccumulatorContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AccumulatorContext.html"><span class="name">AccumulatorContext</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@AccumulatorContextextendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Encapsulate context of one or more <a href="Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s in an <a href="SCollectionWithAccumulator.html" class="extype" name="com.spotify.scio.values.SCollectionWithAccumulator">SCollectionWithAccumulator</a>.</p>
+    </li><li name="com.spotify.scio.values.AccumulatorType" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AccumulatorType[T]extendsAnyRef"></a>
+      <a id="AccumulatorType[T]:AccumulatorType[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="AccumulatorType.html"><span class="name">AccumulatorType</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@AccumulatorType[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Type class for <code>T</code> that can be used in an <a href="Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>.</p>
+    </li><li name="com.spotify.scio.values.DistCache" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="DistCache[F]extendsSerializable"></a>
+      <a id="DistCache[F]:DistCache[F]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="DistCache.html"><span class="name">DistCache</span></a><span class="tparams">[<span name="F">F</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@DistCache[F]extendsSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Encapsulate files on Google Cloud Storage that can be distributed to all workers.</p>
+    </li><li name="com.spotify.scio.values.DoubleSCollectionFunctions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DoubleSCollectionFunctionsextendsAnyRef"></a>
+      <a id="DoubleSCollectionFunctions:DoubleSCollectionFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DoubleSCollectionFunctions.html"><span class="name">DoubleSCollectionFunctions</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@DoubleSCollectionFunctionsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Extra functions available on SCollections of Doubles through an implicit conversion.</p>
+    </li><li name="com.spotify.scio.values.PairSCollectionFunctions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PairSCollectionFunctions[K,V]extendsAnyRef"></a>
+      <a id="PairSCollectionFunctions[K,V]:PairSCollectionFunctions[K,V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PairSCollectionFunctions.html"><span class="name">PairSCollectionFunctions</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@PairSCollectionFunctions[K,V]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Extra functions available on SCollections of (key, value) pairs through an implicit conversion.</p>
+    </li><li name="com.spotify.scio.values.SCollection" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="SCollection[T]extendsPCollectionWrapper[T]"></a>
+      <a id="SCollection[T]:SCollection[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SCollection.html"><span class="name">SCollection</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="com.spotify.scio.values.PCollectionWrapper">PCollectionWrapper</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@SCollection[T]extendsPCollectionWrapper[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A Scala wrapper for <a href=https://cloud.google.com/dataflow/java-sdk/JavaDoc/com/google/cloud/dataflow/sdk/values/PCollection.html class="extype" target="_top">PCollection</a>, the basic
+abstraction in Dataflow.</p><div class="fullcomment"><div class="comment cmt"><p>A Scala wrapper for <a href=https://cloud.google.com/dataflow/java-sdk/JavaDoc/com/google/cloud/dataflow/sdk/values/PCollection.html class="extype" target="_top">PCollection</a>, the basic
+abstraction in Dataflow. Represents an immutable, partitioned collection of elements that can
+be operated on in parallel. This class contains the basic operations available on all
+SCollections, such as <code>map</code>, <code>filter</code>, and <code>persist</code>. In addition, <a href="PairSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.PairSCollectionFunctions">PairSCollectionFunctions</a>
+contains operations available only on SCollections of key-value pairs, such as <code>groupByKey</code> and
+<code>join</code>; <a href="DoubleSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.DoubleSCollectionFunctions">DoubleSCollectionFunctions</a> contains operations available only on SCollections of
+Doubles.
+</p></div></div>
+    </li><li name="com.spotify.scio.values.SCollectionWithAccumulator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SCollectionWithAccumulator[T]extendsPCollectionWrapper[T]"></a>
+      <a id="SCollectionWithAccumulator[T]:SCollectionWithAccumulator[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SCollectionWithAccumulator.html"><span class="name">SCollectionWithAccumulator</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="com.spotify.scio.values.PCollectionWrapper">PCollectionWrapper</span>[<span class="extype" name="com.spotify.scio.values.SCollectionWithAccumulator.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@SCollectionWithAccumulator[T]extendsPCollectionWrapper[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An enhanced SCollection that provides access to one or more <a href="Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s for some
+transforms.</p><div class="fullcomment"><div class="comment cmt"><p>An enhanced SCollection that provides access to one or more <a href="Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s for some
+transforms. <a href="Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s are accessed via the additional <a href="AccumulatorContext.html" class="extype" name="com.spotify.scio.values.AccumulatorContext">AccumulatorContext</a> argument.
+</p></div></div>
+    </li><li name="com.spotify.scio.values.SCollectionWithSideInput" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SCollectionWithSideInput[T]extendsPCollectionWrapper[T]"></a>
+      <a id="SCollectionWithSideInput[T]:SCollectionWithSideInput[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SCollectionWithSideInput.html"><span class="name">SCollectionWithSideInput</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="com.spotify.scio.values.PCollectionWrapper">PCollectionWrapper</span>[<span class="extype" name="com.spotify.scio.values.SCollectionWithSideInput.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@SCollectionWithSideInput[T]extendsPCollectionWrapper[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An enhanced SCollection that provides access to one or more <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>s for some transforms.</p><div class="fullcomment"><div class="comment cmt"><p>An enhanced SCollection that provides access to one or more <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>s for some transforms.
+<a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>s are accessed via the additional <a href="SideInputContext.html" class="extype" name="com.spotify.scio.values.SideInputContext">SideInputContext</a> argument.
+</p></div></div>
+    </li><li name="com.spotify.scio.values.SCollectionWithSideOutput" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SCollectionWithSideOutput[T]extendsPCollectionWrapper[T]"></a>
+      <a id="SCollectionWithSideOutput[T]:SCollectionWithSideOutput[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SCollectionWithSideOutput.html"><span class="name">SCollectionWithSideOutput</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="com.spotify.scio.values.PCollectionWrapper">PCollectionWrapper</span>[<span class="extype" name="com.spotify.scio.values.SCollectionWithSideOutput.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@SCollectionWithSideOutput[T]extendsPCollectionWrapper[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An enhanced SCollection that provides access to one or more <a href="SideOutput.html" class="extype" name="com.spotify.scio.values.SideOutput">SideOutput</a>s for some transforms.</p><div class="fullcomment"><div class="comment cmt"><p>An enhanced SCollection that provides access to one or more <a href="SideOutput.html" class="extype" name="com.spotify.scio.values.SideOutput">SideOutput</a>s for some transforms.
+<a href="SideOutput.html" class="extype" name="com.spotify.scio.values.SideOutput">SideOutput</a>s are accessed via the additional <a href="SideOutputContext.html" class="extype" name="com.spotify.scio.values.SideOutputContext">SideOutputContext</a> argument.
+<a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>s of the <a href="SideOutput.html" class="extype" name="com.spotify.scio.values.SideOutput">SideOutput</a>s are accessed via the additional
+<a href="SideOutputCollections.html" class="extype" name="com.spotify.scio.values.SideOutputCollections">SideOutputCollections</a> return value.
+</p></div></div>
+    </li><li name="com.spotify.scio.values.SideInput" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SideInput[T]extendsSerializable"></a>
+      <a id="SideInput[T]:SideInput[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SideInput.html"><span class="name">SideInput</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@SideInput[T]extendsSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Encapsulate an SCollection when it is being used as a side input.</p>
+    </li><li name="com.spotify.scio.values.SideInputContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SideInputContext[T]extendsAnyVal"></a>
+      <a id="SideInputContext[T]:SideInputContext[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SideInputContext.html"><span class="name">SideInputContext</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@SideInputContext[T]extendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Encapsulate context of one or more <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>s in an <a href="SCollectionWithSideInput.html" class="extype" name="com.spotify.scio.values.SCollectionWithSideInput">SCollectionWithSideInput</a>.</p>
+    </li><li name="com.spotify.scio.values.SideOutput" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SideOutput[T]extendsSerializable"></a>
+      <a id="SideOutput[T]:SideOutput[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SideOutput.html"><span class="name">SideOutput</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@SideOutput[T]extendsSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Encapsulate a side output for a transform.</p>
+    </li><li name="com.spotify.scio.values.SideOutputCollections" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SideOutputCollectionsextendsAnyRef"></a>
+      <a id="SideOutputCollections:SideOutputCollections"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SideOutputCollections.html"><span class="name">SideOutputCollections</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@SideOutputCollectionsextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Encapsulate output of one or more <a href="SideOutput.html" class="extype" name="com.spotify.scio.values.SideOutput">SideOutput</a>s in an <a href="SCollectionWithSideOutput.html" class="extype" name="com.spotify.scio.values.SCollectionWithSideOutput">SCollectionWithSideOutput</a>.</p>
+    </li><li name="com.spotify.scio.values.SideOutputContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SideOutputContext[T]extendsAnyVal"></a>
+      <a id="SideOutputContext[T]:SideOutputContext[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SideOutputContext.html"><span class="name">SideOutputContext</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@SideOutputContext[T]extendsAnyVal" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Encapsulate context of one or more <a href="SideOutput.html" class="extype" name="com.spotify.scio.values.SideOutput">SideOutput</a>s in an <a href="SCollectionWithSideOutput.html" class="extype" name="com.spotify.scio.values.SCollectionWithSideOutput">SCollectionWithSideOutput</a>.</p>
+    </li><li name="com.spotify.scio.values.WindowOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WindowOptions[W&lt;:com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow]extendsProductwithSerializable"></a>
+      <a id="WindowOptions[W&lt;:BoundedWindow]:WindowOptions[W]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="WindowOptions.html"><span class="name">WindowOptions</span></a><span class="tparams">[<span name="W">W &lt;: <a href=https://cloud.google.com/dataflow/java-sdk/JavaDoc/com/google/cloud/dataflow/sdk/transforms/windowing/BoundedWindow.html class="extype" target="_top">BoundedWindow</a></span>]</span><span class="params">(<span name="allowedLateness">allowedLateness: <a href=http://www.joda.org/joda-time/apidocs/org/joda/time/Duration.html class="extype" target="_top">Duration</a> = <span class="symbol">null</span></span>, <span name="trigger">trigger: <a href=https://cloud.google.com/dataflow/java-sdk/JavaDoc/com/google/cloud/dataflow/sdk/transforms/windowing/Trigger.html class="extype" target="_top">Trigger</a>[<span class="extype" name="com.spotify.scio.values.WindowOptions.W">W</span>] = <span class="symbol">null</span></span>, <span name="accumulationMode">accumulationMode: <span class="extype" name="com.google.cloud.dataflow.sdk.util.WindowingStrategy.AccumulationMode">AccumulationMode</span> = <span class="symbol">null</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@WindowOptions[W&lt;:com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow]extendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.values.WindowedSCollection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WindowedSCollection[T]extendsPCollectionWrapper[T]"></a>
+      <a id="WindowedSCollection[T]:WindowedSCollection[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="WindowedSCollection.html"><span class="name">WindowedSCollection</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="com.spotify.scio.values.PCollectionWrapper">PCollectionWrapper</span>[<span class="extype" name="com.spotify.scio.values.WindowedSCollection.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@WindowedSCollection[T]extendsPCollectionWrapper[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.values.WindowedValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WindowedValue[T]extendsProductwithSerializable"></a>
+      <a id="WindowedValue[T]:WindowedValue[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="WindowedValue.html"><span class="name">WindowedValue</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="value">value: <span class="extype" name="com.spotify.scio.values.WindowedValue.T">T</span></span>, <span name="timestamp">timestamp: <span class="extype" name="org.joda.time.Instant">Instant</span></span>, <span name="window">window: <a href=https://cloud.google.com/dataflow/java-sdk/JavaDoc/com/google/cloud/dataflow/sdk/transforms/windowing/BoundedWindow.html class="extype" target="_top">BoundedWindow</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@WindowedValue[T]extendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="com.spotify.scio.values.SCollection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SCollection"></a>
+      <a id="SCollection:SCollection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SCollection$.html"><span class="name">SCollection</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@SCollection" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Convenience functions for creating SCollections.</p>
+    </li><li name="com.spotify.scio.values.SideOutput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SideOutput"></a>
+      <a id="SideOutput:SideOutput"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SideOutput$.html"><span class="name">SideOutput</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@SideOutput" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Companion object for <a href="SideOutput.html" class="extype" name="com.spotify.scio.values.SideOutput">SideOutput</a>.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
