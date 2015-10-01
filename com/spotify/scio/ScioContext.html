@@ -277,7 +277,7 @@ and can be used to create SCollections and distributed caches on that cluster.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">bigQueryTable</span><span class="params">(<span name="table">table: <a href=https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/TableReference.html class="extype" target="_top">TableReference</a></span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<a href="bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]</span>
+        <span class="name">bigQueryTable</span><span class="params">(<span name="table">table: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableReference" class="extype" target="_top">TableReference</a></span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<a href="bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#com.spotify.scio.ScioContext@bigQueryTable(table:com.google.api.services.bigquery.model.TableReference):com.spotify.scio.values.SCollection[com.spotify.scio.bigquery.TableRow]" title="Permalink" target="_top">
@@ -595,7 +595,7 @@ for examples.</p></div></div>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">options</span><span class="result">: <a href=https://cloud.google.com/dataflow/java-sdk/JavaDoc/com/google/cloud/dataflow/sdk/options/DataflowPipelineOptions.html class="extype" target="_top">DataflowPipelineOptions</a></span>
+        <span class="name">options</span><span class="result">: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions" class="extype" target="_top">DataflowPipelineOptions</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#com.spotify.scio.ScioContext@options:com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions" title="Permalink" target="_top">
@@ -604,7 +604,7 @@ for examples.</p></div></div>
     </span>
       <p class="shortcomment cmt">Dataflow pipeline specific options, e.g.</p><div class="fullcomment"><div class="comment cmt"><p>Dataflow pipeline specific options, e.g. project, zone, runner, stagingLocation.</p></div></div>
     </li><li name="com.spotify.scio.ScioContext#parallelize" visbl="pub" data-isabs="false" fullComment="no" group="in_memory">
-      <a id="parallelize[K,V](elems:Map[K,V])(implicitevidence$6:scala.reflect.ClassTag[K],implicitevidence$7:scala.reflect.ClassTag[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
+      <a id="parallelize[K,V](elems:Map[K,V])(implicitevidence$5:scala.reflect.ClassTag[K],implicitevidence$6:scala.reflect.ClassTag[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
       <a id="parallelize[K,V](Map[K,V])(ClassTag[K],ClassTag[V]):SCollection[(K,V)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -615,13 +615,13 @@ for examples.</p></div></div>
         <span class="name">parallelize</span><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="params">(<span name="elems">elems: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="com.spotify.scio.ScioContext.parallelize.K">K</span>, <span class="extype" name="com.spotify.scio.ScioContext.parallelize.V">V</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.parallelize.K">K</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.parallelize.V">V</span>]</span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.ScioContext.parallelize.K">K</span>, <span class="extype" name="com.spotify.scio.ScioContext.parallelize.V">V</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.ScioContext@parallelize[K,V](elems:Map[K,V])(implicitevidence$6:scala.reflect.ClassTag[K],implicitevidence$7:scala.reflect.ClassTag[V]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
+      <a href="../../../index.html#com.spotify.scio.ScioContext@parallelize[K,V](elems:Map[K,V])(implicitevidence$5:scala.reflect.ClassTag[K],implicitevidence$6:scala.reflect.ClassTag[V]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Distribute a local Scala Map to form an SCollection.</p>
     </li><li name="com.spotify.scio.ScioContext#parallelize" visbl="pub" data-isabs="false" fullComment="no" group="in_memory">
-      <a id="parallelize[T](elems:Iterable[T])(implicitevidence$5:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]"></a>
+      <a id="parallelize[T](elems:Iterable[T])(implicitevidence$4:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]"></a>
       <a id="parallelize[T](Iterable[T])(ClassTag[T]):SCollection[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -632,30 +632,13 @@ for examples.</p></div></div>
         <span class="name">parallelize</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="elems">elems: <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.ScioContext.parallelize.T">T</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.parallelize.T">T</span>]</span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.parallelize.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.ScioContext@parallelize[T](elems:Iterable[T])(implicitevidence$5:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
+      <a href="../../../index.html#com.spotify.scio.ScioContext@parallelize[T](elems:Iterable[T])(implicitevidence$4:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Distribute a local Scala Iterable to form an SCollection.</p>
-    </li><li name="com.spotify.scio.ScioContext#parallelize" visbl="pub" data-isabs="false" fullComment="no" group="in_memory">
-      <a id="parallelize[T](elems:T*)(implicitevidence$4:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]"></a>
-      <a id="parallelize[T](T*)(ClassTag[T]):SCollection[T]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">parallelize</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="elems">elems: <span class="extype" name="com.spotify.scio.ScioContext.parallelize.T">T</span>*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.parallelize.T">T</span>]</span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.parallelize.T">T</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.ScioContext@parallelize[T](elems:T*)(implicitevidence$4:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Distribute local values to form an SCollection.</p>
     </li><li name="com.spotify.scio.ScioContext#parallelizeTimestamped" visbl="pub" data-isabs="false" fullComment="no" group="in_memory">
-      <a id="parallelizeTimestamped[T](elems:Iterable[T],timestamps:Iterable[org.joda.time.Instant])(implicitevidence$10:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]"></a>
+      <a id="parallelizeTimestamped[T](elems:Iterable[T],timestamps:Iterable[org.joda.time.Instant])(implicitevidence$8:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]"></a>
       <a id="parallelizeTimestamped[T](Iterable[T],Iterable[Instant])(ClassTag[T]):SCollection[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -666,13 +649,13 @@ for examples.</p></div></div>
         <span class="name">parallelizeTimestamped</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="elems">elems: <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.ScioContext.parallelizeTimestamped.T">T</span>]</span>, <span name="timestamps">timestamps: <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="org.joda.time.Instant">Instant</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.parallelizeTimestamped.T">T</span>]</span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.parallelizeTimestamped.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.ScioContext@parallelizeTimestamped[T](elems:Iterable[T],timestamps:Iterable[org.joda.time.Instant])(implicitevidence$10:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
+      <a href="../../../index.html#com.spotify.scio.ScioContext@parallelizeTimestamped[T](elems:Iterable[T],timestamps:Iterable[org.joda.time.Instant])(implicitevidence$8:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Distribute a local Scala Iterable with timestamps to form an SCollection.</p>
     </li><li name="com.spotify.scio.ScioContext#parallelizeTimestamped" visbl="pub" data-isabs="false" fullComment="no" group="in_memory">
-      <a id="parallelizeTimestamped[T](elems:Iterable[(T,org.joda.time.Instant)])(implicitevidence$9:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]"></a>
+      <a id="parallelizeTimestamped[T](elems:Iterable[(T,org.joda.time.Instant)])(implicitevidence$7:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]"></a>
       <a id="parallelizeTimestamped[T](Iterable[(T,Instant)])(ClassTag[T]):SCollection[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -683,28 +666,11 @@ for examples.</p></div></div>
         <span class="name">parallelizeTimestamped</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="elems">elems: <span class="extype" name="scala.Iterable">Iterable</span>[(<span class="extype" name="com.spotify.scio.ScioContext.parallelizeTimestamped.T">T</span>, <span class="extype" name="org.joda.time.Instant">Instant</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.parallelizeTimestamped.T">T</span>]</span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.parallelizeTimestamped.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.ScioContext@parallelizeTimestamped[T](elems:Iterable[(T,org.joda.time.Instant)])(implicitevidence$9:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
+      <a href="../../../index.html#com.spotify.scio.ScioContext@parallelizeTimestamped[T](elems:Iterable[(T,org.joda.time.Instant)])(implicitevidence$7:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Distribute a local Scala Iterable with timestamps to form an SCollection.</p>
-    </li><li name="com.spotify.scio.ScioContext#parallelizeTimestamped" visbl="pub" data-isabs="false" fullComment="no" group="in_memory">
-      <a id="parallelizeTimestamped[T](elems:(T,org.joda.time.Instant)*)(implicitevidence$8:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]"></a>
-      <a id="parallelizeTimestamped[T]((T,Instant)*)(ClassTag[T]):SCollection[T]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">parallelizeTimestamped</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="elems">elems: (<span class="extype" name="com.spotify.scio.ScioContext.parallelizeTimestamped.T">T</span>, <span class="extype" name="org.joda.time.Instant">Instant</span>)*</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.parallelizeTimestamped.T">T</span>]</span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.parallelizeTimestamped.T">T</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.ScioContext@parallelizeTimestamped[T](elems:(T,org.joda.time.Instant)*)(implicitevidence$8:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">wrap local values with timestamps to form an SCollection.</p>
     </li><li name="com.spotify.scio.ScioContext#pipeline" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="pipeline:com.google.cloud.dataflow.sdk.Pipeline"></a>
       <a id="pipeline:Pipeline"></a>
@@ -923,14 +889,14 @@ for examples.</p></div></div>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wrap</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: <a href=https://cloud.google.com/dataflow/java-sdk/JavaDoc/com/google/cloud/dataflow/sdk/values/PCollection.html class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.wrap.T">T</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.wrap.T">T</span>]</span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.wrap.T">T</span>]</span>
+        <span class="name">wrap</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.wrap.T">T</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.wrap.T">T</span>]</span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.wrap.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#com.spotify.scio.ScioContext@wrap[T](p:com.google.cloud.dataflow.sdk.values.PCollection[T])(implicitevidence$1:scala.reflect.ClassTag[T]):com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Wrap a <a href=https://cloud.google.com/dataflow/java-sdk/JavaDoc/com/google/cloud/dataflow/sdk/values/PCollection.html class="extype" target="_top">PCollection</a>.</p>
+      <p class="shortcomment cmt">Wrap a <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>.</p>
     </li></ol>
             </div>
 

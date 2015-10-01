@@ -92,7 +92,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="BigQueryIO.html"><span class="name">BigQueryIO</span></a><span class="params">(<span name="tableSpecOrQuery">tableSpecOrQuery: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<a href=https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/TableRow.html class="extype" target="_top">TableRow</a>] with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="BigQueryIO.html"><span class="name">BigQueryIO</span></a><span class="params">(<span name="tableSpecOrQuery">tableSpecOrQuery: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableRow" class="extype" target="_top">TableRow</a>] with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.testing.package@BigQueryIOextendsTestIO[com.google.api.services.bigquery.model.TableRow]withProductwithSerializable" title="Permalink" target="_top">
@@ -134,25 +134,23 @@
       </a>
     </span>
       
-    </li><li name="com.spotify.scio.testing.JobSpec" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="JobSpecextendsFlatSpecwithMatcherswithPCollectionMatcher"></a>
-      <a id="JobSpec:JobSpec"></a>
+    </li><li name="com.spotify.scio.testing.PipelineSpec" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PipelineSpecextendsFlatSpecwithMatcherswithPCollectionMatcher"></a>
+      <a id="PipelineSpec:PipelineSpec"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="JobSpec.html"><span class="name">JobSpec</span></a><span class="result"> extends <span class="extype" name="org.scalatest.FlatSpec">FlatSpec</span> with <span class="extype" name="org.scalatest.Matchers">Matchers</span> with <span class="extype" name="com.spotify.scio.testing.PCollectionMatcher">PCollectionMatcher</span></span>
+        <a href="PipelineSpec.html"><span class="name">PipelineSpec</span></a><span class="result"> extends <span class="extype" name="org.scalatest.FlatSpec">FlatSpec</span> with <span class="extype" name="org.scalatest.Matchers">Matchers</span> with <span class="extype" name="com.spotify.scio.testing.PCollectionMatcher">PCollectionMatcher</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.testing.package@JobSpecextendsFlatSpecwithMatcherswithPCollectionMatcher" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.testing.package@PipelineSpecextendsFlatSpecwithMatcherswithPCollectionMatcher" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Trait for unit testing of Dataflow jobs.</p><div class="fullcomment"><div class="comment cmt"><p>Trait for unit testing of Dataflow jobs.
-To be used with <a href="JobTest$.html" class="extype" name="com.spotify.scio.testing.JobTest">JobTest</a>.
-</p></div></div>
+      <p class="shortcomment cmt">Trait for unit testing pipelines.</p>
     </li><li name="com.spotify.scio.testing.PubsubIO" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="PubsubIOextendsTestIO[String]withProductwithSerializable"></a>
       <a id="PubsubIO:PubsubIO"></a>
@@ -179,7 +177,7 @@ To be used with <a href="JobTest$.html" class="extype" name="com.spotify.scio.te
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="TableRowJsonIO.html"><span class="name">TableRowJsonIO</span></a><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<a href=https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/TableRow.html class="extype" target="_top">TableRow</a>] with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="TableRowJsonIO.html"><span class="name">TableRowJsonIO</span></a><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableRow" class="extype" target="_top">TableRow</a>] with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.testing.package@TableRowJsonIOextendsTestIO[com.google.api.services.bigquery.model.TableRow]withProductwithSerializable" title="Permalink" target="_top">
@@ -245,9 +243,9 @@ To be used with <a href="JobTest$.html" class="extype" name="com.spotify.scio.te
       </a>
     </span>
       <p class="shortcomment cmt">Set up a Dataflow job for unit testing.</p><div class="fullcomment"><div class="comment cmt"><p>Set up a Dataflow job for unit testing.
-To be used in a <a href="JobSpec.html" class="extype" name="com.spotify.scio.testing.JobSpec">JobSpec</a>. For example:</p><pre><span class="kw">import</span> com.spotify.scio.testing._
+To be used in a <a href="PipelineSpec.html" class="extype" name="com.spotify.scio.testing.PipelineSpec">PipelineSpec</a>. For example:</p><pre><span class="kw">import</span> com.spotify.scio.testing._
 
-<span class="kw">class</span> WordCountTest <span class="kw">extends</span> JobSpec {
+<span class="kw">class</span> WordCountTest <span class="kw">extends</span> PipelineSpec {
 
   <span class="cmt">// Mock input data, mock distributed cache and expected result</span>
   <span class="kw">val</span> inData = <span class="std">Seq</span>(<span class="lit">"a b c d e"</span>, <span class="lit">"a b a b"</span>)

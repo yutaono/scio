@@ -805,35 +805,35 @@ partition the output SCollection.</p></div></div>
       <p class="shortcomment cmt">Pass each value in the key-value pair SCollection through a map function without changing the
 keys.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#maxByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
-      <a id="maxByKey()(implicitord:Ordering[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
-      <a id="maxByKey()(Ordering[V]):SCollection[(K,V)]"></a>
+      <a id="maxByKey(implicitord:Ordering[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
+      <a id="maxByKey(Ordering[V]):SCollection[(K,V)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">maxByKey</span><span class="params">()</span><span class="params">(<span class="implicit">implicit </span><span name="ord">ord: <span class="extype" name="scala.Ordering">Ordering</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>)]</span>
+        <span class="name">maxByKey</span><span class="params">(<span class="implicit">implicit </span><span name="ord">ord: <span class="extype" name="scala.Ordering">Ordering</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@maxByKey()(implicitord:Ordering[V]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@maxByKey(implicitord:Ordering[V]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Return the max of values for each key as defined by the implicit Ordering[T].</p><div class="fullcomment"><div class="comment cmt"><p>Return the max of values for each key as defined by the implicit Ordering[T].</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new SCollection of (key, maximum value) pairs</p></dd></dl></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#minByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
-      <a id="minByKey()(implicitord:Ordering[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
-      <a id="minByKey()(Ordering[V]):SCollection[(K,V)]"></a>
+      <a id="minByKey(implicitord:Ordering[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
+      <a id="minByKey(Ordering[V]):SCollection[(K,V)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">minByKey</span><span class="params">()</span><span class="params">(<span class="implicit">implicit </span><span name="ord">ord: <span class="extype" name="scala.Ordering">Ordering</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>)]</span>
+        <span class="name">minByKey</span><span class="params">(<span class="implicit">implicit </span><span name="ord">ord: <span class="extype" name="scala.Ordering">Ordering</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@minByKey()(implicitord:Ordering[V]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@minByKey(implicitord:Ordering[V]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1001,18 +1001,18 @@ of math.ceil(numItems * samplingRate) over all key values.
     </span>
       <p class="shortcomment cmt">Return an SCollection with the pairs from <code>this</code> whose keys are not in <code>other</code>.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#sumByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
-      <a id="sumByKey()(implicitsg:com.twitter.algebird.Semigroup[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
-      <a id="sumByKey()(Semigroup[V]):SCollection[(K,V)]"></a>
+      <a id="sumByKey(implicitsg:com.twitter.algebird.Semigroup[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
+      <a id="sumByKey(Semigroup[V]):SCollection[(K,V)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">sumByKey</span><span class="params">()</span><span class="params">(<span class="implicit">implicit </span><span name="sg">sg: <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>)]</span>
+        <span class="name">sumByKey</span><span class="params">(<span class="implicit">implicit </span><span name="sg">sg: <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@sumByKey()(implicitsg:com.twitter.algebird.Semigroup[V]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@sumByKey(implicitsg:com.twitter.algebird.Semigroup[V]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
