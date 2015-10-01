@@ -3628,9 +3628,9 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Test pipeline components with a <a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Test pipeline components with a <a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a>.</p><pre>runWithContext { sc <span class="kw">=&gt;</span>
+      <p class="shortcomment cmt">Test pipeline components with a <a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Test pipeline components with a <a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a>.</p></div><dl class="paramcmts block"><dt class="param">fn</dt><dd class="cmt"><p>code that tests the components and verifies the result</p><pre>runWithContext { sc <span class="kw">=&gt;</span>
   sc.parallelize(<span class="std">Seq</span>(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>)).sum.internal should containSingleValue (<span class="num">6</span>)
-}</pre></div><dl class="paramcmts block"><dt class="param">fn</dt><dd class="cmt"><p>code that tests the components and verifies the result</p></dd></dl></div>
+}</pre></dd></dl></div>
     </li><li name="com.spotify.scio.testing.PipelineSpec#runWithData" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="runWithData[T1,T2,T3,T4,U](data1:Iterable[T1],data2:Iterable[T2],data3:Iterable[T3],data4:Iterable[T4])(fn:(com.spotify.scio.values.SCollection[T1],com.spotify.scio.values.SCollection[T2],com.spotify.scio.values.SCollection[T3],com.spotify.scio.values.SCollection[T4])=&gt;com.spotify.scio.values.SCollection[U])(implicitevidence$10:scala.reflect.ClassTag[T1],implicitevidence$11:scala.reflect.ClassTag[T2],implicitevidence$12:scala.reflect.ClassTag[T3],implicitevidence$13:scala.reflect.ClassTag[T4],implicitevidence$14:scala.reflect.ClassTag[U]):Seq[U]"></a>
       <a id="runWithData[T1,T2,T3,T4,U](Iterable[T1],Iterable[T2],Iterable[T3],Iterable[T4])((SCollection[T1],SCollection[T2],SCollection[T3],SCollection[T4])⇒SCollection[U])(ClassTag[T1],ClassTag[T2],ClassTag[T3],ClassTag[T4],ClassTag[U]):Seq[U]"></a>
@@ -3698,9 +3698,9 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Test pipeline components with in-memory data.</p><div class="fullcomment"><div class="comment cmt"><p>Test pipeline components with in-memory data.</p><pre>runWithData(<span class="std">Seq</span>(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>)) { p <span class="kw">=&gt;</span>
+      <p class="shortcomment cmt">Test pipeline components with in-memory data.</p><div class="fullcomment"><div class="comment cmt"><p>Test pipeline components with in-memory data.</p></div><dl class="paramcmts block"><dt class="param">data</dt><dd class="cmt"><p>input data</p></dd><dt class="param">fn</dt><dd class="cmt"><p>code that tests the components by feeding input and extracting output</p></dd><dt>returns</dt><dd class="cmt"><p>output data</p><pre>runWithData(<span class="std">Seq</span>(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>)) { p <span class="kw">=&gt;</span>
   p.sum
-} should equal (<span class="std">Seq</span>(<span class="num">6</span>))</pre></div><dl class="paramcmts block"><dt class="param">data</dt><dd class="cmt"><p>input data</p></dd><dt class="param">fn</dt><dd class="cmt"><p>code that tests the components by feeding input and extracting output</p></dd><dt>returns</dt><dd class="cmt"><p>output data</p></dd></dl></div>
+} should equal (<span class="std">Seq</span>(<span class="num">6</span>))</pre></dd></dl></div>
     </li><li name="org.scalatest.FlatSpecLike#shorthandSharedTestRegistrationFunction" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="shorthandSharedTestRegistrationFunction:String=&gt;org.scalatest.words.BehaveWord"></a>
       <a id="shorthandSharedTestRegistrationFunction:(String)⇒BehaveWord"></a>
