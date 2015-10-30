@@ -72,7 +72,9 @@ object ScioBuild extends Build {
     scioTest,
     scioBigQuery,
     scioBigTable,
-    scioSchemas
+    scioMl,
+    scioSchemas,
+    scioExamples
   )
 
   lazy val scioCore: Project = Project(
@@ -149,6 +151,21 @@ object ScioBuild extends Build {
     )
   ).dependsOn(
     scioCore
+  )
+
+  lazy val scioMl: Project = Project(
+    "scio-ml",
+    file("ml"),
+    settings = buildSettings ++ Seq(
+      libraryDependencies ++= Seq(
+        "org.scalanlp" %% "breeze" % "0.11.2",
+        "org.scalanlp" %% "breeze-natives" % "0.11.2",
+        "info.debatty" % "java-lsh" % "0.8"
+      )
+    )
+  ).dependsOn(
+    scioCore,
+    scioTest % "test"
   )
 
   lazy val scioSchemas: Project = Project(
