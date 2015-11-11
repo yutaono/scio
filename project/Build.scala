@@ -185,7 +185,9 @@ object ScioBuild extends Build {
     settings = buildSettings ++ Seq(
       libraryDependencies ++= Seq(
         "org.slf4j" % "slf4j-simple" % "1.7.13",
-        "org.hamcrest" % "hamcrest-all" % "1.3"
+        "org.hamcrest" % "hamcrest-all" % "1.3",
+        "org.scalanlp" %% "breeze" % "0.11.2",
+        "org.scalanlp" %% "breeze-natives" % "0.11.2"
       ),
       addCompilerPlugin(paradiseDependency)
     )
