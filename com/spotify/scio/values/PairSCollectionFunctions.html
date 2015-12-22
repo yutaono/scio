@@ -166,7 +166,7 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#aggregateByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
-      <a id="aggregateByKey[A,U](aggregator:com.twitter.algebird.Aggregator[V,A,U])(implicitevidence$21:scala.reflect.ClassTag[A],implicitevidence$22:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]"></a>
+      <a id="aggregateByKey[A,U](aggregator:com.twitter.algebird.Aggregator[V,A,U])(implicitevidence$20:scala.reflect.ClassTag[A],implicitevidence$21:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]"></a>
       <a id="aggregateByKey[A,U](Aggregator[V,A,U])(ClassTag[A],ClassTag[U]):SCollection[(K,U)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -177,7 +177,7 @@
         <span class="name">aggregateByKey</span><span class="tparams">[<span name="A">A</span>, <span name="U">U</span>]</span><span class="params">(<span name="aggregator">aggregator: <span class="extype" name="com.twitter.algebird.Aggregator">Aggregator</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.A">A</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.U">U</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.A">A</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.U">U</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.U">U</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@aggregateByKey[A,U](aggregator:com.twitter.algebird.Aggregator[V,A,U])(implicitevidence$21:scala.reflect.ClassTag[A],implicitevidence$22:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@aggregateByKey[A,U](aggregator:com.twitter.algebird.Aggregator[V,A,U])(implicitevidence$20:scala.reflect.ClassTag[A],implicitevidence$21:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -185,7 +185,7 @@
 each value V is mapped to A, then we reduce with a semigroup of A, then finally we present
 the results as U. This could be more powerful and better optimized in some cases.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#aggregateByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
-      <a id="aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$20:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]"></a>
+      <a id="aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$19:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]"></a>
       <a id="aggregateByKey[U](U)((U,V)⇒U,(U,U)⇒U)(ClassTag[U]):SCollection[(K,U)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -196,7 +196,7 @@ the results as U. This could be more powerful and better optimized in some cases
         <span class="name">aggregateByKey</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="zeroValue">zeroValue: <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.U">U</span></span>)</span><span class="params">(<span name="seqOp">seqOp: (<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.U">U</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>) ⇒ <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.U">U</span></span>, <span name="combOp">combOp: (<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.U">U</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.U">U</span>) ⇒ <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.U">U</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.U">U</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.aggregateByKey.U">U</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$20:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$19:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -303,7 +303,7 @@ used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values
               
         </dd></dl></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#coGroup" visbl="pub" data-isabs="false" fullComment="no" group="cogroup">
-      <a id="coGroup[W1,W2,W3](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)],that3:com.spotify.scio.values.SCollection[(K,W3)])(implicitevidence$7:scala.reflect.ClassTag[W1],implicitevidence$8:scala.reflect.ClassTag[W2],implicitevidence$9:scala.reflect.ClassTag[W3]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2],Iterable[W3]))]"></a>
+      <a id="coGroup[W1,W2,W3](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)],that3:com.spotify.scio.values.SCollection[(K,W3)])(implicitevidence$6:scala.reflect.ClassTag[W1],implicitevidence$7:scala.reflect.ClassTag[W2],implicitevidence$8:scala.reflect.ClassTag[W3]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2],Iterable[W3]))]"></a>
       <a id="coGroup[W1,W2,W3](SCollection[(K,W1)],SCollection[(K,W2)],SCollection[(K,W3)])(ClassTag[W1],ClassTag[W2],ClassTag[W3]):SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2],Iterable[W3]))]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -314,7 +314,7 @@ used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values
         <span class="name">coGroup</span><span class="tparams">[<span name="W1">W1</span>, <span name="W2">W2</span>, <span name="W3">W3</span>]</span><span class="params">(<span name="that1">that1: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W1">W1</span>)]</span>, <span name="that2">that2: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W2">W2</span>)]</span>, <span name="that3">that3: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W3">W3</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W1">W1</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W2">W2</span>]</span>, <span name="arg2">arg2: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W3">W3</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, (<span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W1">W1</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W2">W2</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W3">W3</span>]))]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@coGroup[W1,W2,W3](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)],that3:com.spotify.scio.values.SCollection[(K,W3)])(implicitevidence$7:scala.reflect.ClassTag[W1],implicitevidence$8:scala.reflect.ClassTag[W2],implicitevidence$9:scala.reflect.ClassTag[W3]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2],Iterable[W3]))]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@coGroup[W1,W2,W3](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)],that3:com.spotify.scio.values.SCollection[(K,W3)])(implicitevidence$6:scala.reflect.ClassTag[W1],implicitevidence$7:scala.reflect.ClassTag[W2],implicitevidence$8:scala.reflect.ClassTag[W3]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2],Iterable[W3]))]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -322,7 +322,7 @@ used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values
 that contains a tuple with the list of values for that key in <code>this</code>, <code>that1</code>, <code>that2</code> and
 <code>that3</code>.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#coGroup" visbl="pub" data-isabs="false" fullComment="no" group="cogroup">
-      <a id="coGroup[W1,W2](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)])(implicitevidence$5:scala.reflect.ClassTag[W1],implicitevidence$6:scala.reflect.ClassTag[W2]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2]))]"></a>
+      <a id="coGroup[W1,W2](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)])(implicitevidence$4:scala.reflect.ClassTag[W1],implicitevidence$5:scala.reflect.ClassTag[W2]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2]))]"></a>
       <a id="coGroup[W1,W2](SCollection[(K,W1)],SCollection[(K,W2)])(ClassTag[W1],ClassTag[W2]):SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2]))]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -333,14 +333,14 @@ that contains a tuple with the list of values for that key in <code>this</code>,
         <span class="name">coGroup</span><span class="tparams">[<span name="W1">W1</span>, <span name="W2">W2</span>]</span><span class="params">(<span name="that1">that1: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W1">W1</span>)]</span>, <span name="that2">that2: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W2">W2</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W1">W1</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W2">W2</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, (<span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W1">W1</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W2">W2</span>]))]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@coGroup[W1,W2](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)])(implicitevidence$5:scala.reflect.ClassTag[W1],implicitevidence$6:scala.reflect.ClassTag[W2]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2]))]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@coGroup[W1,W2](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)])(implicitevidence$4:scala.reflect.ClassTag[W1],implicitevidence$5:scala.reflect.ClassTag[W2]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2]))]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">For each key k in <code>this</code> or <code>that1</code> or <code>that2</code>, return a resulting SCollection that contains
 a tuple with the list of values for that key in <code>this</code>, <code>that1</code> and <code>that2</code>.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#coGroup" visbl="pub" data-isabs="false" fullComment="no" group="cogroup">
-      <a id="coGroup[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$4:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W]))]"></a>
+      <a id="coGroup[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$3:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W]))]"></a>
       <a id="coGroup[W](SCollection[(K,W)])(ClassTag[W]):SCollection[(K,(Iterable[V],Iterable[W]))]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -351,14 +351,14 @@ a tuple with the list of values for that key in <code>this</code>, <code>that1</
         <span class="name">coGroup</span><span class="tparams">[<span name="W">W</span>]</span><span class="params">(<span name="that">that: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W">W</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W">W</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, (<span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.coGroup.W">W</span>]))]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@coGroup[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$4:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W]))]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@coGroup[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$3:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W]))]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">For each key k in <code>this</code> or <code>that</code>, return a resulting SCollection that contains a tuple with
 the list of values for that key in <code>this</code> as well as <code>that</code>.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#combineByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
-      <a id="combineByKey[C](createCombiner:V=&gt;C)(mergeValue:(C,V)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$23:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[(K,C)]"></a>
+      <a id="combineByKey[C](createCombiner:V=&gt;C)(mergeValue:(C,V)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$22:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[(K,C)]"></a>
       <a id="combineByKey[C]((V)⇒C)((C,V)⇒C)((C,C)⇒C)(ClassTag[C]):SCollection[(K,C)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -369,7 +369,7 @@ the list of values for that key in <code>this</code> as well as <code>that</code
         <span class="name">combineByKey</span><span class="tparams">[<span name="C">C</span>]</span><span class="params">(<span name="createCombiner">createCombiner: (<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>) ⇒ <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.combineByKey.C">C</span></span>)</span><span class="params">(<span name="mergeValue">mergeValue: (<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.combineByKey.C">C</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>) ⇒ <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.combineByKey.C">C</span></span>)</span><span class="params">(<span name="mergeCombiners">mergeCombiners: (<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.combineByKey.C">C</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.combineByKey.C">C</span>) ⇒ <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.combineByKey.C">C</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.combineByKey.C">C</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.combineByKey.C">C</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@combineByKey[C](createCombiner:V=&gt;C)(mergeValue:(C,V)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$23:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[(K,C)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@combineByKey[C](createCombiner:V=&gt;C)(mergeValue:(C,V)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$22:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[(K,C)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -490,7 +490,7 @@ more accurate the estimate will be; should be <code>&gt;= 16</code>.</p></dd></d
               
         </dd></dl></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#flatMapValues" visbl="pub" data-isabs="false" fullComment="no" group="transform">
-      <a id="flatMapValues[U](f:V=&gt;TraversableOnce[U])(implicitevidence$24:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]"></a>
+      <a id="flatMapValues[U](f:V=&gt;TraversableOnce[U])(implicitevidence$23:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]"></a>
       <a id="flatMapValues[U]((V)⇒TraversableOnce[U])(ClassTag[U]):SCollection[(K,U)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -501,7 +501,7 @@ more accurate the estimate will be; should be <code>&gt;= 16</code>.</p></dd></d
         <span class="name">flatMapValues</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>) ⇒ <span class="extype" name="scala.TraversableOnce">TraversableOnce</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.flatMapValues.U">U</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.flatMapValues.U">U</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.flatMapValues.U">U</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@flatMapValues[U](f:V=&gt;TraversableOnce[U])(implicitevidence$24:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@flatMapValues[U](f:V=&gt;TraversableOnce[U])(implicitevidence$23:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -547,7 +547,7 @@ cases.</p></div></div>
 may be added to the result an arbitrary number of times, and must not change the result
 (e.g., Nil for list concatenation, 0 for addition, or 1 for multiplication.).</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#fullOuterJoin" visbl="pub" data-isabs="false" fullComment="yes" group="join">
-      <a id="fullOuterJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$16:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Option[V],Option[W]))]"></a>
+      <a id="fullOuterJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$15:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Option[V],Option[W]))]"></a>
       <a id="fullOuterJoin[W](SCollection[(K,W)])(ClassTag[W]):SCollection[(K,(Option[V],Option[W]))]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -558,7 +558,7 @@ may be added to the result an arbitrary number of times, and must not change the
         <span class="name">fullOuterJoin</span><span class="tparams">[<span name="W">W</span>]</span><span class="params">(<span name="that">that: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.fullOuterJoin.W">W</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.fullOuterJoin.W">W</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, (<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>], <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.fullOuterJoin.W">W</span>]))]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@fullOuterJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$16:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Option[V],Option[W]))]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@fullOuterJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$15:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Option[V],Option[W]))]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -605,11 +605,11 @@ element (k, w) in <code>that</code>, the resulting SCollection will either conta
 elements within each group is not guaranteed, and may even differ each time the resulting
 SCollection is evaluated.</p><p>Note: This operation may be very expensive. If you are grouping in order to perform an
 aggregation (such as a sum or average) over each key, using
-<a href="#aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$20:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#aggregateByKey">PairSCollectionFunctions.aggregateByKey</a> or
+<a href="#aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$19:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#aggregateByKey">PairSCollectionFunctions.aggregateByKey</a> or
 <a href="#reduceByKey(op:(V,V)=&gt;V):com.spotify.scio.values.SCollection[(K,V)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#reduceByKey">PairSCollectionFunctions.reduceByKey</a> will provide much better performance.</p><p>Note: As currently implemented, groupByKey must be able to hold all the key-value pairs for
 any key in memory. If a key has too many values, it can result in an OutOfMemoryError.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#groupWith" visbl="pub" data-isabs="false" fullComment="no" group="cogroup">
-      <a id="groupWith[W1,W2,W3](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)],that3:com.spotify.scio.values.SCollection[(K,W3)])(implicitevidence$13:scala.reflect.ClassTag[W1],implicitevidence$14:scala.reflect.ClassTag[W2],implicitevidence$15:scala.reflect.ClassTag[W3]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2],Iterable[W3]))]"></a>
+      <a id="groupWith[W1,W2,W3](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)],that3:com.spotify.scio.values.SCollection[(K,W3)])(implicitevidence$12:scala.reflect.ClassTag[W1],implicitevidence$13:scala.reflect.ClassTag[W2],implicitevidence$14:scala.reflect.ClassTag[W3]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2],Iterable[W3]))]"></a>
       <a id="groupWith[W1,W2,W3](SCollection[(K,W1)],SCollection[(K,W2)],SCollection[(K,W3)])(ClassTag[W1],ClassTag[W2],ClassTag[W3]):SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2],Iterable[W3]))]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -620,13 +620,13 @@ any key in memory. If a key has too many values, it can result in an OutOfMemory
         <span class="name">groupWith</span><span class="tparams">[<span name="W1">W1</span>, <span name="W2">W2</span>, <span name="W3">W3</span>]</span><span class="params">(<span name="that1">that1: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W1">W1</span>)]</span>, <span name="that2">that2: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W2">W2</span>)]</span>, <span name="that3">that3: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W3">W3</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W1">W1</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W2">W2</span>]</span>, <span name="arg2">arg2: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W3">W3</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, (<span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W1">W1</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W2">W2</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W3">W3</span>]))]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@groupWith[W1,W2,W3](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)],that3:com.spotify.scio.values.SCollection[(K,W3)])(implicitevidence$13:scala.reflect.ClassTag[W1],implicitevidence$14:scala.reflect.ClassTag[W2],implicitevidence$15:scala.reflect.ClassTag[W3]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2],Iterable[W3]))]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@groupWith[W1,W2,W3](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)],that3:com.spotify.scio.values.SCollection[(K,W3)])(implicitevidence$12:scala.reflect.ClassTag[W1],implicitevidence$13:scala.reflect.ClassTag[W2],implicitevidence$14:scala.reflect.ClassTag[W3]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2],Iterable[W3]))]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Alias for cogroup.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#groupWith" visbl="pub" data-isabs="false" fullComment="no" group="cogroup">
-      <a id="groupWith[W1,W2](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)])(implicitevidence$11:scala.reflect.ClassTag[W1],implicitevidence$12:scala.reflect.ClassTag[W2]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2]))]"></a>
+      <a id="groupWith[W1,W2](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)])(implicitevidence$10:scala.reflect.ClassTag[W1],implicitevidence$11:scala.reflect.ClassTag[W2]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2]))]"></a>
       <a id="groupWith[W1,W2](SCollection[(K,W1)],SCollection[(K,W2)])(ClassTag[W1],ClassTag[W2]):SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2]))]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -637,13 +637,13 @@ any key in memory. If a key has too many values, it can result in an OutOfMemory
         <span class="name">groupWith</span><span class="tparams">[<span name="W1">W1</span>, <span name="W2">W2</span>]</span><span class="params">(<span name="that1">that1: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W1">W1</span>)]</span>, <span name="that2">that2: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W2">W2</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W1">W1</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W2">W2</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, (<span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W1">W1</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W2">W2</span>]))]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@groupWith[W1,W2](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)])(implicitevidence$11:scala.reflect.ClassTag[W1],implicitevidence$12:scala.reflect.ClassTag[W2]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2]))]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@groupWith[W1,W2](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)])(implicitevidence$10:scala.reflect.ClassTag[W1],implicitevidence$11:scala.reflect.ClassTag[W2]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2]))]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Alias for cogroup.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#groupWith" visbl="pub" data-isabs="false" fullComment="no" group="cogroup">
-      <a id="groupWith[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$10:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W]))]"></a>
+      <a id="groupWith[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$9:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W]))]"></a>
       <a id="groupWith[W](SCollection[(K,W)])(ClassTag[W]):SCollection[(K,(Iterable[V],Iterable[W]))]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -654,7 +654,7 @@ any key in memory. If a key has too many values, it can result in an OutOfMemory
         <span class="name">groupWith</span><span class="tparams">[<span name="W">W</span>]</span><span class="params">(<span name="that">that: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W">W</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W">W</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, (<span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>], <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.groupWith.W">W</span>]))]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@groupWith[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$10:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W]))]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@groupWith[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$9:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W]))]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -677,7 +677,7 @@ any key in memory. If a key has too many values, it can result in an OutOfMemory
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#hashJoin" visbl="pub" data-isabs="false" fullComment="yes" group="transform">
-      <a id="hashJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$27:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,W))]"></a>
+      <a id="hashJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$26:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,W))]"></a>
       <a id="hashJoin[W](SCollection[(K,W)])(ClassTag[W]):SCollection[(K,(V,W))]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -688,14 +688,14 @@ any key in memory. If a key has too many values, it can result in an OutOfMemory
         <span class="name">hashJoin</span><span class="tparams">[<span name="W">W</span>]</span><span class="params">(<span name="that">that: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.hashJoin.W">W</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.hashJoin.W">W</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, (<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.hashJoin.W">W</span>))]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@hashJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$27:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,W))]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@hashJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$26:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,W))]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Perform an inner join by replicating <code>that</code> to all workers.</p><div class="fullcomment"><div class="comment cmt"><p>Perform an inner join by replicating <code>that</code> to all workers. The right side should be tiny and
 fit in memory.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#hashLeftJoin" visbl="pub" data-isabs="false" fullComment="yes" group="transform">
-      <a id="hashLeftJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$28:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,Option[W]))]"></a>
+      <a id="hashLeftJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$27:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,Option[W]))]"></a>
       <a id="hashLeftJoin[W](SCollection[(K,W)])(ClassTag[W]):SCollection[(K,(V,Option[W]))]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -706,7 +706,7 @@ fit in memory.</p></div></div>
         <span class="name">hashLeftJoin</span><span class="tparams">[<span name="W">W</span>]</span><span class="params">(<span name="that">that: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.hashLeftJoin.W">W</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.hashLeftJoin.W">W</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, (<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>, <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.hashLeftJoin.W">W</span>]))]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@hashLeftJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$28:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,Option[W]))]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@hashLeftJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$27:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,Option[W]))]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -730,7 +730,7 @@ and fit in memory.</p></div></div>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#join" visbl="pub" data-isabs="false" fullComment="yes" group="join">
-      <a id="join[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$17:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,W))]"></a>
+      <a id="join[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$16:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,W))]"></a>
       <a id="join[W](SCollection[(K,W)])(ClassTag[W]):SCollection[(K,(V,W))]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -741,7 +741,7 @@ and fit in memory.</p></div></div>
         <span class="name">join</span><span class="tparams">[<span name="W">W</span>]</span><span class="params">(<span name="that">that: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.join.W">W</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.join.W">W</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, (<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.join.W">W</span>))]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@join[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$17:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,W))]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@join[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$16:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,W))]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -767,7 +767,7 @@ and fit in memory.</p></div></div>
     </span>
       <p class="shortcomment cmt">Return an SCollection with the keys of each tuple.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#leftOuterJoin" visbl="pub" data-isabs="false" fullComment="yes" group="join">
-      <a id="leftOuterJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$18:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,Option[W]))]"></a>
+      <a id="leftOuterJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$17:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,Option[W]))]"></a>
       <a id="leftOuterJoin[W](SCollection[(K,W)])(ClassTag[W]):SCollection[(K,(V,Option[W]))]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -778,7 +778,7 @@ and fit in memory.</p></div></div>
         <span class="name">leftOuterJoin</span><span class="tparams">[<span name="W">W</span>]</span><span class="params">(<span name="that">that: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.leftOuterJoin.W">W</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.leftOuterJoin.W">W</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, (<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>, <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.leftOuterJoin.W">W</span>]))]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@leftOuterJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$18:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,Option[W]))]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@leftOuterJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$17:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(V,Option[W]))]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -787,7 +787,7 @@ resulting SCollection will either contain all pairs (k, (v, Some(w))) for w in <
 pair (k, (v, None)) if no elements in <code>that</code> have key k. Uses the given Partitioner to
 partition the output SCollection.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#mapValues" visbl="pub" data-isabs="false" fullComment="no" group="transform">
-      <a id="mapValues[U](f:V=&gt;U)(implicitevidence$25:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]"></a>
+      <a id="mapValues[U](f:V=&gt;U)(implicitevidence$24:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]"></a>
       <a id="mapValues[U]((V)⇒U)(ClassTag[U]):SCollection[(K,U)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -798,7 +798,7 @@ partition the output SCollection.</p></div></div>
         <span class="name">mapValues</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>) ⇒ <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.mapValues.U">U</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.mapValues.U">U</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.mapValues.U">U</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@mapValues[U](f:V=&gt;U)(implicitevidence$25:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@mapValues[U](f:V=&gt;U)(implicitevidence$24:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -909,7 +909,7 @@ keys.</p>
 the merging locally on each mapper before sending results to a reducer, similarly to a
 &quot;combiner&quot; in MapReduce.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#rightOuterJoin" visbl="pub" data-isabs="false" fullComment="yes" group="join">
-      <a id="rightOuterJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$19:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Option[V],W))]"></a>
+      <a id="rightOuterJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$18:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Option[V],W))]"></a>
       <a id="rightOuterJoin[W](SCollection[(K,W)])(ClassTag[W]):SCollection[(K,(Option[V],W))]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -920,7 +920,7 @@ the merging locally on each mapper before sending results to a reducer, similarl
         <span class="name">rightOuterJoin</span><span class="tparams">[<span name="W">W</span>]</span><span class="params">(<span name="that">that: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.rightOuterJoin.W">W</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.rightOuterJoin.W">W</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, (<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>], <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.rightOuterJoin.W">W</span>))]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@rightOuterJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$19:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Option[V],W))]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@rightOuterJoin[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$18:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Option[V],W))]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -984,7 +984,7 @@ of math.ceil(numItems * samplingRate) over all key values.
     </span>
       
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#subtractByKey" visbl="pub" data-isabs="false" fullComment="no" group="per_key">
-      <a id="subtractByKey[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$26:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,V)]"></a>
+      <a id="subtractByKey[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$25:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,V)]"></a>
       <a id="subtractByKey[W](SCollection[(K,W)])(ClassTag[W]):SCollection[(K,V)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -995,7 +995,7 @@ of math.ceil(numItems * samplingRate) over all key values.
         <span class="name">subtractByKey</span><span class="tparams">[<span name="W">W</span>]</span><span class="params">(<span name="that">that: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.subtractByKey.W">W</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.subtractByKey.W">W</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@subtractByKey[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$26:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@subtractByKey[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$25:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1174,6 +1174,46 @@ specified implicit Ordering[T].</p></div><dl class="paramcmts block"><dt>returns
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.spotify.scio.values.PairSCollectionFunctions#withHotKeyFanout" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withHotKeyFanout(hotKeyFanout:Int):com.spotify.scio.values.SCollectionWithHotKeyFanout[K,V]"></a>
+      <a id="withHotKeyFanout(Int):SCollectionWithHotKeyFanout[K,V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withHotKeyFanout</span><span class="params">(<span name="hotKeyFanout">hotKeyFanout: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="SCollectionWithHotKeyFanout.html" class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout">SCollectionWithHotKeyFanout</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@withHotKeyFanout(hotKeyFanout:Int):com.spotify.scio.values.SCollectionWithHotKeyFanout[K,V]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Convert this SCollection to an <a href="SCollectionWithHotKeyFanout.html" class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout">SCollectionWithHotKeyFanout</a> that uses an intermediate node
+to combine &quot;hot&quot; keys partially before performing the full combine.</p><div class="fullcomment"><div class="comment cmt"><p>Convert this SCollection to an <a href="SCollectionWithHotKeyFanout.html" class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout">SCollectionWithHotKeyFanout</a> that uses an intermediate node
+to combine &quot;hot&quot; keys partially before performing the full combine.</p></div><dl class="paramcmts block"><dt class="param">hotKeyFanout</dt><dd class="cmt"><p>constant value for every key</p></dd></dl></div>
+    </li><li name="com.spotify.scio.values.PairSCollectionFunctions#withHotKeyFanout" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withHotKeyFanout(hotKeyFanout:K=&gt;Int):com.spotify.scio.values.SCollectionWithHotKeyFanout[K,V]"></a>
+      <a id="withHotKeyFanout((K)⇒Int):SCollectionWithHotKeyFanout[K,V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withHotKeyFanout</span><span class="params">(<span name="hotKeyFanout">hotKeyFanout: (<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="SCollectionWithHotKeyFanout.html" class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout">SCollectionWithHotKeyFanout</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@withHotKeyFanout(hotKeyFanout:K=&gt;Int):com.spotify.scio.values.SCollectionWithHotKeyFanout[K,V]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Convert this SCollection to an <a href="SCollectionWithHotKeyFanout.html" class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout">SCollectionWithHotKeyFanout</a> that uses an intermediate node
+to combine &quot;hot&quot; keys partially before performing the full combine.</p><div class="fullcomment"><div class="comment cmt"><p>Convert this SCollection to an <a href="SCollectionWithHotKeyFanout.html" class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout">SCollectionWithHotKeyFanout</a> that uses an intermediate node
+to combine &quot;hot&quot; keys partially before performing the full combine.</p></div><dl class="paramcmts block"><dt class="param">hotKeyFanout</dt><dd class="cmt"><p>a function from keys to an integer N, where the key will be spread among
+N intermediate nodes for partial combining. If N is less than or equal to 1, this key will
+not be sent through an intermediate node.</p></dd></dl></div>
     </li></ol>
             </div>
 

@@ -301,6 +301,24 @@ a new U to avoid memory allocation.</p></div></div>
     </span>
       <p class="shortcomment cmt">Convert this SCollection to a SideInput of Iterable, to be used with
 <a href="#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>.</p>
+    </li><li name="com.spotify.scio.values.SCollection#asListSideInput" visbl="pub" data-isabs="false" fullComment="no" group="side">
+      <a id="asListSideInput:com.spotify.scio.values.SideInput[List[T]]"></a>
+      <a id="asListSideInput:SideInput[List[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asListSideInput</span><span class="result">: <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@asListSideInput:com.spotify.scio.values.SideInput[List[T]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Convert this SCollection to a SideInput of List, to be used with
+<a href="#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>.</p>
     </li><li name="com.spotify.scio.values.SCollection#asSingletonSideInput" visbl="pub" data-isabs="false" fullComment="no" group="side">
       <a id="asSingletonSideInput:com.spotify.scio.values.SideInput[T]"></a>
       <a id="asSingletonSideInput:SideInput[T]"></a>
@@ -634,7 +652,7 @@ allocation; however, it should not modify t2.</p></div></div>
 elements mapping to that key. The ordering of elements within each group is not guaranteed,
 and may even differ each time the resulting SCollection is evaluated.</p><p>Note: This operation may be very expensive. If you are grouping in order to perform an
 aggregation (such as a sum or average) over each key, using
-<a href="PairSCollectionFunctions.html#aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$20:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#aggregateByKey">PairSCollectionFunctions.aggregateByKey</a> or
+<a href="PairSCollectionFunctions.html#aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$19:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#aggregateByKey">PairSCollectionFunctions.aggregateByKey</a> or
 <a href="PairSCollectionFunctions.html#reduceByKey(op:(V,V)=&gt;V):com.spotify.scio.values.SCollection[(K,V)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#reduceByKey">PairSCollectionFunctions.reduceByKey</a> will provide much better performance.</p></div></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
@@ -741,6 +759,24 @@ duplicate elements, even if the input SCollections did.</p><p>Note that this met
       </a>
     </span>
       <p class="shortcomment cmt">Return a new SCollection by applying a function to all elements of this SCollection.</p>
+    </li><li name="com.spotify.scio.values.SCollection#materialize" visbl="pub" data-isabs="false" fullComment="yes" group="output">
+      <a id="materialize:scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
+      <a id="materialize:Future[Tap[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">materialize</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@materialize:scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Extract data from this SCollection as a Future.</p><div class="fullcomment"><div class="comment cmt"><p>Extract data from this SCollection as a Future. The Future will be completed once the
+pipeline completes successfully.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#max" visbl="pub" data-isabs="false" fullComment="yes" group="transform">
       <a id="max(implicitord:Ordering[T]):com.spotify.scio.values.SCollection[T]"></a>
       <a id="max(Ordering[T]):SCollection[T]"></a>
@@ -969,120 +1005,137 @@ binary operator.</p>
       <p class="shortcomment cmt">Return a sampled subset of this SCollection.</p><div class="fullcomment"><div class="comment cmt"><p>Return a sampled subset of this SCollection.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new SCollection whose single value is an Iterable of the
 samples</p></dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollection#saveAsAvroFile" visbl="pub" data-isabs="false" fullComment="yes" group="output">
-      <a id="saveAsAvroFile(path:String,numShards:Int)(implicitev:&lt;:&lt;[T,org.apache.avro.generic.IndexedRecord]):Unit"></a>
-      <a id="saveAsAvroFile(String,Int)(&lt;:&lt;[T,IndexedRecord]):Unit"></a>
+      <a id="saveAsAvroFile(path:String,numShards:Int,schema:org.apache.avro.Schema)(implicitev:&lt;:&lt;[T,org.apache.avro.generic.IndexedRecord]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
+      <a id="saveAsAvroFile(String,Int,Schema)(&lt;:&lt;[T,IndexedRecord]):Future[Tap[T]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsAvroFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="numShards">numShards: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">0</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="org.apache.avro.generic.IndexedRecord">IndexedRecord</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">saveAsAvroFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="numShards">numShards: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">0</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="org.apache.avro.generic.IndexedRecord">IndexedRecord</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsAvroFile(path:String,numShards:Int)(implicitev:&lt;:&lt;[T,org.apache.avro.generic.IndexedRecord]):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsAvroFile(path:String,numShards:Int,schema:org.apache.avro.Schema)(implicitev:&lt;:&lt;[T,org.apache.avro.generic.IndexedRecord]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Save this SCollection as an Avro file.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as an Avro file. Note that elements must be of type IndexedRecord.</p></div></div>
+      <p class="shortcomment cmt">Save this SCollection as an Avro file.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as an Avro file. Note that elements must be of type IndexedRecord.</p></div><dl class="paramcmts block"><dt class="param">schema</dt><dd class="cmt"><p>must be not null if T is of type GenericRecord.</p></dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollection#saveAsBigQuery" visbl="pub" data-isabs="false" fullComment="yes" group="output">
-      <a id="saveAsBigQuery(tableSpec:String,schema:com.google.api.services.bigquery.model.TableSchema,createDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition,writeDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition)(implicitev:&lt;:&lt;[T,com.google.api.services.bigquery.model.TableRow]):Unit"></a>
-      <a id="saveAsBigQuery(String,TableSchema,CreateDisposition,WriteDisposition)(&lt;:&lt;[T,TableRow]):Unit"></a>
+      <a id="saveAsBigQuery(tableSpec:String,schema:com.google.api.services.bigquery.model.TableSchema,createDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition,writeDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition)(implicitev:&lt;:&lt;[T,com.spotify.scio.bigquery.TableRow]):scala.concurrent.Future[com.spotify.scio.io.Tap[com.spotify.scio.bigquery.TableRow]]"></a>
+      <a id="saveAsBigQuery(String,TableSchema,CreateDisposition,WriteDisposition)(&lt;:&lt;[T,TableRow]):Future[Tap[TableRow]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsBigQuery</span><span class="params">(<span name="tableSpec">tableSpec: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableSchema" class="extype" target="_top">TableSchema</a> = <span class="symbol">null</span></span>, <span name="createDisposition">createDisposition: <span class="extype" name="com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition">CreateDisposition</span> = <span class="symbol">null</span></span>, <span name="writeDisposition">writeDisposition: <span class="extype" name="com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition">WriteDisposition</span> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableRow" class="extype" target="_top">TableRow</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">saveAsBigQuery</span><span class="params">(<span name="tableSpec">tableSpec: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableSchema" class="extype" target="_top">TableSchema</a> = <span class="symbol">null</span></span>, <span name="createDisposition">createDisposition: <span class="extype" name="com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition">CreateDisposition</span> = <span class="symbol">null</span></span>, <span name="writeDisposition">writeDisposition: <span class="extype" name="com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition">WriteDisposition</span> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <a href="../bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<a href="../bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsBigQuery(tableSpec:String,schema:com.google.api.services.bigquery.model.TableSchema,createDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition,writeDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition)(implicitev:&lt;:&lt;[T,com.google.api.services.bigquery.model.TableRow]):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsBigQuery(tableSpec:String,schema:com.google.api.services.bigquery.model.TableSchema,createDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition,writeDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition)(implicitev:&lt;:&lt;[T,com.spotify.scio.bigquery.TableRow]):scala.concurrent.Future[com.spotify.scio.io.Tap[com.spotify.scio.bigquery.TableRow]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Save this SCollection as a Bigquery table.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a Bigquery table. Note that elements must be of type TableRow.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#saveAsBigQuery" visbl="pub" data-isabs="false" fullComment="yes" group="output">
-      <a id="saveAsBigQuery(table:com.google.api.services.bigquery.model.TableReference,schema:com.google.api.services.bigquery.model.TableSchema,createDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition,writeDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition)(implicitev:&lt;:&lt;[T,com.google.api.services.bigquery.model.TableRow]):Unit"></a>
-      <a id="saveAsBigQuery(TableReference,TableSchema,CreateDisposition,WriteDisposition)(&lt;:&lt;[T,TableRow]):Unit"></a>
+      <a id="saveAsBigQuery(table:com.google.api.services.bigquery.model.TableReference,schema:com.google.api.services.bigquery.model.TableSchema,createDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition,writeDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition)(implicitev:&lt;:&lt;[T,com.spotify.scio.bigquery.TableRow]):scala.concurrent.Future[com.spotify.scio.io.Tap[com.spotify.scio.bigquery.TableRow]]"></a>
+      <a id="saveAsBigQuery(TableReference,TableSchema,CreateDisposition,WriteDisposition)(&lt;:&lt;[T,TableRow]):Future[Tap[TableRow]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsBigQuery</span><span class="params">(<span name="table">table: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableReference" class="extype" target="_top">TableReference</a></span>, <span name="schema">schema: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableSchema" class="extype" target="_top">TableSchema</a></span>, <span name="createDisposition">createDisposition: <span class="extype" name="com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition">CreateDisposition</span></span>, <span name="writeDisposition">writeDisposition: <span class="extype" name="com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition">WriteDisposition</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableRow" class="extype" target="_top">TableRow</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">saveAsBigQuery</span><span class="params">(<span name="table">table: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableReference" class="extype" target="_top">TableReference</a></span>, <span name="schema">schema: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableSchema" class="extype" target="_top">TableSchema</a></span>, <span name="createDisposition">createDisposition: <span class="extype" name="com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition">CreateDisposition</span></span>, <span name="writeDisposition">writeDisposition: <span class="extype" name="com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition">WriteDisposition</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <a href="../bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<a href="../bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsBigQuery(table:com.google.api.services.bigquery.model.TableReference,schema:com.google.api.services.bigquery.model.TableSchema,createDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition,writeDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition)(implicitev:&lt;:&lt;[T,com.google.api.services.bigquery.model.TableRow]):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsBigQuery(table:com.google.api.services.bigquery.model.TableReference,schema:com.google.api.services.bigquery.model.TableSchema,createDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition,writeDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition)(implicitev:&lt;:&lt;[T,com.spotify.scio.bigquery.TableRow]):scala.concurrent.Future[com.spotify.scio.io.Tap[com.spotify.scio.bigquery.TableRow]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Save this SCollection as a Bigquery table.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a Bigquery table. Note that elements must be of type TableRow.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#saveAsDatastore" visbl="pub" data-isabs="false" fullComment="yes" group="output">
-      <a id="saveAsDatastore(datasetId:String)(implicitev:&lt;:&lt;[T,com.google.api.services.datastore.DatastoreV1.Entity]):Unit"></a>
-      <a id="saveAsDatastore(String)(&lt;:&lt;[T,Entity]):Unit"></a>
+      <a id="saveAsDatastore(datasetId:String)(implicitev:&lt;:&lt;[T,com.google.api.services.datastore.DatastoreV1.Entity]):scala.concurrent.Future[com.spotify.scio.io.Tap[com.google.api.services.datastore.DatastoreV1.Entity]]"></a>
+      <a id="saveAsDatastore(String)(&lt;:&lt;[T,Entity]):Future[Tap[Entity]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsDatastore</span><span class="params">(<span name="datasetId">datasetId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="com.google.api.services.datastore.DatastoreV1.Entity">Entity</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">saveAsDatastore</span><span class="params">(<span name="datasetId">datasetId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="com.google.api.services.datastore.DatastoreV1.Entity">Entity</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.google.api.services.datastore.DatastoreV1.Entity">Entity</span>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsDatastore(datasetId:String)(implicitev:&lt;:&lt;[T,com.google.api.services.datastore.DatastoreV1.Entity]):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsDatastore(datasetId:String)(implicitev:&lt;:&lt;[T,com.google.api.services.datastore.DatastoreV1.Entity]):scala.concurrent.Future[com.spotify.scio.io.Tap[com.google.api.services.datastore.DatastoreV1.Entity]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Save this SCollection as a Datastore dataset.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a Datastore dataset. Note that elements must be of type Entity.</p></div></div>
-    </li><li name="com.spotify.scio.values.SCollection#saveAsPubsub" visbl="pub" data-isabs="false" fullComment="yes" group="output">
-      <a id="saveAsPubsub(topic:String)(implicitev:&lt;:&lt;[T,String]):Unit"></a>
-      <a id="saveAsPubsub(String)(&lt;:&lt;[T,String]):Unit"></a>
+    </li><li name="com.spotify.scio.values.SCollection#saveAsObjectFile" visbl="pub" data-isabs="false" fullComment="no" group="output">
+      <a id="saveAsObjectFile(path:String):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
+      <a id="saveAsObjectFile(String):Future[Tap[T]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsPubsub</span><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">saveAsObjectFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsPubsub(topic:String)(implicitev:&lt;:&lt;[T,String]):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsObjectFile(path:String):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Save this SCollection as an object file using default serialization.</p>
+    </li><li name="com.spotify.scio.values.SCollection#saveAsPubsub" visbl="pub" data-isabs="false" fullComment="yes" group="output">
+      <a id="saveAsPubsub(topic:String)(implicitev:&lt;:&lt;[T,String]):scala.concurrent.Future[com.spotify.scio.io.Tap[String]]"></a>
+      <a id="saveAsPubsub(String)(&lt;:&lt;[T,String]):Future[Tap[String]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">saveAsPubsub</span><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsPubsub(topic:String)(implicitev:&lt;:&lt;[T,String]):scala.concurrent.Future[com.spotify.scio.io.Tap[String]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Save this SCollection as a Pub/Sub topic.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a Pub/Sub topic. Note that elements must be of type String.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#saveAsTableRowJsonFile" visbl="pub" data-isabs="false" fullComment="yes" group="output">
-      <a id="saveAsTableRowJsonFile(path:String,numShards:Int)(implicitev:&lt;:&lt;[T,com.google.api.services.bigquery.model.TableRow]):Unit"></a>
-      <a id="saveAsTableRowJsonFile(String,Int)(&lt;:&lt;[T,TableRow]):Unit"></a>
+      <a id="saveAsTableRowJsonFile(path:String,numShards:Int)(implicitev:&lt;:&lt;[T,com.spotify.scio.bigquery.TableRow]):scala.concurrent.Future[com.spotify.scio.io.Tap[com.spotify.scio.bigquery.TableRow]]"></a>
+      <a id="saveAsTableRowJsonFile(String,Int)(&lt;:&lt;[T,TableRow]):Future[Tap[TableRow]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsTableRowJsonFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="numShards">numShards: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">0</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableRow" class="extype" target="_top">TableRow</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">saveAsTableRowJsonFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="numShards">numShards: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">0</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <a href="../bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<a href="../bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsTableRowJsonFile(path:String,numShards:Int)(implicitev:&lt;:&lt;[T,com.google.api.services.bigquery.model.TableRow]):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsTableRowJsonFile(path:String,numShards:Int)(implicitev:&lt;:&lt;[T,com.spotify.scio.bigquery.TableRow]):scala.concurrent.Future[com.spotify.scio.io.Tap[com.spotify.scio.bigquery.TableRow]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Save this SCollection as a JSON text file.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a JSON text file. Note that elements must be of type TableRow.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#saveAsTextFile" visbl="pub" data-isabs="false" fullComment="yes" group="output">
-      <a id="saveAsTextFile(path:String,suffix:String,numShards:Int)(implicitev:&lt;:&lt;[T,String]):Unit"></a>
-      <a id="saveAsTextFile(String,String,Int)(&lt;:&lt;[T,String]):Unit"></a>
+      <a id="saveAsTextFile(path:String,suffix:String,numShards:Int)(implicitev:&lt;:&lt;[T,String]):scala.concurrent.Future[com.spotify.scio.io.Tap[String]]"></a>
+      <a id="saveAsTextFile(String,String,Int)(&lt;:&lt;[T,String]):Future[Tap[String]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsTextFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="suffix">suffix: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;.txt&quot;</span></span>, <span name="numShards">numShards: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">0</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">saveAsTextFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="suffix">suffix: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;.txt&quot;</span></span>, <span name="numShards">numShards: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">0</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsTextFile(path:String,suffix:String,numShards:Int)(implicitev:&lt;:&lt;[T,String]):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsTextFile(path:String,suffix:String,numShards:Int)(implicitev:&lt;:&lt;[T,String]):scala.concurrent.Future[com.spotify.scio.io.Tap[String]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1434,8 +1487,8 @@ multiple times (use <code>.distinct()</code> to eliminate them).</p></div></div>
       <p class="shortcomment cmt">Convert this SCollection to an <a href="SCollectionWithAccumulator.html" class="extype" name="com.spotify.scio.values.SCollectionWithAccumulator">SCollectionWithAccumulator</a> with one or more
 <a href="Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s, similar to Hadoop counters.</p><div class="fullcomment"><div class="comment cmt"><p>Convert this SCollection to an <a href="SCollectionWithAccumulator.html" class="extype" name="com.spotify.scio.values.SCollectionWithAccumulator">SCollectionWithAccumulator</a> with one or more
 <a href="Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s, similar to Hadoop counters. Call
-<a href="SCollectionWithAccumulator.html#toSCollection:com.spotify.scio.values.SCollection[T]" class="extmbr" name="com.spotify.scio.values.SCollectionWithAccumulator#toSCollection">SCollectionWithAccumulator.toSCollection</a> when done with accumulators.</p><p>Create accumulators with <a href="../ScioContext.html#maxAccumulator[U](n:String)(implicitat:com.spotify.scio.values.AccumulatorType[U]):com.spotify.scio.values.Accumulator[U]" class="extmbr" name="com.spotify.scio.ScioContext#maxAccumulator">ScioContext.maxAccumulator</a>,
-<a href="../ScioContext.html#minAccumulator[U](n:String)(implicitat:com.spotify.scio.values.AccumulatorType[U]):com.spotify.scio.values.Accumulator[U]" class="extmbr" name="com.spotify.scio.ScioContext#minAccumulator">ScioContext.minAccumulator</a> or <a href="../ScioContext.html#sumAccumulator[U](n:String)(implicitat:com.spotify.scio.values.AccumulatorType[U]):com.spotify.scio.values.Accumulator[U]" class="extmbr" name="com.spotify.scio.ScioContext#sumAccumulator">ScioContext.sumAccumulator</a>. For example:</p><pre><span class="kw">val</span> maxLineLength = sc.maxAccumulator[<span class="std">Int</span>](<span class="lit">"maxLineLength"</span>)
+<a href="SCollectionWithAccumulator.html#toSCollection:com.spotify.scio.values.SCollection[T]" class="extmbr" name="com.spotify.scio.values.SCollectionWithAccumulator#toSCollection">SCollectionWithAccumulator.toSCollection</a> when done with accumulators.</p><p>Note that each accumulator may be used in a single scope only.</p><p>Create accumulators with <a href="../ScioContext.html#maxAccumulator[T](n:String)(implicitat:com.spotify.scio.values.AccumulatorType[T]):com.spotify.scio.values.Accumulator[T]" class="extmbr" name="com.spotify.scio.ScioContext#maxAccumulator">ScioContext.maxAccumulator</a>,
+<a href="../ScioContext.html#minAccumulator[T](n:String)(implicitat:com.spotify.scio.values.AccumulatorType[T]):com.spotify.scio.values.Accumulator[T]" class="extmbr" name="com.spotify.scio.ScioContext#minAccumulator">ScioContext.minAccumulator</a> or <a href="../ScioContext.html#sumAccumulator[T](n:String)(implicitat:com.spotify.scio.values.AccumulatorType[T]):com.spotify.scio.values.Accumulator[T]" class="extmbr" name="com.spotify.scio.ScioContext#sumAccumulator">ScioContext.sumAccumulator</a>. For example:</p><pre><span class="kw">val</span> maxLineLength = sc.maxAccumulator[<span class="std">Int</span>](<span class="lit">"maxLineLength"</span>)
 <span class="kw">val</span> minLineLength = sc.maxAccumulator[<span class="std">Int</span>](<span class="lit">"maxLineLength"</span>)
 <span class="kw">val</span> emptyLines = sc.maxAccumulator[<span class="std">Long</span>](<span class="lit">"emptyLines"</span>)
 
@@ -1450,6 +1503,25 @@ p
         !b
   }
   .toSCollection</pre></div></div>
+    </li><li name="com.spotify.scio.values.SCollection#withFanout" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withFanout(fanout:Int):com.spotify.scio.values.SCollectionWithFanout[T]"></a>
+      <a id="withFanout(Int):SCollectionWithFanout[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withFanout</span><span class="params">(<span name="fanout">fanout: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="SCollectionWithFanout.html" class="extype" name="com.spotify.scio.values.SCollectionWithFanout">SCollectionWithFanout</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@withFanout(fanout:Int):com.spotify.scio.values.SCollectionWithFanout[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Convert this SCollection to an <a href="SCollectionWithFanout.html" class="extype" name="com.spotify.scio.values.SCollectionWithFanout">SCollectionWithFanout</a> that uses an intermediate node to
+combine parts of the data to reduce load on the final global combine step.</p><div class="fullcomment"><div class="comment cmt"><p>Convert this SCollection to an <a href="SCollectionWithFanout.html" class="extype" name="com.spotify.scio.values.SCollectionWithFanout">SCollectionWithFanout</a> that uses an intermediate node to
+combine parts of the data to reduce load on the final global combine step.</p></div><dl class="paramcmts block"><dt class="param">fanout</dt><dd class="cmt"><p>the number of intermediate keys that will be used</p></dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollection#withFixedWindows" visbl="pub" data-isabs="false" fullComment="no" group="window">
       <a id="withFixedWindows(duration:org.joda.time.Duration,offset:org.joda.time.Duration,options:com.spotify.scio.values.WindowOptions[com.google.cloud.dataflow.sdk.transforms.windowing.IntervalWindow]):com.spotify.scio.values.SCollection[T]"></a>
       <a id="withFixedWindows(Duration,Duration,WindowOptions[IntervalWindow]):SCollection[T]"></a>

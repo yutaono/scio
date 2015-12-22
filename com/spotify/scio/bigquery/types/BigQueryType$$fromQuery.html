@@ -49,8 +49,9 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Macro annotation for a BigQuery SELECT query.</p><p>Generate case classes for a BigQuery SELECT query. Note that <code>schema</code> must be a string
-literal of the SELECT query with optional <code>.stripMargin</code> at the end. For example:</p><pre>@BigQueryType.fromQuery(<span class="lit">"SELECT field1, field2 FROM [project:dataset.table]"</span>)</pre><p>Also generate a companion object with convenience methods.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Macro annotation for a BigQuery SELECT query.</p><p>Generate case classes for a BigQuery SELECT query. Note that <code>query</code> must be a string
+literal of the SELECT query with optional <code>.stripMargin</code> at the end. For example:</p><pre>@BigQueryType.fromQuery(<span class="lit">"SELECT field1, field2 FROM [project:dataset.table]"</span>)</pre><p>String formatting syntax can be used in <code>query</code> when additional <code>args</code> are supplied. For
+example:</p><pre>@BigQueryType.fromQuery(<span class="lit">"SELECT field1, field2 FROM [%s]"</span>, <span class="lit">"table"</span>)</pre><p>Also generate a companion object with convenience methods.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.annotation.StaticAnnotation" class="extype" target="_top">StaticAnnotation</a>, <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.annotation.Annotation" class="extype" target="_top">Annotation</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -90,7 +91,7 @@ literal of the SELECT query with optional <code>.stripMargin</code> at the end. 
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="com.spotify.scio.bigquery.types.BigQueryType.fromQuery#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(query:String):com.spotify.scio.bigquery.types.BigQueryType.fromQuery"></a>
+      <a id="&lt;init&gt;(query:String,args:String*):com.spotify.scio.bigquery.types.BigQueryType.fromQuery"></a>
       <a id="&lt;init&gt;:fromQuery"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -98,10 +99,10 @@ literal of the SELECT query with optional <code>.stripMargin</code> at the end. 
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">fromQuery</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
+        <span class="name">fromQuery</span><span class="params">(<span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="args">args: <span class="extype" name="scala.Predef.String">String</span>*</span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../../index.html#com.spotify.scio.bigquery.types.BigQueryType$$fromQuery@&lt;init&gt;(query:String):com.spotify.scio.bigquery.types.BigQueryType.fromQuery" title="Permalink" target="_top">
+      <a href="../../../../../index.html#com.spotify.scio.bigquery.types.BigQueryType$$fromQuery@&lt;init&gt;(query:String,args:String*):com.spotify.scio.bigquery.types.BigQueryType.fromQuery" title="Permalink" target="_top">
         <img src="../../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
