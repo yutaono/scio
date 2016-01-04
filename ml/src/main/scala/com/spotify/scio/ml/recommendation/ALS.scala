@@ -4,7 +4,7 @@ import breeze.linalg._
 import com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions
 import com.spotify.scio._
 import com.spotify.scio.io.Tap
-import com.spotify.scio.values.{SideOutput, SCollection}
+import com.spotify.scio.values.SCollection
 import com.twitter.algebird.Semigroup
 import org.slf4j.LoggerFactory
 
@@ -90,23 +90,23 @@ private class ALS(val ratings: Future[Tap[Rating]],
     val solveKey = if (user) userKey else itemKey
     val fixedKey = if (user) itemKey else userKey
     val lambdaEye = diag(DenseVector.ones[Double](rank)) * lambda
-    val unitMatrix = DenseMatrix.zeros[Double](1, 1)
 
     // FIXME: workaround for nulls in closure
-    val _implicitPrefs = this.implicitPrefs
     val _alpha = this.alpha
 
     val p = ratings.keyBy(fixedKey).join(fixedVectors).values
 
     if (implicitPrefs) {
-      val sums = p.map { case (r, vec) =>
-        val op = vec * vec.t
-        val cui = 1.0 + _alpha * r.rating
-        val pui = if (cui > 0.0) 1.0 else 0.0
-        val ytCuIY = op * (_alpha * r.rating)
-        val ytCupu = vec * (cui * pui)
-        (solveKey(r), (ytCuIY, ytCupu, op))
-      }
+      val sums = p
+        .map { case (r, vec) =>
+          val op = vec * vec.t
+          val cui = 1.0 + _alpha * r.rating
+          val pui = if (cui > 0.0) 1.0 else 0.0
+          val ytCuIY = op * (_alpha * r.rating)
+          val ytCupu = vec * (cui * pui)
+          (solveKey(r), (ytCuIY, ytCupu, op))
+        }
+        .sumByKey
       val yty = sums.map(_._2._3).sum  // sum outer product globally for YtY
       sums.cross(yty)
         .map { t =>
@@ -115,10 +115,12 @@ private class ALS(val ratings: Future[Tap[Rating]],
           (id, xu)
         }
     } else {
-      val sums = p.map { case (r, vec) =>
-        val (ytCupu, op) = (vec * r.rating, vec * vec.t)
-        (solveKey(r), (ytCupu, op))
-      }
+      val sums = p
+        .map { case (r, vec) =>
+          val (ytCupu, op) = (vec * r.rating, vec * vec.t)
+          (solveKey(r), (ytCupu, op))
+        }
+        .sumByKey
       val yty = sums.map(_._2._2).sum  // sum outer product globally for YtY
       sums.cross(yty)
         .map { t =>
@@ -127,41 +129,6 @@ private class ALS(val ratings: Future[Tap[Rating]],
           (id, xu)
         }
     }
-
-    /*
-    // sum things up by fixed key
-    val sums = ratings.keyBy(fixedKey).join(fixedVectors)
-      .map { kv =>
-        val (r, vec) = kv._2
-        val op = vec * vec.t
-        val id = solveKey(r)
-        val (ytCuIY, ytCupu) = if (_implicitPrefs) {
-          val cui = 1.0 + _alpha * r.rating
-          val pui = if (cui > 0.0) 1.0 else 0.0
-          val ytCuIY = op * (_alpha * r.rating)
-          val ytCupu = vec * (cui * pui)
-          (ytCuIY, ytCupu)
-        } else {
-          // c_ui = 1
-          // p_ui = r_ui
-          (unitMatrix, vec * r.rating)
-        }
-        (id, (ytCuIY, ytCupu, op))
-      }
-      .sumByKey
-
-    val yty = sums.map(_._2._3).sum  // sum outer product globally for YtY
-    sums.cross(yty)
-      .map { t =>
-        val ((id, (ytCuIY, ytCupu, _)), yty) = t
-        val xu = if (_implicitPrefs) {
-          (yty + ytCuIY + lambdaEye) \ ytCupu
-        } else {
-          (yty + lambdaEye) \ ytCupu
-        }
-        (id, xu)
-      }
-      */
   }
 
   private def runIteration(currentIteration: Int, userVectors: FTV, itemVectors: FTV): (FTV, FTV) = {
@@ -175,8 +142,8 @@ private class ALS(val ratings: Future[Tap[Rating]],
       val i = Await.result(itemVectors, Duration.Inf).open(sc)
 
       logger.info(s"Running iteration $currentIteration of $iterations")
-      val userF = updateFeatures(r, i, user = true).materialize
-      val itemF = updateFeatures(r, u, user = false).materialize
+      val userF = updateFeatures(r, i, user = true).setName("userF-" + currentIteration).materialize
+      val itemF = updateFeatures(r, u, user = false).setName("itemF-" + currentIteration).materialize
       sc.close()
 
       runIteration(currentIteration + 1, userF, itemF)
@@ -189,8 +156,8 @@ private class ALS(val ratings: Future[Tap[Rating]],
     sc.setName(options.getAppName + "prepare")
     val r = Await.result(ratings, Duration.Inf).open(sc)
     logger.info("Preparing vectors")
-    val userVectors = r.map(_.user).distinct().map((_, DenseVector.rand[Double](rank))).materialize
-    val itemVectors = r.map(_.item).distinct().map((_, DenseVector.rand[Double](rank))).materialize
+    val userVectors = r.map(_.user).distinct().map((_, DenseVector.rand[Double](rank))).setName("userV").materialize
+    val itemVectors = r.map(_.item).distinct().map((_, DenseVector.rand[Double](rank))).setName("itemV").materialize
     sc.close()
     (userVectors, itemVectors)
   }
