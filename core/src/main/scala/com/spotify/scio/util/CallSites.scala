@@ -9,7 +9,8 @@ private[scio] object CallSites {
   private def isExternalClass(c: String): Boolean =
     // Not in our code base or an interpreter
     (!c.startsWith(ns) && !c.startsWith("scala.")) ||
-      c.startsWith(ns + "examples.") || // unless if it's in examples
+      c.startsWith(ns + "examples.") || // unless if it's in scio-examples
+      c.startsWith(ns + "ml.") || // or scio-ml
       c.startsWith(ns + "values.AccumulatorTest") // or this test
 
   def getAppName: String = {
