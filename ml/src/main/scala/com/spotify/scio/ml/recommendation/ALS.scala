@@ -4,7 +4,7 @@ import breeze.linalg._
 import com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions
 import com.spotify.scio._
 import com.spotify.scio.io.Tap
-import com.spotify.scio.values.SCollection
+import com.spotify.scio.values.{SideOutput, SCollection}
 import com.twitter.algebird.Semigroup
 import org.slf4j.LoggerFactory
 
@@ -83,6 +83,7 @@ private class ALS(val ratings: Future[Tap[Rating]],
   private def userKey: R => Int = _.user
   private def itemKey: R => Int = _.item
 
+  // scalastyle:off
   private def updateFeatures(ratings: SCollection[R],
                              fixedVectors: SCollection[(Int, V)],
                              user: Boolean): SCollection[(Int, V)] = {
@@ -95,6 +96,39 @@ private class ALS(val ratings: Future[Tap[Rating]],
     val _implicitPrefs = this.implicitPrefs
     val _alpha = this.alpha
 
+    val p = ratings.keyBy(fixedKey).join(fixedVectors).values
+
+    if (implicitPrefs) {
+      val sums = p.map { case (r, vec) =>
+        val op = vec * vec.t
+        val cui = 1.0 + _alpha * r.rating
+        val pui = if (cui > 0.0) 1.0 else 0.0
+        val ytCuIY = op * (_alpha * r.rating)
+        val ytCupu = vec * (cui * pui)
+        (solveKey(r), (ytCuIY, ytCupu, op))
+      }
+      val yty = sums.map(_._2._3).sum  // sum outer product globally for YtY
+      sums.cross(yty)
+        .map { t =>
+          val ((id, (ytCuIY, ytCupu, _)), yty) = t
+          val xu = (yty + ytCuIY + lambdaEye) \ ytCupu
+          (id, xu)
+        }
+    } else {
+      val sums = p.map { case (r, vec) =>
+        val (ytCupu, op) = (vec * r.rating, vec * vec.t)
+        (solveKey(r), (ytCupu, op))
+      }
+      val yty = sums.map(_._2._2).sum  // sum outer product globally for YtY
+      sums.cross(yty)
+        .map { t =>
+          val ((id, (ytCupu, _)), yty) = t
+          val xu = (yty + lambdaEye) \ ytCupu
+          (id, xu)
+        }
+    }
+
+    /*
     // sum things up by fixed key
     val sums = ratings.keyBy(fixedKey).join(fixedVectors)
       .map { kv =>
@@ -127,6 +161,7 @@ private class ALS(val ratings: Future[Tap[Rating]],
         }
         (id, xu)
       }
+      */
   }
 
   private def runIteration(currentIteration: Int, userVectors: FTV, itemVectors: FTV): (FTV, FTV) = {
