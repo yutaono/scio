@@ -34,7 +34,7 @@ object ALSExample {
 
     val logger = LoggerFactory.getLogger(this.getClass)
     Await.result(result, Duration.Inf).value.toSeq
-      .sortBy(_._2._1)
+      .sortBy(-_._2._1)
       .map(t => "%8.6f: %s".format(t._2._1, t._2._2))
       .foreach(logger.info)
   }
@@ -72,7 +72,7 @@ object ALSExample {
         val cosine: Double = (v1 dot v2) / (norm(v1) * norm(v2))
         (id, cosine)
       }
-      .top(10)(Ordering.by(-_._2))
+      .top(10)(Ordering.by(_._2))
       .flatMap(identity)
       .join(items)
       .materialize

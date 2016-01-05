@@ -701,7 +701,6 @@ sealed trait SCollection[T] extends PCollectionWrapper[T] {
     }
     val filename = "scio-materialize-" + UUID.randomUUID().toString
     val path = tmpDir + (if (tmpDir.endsWith("/")) "" else "/") + filename
-    println(s"MATERIALIZE ${internal.getName} $path")
     saveAsObjectFile(path)
   }
 

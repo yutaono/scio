@@ -17,8 +17,12 @@ case class MatrixFactorizationModel(rank: Int,
                                     userVectors: Future[Tap[(Int, DenseVector[Double])]],
                                     itemVectors: Future[Tap[(Int, DenseVector[Double])]])
 
-object ALS {
+private object KeyType extends Enumeration {
+  type KeyType = Value
+  val USER_KEY, ITEM_KEY = Value
+}
 
+object ALS {
   def train(ratings: Future[Tap[Rating]],
             options: DataflowPipelineOptions,
             iterations: Int,
@@ -28,7 +32,6 @@ object ALS {
             implicitPrefs: Boolean): MatrixFactorizationModel = {
     new ALS(ratings, options, iterations, rank, alpha, lambda, implicitPrefs).run()
   }
-
 }
 
 private class ALS(val ratings: Future[Tap[Rating]],
@@ -39,11 +42,15 @@ private class ALS(val ratings: Future[Tap[Rating]],
                   val lambda: Double,
                   val implicitPrefs: Boolean) {
 
+  import KeyType._
+
   private type R = Rating
   private type V = DenseVector[Double]
   private type M = DenseMatrix[Double]
   private type FT[U] = Future[Tap[U]]
   private type FTV = FT[(Int, V)]
+  private type FTKR = FT[((KeyType, Int), R)]
+  private type FTKV = FT[((KeyType, Int), V)]
 
   private val logger = LoggerFactory.getLogger(classOf[ALS])
 
@@ -131,41 +138,85 @@ private class ALS(val ratings: Future[Tap[Rating]],
     }
   }
 
-  private def runIteration(currentIteration: Int, userVectors: FTV, itemVectors: FTV): (FTV, FTV) = {
+  private def updateFeatures(keyedRatings: SCollection[((KeyType, Int), R)],
+                            vectors: SCollection[((KeyType, Int), V)]): SCollection[((KeyType, Int), V)] = {
+    val lambdaEye = diag(DenseVector.ones[Double](rank)) * lambda
+
+    val solveKey = (fixedKeyType: KeyType, r: R) => fixedKeyType match {
+      case USER_KEY => (ITEM_KEY, r.item)
+      case ITEM_KEY => (USER_KEY, r.user)
+    }
+
+    // FIXME: workaround for nulls in closure
+    val _alpha = this.alpha
+
+    val sums = keyedRatings.join(vectors)
+      .map { case ((fixedKeyType, fixedKey), (r, vec)) =>
+        val op = vec * vec.t
+        val cui = 1.0 + _alpha * r.rating
+        val pui = if (cui > 0.0) 1.0 else 0.0
+        val ytCuIY = op * (_alpha * r.rating)
+        val ytCupu = vec * (cui * pui)
+        (solveKey(fixedKeyType, r), (ytCuIY, ytCupu, op))
+      }
+      .sumByKey
+
+    val ytySide = sums.map(kv => (kv._1._1, kv._2._3)).sumByKey.asMapSideInput
+
+    sums.withSideInputs(ytySide)
+      .map { case (((solvedKeyType, solvedKey), (ytCuIY, ytCupu, op)), side) =>
+        val yty = side(ytySide)(solvedKeyType)
+        val xu = (yty + ytCuIY + lambdaEye) \ ytCupu
+        ((solvedKeyType, solvedKey), xu)
+      }
+      .toSCollection
+  }
+
+  private def runIteration(currentIteration: Int, input: (FTKR, FTKV)): (FTKR, FTKV) = {
     if (currentIteration > iterations) {
-      (userVectors, itemVectors)
+      input
     } else {
       val sc = ScioContext(options)
       sc.setName(options.getAppName + currentIteration + "of" + iterations)
-      val r = Await.result(ratings, Duration.Inf).open(sc)
-      val u = Await.result(userVectors, Duration.Inf).open(sc)
-      val i = Await.result(itemVectors, Duration.Inf).open(sc)
+      val r = Await.result(input._1, Duration.Inf).open(sc)
+      val v = Await.result(input._2, Duration.Inf).open(sc)
 
       logger.info(s"Running iteration $currentIteration of $iterations")
-      val userF = updateFeatures(r, i, user = true).setName("userF-" + currentIteration).materialize
-      val itemF = updateFeatures(r, u, user = false).setName("itemF-" + currentIteration).materialize
+      val v2 = updateFeatures(r, v).materialize
+      val t1 = System.currentTimeMillis()
       sc.close()
+      val t2 = System.currentTimeMillis()
+      logger.info(s"TIME: ${(t2 - t1) / 1000.0}s")
 
-      runIteration(currentIteration + 1, userF, itemF)
+      runIteration(currentIteration + 1, (input._1, v2))
     }
   }
 
-  private def prepareVectors(): (FTV, FTV) = {
+  private def prepareInput(): (FTKR, FTKV) = {
     val rank = this.rank
     val sc = ScioContext(options)
     sc.setName(options.getAppName + "prepare")
     val r = Await.result(ratings, Duration.Inf).open(sc)
-    logger.info("Preparing vectors")
-    val userVectors = r.map(_.user).distinct().map((_, DenseVector.rand[Double](rank))).setName("userV").materialize
-    val itemVectors = r.map(_.item).distinct().map((_, DenseVector.rand[Double](rank))).setName("itemV").materialize
+    logger.info("Preparing input")
+    val keyedRatings = r.flatMap(r => Seq(((USER_KEY, r.user), r), ((ITEM_KEY, r.item), r))).materialize
+    val vectors = r
+      .flatMap { r => Seq((USER_KEY, r.user), (ITEM_KEY, r.item)) }
+      .distinct()
+      .map((_, DenseVector.rand[Double](rank)))
+      .materialize
     sc.close()
-    (userVectors, itemVectors)
+    (keyedRatings, vectors)
   }
 
   def run(): MatrixFactorizationModel = {
-    val (u, i) = prepareVectors()
-    val (uOut, iOut) = runIteration(1, u, i)
-    MatrixFactorizationModel(rank, uOut, iOut)
+    val data = runIteration(1, prepareInput())
+    val sc = ScioContext(options)
+    val v = Await.result(data._2, Duration.Inf).open(sc)
+    val Seq(u, i) = v
+      .partition(2, x => if (x._1._1 == USER_KEY) 0 else 1)
+      .map(_.map(kv => (kv._1._2, kv._2)).materialize)
+    sc.close()
+    MatrixFactorizationModel(rank, u, i)
   }
 
 }
