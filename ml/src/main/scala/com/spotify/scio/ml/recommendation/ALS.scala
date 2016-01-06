@@ -48,7 +48,6 @@ private class ALS(val ratings: Future[Tap[Rating]],
   private type V = DenseVector[Double]
   private type M = DenseMatrix[Double]
   private type FT[U] = Future[Tap[U]]
-  private type FTV = FT[(Int, V)]
   private type FTKR = FT[((KeyType, Int), R)]
   private type FTKV = FT[((KeyType, Int), V)]
 
@@ -85,58 +84,6 @@ private class ALS(val ratings: Future[Tap[Rating]],
         Option(x)
       }
     }
-
-  // Functions for extracting keys
-  private def userKey: R => Int = _.user
-  private def itemKey: R => Int = _.item
-
-  // scalastyle:off
-  private def updateFeatures(ratings: SCollection[R],
-                             fixedVectors: SCollection[(Int, V)],
-                             user: Boolean): SCollection[(Int, V)] = {
-    val solveKey = if (user) userKey else itemKey
-    val fixedKey = if (user) itemKey else userKey
-    val lambdaEye = diag(DenseVector.ones[Double](rank)) * lambda
-
-    // FIXME: workaround for nulls in closure
-    val _alpha = this.alpha
-
-    val p = ratings.keyBy(fixedKey).join(fixedVectors).values
-
-    if (implicitPrefs) {
-      val sums = p
-        .map { case (r, vec) =>
-          val op = vec * vec.t
-          val cui = 1.0 + _alpha * r.rating
-          val pui = if (cui > 0.0) 1.0 else 0.0
-          val ytCuIY = op * (_alpha * r.rating)
-          val ytCupu = vec * (cui * pui)
-          (solveKey(r), (ytCuIY, ytCupu, op))
-        }
-        .sumByKey
-      val yty = sums.map(_._2._3).sum  // sum outer product globally for YtY
-      sums.cross(yty)
-        .map { t =>
-          val ((id, (ytCuIY, ytCupu, _)), yty) = t
-          val xu = (yty + ytCuIY + lambdaEye) \ ytCupu
-          (id, xu)
-        }
-    } else {
-      val sums = p
-        .map { case (r, vec) =>
-          val (ytCupu, op) = (vec * r.rating, vec * vec.t)
-          (solveKey(r), (ytCupu, op))
-        }
-        .sumByKey
-      val yty = sums.map(_._2._2).sum  // sum outer product globally for YtY
-      sums.cross(yty)
-        .map { t =>
-          val ((id, (ytCupu, _)), yty) = t
-          val xu = (yty + lambdaEye) \ ytCupu
-          (id, xu)
-        }
-    }
-  }
 
   private def updateFeatures(keyedRatings: SCollection[((KeyType, Int), R)],
                             vectors: SCollection[((KeyType, Int), V)]): SCollection[((KeyType, Int), V)] = {
@@ -183,10 +130,7 @@ private class ALS(val ratings: Future[Tap[Rating]],
 
       logger.info(s"Running iteration $currentIteration of $iterations")
       val v2 = updateFeatures(r, v).materialize
-      val t1 = System.currentTimeMillis()
       sc.close()
-      val t2 = System.currentTimeMillis()
-      logger.info(s"TIME: ${(t2 - t1) / 1000.0}s")
 
       runIteration(currentIteration + 1, (input._1, v2))
     }
