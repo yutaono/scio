@@ -4,6 +4,7 @@ import breeze.linalg._
 import com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions
 import com.google.cloud.dataflow.sdk.options.PipelineOptions.CheckEnabled
 import com.spotify.scio._
+import com.spotify.scio.ml.nn.NearestNeighbor
 import com.spotify.scio.ml.recommendation._
 import org.slf4j.LoggerFactory
 
@@ -17,6 +18,7 @@ object ALSExample {
     val (opts, args) = ScioContext.parseArguments[DataflowPipelineOptions](cmdlineArgs)
     opts.setStableUniqueNames(CheckEnabled.OFF)
 
+    /*
     val iterations = args.int("iterations")
     val rank = args.int("rank")
     val ratingsFile = args("ratings")
@@ -37,6 +39,7 @@ object ALSExample {
       .sortBy(-_._2._1)
       .map(t => "%8.6f: %s".format(t._2._1, t._2._2))
       .foreach(logger.info)
+      */
   }
 
   private def getRatings(opts: DataflowPipelineOptions, ratingsFile: String) = {
@@ -65,6 +68,25 @@ object ALSExample {
         (t(0).toInt, t(1))
       }
 
+    val _rank = model.rank
+
+    val r = itemVectors
+      .groupBy(_ => 0)
+      .map { case (_, vecs) =>
+        val b = NearestNeighbor.newLSHBuilder[Int, Double](_rank, 4, 1000)
+        vecs.foreach { case (id, v) =>
+          b.add(id, v / norm(v))
+        }
+        b.build
+      }
+      .cross(itemVectors.filter(_._1 == movieId).map(_._2))
+      .flatMap { case (nn, v) =>
+          nn.lookup(v / norm(v), 100)
+      }
+      .join(items)
+      .materialize
+
+    /*
     val r = itemVectors
       .cross(itemVectors.filter(_._1 == movieId).map(_._2))
       .map { t =>
@@ -76,6 +98,7 @@ object ALSExample {
       .flatMap(identity)
       .join(items)
       .materialize
+      */
 
     sc.close()
     r

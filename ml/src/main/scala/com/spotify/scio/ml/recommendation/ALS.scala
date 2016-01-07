@@ -85,6 +85,7 @@ private class ALS(val ratings: Future[Tap[Rating]],
       }
     }
 
+  // scalastyle:off method.length
   private def updateFeatures(keyedRatings: SCollection[((KeyType, Int), R)],
                             vectors: SCollection[((KeyType, Int), V)]): SCollection[((KeyType, Int), V)] = {
     val lambdaEye = diag(DenseVector.ones[Double](rank)) * lambda
@@ -97,27 +98,48 @@ private class ALS(val ratings: Future[Tap[Rating]],
     // FIXME: workaround for nulls in closure
     val _alpha = this.alpha
 
-    val sums = keyedRatings.join(vectors)
-      .map { case ((fixedKeyType, fixedKey), (r, vec)) =>
-        val op = vec * vec.t
-        val cui = 1.0 + _alpha * r.rating
-        val pui = if (cui > 0.0) 1.0 else 0.0
-        val ytCuIY = op * (_alpha * r.rating)
-        val ytCupu = vec * (cui * pui)
-        (solveKey(fixedKeyType, r), (ytCuIY, ytCupu, op))
-      }
-      .sumByKey
+    if (implicitPrefs) {
+      val sums = keyedRatings.join(vectors)
+        .map { case ((fixedKeyType, fixedKey), (r, vec)) =>
+          val op = vec * vec.t
+          val cui = 1.0 + _alpha * r.rating
+          val pui = if (cui > 0.0) 1.0 else 0.0
+          val ytCuIY = op * (_alpha * r.rating)
+          val ytCupu = vec * (cui * pui)
+          (solveKey(fixedKeyType, r), (ytCuIY, ytCupu, op))
+        }
+        .sumByKey
 
-    val ytySide = sums.map(kv => (kv._1._1, kv._2._3)).sumByKey.asMapSideInput
+      val ytySide = sums.map(kv => (kv._1._1, kv._2._3)).sumByKey.asMapSideInput
 
-    sums.withSideInputs(ytySide)
-      .map { case (((solvedKeyType, solvedKey), (ytCuIY, ytCupu, op)), side) =>
-        val yty = side(ytySide)(solvedKeyType)
-        val xu = (yty + ytCuIY + lambdaEye) \ ytCupu
-        ((solvedKeyType, solvedKey), xu)
-      }
-      .toSCollection
+      sums.withSideInputs(ytySide)
+        .map { case (((solvedKeyType, solvedKey), (ytCuIY, ytCupu, op)), side) =>
+          val yty = side(ytySide)(solvedKeyType)
+          val xu = (yty + ytCuIY + lambdaEye) \ ytCupu
+          ((solvedKeyType, solvedKey), xu)
+        }
+        .toSCollection
+    } else {
+      val sums = keyedRatings.join(vectors)
+        .map { case ((fixedKeyType, fixedKey), (r, vec)) =>
+          val op = vec * vec.t
+          val ytCupu = vec * r.rating
+          (solveKey(fixedKeyType, r), (ytCupu, op))
+        }
+        .sumByKey
+
+      val ytySide = sums.map(kv => (kv._1._1, kv._2._2)).sumByKey.asMapSideInput
+
+      sums.withSideInputs(ytySide)
+        .map { case (((solvedKeyType, solvedKey), (ytCupu, op)), side) =>
+          val yty = side(ytySide)(solvedKeyType)
+          val xu = (yty + lambdaEye) \ ytCupu
+          ((solvedKeyType, solvedKey), xu)
+        }
+        .toSCollection
+    }
   }
+  // scalastyle:on method.length
 
   private def runIteration(currentIteration: Int, input: (FTKR, FTKV)): (FTKR, FTKV) = {
     if (currentIteration > iterations) {
@@ -139,7 +161,7 @@ private class ALS(val ratings: Future[Tap[Rating]],
   private def prepareInput(): (FTKR, FTKV) = {
     val rank = this.rank
     val sc = ScioContext(options)
-    sc.setName(options.getAppName + "prepare")
+    sc.setName(options.getAppName + "input")
     val r = Await.result(ratings, Duration.Inf).open(sc)
     logger.info("Preparing input")
     val keyedRatings = r.flatMap(r => Seq(((USER_KEY, r.user), r), ((ITEM_KEY, r.item), r))).materialize
@@ -155,7 +177,9 @@ private class ALS(val ratings: Future[Tap[Rating]],
   def run(): MatrixFactorizationModel = {
     val data = runIteration(1, prepareInput())
     val sc = ScioContext(options)
+    sc.setName(options.getAppName + "output")
     val v = Await.result(data._2, Duration.Inf).open(sc)
+    logger.info("Preparing output")
     val Seq(u, i) = v
       .partition(2, x => if (x._1._1 == USER_KEY) 0 else 1)
       .map(_.map(kv => (kv._1._2, kv._2)).materialize)
