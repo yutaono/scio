@@ -99,10 +99,25 @@ private class ALS(val ratings: Future[Tap[Rating]],
     val _alpha = this.alpha
 
     if (implicitPrefs) {
+      /*
       val sums = keyedRatings.join(vectors)
         .flatMap { case ((fixedKeyType, fixedKey), (rs, vec)) =>
           val op = vec * vec.t
           rs.map { r =>
+            val cui = 1.0 + _alpha * r.rating
+            val pui = if (cui > 0.0) 1.0 else 0.0
+            val ytCuIY = op * (_alpha * r.rating)
+            val ytCupu = vec * (cui * pui)
+            (solveKey(fixedKeyType, r), (ytCuIY, ytCupu, op))
+          }
+        }
+        .sumByKey
+        */
+      val sums = keyedRatings.coGroup(vectors)
+        .flatMap { case ((fixedKeyType, fixedKey), (rs, vs)) =>
+          val vec = vs.head
+          val op = vec * vec.t
+          rs.flatten.map { r =>
             val cui = 1.0 + _alpha * r.rating
             val pui = if (cui > 0.0) 1.0 else 0.0
             val ytCuIY = op * (_alpha * r.rating)

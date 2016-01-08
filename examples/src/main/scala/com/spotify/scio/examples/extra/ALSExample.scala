@@ -52,12 +52,13 @@ object ALSExample {
       //.textFile(ratingsFile)
       //.map { s =>
       .avroFile(ratingsFile, new Schema.Parser().parse("\"bytes\"")).asInstanceOf[SCollection[ByteBuffer]]
-      .filter(_ => scala.util.Random.nextDouble() < 0.1)
       .map { b =>
         val s = new String(b.array())
         val t = s.split("\t")
         Rating(t(0).toInt, t(1).toInt, t(2).toDouble)
-      }.materialize
+      }
+      .filter(_.user <= 100000)
+      .materialize
     sc.close()
     r
   }
