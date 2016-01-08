@@ -48,7 +48,7 @@ private class ALS(val ratings: Future[Tap[Rating]],
   private type V = DenseVector[Double]
   private type M = DenseMatrix[Double]
   private type FT[U] = Future[Tap[U]]
-  private type FTKR = FT[((KeyType, Int), R)]
+  private type FTKR = FT[((KeyType, Int), Iterable[R])]
   private type FTKV = FT[((KeyType, Int), V)]
 
   private val logger = LoggerFactory.getLogger(classOf[ALS])
@@ -86,7 +86,7 @@ private class ALS(val ratings: Future[Tap[Rating]],
     }
 
   // scalastyle:off method.length
-  private def updateFeatures(keyedRatings: SCollection[((KeyType, Int), R)],
+  private def updateFeatures(keyedRatings: SCollection[((KeyType, Int), Iterable[R])],
                             vectors: SCollection[((KeyType, Int), V)]): SCollection[((KeyType, Int), V)] = {
     val lambdaEye = diag(DenseVector.ones[Double](rank)) * lambda
 
@@ -100,13 +100,15 @@ private class ALS(val ratings: Future[Tap[Rating]],
 
     if (implicitPrefs) {
       val sums = keyedRatings.join(vectors)
-        .map { case ((fixedKeyType, fixedKey), (r, vec)) =>
+        .flatMap { case ((fixedKeyType, fixedKey), (rs, vec)) =>
           val op = vec * vec.t
-          val cui = 1.0 + _alpha * r.rating
-          val pui = if (cui > 0.0) 1.0 else 0.0
-          val ytCuIY = op * (_alpha * r.rating)
-          val ytCupu = vec * (cui * pui)
-          (solveKey(fixedKeyType, r), (ytCuIY, ytCupu, op))
+          rs.map { r =>
+            val cui = 1.0 + _alpha * r.rating
+            val pui = if (cui > 0.0) 1.0 else 0.0
+            val ytCuIY = op * (_alpha * r.rating)
+            val ytCupu = vec * (cui * pui)
+            (solveKey(fixedKeyType, r), (ytCuIY, ytCupu, op))
+          }
         }
         .sumByKey
 
@@ -121,10 +123,12 @@ private class ALS(val ratings: Future[Tap[Rating]],
         .toSCollection
     } else {
       val sums = keyedRatings.join(vectors)
-        .map { case ((fixedKeyType, fixedKey), (r, vec)) =>
+        .flatMap { case ((fixedKeyType, fixedKey), (rs, vec)) =>
           val op = vec * vec.t
-          val ytCupu = vec * r.rating
-          (solveKey(fixedKeyType, r), (ytCupu, op))
+          rs.map { r =>
+            val ytCupu = vec * r.rating
+            (solveKey(fixedKeyType, r), (ytCupu, op))
+          }
         }
         .sumByKey
 
@@ -164,7 +168,10 @@ private class ALS(val ratings: Future[Tap[Rating]],
     sc.setName(options.getAppName + "input")
     val r = Await.result(ratings, Duration.Inf).open(sc)
     logger.info("Preparing input")
-    val keyedRatings = r.flatMap(r => Seq(((USER_KEY, r.user), r), ((ITEM_KEY, r.item), r))).materialize
+    val keyedRatings = r
+      .flatMap(r => Seq(((USER_KEY, r.user), r), ((ITEM_KEY, r.item), r)))
+      .groupByKey()
+      .materialize
     val vectors = r
       .flatMap { r => Seq((USER_KEY, r.user), (ITEM_KEY, r.item)) }
       .distinct()

@@ -1,11 +1,16 @@
 package com.spotify.scio.examples.extra
 
+import java.nio.ByteBuffer
+
 import breeze.linalg._
 import com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions
 import com.google.cloud.dataflow.sdk.options.PipelineOptions.CheckEnabled
+import com.spotify.common.uri.{SpotifyUri, SpotifyHexId}
 import com.spotify.scio._
 import com.spotify.scio.ml.nn.NearestNeighbor
 import com.spotify.scio.ml.recommendation._
+import com.spotify.scio.values.SCollection
+import org.apache.avro.Schema
 import org.slf4j.LoggerFactory
 
 import scala.concurrent.Await
@@ -18,12 +23,12 @@ object ALSExample {
     val (opts, args) = ScioContext.parseArguments[DataflowPipelineOptions](cmdlineArgs)
     opts.setStableUniqueNames(CheckEnabled.OFF)
 
-    /*
     val iterations = args.int("iterations")
     val rank = args.int("rank")
     val ratingsFile = args("ratings")
     val itemsFile = args("items")
-    val movieId = args.int("movieId", 50)  // Star Wars
+    //val movieId = args.int("movieId", 50)  // Star Wars
+    val movieId = args.int("movieId", 270621)  // War Eternal
 
     val ratings = getRatings(opts, ratingsFile)
 
@@ -39,14 +44,17 @@ object ALSExample {
       .sortBy(-_._2._1)
       .map(t => "%8.6f: %s".format(t._2._1, t._2._2))
       .foreach(logger.info)
-      */
   }
 
   private def getRatings(opts: DataflowPipelineOptions, ratingsFile: String) = {
     val sc = ScioContext(opts)
     val r = sc
-      .textFile(ratingsFile)
-      .map { s =>
+      //.textFile(ratingsFile)
+      //.map { s =>
+      .avroFile(ratingsFile, new Schema.Parser().parse("\"bytes\"")).asInstanceOf[SCollection[ByteBuffer]]
+      .filter(_ => scala.util.Random.nextDouble() < 0.1)
+      .map { b =>
+        val s = new String(b.array())
         val t = s.split("\t")
         Rating(t(0).toInt, t(1).toInt, t(2).toDouble)
       }.materialize
@@ -64,8 +72,10 @@ object ALSExample {
     val items = sc
       .textFile(itemsFile)
       .map { s =>
-        val t = s.split("\\|")
-        (t(0).toInt, t(1))
+        //val t = s.split("\\|")
+        //(t(0).toInt, t(1))
+        val t = s.split(" ")
+        (t(0).toInt, SpotifyUri.track(new SpotifyHexId(t(1)).asBase62()))
       }
 
     val _rank = model.rank
@@ -73,7 +83,7 @@ object ALSExample {
     val r = itemVectors
       .groupBy(_ => 0)
       .map { case (_, vecs) =>
-        val b = NearestNeighbor.newLSHBuilder[Int, Double](_rank, 4, 1000)
+        val b = NearestNeighbor.newLSHBuilder[Int, Double](_rank, 1, 100000)
         vecs.foreach { case (id, v) =>
           b.add(id, v / norm(v))
         }
