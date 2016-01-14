@@ -256,12 +256,12 @@ the elements.</p></dd></dl></div>
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Convert this SCollection of (key, value) to a SideInput of Map[key, value], to be used with
-<a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Convert this SCollection of (key, value) to a SideInput of Map[key, value], to be used with
-<a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>. It is required that each key of the input be associated with
-a single value.
+      <p class="shortcomment cmt">Convert this SCollection to a SideInput, mapping key-value pairs of each window to a Map[key,
+value], to be used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Convert this SCollection to a SideInput, mapping key-value pairs of each window to a Map[key,
+value], to be used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>. It is required that each key of the
+input be associated with a single value.
 </p></div></div>
-    </li><li name="com.spotify.scio.values.PairSCollectionFunctions#asMultiMapSideInput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.spotify.scio.values.PairSCollectionFunctions#asMultiMapSideInput" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asMultiMapSideInput:com.spotify.scio.values.SideInput[Map[K,Iterable[V]]]"></a>
       <a id="asMultiMapSideInput:SideInput[Map[K,Iterable[V]]]"></a>
       <h4 class="signature">
@@ -277,8 +277,11 @@ a single value.
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Convert this SCollection of (key, value) to a SideInput of Map[key, Iterable[value]], to be
-used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>.</p>
+      <p class="shortcomment cmt">Convert this SCollection to a SideInput, mapping key-value pairs of each window to a Map[key,
+Iterable[value]], to be used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Convert this SCollection to a SideInput, mapping key-value pairs of each window to a Map[key,
+Iterable[value]], to be used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>. It is not required that the
+keys in the input collection be unique.
+</p></div></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
