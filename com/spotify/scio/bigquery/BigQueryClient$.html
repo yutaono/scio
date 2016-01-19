@@ -317,6 +317,40 @@
       </a>
     </span>
       <p class="shortcomment cmt">Table expiration in milliseconds for staging dataset.</p>
+    </li><li name="com.spotify.scio.bigquery.BigQueryClient#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(project:String,secret:String):com.spotify.scio.bigquery.BigQueryClient"></a>
+      <a id="apply(String,String):BigQueryClient"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="project">project: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="secret">secret: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="BigQueryClient.html" class="extype" name="com.spotify.scio.bigquery.BigQueryClient">BigQueryClient</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient$@apply(project:String,secret:String):com.spotify.scio.bigquery.BigQueryClient" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a new BigQueryClient instance with the given project and secret file.</p>
+    </li><li name="com.spotify.scio.bigquery.BigQueryClient#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(project:String):com.spotify.scio.bigquery.BigQueryClient"></a>
+      <a id="apply(String):BigQueryClient"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="project">project: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="BigQueryClient.html" class="extype" name="com.spotify.scio.bigquery.BigQueryClient">BigQueryClient</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient$@apply(project:String):com.spotify.scio.bigquery.BigQueryClient" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a new BigQueryClient instance with the given project.</p>
     </li><li name="com.spotify.scio.bigquery.BigQueryClient#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="apply():com.spotify.scio.bigquery.BigQueryClient"></a>
       <a id="apply():BigQueryClient"></a>
@@ -333,9 +367,10 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Create a new BigQueryClient instance with project and JSON secret from system properties.</p><div class="fullcomment"><div class="comment cmt"><p>Create a new BigQueryClient instance with project and JSON secret from system properties.</p><p>Project and path to JSON secret must be set in <code>bigquery.project</code> and <code>bigquery.secret</code>
-system properties. For example, by adding the following to your job code:</p><pre>sys.props(<span class="lit">"bigquery.project"</span>) = <span class="lit">"my-project"</span>
-sys.props(<span class="lit">"bigquery.secret"</span>) = <span class="lit">"/path/to/secret.json"</span></pre><p>Or you can pass them as SBT command line arguments:</p><pre>sbt -Dbigquery.project=my-project -Dbigquery.secret=/path/to/secret.json</pre></div></div>
+      <p class="shortcomment cmt">Create a new BigQueryClient instance.</p><div class="fullcomment"><div class="comment cmt"><p>Create a new BigQueryClient instance.</p><p>Project must be set via <code>bigquery.project</code> system property.
+An optional JSON secret file can be set via <code>bigquery.secret</code>.
+For example, by adding the following code at the beginning of a job:</p><pre>sys.props(<span class="lit">"bigquery.project"</span>) = <span class="lit">"my-project"</span>
+sys.props(<span class="lit">"bigquery.secret"</span>) = <span class="lit">"/path/to/secret.json"</span></pre><p>Or by passing them as SBT command line arguments:</p><pre>sbt -Dbigquery.project=my-project -Dbigquery.secret=/path/to/secret.json</pre></div></div>
     </li><li name="com.spotify.scio.bigquery.BigQueryClient#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="apply(project:String,credential:com.google.api.client.auth.oauth2.Credential):com.spotify.scio.bigquery.BigQueryClient"></a>
       <a id="apply(String,Credential):BigQueryClient"></a>
