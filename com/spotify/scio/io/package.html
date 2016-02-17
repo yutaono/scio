@@ -66,7 +66,24 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="com.spotify.scio.io.BigQueryTap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="com.spotify.scio.io.AvroTap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AvroTap[T]extendsTap[T]withProductwithSerializable"></a>
+      <a id="AvroTap[T]:AvroTap[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="AvroTap.html"><span class="name">AvroTap</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$1">evidence$1: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>]</span>)</span><span class="result"> extends <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.io.package@AvroTap[T]extendsTap[T]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Tap for Avro files on local file system or GCS.</p>
+    </li><li name="com.spotify.scio.io.BigQueryTap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="BigQueryTapextendsTap[com.spotify.scio.bigquery.TableRow]withProductwithSerializable"></a>
       <a id="BigQueryTap:BigQueryTap"></a>
       <h4 class="signature">
@@ -83,23 +100,6 @@
       </a>
     </span>
       <p class="shortcomment cmt">Tap for BigQuery tables.</p>
-    </li><li name="com.spotify.scio.io.GenericAvroTap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="GenericAvroTapextendsTap[org.apache.avro.generic.GenericRecord]withProductwithSerializable"></a>
-      <a id="GenericAvroTap:GenericAvroTap"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">case class</span>
-      </span>
-      <span class="symbol">
-        <a href="GenericAvroTap.html"><span class="name">GenericAvroTap</span></a><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span></span>)</span><span class="result"> extends <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="org.apache.avro.generic.GenericRecord">GenericRecord</span>] with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.package@GenericAvroTapextendsTap[org.apache.avro.generic.GenericRecord]withProductwithSerializable" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Tap for generic Avro files on local file system or GCS.</p>
     </li><li name="com.spotify.scio.io.ObjectFileTap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ObjectFileTap[T]extendsTap[T]withProductwithSerializable"></a>
       <a id="ObjectFileTap[T]:ObjectFileTap[T]"></a>
@@ -116,24 +116,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
-    </li><li name="com.spotify.scio.io.SpecificAvroTap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="SpecificAvroTap[T]extendsTap[T]withProductwithSerializable"></a>
-      <a id="SpecificAvroTap[T]:SpecificAvroTap[T]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">case class</span>
-      </span>
-      <span class="symbol">
-        <a href="SpecificAvroTap.html"><span class="name">SpecificAvroTap</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$1">evidence$1: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.SpecificAvroTap.T">T</span>]</span>)</span><span class="result"> extends <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.SpecificAvroTap.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.package@SpecificAvroTap[T]extendsTap[T]withProductwithSerializable" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Tap for specific Avro files on local file system or GCS.</p>
+      <p class="shortcomment cmt">Tap for object files on local file system or GCS.</p>
     </li><li name="com.spotify.scio.io.TableRowJsonTap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TableRowJsonTapextendsTap[com.spotify.scio.bigquery.TableRow]withProductwithSerializable"></a>
       <a id="TableRowJsonTap:TableRowJsonTap"></a>

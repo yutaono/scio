@@ -365,35 +365,35 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="com.spotify.scio.hdfs.HdfsSCollection#saveAsHdfsAvroFile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="saveAsHdfsAvroFile(path:String,schema:org.apache.avro.Schema)(implicitev:&lt;:&lt;[T,org.apache.avro.generic.IndexedRecord]):Unit"></a>
-      <a id="saveAsHdfsAvroFile(String,Schema)(&lt;:&lt;[T,IndexedRecord]):Unit"></a>
+      <a id="saveAsHdfsAvroFile(path:String,schema:org.apache.avro.Schema)(implicitev:&lt;:&lt;[T,org.apache.avro.generic.IndexedRecord]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
+      <a id="saveAsHdfsAvroFile(String,Schema)(&lt;:&lt;[T,IndexedRecord]):Future[Tap[T]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsHdfsAvroFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.hdfs.HdfsSCollection.T">T</span>, <span class="extype" name="org.apache.avro.generic.IndexedRecord">IndexedRecord</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">saveAsHdfsAvroFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.hdfs.HdfsSCollection.T">T</span>, <span class="extype" name="org.apache.avro.generic.IndexedRecord">IndexedRecord</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.hdfs.HdfsSCollection.T">T</span>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.hdfs.package$$HdfsSCollection@saveAsHdfsAvroFile(path:String,schema:org.apache.avro.Schema)(implicitev:&lt;:&lt;[T,org.apache.avro.generic.IndexedRecord]):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.hdfs.package$$HdfsSCollection@saveAsHdfsAvroFile(path:String,schema:org.apache.avro.Schema)(implicitev:&lt;:&lt;[T,org.apache.avro.generic.IndexedRecord]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Save this SCollection as an Avro file on HDFS.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as an Avro file on HDFS. Note that elements must be of type IndexedRecord.</p></div></div>
     </li><li name="com.spotify.scio.hdfs.HdfsSCollection#saveAsHdfsTextFile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="saveAsHdfsTextFile(path:String)(implicitev:&lt;:&lt;[T,String]):Unit"></a>
-      <a id="saveAsHdfsTextFile(String)(&lt;:&lt;[T,String]):Unit"></a>
+      <a id="saveAsHdfsTextFile(path:String)(implicitev:&lt;:&lt;[T,String]):scala.concurrent.Future[com.spotify.scio.io.Tap[String]]"></a>
+      <a id="saveAsHdfsTextFile(String)(&lt;:&lt;[T,String]):Future[Tap[String]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsHdfsTextFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.hdfs.HdfsSCollection.T">T</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">saveAsHdfsTextFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.hdfs.HdfsSCollection.T">T</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.hdfs.package$$HdfsSCollection@saveAsHdfsTextFile(path:String)(implicitev:&lt;:&lt;[T,String]):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.hdfs.package$$HdfsSCollection@saveAsHdfsTextFile(path:String)(implicitev:&lt;:&lt;[T,String]):scala.concurrent.Future[com.spotify.scio.io.Tap[String]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
