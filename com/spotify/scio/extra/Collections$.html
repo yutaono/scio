@@ -49,7 +49,12 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Utilities for Scala collection library.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Utilities for Scala collection library.</p><p>Adds a <code>top</code> method to <code>Array[T]</code> and <code>Iterable[T]</code> and a <code>topByKey</code> method to <code>Array[(K, V)]</code>
+and <code>Iterable[(K, V)]</code>.</p><pre><span class="kw">import</span> com.spotify.scio.extra.Collections._
+
+<span class="kw">val</span> xs: <span class="std">Array</span>[(<span class="std">String</span>, <span class="std">Int</span>)] = <span class="cmt">// ...</span>
+xs.top(<span class="num">5</span>)(Ordering.by(_._2))
+xs.topByKey(<span class="num">5</span>)</pre></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>

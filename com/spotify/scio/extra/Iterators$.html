@@ -49,7 +49,21 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Utilities for Scala iterators.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Utilities for Scala iterators.</p><p>Adds a <code>timeSeries</code> method to <code>Iterator[T]</code> so that it can be windowed with different logic.</p><pre><span class="kw">import</span> com.spotify.scio.extra.Iterators._
+
+<span class="kw">case</span> <span class="kw">class</span> Event(user: <span class="std">String</span>, action: <span class="std">String</span>, timestamp: <span class="std">Long</span>)
+<span class="kw">val</span> i: Iterator[Event] = <span class="cmt">// ...</span>
+
+<span class="cmt">// 60 minutes fixed windows offset by 30 minutes</span>
+<span class="cmt">// E.g. minute [30, 90), [90, 120), [120, 150), [150, 180) ...</span>
+i.timeSeries(_.timestamp).fixed(<span class="num">3600000</span>, <span class="num">1800000</span>)
+
+<span class="cmt">// session windows with 60 minute gaps between windows</span>
+i.timeSeries(_.timestamp).session(<span class="num">3600000</span>)
+
+<span class="cmt">// 60 minutes sliding windows, one every 10 minutes, offset by 5 minutes</span>
+<span class="cmt">// E.g. minute [5, 65), [15, 75), [25, 85), [35, 95) ...</span>
+i.timeSeries(_.timestamp).session(<span class="num">3600000</span>, <span class="num">600000</span>, <span class="num">300000</span>)</pre></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
