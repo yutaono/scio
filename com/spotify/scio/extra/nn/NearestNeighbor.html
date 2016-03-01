@@ -51,7 +51,16 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Immutable index for fast nearest neighbor look up.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Immutable index for fast nearest neighbor look up.</p><p>{{
+import com.spotify.scio.extra.nn._</p><p>// Tuples of (item ID, vector) to look up from
+val vectors: Seq[(String, DenseVector[Double])] = // ...</p><p>// Builder for a nearest neighbor index backed by a matrix
+val builder = NearestNeighbor.newMatrixBuilder[String, Double](40)
+vectors.foreach(kv =&gt; builder.addVector(kv._1, kv._2))
+val nn = builder.build</p><p>// Candidate to loo up nearest neighbors from
+val candidate: DenseVector[Double] = // ...</p><p>// Look up top 10 most similar items
+nn.lookup(candidate, 10)
+}}
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>

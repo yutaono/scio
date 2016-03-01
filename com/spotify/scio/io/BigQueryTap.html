@@ -45,7 +45,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">BigQueryTap</span><span class="params">(<span name="table">table: <a href=https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/TableReference.html class="extype" target="_top">TableReference</a></span>, <span name="opts">opts: <a href=https://cloud.google.com/dataflow/java-sdk/JavaDoc/com/google/cloud/dataflow/sdk/options/DataflowPipelineOptions.html class="extype" target="_top">DataflowPipelineOptions</a></span>)</span><span class="result"> extends <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<a href="../bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>] with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">BigQueryTap</span><span class="params">(<span name="table">table: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableReference" class="extype" target="_top">TableReference</a></span>)</span><span class="result"> extends <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<a href="../bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>] with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
@@ -89,7 +89,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="com.spotify.scio.io.BigQueryTap#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(table:com.google.api.services.bigquery.model.TableReference,opts:com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions):com.spotify.scio.io.BigQueryTap"></a>
+      <a id="&lt;init&gt;(table:com.google.api.services.bigquery.model.TableReference):com.spotify.scio.io.BigQueryTap"></a>
       <a id="&lt;init&gt;:BigQueryTap"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -97,10 +97,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">BigQueryTap</span><span class="params">(<span name="table">table: <a href=https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/TableReference.html class="extype" target="_top">TableReference</a></span>, <span name="opts">opts: <a href=https://cloud.google.com/dataflow/java-sdk/JavaDoc/com/google/cloud/dataflow/sdk/options/DataflowPipelineOptions.html class="extype" target="_top">DataflowPipelineOptions</a></span>)</span>
+        <span class="name">BigQueryTap</span><span class="params">(<span name="table">table: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableReference" class="extype" target="_top">TableReference</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.BigQueryTap@&lt;init&gt;(table:com.google.api.services.bigquery.model.TableReference,opts:com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions):com.spotify.scio.io.BigQueryTap" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.io.BigQueryTap@&lt;init&gt;(table:com.google.api.services.bigquery.model.TableReference):com.spotify.scio.io.BigQueryTap" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -279,6 +279,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="com.spotify.scio.io.Tap#map" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="map[U](f:T=&gt;U)(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.io.Tap[U]"></a>
+      <a id="map[U]((TableRow)⇒U)(ClassTag[U]):Tap[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">map</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<a href="../bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>) ⇒ <span class="extype" name="com.spotify.scio.io.Tap.map.U">U</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.Tap.map.U">U</span>]</span>)</span><span class="result">: <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.Tap.map.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.io.BigQueryTap@map[U](f:T=&gt;U)(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.io.Tap[U]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Map items from T to U.</p><div class="fullcomment"><div class="comment cmt"><p>Map items from T to U.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -347,23 +364,6 @@
       </a>
     </span>
       <p class="shortcomment cmt">Open data set as an SCollection.</p><div class="fullcomment"><div class="comment cmt"><p>Open data set as an SCollection.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.spotify.scio.io.BigQueryTap">BigQueryTap</a> → <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a></dd></dl></div>
-    </li><li name="com.spotify.scio.io.BigQueryTap#opts" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="opts:com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions"></a>
-      <a id="opts:DataflowPipelineOptions"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">opts</span><span class="result">: <a href=https://cloud.google.com/dataflow/java-sdk/JavaDoc/com/google/cloud/dataflow/sdk/options/DataflowPipelineOptions.html class="extype" target="_top">DataflowPipelineOptions</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.BigQueryTap@opts:com.google.cloud.dataflow.sdk.options.DataflowPipelineOptions" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -390,7 +390,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">table</span><span class="result">: <a href=https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/TableReference.html class="extype" target="_top">TableReference</a></span>
+        <span class="name">table</span><span class="result">: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableReference" class="extype" target="_top">TableReference</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.io.BigQueryTap@table:com.google.api.services.bigquery.model.TableReference" title="Permalink" target="_top">

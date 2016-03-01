@@ -66,7 +66,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="com.spotify.scio.extra.nn.NearestNeighbor" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+              <ol><li name="com.spotify.scio.extra.nn.NearestNeighbor" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="NearestNeighbor[K,V]extendsSerializable"></a>
       <a id="NearestNeighbor[K,V]:NearestNeighbor[K,V]"></a>
       <h4 class="signature">
@@ -82,7 +82,16 @@
         <img src="../../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Immutable index for fast nearest neighbor look up.</p>
+      <p class="shortcomment cmt">Immutable index for fast nearest neighbor look up.</p><div class="fullcomment"><div class="comment cmt"><p>Immutable index for fast nearest neighbor look up.</p><p>{{
+import com.spotify.scio.extra.nn._</p><p>// Tuples of (item ID, vector) to look up from
+val vectors: Seq[(String, DenseVector[Double])] = // ...</p><p>// Builder for a nearest neighbor index backed by a matrix
+val builder = NearestNeighbor.newMatrixBuilder[String, Double](40)
+vectors.foreach(kv =&gt; builder.addVector(kv._1, kv._2))
+val nn = builder.build</p><p>// Candidate to loo up nearest neighbors from
+val candidate: DenseVector[Double] = // ...</p><p>// Look up top 10 most similar items
+nn.lookup(candidate, 10)
+}}
+</p></div></div>
     </li><li name="com.spotify.scio.extra.nn.NearestNeighborBuilder" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="NearestNeighborBuilder[K,V]extendsSerializable"></a>
       <a id="NearestNeighborBuilder[K,V]:NearestNeighborBuilder[K,V]"></a>

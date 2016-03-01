@@ -335,6 +335,23 @@
     </span>
       <p class="shortcomment cmt">Create a new BigQueryClient instance with the given project and secret file.</p>
     </li><li name="com.spotify.scio.bigquery.BigQueryClient#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(project:String,credential:com.google.api.client.auth.oauth2.Credential):com.spotify.scio.bigquery.BigQueryClient"></a>
+      <a id="apply(String,Credential):BigQueryClient"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="project">project: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="credential">credential: <span class="extype" name="com.google.api.client.auth.oauth2.Credential">Credential</span></span>)</span><span class="result">: <a href="BigQueryClient.html" class="extype" name="com.spotify.scio.bigquery.BigQueryClient">BigQueryClient</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient$@apply(project:String,credential:com.google.api.client.auth.oauth2.Credential):com.spotify.scio.bigquery.BigQueryClient" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Create a new BigQueryClient instance with the given project and credential.</p>
+    </li><li name="com.spotify.scio.bigquery.BigQueryClient#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="apply(project:String):com.spotify.scio.bigquery.BigQueryClient"></a>
       <a id="apply(String):BigQueryClient"></a>
       <h4 class="signature">
@@ -371,23 +388,6 @@
 An optional JSON secret file can be set via <code>bigquery.secret</code>.
 For example, by adding the following code at the beginning of a job:</p><pre>sys.props(<span class="lit">"bigquery.project"</span>) = <span class="lit">"my-project"</span>
 sys.props(<span class="lit">"bigquery.secret"</span>) = <span class="lit">"/path/to/secret.json"</span></pre><p>Or by passing them as SBT command line arguments:</p><pre>sbt -Dbigquery.project=my-project -Dbigquery.secret=/path/to/secret.json</pre></div></div>
-    </li><li name="com.spotify.scio.bigquery.BigQueryClient#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(project:String,credential:com.google.api.client.auth.oauth2.Credential):com.spotify.scio.bigquery.BigQueryClient"></a>
-      <a id="apply(String,Credential):BigQueryClient"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="project">project: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="credential">credential: <span class="extype" name="com.google.api.client.auth.oauth2.Credential">Credential</span></span>)</span><span class="result">: <a href="BigQueryClient.html" class="extype" name="com.spotify.scio.bigquery.BigQueryClient">BigQueryClient</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient$@apply(project:String,credential:com.google.api.client.auth.oauth2.Credential):com.spotify.scio.bigquery.BigQueryClient" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Create a new BigQueryClient instance with the given project and credential.</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -428,6 +428,23 @@ sys.props(<span class="lit">"bigquery.secret"</span>) = <span class="lit">"/path
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.spotify.scio.bigquery.BigQueryClient#defaultInstance" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="defaultInstance():com.spotify.scio.bigquery.BigQueryClient"></a>
+      <a id="defaultInstance():BigQueryClient"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">defaultInstance</span><span class="params">()</span><span class="result">: <a href="BigQueryClient.html" class="extype" name="com.spotify.scio.bigquery.BigQueryClient">BigQueryClient</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient$@defaultInstance():com.spotify.scio.bigquery.BigQueryClient" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Get the default BigQueryClient instance.</p>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
