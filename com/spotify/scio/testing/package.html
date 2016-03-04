@@ -272,6 +272,8 @@ To be used in a <a href="PipelineSpec.html" class="extype" name="com.spotify.sci
   <span class="cmt">// Test specification</span>
   <span class="lit">"WordCount"</span> should <span class="lit">"work"</span> in {
     JobTest(<span class="lit">"com.spotify.scio.examples.WordCount"</span>)
+    <span class="cmt">// Or the type safe version</span>
+    <span class="cmt">// JobTest[com.spotify.scio.examples.WordCount.type]</span>
 
       <span class="cmt">// Command line arguments</span>
       .args(<span class="lit">"--input=in.txt"</span>, <span class="lit">"--output=out.txt"</span>)
