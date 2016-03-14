@@ -60,7 +60,7 @@
               <ol>
                 
                 <li class="alpha in"><span>Alphabetic</span></li>
-                <li class="inherit out"><span>By inheritance</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
               </ol>
             </div>
         <div id="ancestors">
@@ -73,7 +73,7 @@
             <span class="filtertype"></span>
             <ol>
               <li class="hideall out"><span>Hide All</span></li>
-              <li class="showall in"><span>Show all</span></li>
+              <li class="showall in"><span>Show All</span></li>
             </ol>
           </div>
         <div id="visbl">
@@ -97,7 +97,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="package$$BigTableInput.html"><span class="name">BigTableInput</span></a><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="clusterId">clusterId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="zoneId">zoneId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<span class="extype" name="org.apache.hadoop.hbase.client.Result">Result</span>] with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="package$$BigTableInput.html"><span class="name">BigTableInput</span></a><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="clusterId">clusterId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="zoneId">zoneId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<span class="extype" name="org.apache.hadoop.hbase.client.Result">Result</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.bigtable.package@BigTableInputextendsTestIO[org.apache.hadoop.hbase.client.Result]withProductwithSerializable" title="Permalink" target="_top">
@@ -114,7 +114,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="package$$BigTableOutput.html"><span class="name">BigTableOutput</span></a><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="org.apache.hadoop.hbase.client.Mutation">Mutation</span></span>]</span><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="clusterId">clusterId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="zoneId">zoneId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<span class="extype" name="com.spotify.scio.bigtable.BigTableOutput.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="package$$BigTableOutput.html"><span class="name">BigTableOutput</span></a><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="org.apache.hadoop.hbase.client.Mutation">Mutation</span></span>]</span><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="clusterId">clusterId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="zoneId">zoneId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<span class="extype" name="com.spotify.scio.bigtable.BigTableOutput.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.bigtable.package@BigTableOutput[T&lt;:org.apache.hadoop.hbase.client.Mutation]extendsTestIO[T]withProductwithSerializable" title="Permalink" target="_top">
@@ -156,6 +156,43 @@
       </a>
     </span>
       <p class="shortcomment cmt">Enhanced version of <a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a> with BigTable methods.</p>
+    </li><li name="com.spotify.scio.bigtable.MultipleBigTableOutput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MultipleBigTableOutput[T&lt;:org.apache.hadoop.hbase.client.Mutation]extendsTestIO[(String,Iterable[T])]withProductwithSerializable"></a>
+      <a id="MultipleBigTableOutput[T&lt;:Mutation]:MultipleBigTableOutput[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$MultipleBigTableOutput.html"><span class="name">MultipleBigTableOutput</span></a><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="org.apache.hadoop.hbase.client.Mutation">Mutation</span></span>]</span><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="clusterId">clusterId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="zoneId">zoneId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[(<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.bigtable.MultipleBigTableOutput.T">T</span>])] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package@MultipleBigTableOutput[T&lt;:org.apache.hadoop.hbase.client.Mutation]extendsTestIO[(String,Iterable[T])]withProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.bigtable.PairBigTableSCollection" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PairBigTableSCollection[T]extendsAnyRef"></a>
+      <a id="PairBigTableSCollection[T]:PairBigTableSCollection[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$PairBigTableSCollection.html"><span class="name">PairBigTableSCollection</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package@PairBigTableSCollection[T]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enhanced version of <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> for writing to
+multiple BigTable tables.</p><div class="fullcomment"><div class="comment cmt"><p>Enhanced version of <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> for writing to
+multiple BigTable tables.</p><p>Keys are table IDs and values are collections of Mutations.
+</p></div></div>
     </li></ol>
             </div>
 
