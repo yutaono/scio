@@ -92,7 +92,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="BigQueryIO.html"><span class="name">BigQueryIO</span></a><span class="params">(<span name="tableSpecOrQuery">tableSpecOrQuery: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableRow" class="extype" target="_top">TableRow</a>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="BigQueryIO.html"><span class="name">BigQueryIO</span></a><span class="params">(<span name="tableSpecOrQuery">tableSpecOrQuery: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<a href=https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/TableRow.html class="extype" target="_top">TableRow</a>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.testing.package@BigQueryIOextendsTestIO[com.google.api.services.bigquery.model.TableRow]withProductwithSerializable" title="Permalink" target="_top">
@@ -151,7 +151,7 @@
       </a>
     </span>
       
-    </li><li name="com.spotify.scio.testing.PipelineSpec" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+    </li><li name="com.spotify.scio.testing.PipelineSpec" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="PipelineSpecextendsFlatSpecwithMatcherswithSCollectionMatcher"></a>
       <a id="PipelineSpec:PipelineSpec"></a>
       <h4 class="signature">
@@ -167,7 +167,13 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Trait for unit testing pipelines.</p>
+      <p class="shortcomment cmt">Trait for unit testing pipelines.</p><div class="fullcomment"><div class="comment cmt"><p>Trait for unit testing pipelines.</p><p>A simple test might look like this:</p><pre><span class="kw">class</span> SimplePipelineTest <span class="kw">extends</span> PipelineSpec {
+  <span class="lit">"A simple pipeline"</span> should <span class="lit">"sum integers"</span> in {
+    runWithContext { sc <span class="kw">=&gt;</span>
+      sc.parallelize(<span class="std">Seq</span>(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>)).sum should containSingleValue (<span class="num">6</span>)
+    }
+  }
+}</pre></div></div>
     </li><li name="com.spotify.scio.testing.PubsubIO" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="PubsubIOextendsTestIO[String]withProductwithSerializable"></a>
       <a id="PubsubIO:PubsubIO"></a>
@@ -194,7 +200,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="TableRowJsonIO.html"><span class="name">TableRowJsonIO</span></a><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableRow" class="extype" target="_top">TableRow</a>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="TableRowJsonIO.html"><span class="name">TableRowJsonIO</span></a><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<a href=https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/TableRow.html class="extype" target="_top">TableRow</a>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.testing.package@TableRowJsonIOextendsTestIO[com.google.api.services.bigquery.model.TableRow]withProductwithSerializable" title="Permalink" target="_top">
