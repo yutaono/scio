@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>BigTable - com.spotify.scio.bigtable.BigTable</title>
-          <meta name="description" content="BigTable - com.spotify.scio.bigtable.BigTable" />
-          <meta name="keywords" content="BigTable com.spotify.scio.bigtable.BigTable" />
+          <title>BigtableSCollection - com.spotify.scio.bigtable.BigtableSCollection</title>
+          <meta name="description" content="BigtableSCollection - com.spotify.scio.bigtable.BigtableSCollection" />
+          <meta name="keywords" content="BigtableSCollection com.spotify.scio.bigtable.BigtableSCollection" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -16,7 +16,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../index.html';
-            var hash = 'com.spotify.scio.bigtable.BigTable$';
+            var hash = 'com.spotify.scio.bigtable.package$$BigtableSCollection';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -26,14 +26,14 @@
    	  </script>
     
         </head>
-        <body class="value">
+        <body class="type">
       <div id="definition">
-        <img alt="Object" src="../../../../lib/object_big.png" />
+        <img alt="Class" src="../../../../lib/class_big.png" />
         <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.spotify">spotify</a>.<a href="../package.html" class="extype" name="com.spotify.scio">scio</a>.<a href="package.html" class="extype" name="com.spotify.scio.bigtable">bigtable</a></p>
-        <h1>BigTable</h1><h3><span class="morelinks"><div>Related Doc:
+        <h1>BigtableSCollection</h1><h3><span class="morelinks"><div>Related Doc:
             <a href="package.html" class="extype" name="com.spotify.scio.bigtable">package bigtable</a>
           </div></span></h3><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -41,15 +41,16 @@
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">BigTable</span>
+        <span class="name">BigtableSCollection</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Utilities for BigTable.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Enhanced version of <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> with Bigtable methods.
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -69,7 +70,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.spotify.scio.bigtable.BigTable"><span>BigTable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.spotify.scio.bigtable.BigtableSCollection"><span>BigtableSCollection</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -86,7 +87,27 @@
 
       <div id="template">
         <div id="allMembers">
-        
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="com.spotify.scio.bigtable.BigtableSCollection#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(self:com.spotify.scio.values.SCollection[T]):com.spotify.scio.bigtable.package.BigtableSCollection[T]"></a>
+      <a id="&lt;init&gt;:BigtableSCollection[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BigtableSCollection</span><span class="params">(<span name="self">self: <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.bigtable.BigtableSCollection.T">T</span>]</span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@&lt;init&gt;(self:com.spotify.scio.values.SCollection[T]):com.spotify.scio.bigtable.package.BigtableSCollection[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
 
         
 
@@ -106,7 +127,7 @@
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@!=(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -123,7 +144,7 @@
         <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@##():Int" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@##():Int" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -140,7 +161,7 @@
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@==(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -157,7 +178,7 @@
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@asInstanceOf[T0]:T0" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -174,7 +195,7 @@
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@clone():Object" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@clone():Object" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -197,7 +218,7 @@
         <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -214,7 +235,7 @@
         <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@equals(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -231,7 +252,7 @@
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@finalize():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@finalize():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -254,7 +275,7 @@
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@getClass():Class[_]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@getClass():Class[_]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -271,7 +292,7 @@
         <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@hashCode():Int" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@hashCode():Int" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -288,7 +309,7 @@
         <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -305,7 +326,7 @@
         <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -322,7 +343,7 @@
         <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@notify():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@notify():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -339,28 +360,62 @@
         <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@notifyAll():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@notifyAll():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="com.spotify.scio.bigtable.BigTable#parseOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="parseOptions(args:Array[String]):com.google.cloud.bigtable.dataflow.CloudBigtableOptions"></a>
-      <a id="parseOptions(Array[String]):CloudBigtableOptions"></a>
+    </li><li name="com.spotify.scio.bigtable.BigtableSCollection#saveAsBigtable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="saveAsBigtable(config:com.google.cloud.bigtable.dataflow.CloudBigtableTableConfiguration)(implicitev:&lt;:&lt;[T,org.apache.hadoop.hbase.client.Mutation]):scala.concurrent.Future[com.spotify.scio.io.Tap[org.apache.hadoop.hbase.client.Result]]"></a>
+      <a id="saveAsBigtable(CloudBigtableTableConfiguration)(&lt;:&lt;[T,Mutation]):Future[Tap[Result]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">parseOptions</span><span class="params">(<span name="args">args: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="com.google.cloud.bigtable.dataflow.CloudBigtableOptions">CloudBigtableOptions</span></span>
+        <span class="name">saveAsBigtable</span><span class="params">(<span name="config">config: <span class="extype" name="com.google.cloud.bigtable.dataflow.CloudBigtableTableConfiguration">CloudBigtableTableConfiguration</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.bigtable.BigtableSCollection.T">T</span>, <span class="extype" name="org.apache.hadoop.hbase.client.Mutation">Mutation</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="org.apache.hadoop.hbase.client.Result">Result</span>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@parseOptions(args:Array[String]):com.google.cloud.bigtable.dataflow.CloudBigtableOptions" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@saveAsBigtable(config:com.google.cloud.bigtable.dataflow.CloudBigtableTableConfiguration)(implicitev:&lt;:&lt;[T,org.apache.hadoop.hbase.client.Mutation]):scala.concurrent.Future[com.spotify.scio.io.Tap[org.apache.hadoop.hbase.client.Result]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Parse CloudBigtableOptions from command line arguments.</p>
+      <p class="shortcomment cmt">Save this SCollection as a Bigtable table.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a Bigtable table. Note that elements must be of type Mutation.</p></div></div>
+    </li><li name="com.spotify.scio.bigtable.BigtableSCollection#saveAsBigtable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="saveAsBigtable(projectId:String,clusterId:String,zoneId:String,tableId:String,additionalConfiguration:Map[String,String])(implicitev:&lt;:&lt;[T,org.apache.hadoop.hbase.client.Mutation]):scala.concurrent.Future[com.spotify.scio.io.Tap[org.apache.hadoop.hbase.client.Result]]"></a>
+      <a id="saveAsBigtable(String,String,String,String,Map[String,String])(&lt;:&lt;[T,Mutation]):Future[Tap[Result]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">saveAsBigtable</span><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="clusterId">clusterId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="zoneId">zoneId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="additionalConfiguration">additionalConfiguration: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.bigtable.BigtableSCollection.T">T</span>, <span class="extype" name="org.apache.hadoop.hbase.client.Mutation">Mutation</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="org.apache.hadoop.hbase.client.Result">Result</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@saveAsBigtable(projectId:String,clusterId:String,zoneId:String,tableId:String,additionalConfiguration:Map[String,String])(implicitev:&lt;:&lt;[T,org.apache.hadoop.hbase.client.Mutation]):scala.concurrent.Future[com.spotify.scio.io.Tap[org.apache.hadoop.hbase.client.Result]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Save this SCollection as a Bigtable table.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a Bigtable table. Note that elements must be of type Mutation.</p></div></div>
+    </li><li name="com.spotify.scio.bigtable.BigtableSCollection#self" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="self:com.spotify.scio.values.SCollection[T]"></a>
+      <a id="self:SCollection[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">self</span><span class="result">: <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.bigtable.BigtableSCollection.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@self:com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -373,7 +428,7 @@
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -390,7 +445,7 @@
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@toString():String" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@toString():String" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -407,7 +462,7 @@
         <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@wait():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@wait():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -430,7 +485,7 @@
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -453,7 +508,7 @@
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.BigTable$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableSCollection@wait(x$1:Long):Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>

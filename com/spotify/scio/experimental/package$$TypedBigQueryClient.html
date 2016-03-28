@@ -493,7 +493,7 @@ bq.getTypedRows[Row](<span class="lit">"myproject:samples.gsod"</span>)</pre></d
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.spotify.scio.experimental.TypedBigQueryClient#writeTypedRows" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.spotify.scio.experimental.TypedBigQueryClient#writeTypedRows" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="writeTypedRows[T&lt;:com.spotify.scio.bigquery.types.BigQueryType.HasAnnotation](tableSpec:String,rows:List[T],writeDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition,createDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition)(implicitevidence$7:scala.reflect.ClassTag[T],implicitevidence$8:reflect.runtime.universe.TypeTag[T]):Unit"></a>
       <a id="writeTypedRows[T&lt;:HasAnnotation](String,List[T],WriteDisposition,CreateDisposition)(ClassTag[T],scala.reflect.api.JavaUniverse.TypeTag[T]):Unit"></a>
       <h4 class="signature">
@@ -509,7 +509,9 @@ bq.getTypedRows[Row](<span class="lit">"myproject:samples.gsod"</span>)</pre></d
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Write a List of rows to a BigQuery table.</p><div class="fullcomment"><div class="comment cmt"><p>Write a List of rows to a BigQuery table. Note that element type <code>T</code> must be annotated with
+<a href="package.html#BigQueryType:com.spotify.scio.bigquery.types.BigQueryType.type" class="extmbr" name="com.spotify.scio.experimental#BigQueryType">BigQueryType</a>.
+</p></div></div>
     </li><li name="com.spotify.scio.experimental.TypedBigQueryClient#writeTypedRows" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="writeTypedRows[T&lt;:com.spotify.scio.bigquery.types.BigQueryType.HasAnnotation](table:com.google.api.services.bigquery.model.TableReference,rows:List[T],writeDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.WriteDisposition,createDisposition:com.google.cloud.dataflow.sdk.io.BigQueryIO.Write.CreateDisposition)(implicitevidence$5:scala.reflect.ClassTag[T],implicitevidence$6:reflect.runtime.universe.TypeTag[T]):Unit"></a>
       <a id="writeTypedRows[T&lt;:HasAnnotation](TableReference,List[T],WriteDisposition,CreateDisposition)(ClassTag[T],scala.reflect.api.JavaUniverse.TypeTag[T]):Unit"></a>
@@ -526,7 +528,8 @@ bq.getTypedRows[Row](<span class="lit">"myproject:samples.gsod"</span>)</pre></d
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Write a List to a BigQuery table.</p><div class="fullcomment"><div class="comment cmt"><p>Write a List to a BigQuery table. Note that element type <code>T</code> must be annotated with <a href="package.html#BigQueryType:com.spotify.scio.bigquery.types.BigQueryType.type" class="extmbr" name="com.spotify.scio.experimental#BigQueryType">BigQueryType</a>.
+      <p class="shortcomment cmt">Write a List of rows to a BigQuery table.</p><div class="fullcomment"><div class="comment cmt"><p>Write a List of rows to a BigQuery table. Note that element type <code>T</code> must be annotated with
+<a href="package.html#BigQueryType:com.spotify.scio.bigquery.types.BigQueryType.type" class="extmbr" name="com.spotify.scio.experimental#BigQueryType">BigQueryType</a>.
 </p></div></div>
     </li></ol>
             </div>
