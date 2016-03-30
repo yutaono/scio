@@ -383,7 +383,7 @@ experimental features.
       </a>
     </span>
       <p class="shortcomment cmt">Save this SCollection as a BigQuery table.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a BigQuery table. Note that element type <code>T</code> must be annotated with
-<a href="package.html#BigQueryType:com.spotify.scio.bigquery.types.BigQueryType.type" class="extmbr" name="com.spotify.scio.experimental#BigQueryType">BigQueryType</a>.</p><p>This could be a complete case class with <a href="../bigquery/types/BigQueryType$$toTable.html" class="extype" name="com.spotify.scio.bigquery.types.BigQueryType.toTable">BigQueryType.toTable</a>. For example:</p><pre>@BigQueryType.toTable()
+<a href="package.html#BigQueryType:com.spotify.scio.bigquery.types.BigQueryType.type" class="extmbr" name="com.spotify.scio.experimental#BigQueryType">BigQueryType</a>.</p><p>This could be a complete case class with <a href="../bigquery/types/BigQueryType$$toTable.html" class="extype" name="com.spotify.scio.bigquery.types.BigQueryType.toTable">BigQueryType.toTable</a>. For example:</p><pre>@BigQueryType.toTable
 <span class="kw">case</span> <span class="kw">class</span> Result(name: <span class="std">String</span>, score: <span class="std">Double</span>)
 
 <span class="kw">val</span> p: SCollection[Result] = <span class="cmt">// process data and convert elements to Result</span>

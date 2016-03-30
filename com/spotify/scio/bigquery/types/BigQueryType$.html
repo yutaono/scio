@@ -243,7 +243,7 @@ the form of <code>project:dataset.table</code> with optional <code>.stripMargin<
     </span>
       <p class="shortcomment cmt">Macro annotation for case classes to be saved to a BigQuery table.</p><div class="fullcomment"><div class="comment cmt"><p>Macro annotation for case classes to be saved to a BigQuery table.</p><p>Note that this annotation does not generate case classes, only a companion object with
 convenience methods. You need to define a complete case class for as output record. For
-example:</p><pre>@BigQueryType.toTable()
+example:</p><pre>@BigQueryType.toTable
 <span class="kw">case</span> <span class="kw">class</span> Result(name: <span class="std">String</span>, score: <span class="std">Double</span>)</pre></div></div>
     </li></ol>
             </div>

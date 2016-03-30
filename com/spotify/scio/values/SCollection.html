@@ -210,7 +210,7 @@ multiple times (use <code>.distinct()</code> to eliminate them).</p></div></div>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollection#aggregate" visbl="pub" data-isabs="false" fullComment="yes" group="transform">
-      <a id="aggregate[A,U](aggregator:com.twitter.algebird.Aggregator[T,A,U])(implicitevidence$6:scala.reflect.ClassTag[A],implicitevidence$7:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
+      <a id="aggregate[A,U](aggregator:com.twitter.algebird.Aggregator[T,A,U])(implicitevidence$7:scala.reflect.ClassTag[A],implicitevidence$8:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
       <a id="aggregate[A,U](Aggregator[T,A,U])(ClassTag[A],ClassTag[U]):SCollection[U]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -221,7 +221,7 @@ multiple times (use <code>.distinct()</code> to eliminate them).</p></div></div>
         <span class="name">aggregate</span><span class="tparams">[<span name="A">A</span>, <span name="U">U</span>]</span><span class="params">(<span name="aggregator">aggregator: <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Aggregator" class="extype" target="_top">Aggregator</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="com.spotify.scio.values.SCollection.aggregate.A">A</span>, <span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.A">A</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@aggregate[A,U](aggregator:com.twitter.algebird.Aggregator[T,A,U])(implicitevidence$6:scala.reflect.ClassTag[A],implicitevidence$7:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@aggregate[A,U](aggregator:com.twitter.algebird.Aggregator[T,A,U])(implicitevidence$7:scala.reflect.ClassTag[A],implicitevidence$8:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -229,7 +229,7 @@ multiple times (use <code>.distinct()</code> to eliminate them).</p></div></div>
 A, then we reduce with a semigroup of A, then finally we present the results as U. This could
 be more powerful and better optimized in some cases.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#aggregate" visbl="pub" data-isabs="false" fullComment="yes" group="transform">
-      <a id="aggregate[U](zeroValue:U)(seqOp:(U,T)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$5:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
+      <a id="aggregate[U](zeroValue:U)(seqOp:(U,T)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$6:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
       <a id="aggregate[U](U)((U,T)⇒U,(U,U)⇒U)(ClassTag[U]):SCollection[U]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -240,7 +240,7 @@ be more powerful and better optimized in some cases.</p></div></div>
         <span class="name">aggregate</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="zeroValue">zeroValue: <span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span></span>)</span><span class="params">(<span name="seqOp">seqOp: (<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>, <span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span></span>, <span name="combOp">combOp: (<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>, <span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@aggregate[U](zeroValue:U)(seqOp:(U,T)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$5:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@aggregate[U](zeroValue:U)(seqOp:(U,T)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$6:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -266,6 +266,42 @@ a new U to avoid memory allocation.</p></div></div>
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>PCollectionWrapper</dd></dl></div>
+    </li><li name="com.spotify.scio.values.SCollection#applyOutputTransform" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="applyOutputTransform(transform:com.google.cloud.dataflow.sdk.transforms.PTransform[_&gt;:com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PDone]):com.google.cloud.dataflow.sdk.values.PDone"></a>
+      <a id="applyOutputTransform(PTransform[_&gt;:PCollection[T],PDone]):PDone"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">applyOutputTransform</span><span class="params">(<span name="transform">transform: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.PTransform" class="extype" target="_top">PTransform</a>[_ &gt;: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>], <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PDone" class="extype" target="_top">PDone</a>]</span>)</span><span class="result">: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PDone" class="extype" target="_top">PDone</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@applyOutputTransform(transform:com.google.cloud.dataflow.sdk.transforms.PTransform[_&gt;:com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PDone]):com.google.cloud.dataflow.sdk.values.PDone" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Apply a <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.PTransform" class="extype" target="_top">PTransform</a> with <span class="extype" name="PDone">PDone</span>
+output.</p>
+    </li><li name="com.spotify.scio.values.SCollection#applyTransform" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="applyTransform[U](transform:com.google.cloud.dataflow.sdk.transforms.PTransform[_&gt;:com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PCollection[U]])(implicitevidence$4:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
+      <a id="applyTransform[U](PTransform[_&gt;:PCollection[T],PCollection[U]])(ClassTag[U]):SCollection[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">applyTransform</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="transform">transform: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.PTransform" class="extype" target="_top">PTransform</a>[_ &gt;: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>], <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.applyTransform.U">U</span>]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.applyTransform.U">U</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.applyTransform.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@applyTransform[U](transform:com.google.cloud.dataflow.sdk.transforms.PTransform[_&gt;:com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PCollection[U]])(implicitevidence$4:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Apply a <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.PTransform" class="extype" target="_top">PTransform</a> and wrap the output
+in an <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>.</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -364,7 +400,7 @@ caching is desired, use <a href="#asListSideInput:com.spotify.scio.values.SideIn
               
         </dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollection#combine" visbl="pub" data-isabs="false" fullComment="yes" group="transform">
-      <a id="combine[C](createCombiner:T=&gt;C)(mergeValue:(C,T)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$8:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[C]"></a>
+      <a id="combine[C](createCombiner:T=&gt;C)(mergeValue:(C,T)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$9:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[C]"></a>
       <a id="combine[C]((T)⇒C)((C,T)⇒C)((C,C)⇒C)(ClassTag[C]):SCollection[C]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -375,7 +411,7 @@ caching is desired, use <a href="#asListSideInput:com.spotify.scio.values.SideIn
         <span class="name">combine</span><span class="tparams">[<span name="C">C</span>]</span><span class="params">(<span name="createCombiner">createCombiner: (<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollection.combine.C">C</span></span>)</span><span class="params">(<span name="mergeValue">mergeValue: (<span class="extype" name="com.spotify.scio.values.SCollection.combine.C">C</span>, <span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollection.combine.C">C</span></span>)</span><span class="params">(<span name="mergeCombiners">mergeCombiners: (<span class="extype" name="com.spotify.scio.values.SCollection.combine.C">C</span>, <span class="extype" name="com.spotify.scio.values.SCollection.combine.C">C</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollection.combine.C">C</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.combine.C">C</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.combine.C">C</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@combine[C](createCombiner:T=&gt;C)(mergeValue:(C,T)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$8:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[C]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@combine[C](createCombiner:T=&gt;C)(mergeValue:(C,T)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$9:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[C]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -384,18 +420,18 @@ an SCollection[T] into a result of type SCollection[C], for a &quot;combined typ
 and C can be different -- for example, one might combine an SCollection of type Int into an
 SCollection of type Seq[Int]. Users provide three functions:</p><p>- <code>createCombiner</code>, which turns a V into a C (e.g., creates a one-element list)</p><p>- <code>mergeValue</code>, to merge a V into a C (e.g., adds it to the end of a list)</p><p>- <code>mergeCombiners</code>, to combine two C's into a single one.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#count" visbl="pub" data-isabs="false" fullComment="yes" group="transform">
-      <a id="count():com.spotify.scio.values.SCollection[Long]"></a>
-      <a id="count():SCollection[Long]"></a>
+      <a id="count:com.spotify.scio.values.SCollection[Long]"></a>
+      <a id="count:SCollection[Long]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">count</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a>]</span>
+        <span class="name">count</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@count():com.spotify.scio.values.SCollection[Long]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@count:com.spotify.scio.values.SCollection[Long]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -437,24 +473,24 @@ SCollection of type Seq[Int]. Users provide three functions:</p><p>- <code>creat
       <p class="shortcomment cmt">Count approximate number of distinct elements in the SCollection.</p><div class="fullcomment"><div class="comment cmt"><p>Count approximate number of distinct elements in the SCollection.</p></div><dl class="paramcmts block"><dt class="param">sampleSize</dt><dd class="cmt"><p>the number of entries in the statisticalsample; the higher this number, the
 more accurate the estimate will be; should be <code>&gt;= 16</code></p></dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollection#countByValue" visbl="pub" data-isabs="false" fullComment="no" group="transform">
-      <a id="countByValue():com.spotify.scio.values.SCollection[(T,Long)]"></a>
-      <a id="countByValue():SCollection[(T,Long)]"></a>
+      <a id="countByValue:com.spotify.scio.values.SCollection[(T,Long)]"></a>
+      <a id="countByValue:SCollection[(T,Long)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">countByValue</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a>)]</span>
+        <span class="name">countByValue</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@countByValue():com.spotify.scio.values.SCollection[(T,Long)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@countByValue:com.spotify.scio.values.SCollection[(T,Long)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Count of each unique value in this SCollection as an SCollection of (value, count) pairs.</p>
     </li><li name="com.spotify.scio.values.SCollection#cross" visbl="pub" data-isabs="false" fullComment="yes" group="hash">
-      <a id="cross[U](that:com.spotify.scio.values.SCollection[U])(implicitevidence$13:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(T,U)]"></a>
+      <a id="cross[U](that:com.spotify.scio.values.SCollection[U])(implicitevidence$14:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(T,U)]"></a>
       <a id="cross[U](SCollection[U])(ClassTag[U]):SCollection[(T,U)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -465,25 +501,25 @@ more accurate the estimate will be; should be <code>&gt;= 16</code></p></dd></dl
         <span class="name">cross</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="that">that: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.cross.U">U</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.cross.U">U</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="com.spotify.scio.values.SCollection.cross.U">U</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@cross[U](that:com.spotify.scio.values.SCollection[U])(implicitevidence$13:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(T,U)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@cross[U](that:com.spotify.scio.values.SCollection[U])(implicitevidence$14:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(T,U)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Return the cross product with another SCollection by replicating <code>that</code> to all workers.</p><div class="fullcomment"><div class="comment cmt"><p>Return the cross product with another SCollection by replicating <code>that</code> to all workers. The
 right side should be tiny and fit in memory.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#distinct" visbl="pub" data-isabs="false" fullComment="no" group="transform">
-      <a id="distinct():com.spotify.scio.values.SCollection[T]"></a>
-      <a id="distinct():SCollection[T]"></a>
+      <a id="distinct:com.spotify.scio.values.SCollection[T]"></a>
+      <a id="distinct:SCollection[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">distinct</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</span>
+        <span class="name">distinct</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@distinct():com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@distinct:com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -563,7 +599,7 @@ right side should be tiny and fit in memory.</p></div></div>
               
         </dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollection#flatMap" visbl="pub" data-isabs="false" fullComment="no" group="transform">
-      <a id="flatMap[U](f:T=&gt;TraversableOnce[U])(implicitevidence$9:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
+      <a id="flatMap[U](f:T=&gt;TraversableOnce[U])(implicitevidence$10:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
       <a id="flatMap[U]((T)⇒TraversableOnce[U])(ClassTag[U]):SCollection[U]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -574,7 +610,7 @@ right side should be tiny and fit in memory.</p></div></div>
         <span class="name">flatMap</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>) ⇒ <span class="extype" name="scala.TraversableOnce">TraversableOnce</span>[<span class="extype" name="com.spotify.scio.values.SCollection.flatMap.U">U</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.flatMap.U">U</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.flatMap.U">U</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@flatMap[U](f:T=&gt;TraversableOnce[U])(implicitevidence$9:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@flatMap[U](f:T=&gt;TraversableOnce[U])(implicitevidence$10:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -636,7 +672,7 @@ allocation; however, it should not modify t2.</p></div></div>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollection#groupBy" visbl="pub" data-isabs="false" fullComment="yes" group="transform">
-      <a id="groupBy[K](f:T=&gt;K)(implicitevidence$10:scala.reflect.ClassTag[K]):com.spotify.scio.values.SCollection[(K,Iterable[T])]"></a>
+      <a id="groupBy[K](f:T=&gt;K)(implicitevidence$11:scala.reflect.ClassTag[K]):com.spotify.scio.values.SCollection[(K,Iterable[T])]"></a>
       <a id="groupBy[K]((T)⇒K)(ClassTag[K]):SCollection[(K,Iterable[T])]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -647,7 +683,7 @@ allocation; however, it should not modify t2.</p></div></div>
         <span class="name">groupBy</span><span class="tparams">[<span name="K">K</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollection.groupBy.K">K</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.groupBy.K">K</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollection.groupBy.K">K</span>, <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>])]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@groupBy[K](f:T=&gt;K)(implicitevidence$10:scala.reflect.ClassTag[K]):com.spotify.scio.values.SCollection[(K,Iterable[T])]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@groupBy[K](f:T=&gt;K)(implicitevidence$11:scala.reflect.ClassTag[K]):com.spotify.scio.values.SCollection[(K,Iterable[T])]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -675,7 +711,7 @@ aggregation (such as a sum or average) over each key, using
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollection#hashLookup" visbl="pub" data-isabs="false" fullComment="yes" group="hash">
-      <a id="hashLookup[V](that:com.spotify.scio.values.SCollection[(T,V)])(implicitevidence$14:scala.reflect.ClassTag[V]):com.spotify.scio.values.SCollection[(T,Iterable[V])]"></a>
+      <a id="hashLookup[V](that:com.spotify.scio.values.SCollection[(T,V)])(implicitevidence$15:scala.reflect.ClassTag[V]):com.spotify.scio.values.SCollection[(T,Iterable[V])]"></a>
       <a id="hashLookup[V](SCollection[(T,V)])(ClassTag[V]):SCollection[(T,Iterable[V])]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -686,7 +722,7 @@ aggregation (such as a sum or average) over each key, using
         <span class="name">hashLookup</span><span class="tparams">[<span name="V">V</span>]</span><span class="params">(<span name="that">that: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="com.spotify.scio.values.SCollection.hashLookup.V">V</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.hashLookup.V">V</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.SCollection.hashLookup.V">V</span>])]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@hashLookup[V](that:com.spotify.scio.values.SCollection[(T,V)])(implicitevidence$14:scala.reflect.ClassTag[V]):com.spotify.scio.values.SCollection[(T,Iterable[V])]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@hashLookup[V](that:com.spotify.scio.values.SCollection[(T,V)])(implicitevidence$15:scala.reflect.ClassTag[V]):com.spotify.scio.values.SCollection[(T,Iterable[V])]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -729,7 +765,7 @@ duplicate elements, even if the input SCollections did.</p><p>Note that this met
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollection#keyBy" visbl="pub" data-isabs="false" fullComment="no" group="transform">
-      <a id="keyBy[K](f:T=&gt;K)(implicitevidence$11:scala.reflect.ClassTag[K]):com.spotify.scio.values.SCollection[(K,T)]"></a>
+      <a id="keyBy[K](f:T=&gt;K)(implicitevidence$12:scala.reflect.ClassTag[K]):com.spotify.scio.values.SCollection[(K,T)]"></a>
       <a id="keyBy[K]((T)⇒K)(ClassTag[K]):SCollection[(K,T)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -740,13 +776,13 @@ duplicate elements, even if the input SCollections did.</p><p>Note that this met
         <span class="name">keyBy</span><span class="tparams">[<span name="K">K</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollection.keyBy.K">K</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.keyBy.K">K</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollection.keyBy.K">K</span>, <span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@keyBy[K](f:T=&gt;K)(implicitevidence$11:scala.reflect.ClassTag[K]):com.spotify.scio.values.SCollection[(K,T)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@keyBy[K](f:T=&gt;K)(implicitevidence$12:scala.reflect.ClassTag[K]):com.spotify.scio.values.SCollection[(K,T)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Create tuples of the elements in this SCollection by applying <code>f</code>.</p>
     </li><li name="com.spotify.scio.values.SCollection#map" visbl="pub" data-isabs="false" fullComment="no" group="transform">
-      <a id="map[U](f:T=&gt;U)(implicitevidence$12:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
+      <a id="map[U](f:T=&gt;U)(implicitevidence$13:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
       <a id="map[U]((T)⇒U)(ClassTag[U]):SCollection[U]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -757,7 +793,7 @@ duplicate elements, even if the input SCollections did.</p><p>Note that this met
         <span class="name">map</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollection.map.U">U</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.map.U">U</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.map.U">U</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@map[U](f:T=&gt;U)(implicitevidence$12:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@map[U](f:T=&gt;U)(implicitevidence$13:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1579,6 +1615,23 @@ combine parts of the data to reduce load on the final global combine step.</p></
       </a>
     </span>
       <p class="shortcomment cmt">Group values in to a single global window.</p>
+    </li><li name="com.spotify.scio.values.SCollection#withPaneInfo" visbl="pub" data-isabs="false" fullComment="no" group="window">
+      <a id="withPaneInfo:com.spotify.scio.values.SCollection[(T,com.google.cloud.dataflow.sdk.transforms.windowing.PaneInfo)]"></a>
+      <a id="withPaneInfo:SCollection[(T,PaneInfo)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withPaneInfo</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.PaneInfo" class="extype" target="_top">PaneInfo</a>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@withPaneInfo:com.spotify.scio.values.SCollection[(T,com.google.cloud.dataflow.sdk.transforms.windowing.PaneInfo)]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Convert values into pairs of (value, window).</p>
     </li><li name="com.spotify.scio.values.SCollection#withSessionWindows" visbl="pub" data-isabs="false" fullComment="no" group="window">
       <a id="withSessionWindows(gapDuration:org.joda.time.Duration,options:com.spotify.scio.values.WindowOptions[com.google.cloud.dataflow.sdk.transforms.windowing.IntervalWindow]):com.spotify.scio.values.SCollection[T]"></a>
       <a id="withSessionWindows(Duration,WindowOptions[IntervalWindow]):SCollection[T]"></a>
@@ -1678,22 +1731,39 @@ p.withSideOutputs(side1, side2).map { (x, s) <span class="kw">=&gt;</span>
     </span>
       <p class="shortcomment cmt">Window values into sliding windows.</p>
     </li><li name="com.spotify.scio.values.SCollection#withTimestamp" visbl="pub" data-isabs="false" fullComment="no" group="window">
-      <a id="withTimestamp():com.spotify.scio.values.SCollection[(T,org.joda.time.Instant)]"></a>
-      <a id="withTimestamp():SCollection[(T,Instant)]"></a>
+      <a id="withTimestamp:com.spotify.scio.values.SCollection[(T,org.joda.time.Instant)]"></a>
+      <a id="withTimestamp:SCollection[(T,Instant)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">withTimestamp</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="org.joda.time.Instant">Instant</span>)]</span>
+        <span class="name">withTimestamp</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="org.joda.time.Instant">Instant</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@withTimestamp():com.spotify.scio.values.SCollection[(T,org.joda.time.Instant)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@withTimestamp:com.spotify.scio.values.SCollection[(T,org.joda.time.Instant)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Convert values into pairs of (value, timestamp).</p>
+    </li><li name="com.spotify.scio.values.SCollection#withWindow" visbl="pub" data-isabs="false" fullComment="no" group="window">
+      <a id="withWindow:com.spotify.scio.values.SCollection[(T,com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow)]"></a>
+      <a id="withWindow:SCollection[(T,BoundedWindow)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withWindow</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@withWindow:com.spotify.scio.values.SCollection[(T,com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow)]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Convert values into pairs of (value, window).</p>
     </li><li name="com.spotify.scio.values.SCollection#withWindowFn" visbl="pub" data-isabs="false" fullComment="no" group="window">
       <a id="withWindowFn[W&lt;:com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow](fn:com.google.cloud.dataflow.sdk.transforms.windowing.WindowFn[AnyRef,W],options:com.spotify.scio.values.WindowOptions[W]):com.spotify.scio.values.SCollection[T]"></a>
       <a id="withWindowFn[W&lt;:BoundedWindow](WindowFn[AnyRef,W],WindowOptions[W]):SCollection[T]"></a>

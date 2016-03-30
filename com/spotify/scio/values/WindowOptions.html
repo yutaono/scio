@@ -45,7 +45,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">WindowOptions</span><span class="tparams">[<span name="W">W &lt;: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>]</span><span class="params">(<span name="allowedLateness">allowedLateness: <a href="http://www.joda.org/joda-time/apidocs/index.html#org.joda.time.Duration" class="extype" target="_top">Duration</a> = <span class="symbol">null</span></span>, <span name="trigger">trigger: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.Trigger" class="extype" target="_top">Trigger</a>[<span class="extype" name="com.spotify.scio.values.WindowOptions.W">W</span>] = <span class="symbol">null</span></span>, <span name="accumulationMode">accumulationMode: <span class="extype" name="com.google.cloud.dataflow.sdk.util.WindowingStrategy.AccumulationMode">AccumulationMode</span> = <span class="symbol">null</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">WindowOptions</span><span class="tparams">[<span name="W">W &lt;: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>]</span><span class="params">(<span name="trigger">trigger: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.TriggerBuilder" class="extype" target="_top">TriggerBuilder</a>[<span class="extype" name="com.spotify.scio.values.WindowOptions.W">W</span>] = <span class="symbol">null</span></span>, <span name="accumulationMode">accumulationMode: <span class="extype" name="com.google.cloud.dataflow.sdk.util.WindowingStrategy.AccumulationMode">AccumulationMode</span> = <span class="symbol">null</span></span>, <span name="allowedLateness">allowedLateness: <a href="http://www.joda.org/joda-time/apidocs/index.html#org.joda.time.Duration" class="extype" target="_top">Duration</a> = <span class="symbol">null</span></span>, <span name="closingBehavior">closingBehavior: <span class="extype" name="com.google.cloud.dataflow.sdk.transforms.windowing.Window.ClosingBehavior">ClosingBehavior</span> = <span class="symbol">null</span></span>, <span name="outputTimeFn">outputTimeFn: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.OutputTimeFn" class="extype" target="_top">OutputTimeFn</a>[<a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a>] = <span class="symbol">null</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
@@ -89,7 +89,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="com.spotify.scio.values.WindowOptions#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(allowedLateness:org.joda.time.Duration,trigger:com.google.cloud.dataflow.sdk.transforms.windowing.Trigger[W],accumulationMode:com.google.cloud.dataflow.sdk.util.WindowingStrategy.AccumulationMode):com.spotify.scio.values.WindowOptions[W]"></a>
+      <a id="&lt;init&gt;(trigger:com.google.cloud.dataflow.sdk.transforms.windowing.TriggerBuilder[W],accumulationMode:com.google.cloud.dataflow.sdk.util.WindowingStrategy.AccumulationMode,allowedLateness:org.joda.time.Duration,closingBehavior:com.google.cloud.dataflow.sdk.transforms.windowing.Window.ClosingBehavior,outputTimeFn:com.google.cloud.dataflow.sdk.transforms.windowing.OutputTimeFn[com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow]):com.spotify.scio.values.WindowOptions[W]"></a>
       <a id="&lt;init&gt;:WindowOptions[W]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -97,10 +97,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">WindowOptions</span><span class="params">(<span name="allowedLateness">allowedLateness: <a href="http://www.joda.org/joda-time/apidocs/index.html#org.joda.time.Duration" class="extype" target="_top">Duration</a> = <span class="symbol">null</span></span>, <span name="trigger">trigger: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.Trigger" class="extype" target="_top">Trigger</a>[<span class="extype" name="com.spotify.scio.values.WindowOptions.W">W</span>] = <span class="symbol">null</span></span>, <span name="accumulationMode">accumulationMode: <span class="extype" name="com.google.cloud.dataflow.sdk.util.WindowingStrategy.AccumulationMode">AccumulationMode</span> = <span class="symbol">null</span></span>)</span>
+        <span class="name">WindowOptions</span><span class="params">(<span name="trigger">trigger: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.TriggerBuilder" class="extype" target="_top">TriggerBuilder</a>[<span class="extype" name="com.spotify.scio.values.WindowOptions.W">W</span>] = <span class="symbol">null</span></span>, <span name="accumulationMode">accumulationMode: <span class="extype" name="com.google.cloud.dataflow.sdk.util.WindowingStrategy.AccumulationMode">AccumulationMode</span> = <span class="symbol">null</span></span>, <span name="allowedLateness">allowedLateness: <a href="http://www.joda.org/joda-time/apidocs/index.html#org.joda.time.Duration" class="extype" target="_top">Duration</a> = <span class="symbol">null</span></span>, <span name="closingBehavior">closingBehavior: <span class="extype" name="com.google.cloud.dataflow.sdk.transforms.windowing.Window.ClosingBehavior">ClosingBehavior</span> = <span class="symbol">null</span></span>, <span name="outputTimeFn">outputTimeFn: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.OutputTimeFn" class="extype" target="_top">OutputTimeFn</a>[<a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a>] = <span class="symbol">null</span></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.WindowOptions@&lt;init&gt;(allowedLateness:org.joda.time.Duration,trigger:com.google.cloud.dataflow.sdk.transforms.windowing.Trigger[W],accumulationMode:com.google.cloud.dataflow.sdk.util.WindowingStrategy.AccumulationMode):com.spotify.scio.values.WindowOptions[W]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.WindowOptions@&lt;init&gt;(trigger:com.google.cloud.dataflow.sdk.transforms.windowing.TriggerBuilder[W],accumulationMode:com.google.cloud.dataflow.sdk.util.WindowingStrategy.AccumulationMode,allowedLateness:org.joda.time.Duration,closingBehavior:com.google.cloud.dataflow.sdk.transforms.windowing.Window.ClosingBehavior,outputTimeFn:com.google.cloud.dataflow.sdk.transforms.windowing.OutputTimeFn[com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow]):com.spotify.scio.values.WindowOptions[W]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -239,6 +239,23 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.spotify.scio.values.WindowOptions#closingBehavior" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="closingBehavior:com.google.cloud.dataflow.sdk.transforms.windowing.Window.ClosingBehavior"></a>
+      <a id="closingBehavior:ClosingBehavior"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">closingBehavior</span><span class="result">: <span class="extype" name="com.google.cloud.dataflow.sdk.transforms.windowing.Window.ClosingBehavior">ClosingBehavior</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.WindowOptions@closingBehavior:com.google.cloud.dataflow.sdk.transforms.windowing.Window.ClosingBehavior" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -364,6 +381,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="com.spotify.scio.values.WindowOptions#outputTimeFn" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="outputTimeFn:com.google.cloud.dataflow.sdk.transforms.windowing.OutputTimeFn[com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow]"></a>
+      <a id="outputTimeFn:OutputTimeFn[BoundedWindow]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">outputTimeFn</span><span class="result">: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.OutputTimeFn" class="extype" target="_top">OutputTimeFn</a>[<a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.WindowOptions@outputTimeFn:com.google.cloud.dataflow.sdk.transforms.windowing.OutputTimeFn[com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -382,18 +416,18 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="com.spotify.scio.values.WindowOptions#trigger" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="trigger:com.google.cloud.dataflow.sdk.transforms.windowing.Trigger[W]"></a>
-      <a id="trigger:Trigger[W]"></a>
+      <a id="trigger:com.google.cloud.dataflow.sdk.transforms.windowing.TriggerBuilder[W]"></a>
+      <a id="trigger:TriggerBuilder[W]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">trigger</span><span class="result">: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.Trigger" class="extype" target="_top">Trigger</a>[<span class="extype" name="com.spotify.scio.values.WindowOptions.W">W</span>]</span>
+        <span class="name">trigger</span><span class="result">: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.TriggerBuilder" class="extype" target="_top">TriggerBuilder</a>[<span class="extype" name="com.spotify.scio.values.WindowOptions.W">W</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.WindowOptions@trigger:com.google.cloud.dataflow.sdk.transforms.windowing.Trigger[W]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.WindowOptions@trigger:com.google.cloud.dataflow.sdk.transforms.windowing.TriggerBuilder[W]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
