@@ -221,18 +221,18 @@ in an <span class="extype" name="SCollection">SCollection</span>.</p>
     </span>
       <p class="shortcomment cmt">Get an SCollection for an Avro file.</p>
     </li><li name="com.spotify.scio.ScioContext#bigQuerySelect" visbl="pub" data-isabs="false" fullComment="no" group="input">
-      <a id="bigQuerySelect(sqlQuery:String):com.spotify.scio.values.SCollection[com.spotify.scio.bigquery.TableRow]"></a>
-      <a id="bigQuerySelect(String):SCollection[TableRow]"></a>
+      <a id="bigQuerySelect(sqlQuery:String,flattenResults:Boolean):com.spotify.scio.values.SCollection[com.spotify.scio.bigquery.TableRow]"></a>
+      <a id="bigQuerySelect(String,Boolean):SCollection[TableRow]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">bigQuerySelect</span><span class="params">(<span name="sqlQuery">sqlQuery: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<a href="bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]</span>
+        <span class="name">bigQuerySelect</span><span class="params">(<span name="sqlQuery">sqlQuery: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="flattenResults">flattenResults: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<a href="bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.ScioContext@bigQuerySelect(sqlQuery:String):com.spotify.scio.values.SCollection[com.spotify.scio.bigquery.TableRow]" title="Permalink" target="_top">
+      <a href="../../../index.html#com.spotify.scio.ScioContext@bigQuerySelect(sqlQuery:String,flattenResults:Boolean):com.spotify.scio.values.SCollection[com.spotify.scio.bigquery.TableRow]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -272,18 +272,18 @@ in an <span class="extype" name="SCollection">SCollection</span>.</p>
     </span>
       <p class="shortcomment cmt">Get an SCollection for a BigQuery table.</p>
     </li><li name="com.spotify.scio.ScioContext#bigtable" visbl="pub" data-isabs="false" fullComment="no" group="input">
-      <a id="bigtable(tableId:String,bigtableOptions:com.google.cloud.bigtable.config.BigtableOptions):com.spotify.scio.values.SCollection[com.google.bigtable.v1.Row]"></a>
-      <a id="bigtable(String,BigtableOptions):SCollection[Row]"></a>
+      <a id="bigtable(tableId:String,bigtableOptions:com.google.cloud.bigtable.config.BigtableOptions,rowFilter:com.google.bigtable.v1.RowFilter):com.spotify.scio.values.SCollection[com.google.bigtable.v1.Row]"></a>
+      <a id="bigtable(String,BigtableOptions,RowFilter):SCollection[Row]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">bigtable</span><span class="params">(<span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="bigtableOptions">bigtableOptions: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.bigtable.config.BigtableOptions" class="extype" target="_top">BigtableOptions</a></span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.google.bigtable.v1.Row">Row</span>]</span>
+        <span class="name">bigtable</span><span class="params">(<span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="bigtableOptions">bigtableOptions: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.bigtable.config.BigtableOptions" class="extype" target="_top">BigtableOptions</a></span>, <span name="rowFilter">rowFilter: <span class="extype" name="com.google.bigtable.v1.RowFilter">RowFilter</span> = <span class="symbol">null</span></span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.google.bigtable.v1.Row">Row</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.ScioContext@bigtable(tableId:String,bigtableOptions:com.google.cloud.bigtable.config.BigtableOptions):com.spotify.scio.values.SCollection[com.google.bigtable.v1.Row]" title="Permalink" target="_top">
+      <a href="../../../index.html#com.spotify.scio.ScioContext@bigtable(tableId:String,bigtableOptions:com.google.cloud.bigtable.config.BigtableOptions,rowFilter:com.google.bigtable.v1.RowFilter):com.spotify.scio.values.SCollection[com.google.bigtable.v1.Row]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>

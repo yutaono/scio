@@ -432,7 +432,7 @@
       </a>
     </span>
       <p class="shortcomment cmt">Get a typed SCollection for a BigQuery SELECT query or table.</p><div class="fullcomment"><div class="comment cmt"><p>Get a typed SCollection for a BigQuery SELECT query or table.</p><p>Note that <code>T</code> must be annotated with <a href="../bigquery/types/BigQueryType$$fromSchema.html" class="extype" name="com.spotify.scio.bigquery.types.BigQueryType.fromSchema">BigQueryType.fromSchema</a>,
-<a href="../bigquery/types/BigQueryType$$fromTable.html" class="extype" name="com.spotify.scio.bigquery.types.BigQueryType.fromTable">BigQueryType.fromTable</a>, or <a href="../bigquery/types/BigQueryType$$fromQuery.html" class="extype" name="com.spotify.scio.bigquery.types.BigQueryType.fromQuery">BigQueryType.fromQuery</a>.</p><p>By default the source (table or query) specified in the annotation will be used, but it can
+<a href="../bigquery/types/BigQueryType$$fromTable.html" class="extype" name="com.spotify.scio.bigquery.types.BigQueryType.fromTable">BigQueryType.fromTable</a>, <a href="../bigquery/types/BigQueryType$$fromQuery.html" class="extype" name="com.spotify.scio.bigquery.types.BigQueryType.fromQuery">BigQueryType.fromQuery</a>, or <a href="../bigquery/types/BigQueryType$$toTable.html" class="extype" name="com.spotify.scio.bigquery.types.BigQueryType.toTable">BigQueryType.toTable</a>.</p><p>By default the source (table or query) specified in the annotation will be used, but it can
 be overridden with the <code>newSource</code> parameter. For example:</p><pre>@BigQueryType.fromTable(<span class="lit">"publicdata:samples.gsod"</span>)
 <span class="kw">class</span> Row
 
@@ -440,7 +440,10 @@ be overridden with the <code>newSource</code> parameter. For example:</p><pre>@B
 sc.typedBigQuery[Row]()
 
 <span class="cmt">// Read from [myproject:samples.gsod] instead.</span>
-sc.typedBigQuery[Row](<span class="lit">"myproject:samples.gsod"</span>)</pre></div></div>
+sc.typedBigQuery[Row](<span class="lit">"myproject:samples.gsod"</span>)
+
+<span class="cmt">// Read from a query instead.</span>
+sc.typedBigQuery[Row](<span class="lit">"SELECT * FROM [publicdata:samples.gsod] LIMIT 1000"</span>)</pre></div></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>

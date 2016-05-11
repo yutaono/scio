@@ -88,7 +88,27 @@
 
       <div id="template">
         <div id="allMembers">
-        
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="com.spotify.scio.bigquery.BigQueryClient#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(projectId:String,secretFile:java.io.File):com.spotify.scio.bigquery.BigQueryClient"></a>
+      <a id="&lt;init&gt;:BigQueryClient"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BigQueryClient</span><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="secretFile">secretFile: <span class="extype" name="java.io.File">File</span></span>)</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient@&lt;init&gt;(projectId:String,secretFile:java.io.File):com.spotify.scio.bigquery.BigQueryClient" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
 
         
 
@@ -262,18 +282,18 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.spotify.scio.bigquery.BigQueryClient#getQueryRows" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getQueryRows(sqlQuery:String):Iterator[com.spotify.scio.bigquery.TableRow]"></a>
-      <a id="getQueryRows(String):Iterator[TableRow]"></a>
+      <a id="getQueryRows(sqlQuery:String,flattenResults:Boolean):Iterator[com.spotify.scio.bigquery.TableRow]"></a>
+      <a id="getQueryRows(String,Boolean):Iterator[TableRow]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getQueryRows</span><span class="params">(<span name="sqlQuery">sqlQuery: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Iterator">Iterator</span>[<a href="package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]</span>
+        <span class="name">getQueryRows</span><span class="params">(<span name="sqlQuery">sqlQuery: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="flattenResults">flattenResults: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>)</span><span class="result">: <span class="extype" name="scala.Iterator">Iterator</span>[<a href="package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient@getQueryRows(sqlQuery:String):Iterator[com.spotify.scio.bigquery.TableRow]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient@getQueryRows(sqlQuery:String,flattenResults:Boolean):Iterator[com.spotify.scio.bigquery.TableRow]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -448,23 +468,25 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="com.spotify.scio.bigquery.BigQueryClient#queryIntoTable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="queryIntoTable(sqlQuery:String):com.spotify.scio.bigquery.QueryJob"></a>
-      <a id="queryIntoTable(String):QueryJob"></a>
+    </li><li name="com.spotify.scio.bigquery.BigQueryClient#query" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="query(sqlQuery:String,destinationTable:String,flattenResults:Boolean):com.google.api.services.bigquery.model.TableReference"></a>
+      <a id="query(String,String,Boolean):TableReference"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">queryIntoTable</span><span class="params">(<span name="sqlQuery">sqlQuery: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="QueryJob.html" class="extype" name="com.spotify.scio.bigquery.QueryJob">QueryJob</a></span>
+        <span class="name">query</span><span class="params">(<span name="sqlQuery">sqlQuery: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="destinationTable">destinationTable: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="flattenResults">flattenResults: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>)</span><span class="result">: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableReference" class="extype" target="_top">TableReference</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient@queryIntoTable(sqlQuery:String):com.spotify.scio.bigquery.QueryJob" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient@query(sqlQuery:String,destinationTable:String,flattenResults:Boolean):com.google.api.services.bigquery.model.TableReference" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Execute a query and save results into a temporary table.</p>
+      <p class="shortcomment cmt">Make a query and save results to a destination table.</p><div class="fullcomment"><div class="comment cmt"><p>Make a query and save results to a destination table.</p><p>A temporary table will be created if <code>destinationTable</code> is <code>null</code> and a cached table will be
+returned instead if one exists.
+</p></div></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -577,7 +599,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">waitForJobs</span><span class="params">(<span name="jobs">jobs: <a href="QueryJob.html" class="extype" name="com.spotify.scio.bigquery.QueryJob">QueryJob</a>*</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">waitForJobs</span><span class="params">(<span name="jobs">jobs: <span class="extype" name="com.spotify.scio.bigquery.QueryJob">QueryJob</span>*</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient@waitForJobs(jobs:com.spotify.scio.bigquery.QueryJob*):Unit" title="Permalink" target="_top">

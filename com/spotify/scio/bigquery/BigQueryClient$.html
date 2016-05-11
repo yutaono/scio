@@ -181,6 +181,25 @@
       </a>
     </span>
       <p class="shortcomment cmt">System property key for local schema cache directory.</p>
+    </li><li name="com.spotify.scio.bigquery.BigQueryClient#CONNECT_TIMEOUT_MS_KEY" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CONNECT_TIMEOUT_MS_KEY:String"></a>
+      <a id="CONNECT_TIMEOUT_MS_KEY:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CONNECT_TIMEOUT_MS_KEY</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient$@CONNECT_TIMEOUT_MS_KEY:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">System property key for timeout in milliseconds to establish a connection.</p><div class="fullcomment"><div class="comment cmt"><p>System property key for timeout in milliseconds to establish a connection.
+Default is 20000 (20 seconds). 0 for an infinite timeout.
+</p></div></div>
     </li><li name="com.spotify.scio.bigquery.BigQueryClient#PROJECT_KEY" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="PROJECT_KEY:String"></a>
       <a id="PROJECT_KEY:String"></a>
@@ -198,6 +217,25 @@
       </a>
     </span>
       <p class="shortcomment cmt">System property key for billing project.</p>
+    </li><li name="com.spotify.scio.bigquery.BigQueryClient#READ_TIMEOUT_MS_KEY" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="READ_TIMEOUT_MS_KEY:String"></a>
+      <a id="READ_TIMEOUT_MS_KEY:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">READ_TIMEOUT_MS_KEY</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient$@READ_TIMEOUT_MS_KEY:String" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">System property key for timeout in milliseconds to read data from an established connection.</p><div class="fullcomment"><div class="comment cmt"><p>System property key for timeout in milliseconds to read data from an established connection.
+Default is 20000 (20 seconds). 0 for an infinite timeout.
+</p></div></div>
     </li><li name="com.spotify.scio.bigquery.BigQueryClient#SECRET_KEY" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="SECRET_KEY:String"></a>
       <a id="SECRET_KEY:String"></a>
@@ -318,18 +356,18 @@
     </span>
       <p class="shortcomment cmt">Table expiration in milliseconds for staging dataset.</p>
     </li><li name="com.spotify.scio.bigquery.BigQueryClient#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply(project:String,secret:String):com.spotify.scio.bigquery.BigQueryClient"></a>
-      <a id="apply(String,String):BigQueryClient"></a>
+      <a id="apply(project:String,secretFile:java.io.File):com.spotify.scio.bigquery.BigQueryClient"></a>
+      <a id="apply(String,File):BigQueryClient"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="project">project: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="secret">secret: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="BigQueryClient.html" class="extype" name="com.spotify.scio.bigquery.BigQueryClient">BigQueryClient</a></span>
+        <span class="name">apply</span><span class="params">(<span name="project">project: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="secretFile">secretFile: <span class="extype" name="java.io.File">File</span></span>)</span><span class="result">: <a href="BigQueryClient.html" class="extype" name="com.spotify.scio.bigquery.BigQueryClient">BigQueryClient</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient$@apply(project:String,secret:String):com.spotify.scio.bigquery.BigQueryClient" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient$@apply(project:String,secretFile:java.io.File):com.spotify.scio.bigquery.BigQueryClient" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -368,26 +406,6 @@
       </a>
     </span>
       <p class="shortcomment cmt">Create a new BigQueryClient instance with the given project.</p>
-    </li><li name="com.spotify.scio.bigquery.BigQueryClient#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply():com.spotify.scio.bigquery.BigQueryClient"></a>
-      <a id="apply():BigQueryClient"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">apply</span><span class="params">()</span><span class="result">: <a href="BigQueryClient.html" class="extype" name="com.spotify.scio.bigquery.BigQueryClient">BigQueryClient</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.BigQueryClient$@apply():com.spotify.scio.bigquery.BigQueryClient" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Create a new BigQueryClient instance.</p><div class="fullcomment"><div class="comment cmt"><p>Create a new BigQueryClient instance.</p><p>Project must be set via <code>bigquery.project</code> system property.
-An optional JSON secret file can be set via <code>bigquery.secret</code>.
-For example, by adding the following code at the beginning of a job:</p><pre>sys.props(<span class="lit">"bigquery.project"</span>) = <span class="lit">"my-project"</span>
-sys.props(<span class="lit">"bigquery.secret"</span>) = <span class="lit">"/path/to/secret.json"</span></pre><p>Or by passing them as SBT command line arguments:</p><pre>sbt -Dbigquery.project=my-project -Dbigquery.secret=/path/to/secret.json</pre></div></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -428,7 +446,7 @@ sys.props(<span class="lit">"bigquery.secret"</span>) = <span class="lit">"/path
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.spotify.scio.bigquery.BigQueryClient#defaultInstance" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.spotify.scio.bigquery.BigQueryClient#defaultInstance" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="defaultInstance():com.spotify.scio.bigquery.BigQueryClient"></a>
       <a id="defaultInstance():BigQueryClient"></a>
       <h4 class="signature">
@@ -444,7 +462,10 @@ sys.props(<span class="lit">"bigquery.secret"</span>) = <span class="lit">"/path
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Get the default BigQueryClient instance.</p>
+      <p class="shortcomment cmt">Get the default BigQueryClient instance.</p><div class="fullcomment"><div class="comment cmt"><p>Get the default BigQueryClient instance.</p><p>Project must be set via <code>bigquery.project</code> system property.
+An optional JSON secret file can be set via <code>bigquery.secret</code>.
+For example, by adding the following code at the beginning of a job:</p><pre>sys.props(<span class="lit">"bigquery.project"</span>) = <span class="lit">"my-project"</span>
+sys.props(<span class="lit">"bigquery.secret"</span>) = <span class="lit">"/path/to/secret.json"</span></pre><p>Or by passing them as SBT command line arguments:</p><pre>sbt -Dbigquery.project=my-project -Dbigquery.secret=/path/to/secret.json</pre></div></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>

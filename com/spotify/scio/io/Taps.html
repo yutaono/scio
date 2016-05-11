@@ -92,31 +92,10 @@
 
         
 
-        <div id="values" class="values members">
-              <h3>Abstract Value Members</h3>
-              <ol><li name="com.spotify.scio.io.Taps#mkTap" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="mkTap[T](name:String,readyFn:()=&gt;Boolean,tapFn:()=&gt;com.spotify.scio.io.Tap[T]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
-      <a id="mkTap[T](String,()⇒Boolean,()⇒Tap[T]):Future[Tap[T]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">mkTap</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="readyFn">readyFn: () ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="tapFn">tapFn: () ⇒ <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.Taps.mkTap.T">T</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.Taps.mkTap.T">T</span>]]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Taps@mkTap[T](name:String,readyFn:()=&gt;Boolean,tapFn:()=&gt;com.spotify.scio.io.Tap[T]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Make a tap, to be implemented by concrete classes.</p><div class="fullcomment"><div class="comment cmt"><p>Make a tap, to be implemented by concrete classes.
-</p></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>unique name of the tap</p></dd><dt class="param">readyFn</dt><dd class="cmt"><p>function to check if the tap is ready</p></dd><dt class="param">tapFn</dt><dd class="cmt"><p>function to create the tap</p></dd></dl><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
-    </li></ol>
-            </div>
+        
 
         <div id="values" class="values members">
-              <h3>Concrete Value Members</h3>
+              <h3>Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
@@ -203,18 +182,18 @@
     </span>
       <p class="shortcomment cmt">Get a <code>Future[Tap[T]]</code> for an Avro file.</p>
     </li><li name="com.spotify.scio.io.Taps#bigQuerySelect" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="bigQuerySelect(sqlQuery:String):scala.concurrent.Future[com.spotify.scio.io.Tap[com.spotify.scio.bigquery.TableRow]]"></a>
-      <a id="bigQuerySelect(String):Future[Tap[TableRow]]"></a>
+      <a id="bigQuerySelect(sqlQuery:String,flattenResults:Boolean):scala.concurrent.Future[com.spotify.scio.io.Tap[com.spotify.scio.bigquery.TableRow]]"></a>
+      <a id="bigQuerySelect(String,Boolean):Future[Tap[TableRow]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">bigQuerySelect</span><span class="params">(<span name="sqlQuery">sqlQuery: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<a href="../bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]]</span>
+        <span class="name">bigQuerySelect</span><span class="params">(<span name="sqlQuery">sqlQuery: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="flattenResults">flattenResults: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<a href="../bigquery/package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Taps@bigQuerySelect(sqlQuery:String):scala.concurrent.Future[com.spotify.scio.io.Tap[com.spotify.scio.bigquery.TableRow]]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.io.Taps@bigQuerySelect(sqlQuery:String,flattenResults:Boolean):scala.concurrent.Future[com.spotify.scio.io.Tap[com.spotify.scio.bigquery.TableRow]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
