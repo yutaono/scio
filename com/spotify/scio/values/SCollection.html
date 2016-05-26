@@ -691,7 +691,7 @@ allocation; however, it should not modify t2.</p></div></div>
 elements mapping to that key. The ordering of elements within each group is not guaranteed,
 and may even differ each time the resulting SCollection is evaluated.</p><p>Note: This operation may be very expensive. If you are grouping in order to perform an
 aggregation (such as a sum or average) over each key, using
-<a href="PairSCollectionFunctions.html#aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$19:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#aggregateByKey">PairSCollectionFunctions.aggregateByKey</a> or
+<a href="PairSCollectionFunctions.html#aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$23:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#aggregateByKey">PairSCollectionFunctions.aggregateByKey</a> or
 <a href="PairSCollectionFunctions.html#reduceByKey(op:(V,V)=&gt;V):com.spotify.scio.values.SCollection[(K,V)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#reduceByKey">PairSCollectionFunctions.reduceByKey</a> will provide much better performance.</p></div></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
@@ -1094,26 +1094,6 @@ samples</p></dd></dl></div>
       </a>
     </span>
       <p class="shortcomment cmt">Save this SCollection as a BigQuery table.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a BigQuery table. Note that elements must be of type TableRow.</p></div></div>
-    </li><li name="com.spotify.scio.values.SCollection#saveAsBigtable" visbl="pub" data-isabs="false" fullComment="yes" group="output">
-      <a id="saveAsBigtable(tableId:String,bigtableOptions:com.google.cloud.bigtable.config.BigtableOptions)(implicitev:&lt;:&lt;[T,(com.google.protobuf.ByteString,Iterable[com.google.bigtable.v1.Mutation])]):scala.concurrent.Future[com.spotify.scio.io.Tap[(com.google.protobuf.ByteString,Iterable[com.google.bigtable.v1.Mutation])]]"></a>
-      <a id="saveAsBigtable(String,BigtableOptions)(&lt;:&lt;[T,(ByteString,Iterable[Mutation])]):Future[Tap[(ByteString,Iterable[Mutation])]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">saveAsBigtable</span><span class="params">(<span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="bigtableOptions">bigtableOptions: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.bigtable.config.BigtableOptions" class="extype" target="_top">BigtableOptions</a></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, (<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>, <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.google.bigtable.v1.Mutation">Mutation</span>])]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[(<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>, <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.google.bigtable.v1.Mutation">Mutation</span>])]]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsBigtable(tableId:String,bigtableOptions:com.google.cloud.bigtable.config.BigtableOptions)(implicitev:&lt;:&lt;[T,(com.google.protobuf.ByteString,Iterable[com.google.bigtable.v1.Mutation])]):scala.concurrent.Future[com.spotify.scio.io.Tap[(com.google.protobuf.ByteString,Iterable[com.google.bigtable.v1.Mutation])]]" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Save this SCollection as a Bigtable table.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a Bigtable table.</p><p>Note that elements must be of type (ByteString, Iterable[Mutation]), , where the <span class="extype" name="ByteString">ByteString</span>
-is the key of the row being mutated, and each <span class="extype" name="Mutation">Mutation</span> represents an idempotent
-transformation to that row.
-</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#saveAsDatastore" visbl="pub" data-isabs="false" fullComment="yes" group="output">
       <a id="saveAsDatastore(datasetId:String)(implicitev:&lt;:&lt;[T,com.google.api.services.datastore.DatastoreV1.Entity]):scala.concurrent.Future[com.spotify.scio.io.Tap[com.google.api.services.datastore.DatastoreV1.Entity]]"></a>
       <a id="saveAsDatastore(String)(&lt;:&lt;[T,Entity]):Future[Tap[Entity]]"></a>
