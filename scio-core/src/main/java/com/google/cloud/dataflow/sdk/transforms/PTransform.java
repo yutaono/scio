@@ -26,11 +26,14 @@ import com.google.cloud.dataflow.sdk.util.StringUtils;
 import com.google.cloud.dataflow.sdk.values.PInput;
 import com.google.cloud.dataflow.sdk.values.POutput;
 import com.google.cloud.dataflow.sdk.values.TypedPValue;
+import com.google.common.collect.Lists;
 import com.spotify.scio.util.CallSites;
 
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.Collection;
 
 /**
  * A {@code PTransform<InputT, OutputT>} is an operation that takes an
@@ -260,16 +263,26 @@ public abstract class PTransform<InputT extends PInput, OutputT extends POutput>
     }
   }
 
-  private void writeObject(ObjectOutputStream oos) {
+  private void writeObject(ObjectOutputStream oos) throws IOException {
     // We don't really want to be serializing this object, but we
     // often have serializable anonymous DoFns nested within a
     // PTransform.
+    oos.writeInt(displayDataItems.size());
+    for (DisplayData.Item<?> item : displayDataItems) {
+      oos.writeObject(item);
+    }
+
   }
 
-  private void readObject(ObjectInputStream oos) {
+  private void readObject(ObjectInputStream oos) throws IOException, ClassNotFoundException {
     // We don't really want to be serializing this object, but we
     // often have serializable anonymous DoFns nested within a
     // PTransform.
+    displayDataItems = Lists.newArrayList();
+    int size = oos.readInt();
+    for (int i = 0; i < size; i++) {
+      displayDataItems.add((DisplayData.Item<?>) oos.readObject());
+    }
   }
 
   /**
@@ -322,19 +335,23 @@ public abstract class PTransform<InputT extends PInput, OutputT extends POutput>
    */
   @Override
   public void populateDisplayData(Builder builder) {
-    if (source != null) {
-      builder
-        .add(DisplayData.item("Source file", source.file()))
-        .add(DisplayData.item("Source method", source.method()))
-        .add(DisplayData.item("Source line", source.line()));
+    for (DisplayData.Item<?> item : this.displayDataItems) {
+      builder.add(item);
     }
   }
 
-  private CallSites.Source source = null;
+  private transient Collection<DisplayData.Item<?>> displayDataItems = Lists.newArrayList();
+
+  public <T> PTransform<InputT, OutputT> withDisplayDataItem(DisplayData.Item<T> item) {
+    this.displayDataItems.add(item);
+    return this;
+  }
 
   public PTransform<InputT, OutputT> withSource(CallSites.Source source) {
-    this.source = source;
-    return this;
+    return this
+        .withDisplayDataItem(DisplayData.item("Source file", source.file()))
+        .withDisplayDataItem(DisplayData.item("Source method", source.method()))
+        .withDisplayDataItem(DisplayData.item("Source line", source.line()));
   }
 
 }
