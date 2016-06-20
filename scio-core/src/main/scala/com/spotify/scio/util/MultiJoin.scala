@@ -39,10 +39,11 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)]): SCollection[(KEY, (Iterable[A], Iterable[B]))] = {
     val (tagA, tagB) = (new TupleTag[A](), new TupleTag[B]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala))
@@ -51,11 +52,12 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C]))] = {
     val (tagA, tagB, tagC) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
       .and(tagC, c.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala))
@@ -64,12 +66,13 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D]))] = {
     val (tagA, tagB, tagC, tagD) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
       .and(tagC, c.toKV.internal)
       .and(tagD, d.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala))
@@ -78,13 +81,14 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E]))] = {
     val (tagA, tagB, tagC, tagD, tagE) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
       .and(tagC, c.toKV.internal)
       .and(tagD, d.toKV.internal)
       .and(tagE, e.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala))
@@ -93,6 +97,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -100,7 +105,7 @@ object MultiJoin {
       .and(tagD, d.toKV.internal)
       .and(tagE, e.toKV.internal)
       .and(tagF, f.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala))
@@ -109,6 +114,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -117,7 +123,7 @@ object MultiJoin {
       .and(tagE, e.toKV.internal)
       .and(tagF, f.toKV.internal)
       .and(tagG, g.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala))
@@ -126,6 +132,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -135,7 +142,7 @@ object MultiJoin {
       .and(tagF, f.toKV.internal)
       .and(tagG, g.toKV.internal)
       .and(tagH, h.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala))
@@ -144,6 +151,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -154,7 +162,7 @@ object MultiJoin {
       .and(tagG, g.toKV.internal)
       .and(tagH, h.toKV.internal)
       .and(tagI, i.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala))
@@ -163,6 +171,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -174,7 +183,7 @@ object MultiJoin {
       .and(tagH, h.toKV.internal)
       .and(tagI, i.toKV.internal)
       .and(tagJ, j.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala))
@@ -183,6 +192,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J], Iterable[K]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -195,7 +205,7 @@ object MultiJoin {
       .and(tagI, i.toKV.internal)
       .and(tagJ, j.toKV.internal)
       .and(tagK, k.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala, result.getAll(tagK).asScala))
@@ -204,6 +214,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J], Iterable[K], Iterable[L]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -217,7 +228,7 @@ object MultiJoin {
       .and(tagJ, j.toKV.internal)
       .and(tagK, k.toKV.internal)
       .and(tagL, l.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala, result.getAll(tagK).asScala, result.getAll(tagL).asScala))
@@ -226,6 +237,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J], Iterable[K], Iterable[L], Iterable[M]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -240,7 +252,7 @@ object MultiJoin {
       .and(tagK, k.toKV.internal)
       .and(tagL, l.toKV.internal)
       .and(tagM, m.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala, result.getAll(tagK).asScala, result.getAll(tagL).asScala, result.getAll(tagM).asScala))
@@ -249,6 +261,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J], Iterable[K], Iterable[L], Iterable[M], Iterable[N]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -264,7 +277,7 @@ object MultiJoin {
       .and(tagL, l.toKV.internal)
       .and(tagM, m.toKV.internal)
       .and(tagN, n.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala, result.getAll(tagK).asScala, result.getAll(tagL).asScala, result.getAll(tagM).asScala, result.getAll(tagN).asScala))
@@ -273,6 +286,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J], Iterable[K], Iterable[L], Iterable[M], Iterable[N], Iterable[O]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -289,7 +303,7 @@ object MultiJoin {
       .and(tagM, m.toKV.internal)
       .and(tagN, n.toKV.internal)
       .and(tagO, o.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala, result.getAll(tagK).asScala, result.getAll(tagL).asScala, result.getAll(tagM).asScala, result.getAll(tagN).asScala, result.getAll(tagO).asScala))
@@ -298,6 +312,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J], Iterable[K], Iterable[L], Iterable[M], Iterable[N], Iterable[O], Iterable[P]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -315,7 +330,7 @@ object MultiJoin {
       .and(tagN, n.toKV.internal)
       .and(tagO, o.toKV.internal)
       .and(tagP, p.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala, result.getAll(tagK).asScala, result.getAll(tagL).asScala, result.getAll(tagM).asScala, result.getAll(tagN).asScala, result.getAll(tagO).asScala, result.getAll(tagP).asScala))
@@ -324,6 +339,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J], Iterable[K], Iterable[L], Iterable[M], Iterable[N], Iterable[O], Iterable[P], Iterable[Q]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -342,7 +358,7 @@ object MultiJoin {
       .and(tagO, o.toKV.internal)
       .and(tagP, p.toKV.internal)
       .and(tagQ, q.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala, result.getAll(tagK).asScala, result.getAll(tagL).asScala, result.getAll(tagM).asScala, result.getAll(tagN).asScala, result.getAll(tagO).asScala, result.getAll(tagP).asScala, result.getAll(tagQ).asScala))
@@ -351,6 +367,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J], Iterable[K], Iterable[L], Iterable[M], Iterable[N], Iterable[O], Iterable[P], Iterable[Q], Iterable[R]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -370,7 +387,7 @@ object MultiJoin {
       .and(tagP, p.toKV.internal)
       .and(tagQ, q.toKV.internal)
       .and(tagR, r.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala, result.getAll(tagK).asScala, result.getAll(tagL).asScala, result.getAll(tagM).asScala, result.getAll(tagN).asScala, result.getAll(tagO).asScala, result.getAll(tagP).asScala, result.getAll(tagQ).asScala, result.getAll(tagR).asScala))
@@ -379,6 +396,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J], Iterable[K], Iterable[L], Iterable[M], Iterable[N], Iterable[O], Iterable[P], Iterable[Q], Iterable[R], Iterable[S]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -399,7 +417,7 @@ object MultiJoin {
       .and(tagQ, q.toKV.internal)
       .and(tagR, r.toKV.internal)
       .and(tagS, s.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala, result.getAll(tagK).asScala, result.getAll(tagL).asScala, result.getAll(tagM).asScala, result.getAll(tagN).asScala, result.getAll(tagO).asScala, result.getAll(tagP).asScala, result.getAll(tagQ).asScala, result.getAll(tagR).asScala, result.getAll(tagS).asScala))
@@ -408,6 +426,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag, T: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)], t: SCollection[(KEY, T)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J], Iterable[K], Iterable[L], Iterable[M], Iterable[N], Iterable[O], Iterable[P], Iterable[Q], Iterable[R], Iterable[S], Iterable[T]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS, tagT) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S](), new TupleTag[T]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -429,7 +448,7 @@ object MultiJoin {
       .and(tagR, r.toKV.internal)
       .and(tagS, s.toKV.internal)
       .and(tagT, t.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala, result.getAll(tagK).asScala, result.getAll(tagL).asScala, result.getAll(tagM).asScala, result.getAll(tagN).asScala, result.getAll(tagO).asScala, result.getAll(tagP).asScala, result.getAll(tagQ).asScala, result.getAll(tagR).asScala, result.getAll(tagS).asScala, result.getAll(tagT).asScala))
@@ -438,6 +457,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag, T: ClassTag, U: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)], t: SCollection[(KEY, T)], u: SCollection[(KEY, U)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J], Iterable[K], Iterable[L], Iterable[M], Iterable[N], Iterable[O], Iterable[P], Iterable[Q], Iterable[R], Iterable[S], Iterable[T], Iterable[U]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS, tagT, tagU) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S](), new TupleTag[T](), new TupleTag[U]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -460,7 +480,7 @@ object MultiJoin {
       .and(tagS, s.toKV.internal)
       .and(tagT, t.toKV.internal)
       .and(tagU, u.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala, result.getAll(tagK).asScala, result.getAll(tagL).asScala, result.getAll(tagM).asScala, result.getAll(tagN).asScala, result.getAll(tagO).asScala, result.getAll(tagP).asScala, result.getAll(tagQ).asScala, result.getAll(tagR).asScala, result.getAll(tagS).asScala, result.getAll(tagT).asScala, result.getAll(tagU).asScala))
@@ -469,6 +489,7 @@ object MultiJoin {
 
   def cogroup[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag, T: ClassTag, U: ClassTag, V: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)], t: SCollection[(KEY, T)], u: SCollection[(KEY, U)], v: SCollection[(KEY, V)]): SCollection[(KEY, (Iterable[A], Iterable[B], Iterable[C], Iterable[D], Iterable[E], Iterable[F], Iterable[G], Iterable[H], Iterable[I], Iterable[J], Iterable[K], Iterable[L], Iterable[M], Iterable[N], Iterable[O], Iterable[P], Iterable[Q], Iterable[R], Iterable[S], Iterable[T], Iterable[U], Iterable[V]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS, tagT, tagU, tagV) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S](), new TupleTag[T](), new TupleTag[U](), new TupleTag[V]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -492,7 +513,7 @@ object MultiJoin {
       .and(tagT, t.toKV.internal)
       .and(tagU, u.toKV.internal)
       .and(tagV, v.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).map { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       (key, (result.getAll(tagA).asScala, result.getAll(tagB).asScala, result.getAll(tagC).asScala, result.getAll(tagD).asScala, result.getAll(tagE).asScala, result.getAll(tagF).asScala, result.getAll(tagG).asScala, result.getAll(tagH).asScala, result.getAll(tagI).asScala, result.getAll(tagJ).asScala, result.getAll(tagK).asScala, result.getAll(tagL).asScala, result.getAll(tagM).asScala, result.getAll(tagN).asScala, result.getAll(tagO).asScala, result.getAll(tagP).asScala, result.getAll(tagQ).asScala, result.getAll(tagR).asScala, result.getAll(tagS).asScala, result.getAll(tagT).asScala, result.getAll(tagU).asScala, result.getAll(tagV).asScala))
@@ -501,10 +522,11 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)]): SCollection[(KEY, (A, B))] = {
     val (tagA, tagB) = (new TupleTag[A](), new TupleTag[B]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -516,11 +538,12 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)]): SCollection[(KEY, (A, B, C))] = {
     val (tagA, tagB, tagC) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
       .and(tagC, c.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -533,12 +556,13 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)]): SCollection[(KEY, (A, B, C, D))] = {
     val (tagA, tagB, tagC, tagD) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
       .and(tagC, c.toKV.internal)
       .and(tagD, d.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -552,13 +576,14 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)]): SCollection[(KEY, (A, B, C, D, E))] = {
     val (tagA, tagB, tagC, tagD, tagE) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
       .and(tagC, c.toKV.internal)
       .and(tagD, d.toKV.internal)
       .and(tagE, e.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -573,6 +598,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)]): SCollection[(KEY, (A, B, C, D, E, F))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -580,7 +606,7 @@ object MultiJoin {
       .and(tagD, d.toKV.internal)
       .and(tagE, e.toKV.internal)
       .and(tagF, f.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -596,6 +622,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)]): SCollection[(KEY, (A, B, C, D, E, F, G))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -604,7 +631,7 @@ object MultiJoin {
       .and(tagE, e.toKV.internal)
       .and(tagF, f.toKV.internal)
       .and(tagG, g.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -621,6 +648,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)]): SCollection[(KEY, (A, B, C, D, E, F, G, H))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -630,7 +658,7 @@ object MultiJoin {
       .and(tagF, f.toKV.internal)
       .and(tagG, g.toKV.internal)
       .and(tagH, h.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -648,6 +676,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -658,7 +687,7 @@ object MultiJoin {
       .and(tagG, g.toKV.internal)
       .and(tagH, h.toKV.internal)
       .and(tagI, i.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -677,6 +706,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -688,7 +718,7 @@ object MultiJoin {
       .and(tagH, h.toKV.internal)
       .and(tagI, i.toKV.internal)
       .and(tagJ, j.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -708,6 +738,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J, K))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -720,7 +751,7 @@ object MultiJoin {
       .and(tagI, i.toKV.internal)
       .and(tagJ, j.toKV.internal)
       .and(tagK, k.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -741,6 +772,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J, K, L))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -754,7 +786,7 @@ object MultiJoin {
       .and(tagJ, j.toKV.internal)
       .and(tagK, k.toKV.internal)
       .and(tagL, l.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -776,6 +808,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J, K, L, M))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -790,7 +823,7 @@ object MultiJoin {
       .and(tagK, k.toKV.internal)
       .and(tagL, l.toKV.internal)
       .and(tagM, m.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -813,6 +846,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J, K, L, M, N))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -828,7 +862,7 @@ object MultiJoin {
       .and(tagL, l.toKV.internal)
       .and(tagM, m.toKV.internal)
       .and(tagN, n.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -852,6 +886,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -868,7 +903,7 @@ object MultiJoin {
       .and(tagM, m.toKV.internal)
       .and(tagN, n.toKV.internal)
       .and(tagO, o.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -893,6 +928,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -910,7 +946,7 @@ object MultiJoin {
       .and(tagN, n.toKV.internal)
       .and(tagO, o.toKV.internal)
       .and(tagP, p.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -936,6 +972,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -954,7 +991,7 @@ object MultiJoin {
       .and(tagO, o.toKV.internal)
       .and(tagP, p.toKV.internal)
       .and(tagQ, q.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -981,6 +1018,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1000,7 +1038,7 @@ object MultiJoin {
       .and(tagP, p.toKV.internal)
       .and(tagQ, q.toKV.internal)
       .and(tagR, r.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1028,6 +1066,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1048,7 +1087,7 @@ object MultiJoin {
       .and(tagQ, q.toKV.internal)
       .and(tagR, r.toKV.internal)
       .and(tagS, s.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1077,6 +1116,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag, T: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)], t: SCollection[(KEY, T)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS, tagT) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S](), new TupleTag[T]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1098,7 +1138,7 @@ object MultiJoin {
       .and(tagR, r.toKV.internal)
       .and(tagS, s.toKV.internal)
       .and(tagT, t.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1128,6 +1168,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag, T: ClassTag, U: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)], t: SCollection[(KEY, T)], u: SCollection[(KEY, U)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS, tagT, tagU) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S](), new TupleTag[T](), new TupleTag[U]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1150,7 +1191,7 @@ object MultiJoin {
       .and(tagS, s.toKV.internal)
       .and(tagT, t.toKV.internal)
       .and(tagU, u.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1181,6 +1222,7 @@ object MultiJoin {
 
   def apply[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag, T: ClassTag, U: ClassTag, V: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)], t: SCollection[(KEY, T)], u: SCollection[(KEY, U)], v: SCollection[(KEY, V)]): SCollection[(KEY, (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS, tagT, tagU, tagV) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S](), new TupleTag[T](), new TupleTag[U](), new TupleTag[V]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1204,7 +1246,7 @@ object MultiJoin {
       .and(tagT, t.toKV.internal)
       .and(tagU, u.toKV.internal)
       .and(tagV, v.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1236,10 +1278,11 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)]): SCollection[(KEY, (A, Option[B]))] = {
     val (tagA, tagB) = (new TupleTag[A](), new TupleTag[B]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1251,11 +1294,12 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)]): SCollection[(KEY, (A, Option[B], Option[C]))] = {
     val (tagA, tagB, tagC) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
       .and(tagC, c.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1268,12 +1312,13 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D]))] = {
     val (tagA, tagB, tagC, tagD) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
       .and(tagC, c.toKV.internal)
       .and(tagD, d.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1287,13 +1332,14 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E]))] = {
     val (tagA, tagB, tagC, tagD, tagE) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
       .and(tagC, c.toKV.internal)
       .and(tagD, d.toKV.internal)
       .and(tagE, e.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1308,6 +1354,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1315,7 +1362,7 @@ object MultiJoin {
       .and(tagD, d.toKV.internal)
       .and(tagE, e.toKV.internal)
       .and(tagF, f.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1331,6 +1378,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1339,7 +1387,7 @@ object MultiJoin {
       .and(tagE, e.toKV.internal)
       .and(tagF, f.toKV.internal)
       .and(tagG, g.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1356,6 +1404,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1365,7 +1414,7 @@ object MultiJoin {
       .and(tagF, f.toKV.internal)
       .and(tagG, g.toKV.internal)
       .and(tagH, h.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1383,6 +1432,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1393,7 +1443,7 @@ object MultiJoin {
       .and(tagG, g.toKV.internal)
       .and(tagH, h.toKV.internal)
       .and(tagI, i.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1412,6 +1462,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1423,7 +1474,7 @@ object MultiJoin {
       .and(tagH, h.toKV.internal)
       .and(tagI, i.toKV.internal)
       .and(tagJ, j.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1443,6 +1494,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1455,7 +1507,7 @@ object MultiJoin {
       .and(tagI, i.toKV.internal)
       .and(tagJ, j.toKV.internal)
       .and(tagK, k.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1476,6 +1528,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1489,7 +1542,7 @@ object MultiJoin {
       .and(tagJ, j.toKV.internal)
       .and(tagK, k.toKV.internal)
       .and(tagL, l.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1511,6 +1564,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1525,7 +1579,7 @@ object MultiJoin {
       .and(tagK, k.toKV.internal)
       .and(tagL, l.toKV.internal)
       .and(tagM, m.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1548,6 +1602,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1563,7 +1618,7 @@ object MultiJoin {
       .and(tagL, l.toKV.internal)
       .and(tagM, m.toKV.internal)
       .and(tagN, n.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1587,6 +1642,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1603,7 +1659,7 @@ object MultiJoin {
       .and(tagM, m.toKV.internal)
       .and(tagN, n.toKV.internal)
       .and(tagO, o.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1628,6 +1684,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1645,7 +1702,7 @@ object MultiJoin {
       .and(tagN, n.toKV.internal)
       .and(tagO, o.toKV.internal)
       .and(tagP, p.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1671,6 +1728,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P], Option[Q]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1689,7 +1747,7 @@ object MultiJoin {
       .and(tagO, o.toKV.internal)
       .and(tagP, p.toKV.internal)
       .and(tagQ, q.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1716,6 +1774,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P], Option[Q], Option[R]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1735,7 +1794,7 @@ object MultiJoin {
       .and(tagP, p.toKV.internal)
       .and(tagQ, q.toKV.internal)
       .and(tagR, r.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1763,6 +1822,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P], Option[Q], Option[R], Option[S]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1783,7 +1843,7 @@ object MultiJoin {
       .and(tagQ, q.toKV.internal)
       .and(tagR, r.toKV.internal)
       .and(tagS, s.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1812,6 +1872,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag, T: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)], t: SCollection[(KEY, T)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P], Option[Q], Option[R], Option[S], Option[T]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS, tagT) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S](), new TupleTag[T]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1833,7 +1894,7 @@ object MultiJoin {
       .and(tagR, r.toKV.internal)
       .and(tagS, s.toKV.internal)
       .and(tagT, t.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1863,6 +1924,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag, T: ClassTag, U: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)], t: SCollection[(KEY, T)], u: SCollection[(KEY, U)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P], Option[Q], Option[R], Option[S], Option[T], Option[U]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS, tagT, tagU) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S](), new TupleTag[T](), new TupleTag[U]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1885,7 +1947,7 @@ object MultiJoin {
       .and(tagS, s.toKV.internal)
       .and(tagT, t.toKV.internal)
       .and(tagU, u.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1916,6 +1978,7 @@ object MultiJoin {
 
   def left[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag, T: ClassTag, U: ClassTag, V: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)], t: SCollection[(KEY, T)], u: SCollection[(KEY, U)], v: SCollection[(KEY, V)]): SCollection[(KEY, (A, Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P], Option[Q], Option[R], Option[S], Option[T], Option[U], Option[V]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS, tagT, tagU, tagV) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S](), new TupleTag[T](), new TupleTag[U](), new TupleTag[V]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -1939,7 +2002,7 @@ object MultiJoin {
       .and(tagT, t.toKV.internal)
       .and(tagU, u.toKV.internal)
       .and(tagV, v.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1971,10 +2034,11 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)]): SCollection[(KEY, (Option[A], Option[B]))] = {
     val (tagA, tagB) = (new TupleTag[A](), new TupleTag[B]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -1986,11 +2050,12 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)]): SCollection[(KEY, (Option[A], Option[B], Option[C]))] = {
     val (tagA, tagB, tagC) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
       .and(tagC, c.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2003,12 +2068,13 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D]))] = {
     val (tagA, tagB, tagC, tagD) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
       .and(tagC, c.toKV.internal)
       .and(tagD, d.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2022,13 +2088,14 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E]))] = {
     val (tagA, tagB, tagC, tagD, tagE) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
       .and(tagC, c.toKV.internal)
       .and(tagD, d.toKV.internal)
       .and(tagE, e.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2043,6 +2110,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2050,7 +2118,7 @@ object MultiJoin {
       .and(tagD, d.toKV.internal)
       .and(tagE, e.toKV.internal)
       .and(tagF, f.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2066,6 +2134,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2074,7 +2143,7 @@ object MultiJoin {
       .and(tagE, e.toKV.internal)
       .and(tagF, f.toKV.internal)
       .and(tagG, g.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2091,6 +2160,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2100,7 +2170,7 @@ object MultiJoin {
       .and(tagF, f.toKV.internal)
       .and(tagG, g.toKV.internal)
       .and(tagH, h.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2118,6 +2188,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2128,7 +2199,7 @@ object MultiJoin {
       .and(tagG, g.toKV.internal)
       .and(tagH, h.toKV.internal)
       .and(tagI, i.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2147,6 +2218,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2158,7 +2230,7 @@ object MultiJoin {
       .and(tagH, h.toKV.internal)
       .and(tagI, i.toKV.internal)
       .and(tagJ, j.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2178,6 +2250,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2190,7 +2263,7 @@ object MultiJoin {
       .and(tagI, i.toKV.internal)
       .and(tagJ, j.toKV.internal)
       .and(tagK, k.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2211,6 +2284,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2224,7 +2298,7 @@ object MultiJoin {
       .and(tagJ, j.toKV.internal)
       .and(tagK, k.toKV.internal)
       .and(tagL, l.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2246,6 +2320,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2260,7 +2335,7 @@ object MultiJoin {
       .and(tagK, k.toKV.internal)
       .and(tagL, l.toKV.internal)
       .and(tagM, m.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2283,6 +2358,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2298,7 +2374,7 @@ object MultiJoin {
       .and(tagL, l.toKV.internal)
       .and(tagM, m.toKV.internal)
       .and(tagN, n.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2322,6 +2398,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2338,7 +2415,7 @@ object MultiJoin {
       .and(tagM, m.toKV.internal)
       .and(tagN, n.toKV.internal)
       .and(tagO, o.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2363,6 +2440,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2380,7 +2458,7 @@ object MultiJoin {
       .and(tagN, n.toKV.internal)
       .and(tagO, o.toKV.internal)
       .and(tagP, p.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2406,6 +2484,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P], Option[Q]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2424,7 +2503,7 @@ object MultiJoin {
       .and(tagO, o.toKV.internal)
       .and(tagP, p.toKV.internal)
       .and(tagQ, q.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2451,6 +2530,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P], Option[Q], Option[R]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2470,7 +2550,7 @@ object MultiJoin {
       .and(tagP, p.toKV.internal)
       .and(tagQ, q.toKV.internal)
       .and(tagR, r.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2498,6 +2578,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P], Option[Q], Option[R], Option[S]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2518,7 +2599,7 @@ object MultiJoin {
       .and(tagQ, q.toKV.internal)
       .and(tagR, r.toKV.internal)
       .and(tagS, s.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2547,6 +2628,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag, T: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)], t: SCollection[(KEY, T)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P], Option[Q], Option[R], Option[S], Option[T]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS, tagT) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S](), new TupleTag[T]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2568,7 +2650,7 @@ object MultiJoin {
       .and(tagR, r.toKV.internal)
       .and(tagS, s.toKV.internal)
       .and(tagT, t.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2598,6 +2680,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag, T: ClassTag, U: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)], t: SCollection[(KEY, T)], u: SCollection[(KEY, U)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P], Option[Q], Option[R], Option[S], Option[T], Option[U]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS, tagT, tagU) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S](), new TupleTag[T](), new TupleTag[U]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2620,7 +2703,7 @@ object MultiJoin {
       .and(tagS, s.toKV.internal)
       .and(tagT, t.toKV.internal)
       .and(tagU, u.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {
@@ -2651,6 +2734,7 @@ object MultiJoin {
 
   def outer[KEY: ClassTag, A: ClassTag, B: ClassTag, C: ClassTag, D: ClassTag, E: ClassTag, F: ClassTag, G: ClassTag, H: ClassTag, I: ClassTag, J: ClassTag, K: ClassTag, L: ClassTag, M: ClassTag, N: ClassTag, O: ClassTag, P: ClassTag, Q: ClassTag, R: ClassTag, S: ClassTag, T: ClassTag, U: ClassTag, V: ClassTag](a: SCollection[(KEY, A)], b: SCollection[(KEY, B)], c: SCollection[(KEY, C)], d: SCollection[(KEY, D)], e: SCollection[(KEY, E)], f: SCollection[(KEY, F)], g: SCollection[(KEY, G)], h: SCollection[(KEY, H)], i: SCollection[(KEY, I)], j: SCollection[(KEY, J)], k: SCollection[(KEY, K)], l: SCollection[(KEY, L)], m: SCollection[(KEY, M)], n: SCollection[(KEY, N)], o: SCollection[(KEY, O)], p: SCollection[(KEY, P)], q: SCollection[(KEY, Q)], r: SCollection[(KEY, R)], s: SCollection[(KEY, S)], t: SCollection[(KEY, T)], u: SCollection[(KEY, U)], v: SCollection[(KEY, V)]): SCollection[(KEY, (Option[A], Option[B], Option[C], Option[D], Option[E], Option[F], Option[G], Option[H], Option[I], Option[J], Option[K], Option[L], Option[M], Option[N], Option[O], Option[P], Option[Q], Option[R], Option[S], Option[T], Option[U], Option[V]))] = {
     val (tagA, tagB, tagC, tagD, tagE, tagF, tagG, tagH, tagI, tagJ, tagK, tagL, tagM, tagN, tagO, tagP, tagQ, tagR, tagS, tagT, tagU, tagV) = (new TupleTag[A](), new TupleTag[B](), new TupleTag[C](), new TupleTag[D](), new TupleTag[E](), new TupleTag[F](), new TupleTag[G](), new TupleTag[H](), new TupleTag[I](), new TupleTag[J](), new TupleTag[K](), new TupleTag[L](), new TupleTag[M](), new TupleTag[N](), new TupleTag[O](), new TupleTag[P](), new TupleTag[Q](), new TupleTag[R](), new TupleTag[S](), new TupleTag[T](), new TupleTag[U](), new TupleTag[V]())
+    val src = CallSites.getSource
     val keyed = KeyedPCollectionTuple
       .of(tagA, a.toKV.internal)
       .and(tagB, b.toKV.internal)
@@ -2674,7 +2758,7 @@ object MultiJoin {
       .and(tagT, t.toKV.internal)
       .and(tagU, u.toKV.internal)
       .and(tagV, v.toKV.internal)
-      .apply(CallSites.getCurrent, CoGroupByKey.create())
+      .apply(src.method, CoGroupByKey.create().withSource(src))
     a.context.wrap(keyed).flatMap { kv =>
       val (key, result) = (kv.getKey, kv.getValue)
       for {

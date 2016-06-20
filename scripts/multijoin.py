@@ -57,11 +57,12 @@ def cogroup(out, n):
         ', '.join('tag' + x for x in vals),
         ', '.join('new TupleTag[%s]()' % x for x in vals))
 
+    print >> out, '    val src = CallSites.getSource'
     print >> out, '    val keyed = KeyedPCollectionTuple'
     print >> out, '      .of(tagA, a.toKV.internal)'
     for x in vals[1:]:
         print >> out, '      .and(tag%s, %s.toKV.internal)' % (x, x.lower())
-    print >> out, '      .apply(CallSites.getCurrent, CoGroupByKey.create())'
+    print >> out, '      .apply(src.method, CoGroupByKey.create().withSource(src))'
 
     print >> out, '    a.context.wrap(keyed).map { kv =>'
     print >> out, '      val (key, result) = (kv.getKey, kv.getValue)'
@@ -81,11 +82,12 @@ def join(out, n):
         ', '.join('tag' + x for x in vals),
         ', '.join('new TupleTag[%s]()' % x for x in vals))
 
+    print >> out, '    val src = CallSites.getSource'
     print >> out, '    val keyed = KeyedPCollectionTuple'
     print >> out, '      .of(tagA, a.toKV.internal)'
     for x in vals[1:]:
         print >> out, '      .and(tag%s, %s.toKV.internal)' % (x, x.lower())
-    print >> out, '      .apply(CallSites.getCurrent, CoGroupByKey.create())'
+    print >> out, '      .apply(src.method, CoGroupByKey.create().withSource(src))'
 
     print >> out, '    a.context.wrap(keyed).flatMap { kv =>'
     print >> out, '      val (key, result) = (kv.getKey, kv.getValue)'
@@ -107,11 +109,12 @@ def left(out, n):
         ', '.join('tag' + x for x in vals),
         ', '.join('new TupleTag[%s]()' % x for x in vals))
 
+    print >> out, '    val src = CallSites.getSource'
     print >> out, '    val keyed = KeyedPCollectionTuple'
     print >> out, '      .of(tagA, a.toKV.internal)'
     for x in vals[1:]:
         print >> out, '      .and(tag%s, %s.toKV.internal)' % (x, x.lower())
-    print >> out, '      .apply(CallSites.getCurrent, CoGroupByKey.create())'
+    print >> out, '      .apply(src.method, CoGroupByKey.create().withSource(src))'
 
     print >> out, '    a.context.wrap(keyed).flatMap { kv =>'
     print >> out, '      val (key, result) = (kv.getKey, kv.getValue)'
@@ -136,11 +139,12 @@ def outer(out, n):
         ', '.join('tag' + x for x in vals),
         ', '.join('new TupleTag[%s]()' % x for x in vals))
 
+    print >> out, '    val src = CallSites.getSource'
     print >> out, '    val keyed = KeyedPCollectionTuple'
     print >> out, '      .of(tagA, a.toKV.internal)'
     for x in vals[1:]:
         print >> out, '      .and(tag%s, %s.toKV.internal)' % (x, x.lower())
-    print >> out, '      .apply(CallSites.getCurrent, CoGroupByKey.create())'
+    print >> out, '      .apply(src.method, CoGroupByKey.create().withSource(src))'
 
     print >> out, '    a.context.wrap(keyed).flatMap { kv =>'
     print >> out, '      val (key, result) = (kv.getKey, kv.getValue)'
