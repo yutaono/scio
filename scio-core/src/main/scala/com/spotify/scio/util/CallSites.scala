@@ -19,7 +19,7 @@ package com.spotify.scio.util
 
 import scala.collection.mutable.{Map => MMap}
 
-private[scio] object CallSites {
+/*private[scio]*/ object CallSites {
 
   private val scioNs = "com.spotify.scio."
   private val dfNs = "com.google.cloud.dataflow.sdk."
@@ -73,6 +73,30 @@ private[scio] object CallSites {
       nameCache(name) += 1
       name + nameCache(name)
     }
+  }
+
+  case class Source(file: String, method: String, line: Int)
+
+  def getSource: Source = {
+    val stack = new Exception().getStackTrace.drop(1)
+
+    // find first stack outside of Scio or Dataflow
+    var pExt = stack.indexWhere(e => isExternalClass(e.getClassName))
+
+    val pTransform = stack.indexWhere(isTransform)
+    if (pTransform < pExt && pTransform > 0) {
+      val m = stack(pExt - 1).getMethodName // method implemented with transform
+      val _p = stack.take(pTransform).indexWhere(e => e.getClassName.contains(m))
+      if (_p > 0) {
+        pExt = _p
+      }
+    }
+
+    val k = stack(pExt - 1).getMethodName
+    val file = stack(pExt).getFileName
+    val method = methodMap.getOrElse(k, k)
+    val line = stack(pExt).getLineNumber
+    Source(file, method, line)
   }
 
 }
