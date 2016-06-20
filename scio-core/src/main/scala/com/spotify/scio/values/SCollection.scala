@@ -57,9 +57,10 @@ object SCollection {
 
   /** Create a union of multiple SCollections */
   def unionAll[T: ClassTag](scs: Iterable[SCollection[T]]): SCollection[T] = {
+    val src = CallSites.getSource
     val o = PCollectionList
       .of(scs.map(_.internal).asJava)
-      .apply(CallSites.getCurrent, Flatten.pCollections())
+      .apply(src.method, Flatten.pCollections().withSource(src))
     new SCollectionImpl(o, scs.head.context)
   }
 
@@ -133,11 +134,13 @@ sealed trait SCollection[T] extends PCollectionWrapper[T] {
   /** Apply a transform. */
   private[values] def transform[U: ClassTag](f: SCollection[T] => SCollection[U])
   : SCollection[U] = {
-    val o = internal.apply(CallSites.getCurrent, new PTransform[PCollection[T], PCollection[U]]() {
+    val transform = new PTransform[PCollection[T], PCollection[U]]() {
       override def apply(input: PCollection[T]): PCollection[U] = {
         f(context.wrap(input)).internal
       }
-    })
+    }
+    val src = CallSites.getSource
+    val o = internal.apply(src.method, transform.withSource(src))
     context.wrap(o)
   }
 
@@ -168,9 +171,10 @@ sealed trait SCollection[T] extends PCollectionWrapper[T] {
    * @group collection
    */
   def union(that: SCollection[T]): SCollection[T] = {
+    val src = CallSites.getSource
     val o = PCollectionList
       .of(internal).and(that.internal)
-      .apply(CallSites.getCurrent, Flatten.pCollections())
+      .apply(src.method, Flatten.pCollections().withSource(src))
     context.wrap(o)
   }
 

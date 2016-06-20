@@ -37,8 +37,10 @@ private[values] trait PCollectionWrapper[T] {
   implicit protected val ct: ClassTag[T]
 
   private[scio] def applyInternal[Output <: POutput]
-  (transform: PTransform[_ >: PCollection[T], Output]): Output =
-    internal.apply(CallSites.getCurrent, transform)
+  (transform: PTransform[_ >: PCollection[T], Output]): Output = {
+    val src = CallSites.getSource
+    internal.apply(src.method, transform.withSource(src))
+  }
 
   protected def apply[U: ClassTag]
   (transform: PTransform[_ >: PCollection[T], PCollection[U]]): SCollection[U] = {
