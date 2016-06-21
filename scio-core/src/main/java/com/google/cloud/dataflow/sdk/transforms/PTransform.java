@@ -263,27 +263,27 @@ public abstract class PTransform<InputT extends PInput, OutputT extends POutput>
     }
   }
 
-  private void writeObject(ObjectOutputStream oos) throws IOException {
-    // We don't really want to be serializing this object, but we
-    // often have serializable anonymous DoFns nested within a
-    // PTransform.
-    oos.writeInt(displayDataItems.size());
-    for (DisplayData.Item<?> item : displayDataItems) {
-      oos.writeObject(item);
-    }
-
-  }
-
-  private void readObject(ObjectInputStream oos) throws IOException, ClassNotFoundException {
-    // We don't really want to be serializing this object, but we
-    // often have serializable anonymous DoFns nested within a
-    // PTransform.
-    displayDataItems = Lists.newArrayList();
-    int size = oos.readInt();
-    for (int i = 0; i < size; i++) {
-      displayDataItems.add((DisplayData.Item<?>) oos.readObject());
-    }
-  }
+//  private void writeObject(ObjectOutputStream oos) throws IOException {
+//    // We don't really want to be serializing this object, but we
+//    // often have serializable anonymous DoFns nested within a
+//    // PTransform.
+//    oos.writeInt(displayDataItems.size());
+//    for (DisplayData.Item<?> item : displayDataItems) {
+//      oos.writeObject(item);
+//    }
+//
+//  }
+//
+//  private void readObject(ObjectInputStream oos) throws IOException, ClassNotFoundException {
+//    // We don't really want to be serializing this object, but we
+//    // often have serializable anonymous DoFns nested within a
+//    // PTransform.
+//    displayDataItems = Lists.newArrayList();
+//    int size = oos.readInt();
+//    for (int i = 0; i < size; i++) {
+//      displayDataItems.add((DisplayData.Item<?>) oos.readObject());
+//    }
+//  }
 
   /**
    * Returns the default {@code Coder} to use for the output of this
@@ -340,7 +340,7 @@ public abstract class PTransform<InputT extends PInput, OutputT extends POutput>
     }
   }
 
-  private transient Collection<DisplayData.Item<?>> displayDataItems = Lists.newArrayList();
+  private final Collection<DisplayData.Item<?>> displayDataItems = Lists.newArrayList();
 
   public <T> PTransform<InputT, OutputT> withDisplayDataItem(DisplayData.Item<T> item) {
     this.displayDataItems.add(item);
