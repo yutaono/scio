@@ -25,7 +25,7 @@ import com.spotify.scio.{Implicits, ScioContext}
 
 import scala.reflect.ClassTag
 
-private[values] trait PCollectionWrapper[T] {
+private[scio] trait PCollectionWrapper[T] {
 
   import Implicits._
 

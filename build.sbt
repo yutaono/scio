@@ -269,6 +269,8 @@ lazy val scioExtra: Project = Project(
       "org.scalacheck" %% "scalacheck" % scalaCheckVersion % "test"
     )
   )
+).dependsOn(
+  scioCore
 )
 
 lazy val scioHdfs: Project = Project(

@@ -445,6 +445,16 @@ sealed trait SCollection[T] extends PCollectionWrapper[T] {
       this.parDo(new BernoulliSampler[T](fraction))
     }
   }
+      /*
+  def sampleAggregate[A: ClassTag, U: ClassTag](withReplacement: Boolean,
+                                                fraction: Double,
+                                                aggregator: Aggregator[T, A, U]): SCollection[U] = {
+    if (withReplacement) {
+      this.parDo(new PoissonSampler[T](fraction))
+    } else {
+      this.parDo(new BernoulliSampler[T](fraction))
+    }
+  }     */
 
   /**
    * Return an SCollection with the elements from `this` that are not in `other`.
