@@ -200,18 +200,18 @@
     </span>
       <p class="shortcomment cmt">Get an SCollection for a Bigtable table.</p>
     </li><li name="com.spotify.scio.bigtable.BigtableScioContext#bigTable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="bigTable(projectId:String,clusterId:String,zoneId:String,tableId:String,scan:org.apache.hadoop.hbase.client.Scan):com.spotify.scio.values.SCollection[org.apache.hadoop.hbase.client.Result]"></a>
-      <a id="bigTable(String,String,String,String,Scan):SCollection[Result]"></a>
+      <a id="bigTable(projectId:String,instanceId:String,tableId:String,scan:org.apache.hadoop.hbase.client.Scan):com.spotify.scio.values.SCollection[org.apache.hadoop.hbase.client.Result]"></a>
+      <a id="bigTable(String,String,String,Scan):SCollection[Result]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">bigTable</span><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="clusterId">clusterId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="zoneId">zoneId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="scan">scan: <span class="extype" name="org.apache.hadoop.hbase.client.Scan">Scan</span> = <span class="symbol">null</span></span>)</span><span class="result">: <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="org.apache.hadoop.hbase.client.Result">Result</span>]</span>
+        <span class="name">bigTable</span><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="instanceId">instanceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="scan">scan: <span class="extype" name="org.apache.hadoop.hbase.client.Scan">Scan</span> = <span class="symbol">null</span></span>)</span><span class="result">: <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="org.apache.hadoop.hbase.client.Result">Result</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableScioContext@bigTable(projectId:String,clusterId:String,zoneId:String,tableId:String,scan:org.apache.hadoop.hbase.client.Scan):com.spotify.scio.values.SCollection[org.apache.hadoop.hbase.client.Result]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableScioContext@bigTable(projectId:String,instanceId:String,tableId:String,scan:org.apache.hadoop.hbase.client.Scan):com.spotify.scio.values.SCollection[org.apache.hadoop.hbase.client.Result]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -449,6 +449,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.spotify.scio.bigtable.BigtableScioContext#updateNumberOfBigtableNodes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="updateNumberOfBigtableNodes(cloudBigtableConfiguration:com.google.cloud.bigtable.dataflow.CloudBigtableConfiguration,numberOfNodes:Int,sleepDuration:org.joda.time.Duration):Unit"></a>
+      <a id="updateNumberOfBigtableNodes(CloudBigtableConfiguration,Int,Duration):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">updateNumberOfBigtableNodes</span><span class="params">(<span name="cloudBigtableConfiguration">cloudBigtableConfiguration: <span class="extype" name="com.google.cloud.bigtable.dataflow.CloudBigtableConfiguration">CloudBigtableConfiguration</span></span>, <span name="numberOfNodes">numberOfNodes: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="sleepDuration">sleepDuration: <span class="extype" name="org.joda.time.Duration">Duration</span> = <span class="symbol">DEFAULT_SLEEP_DURATION</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$BigtableScioContext@updateNumberOfBigtableNodes(cloudBigtableConfiguration:com.google.cloud.bigtable.dataflow.CloudBigtableConfiguration,numberOfNodes:Int,sleepDuration:org.joda.time.Duration):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wrapper around update number of Bigtable nodes function to allow for testing.</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>

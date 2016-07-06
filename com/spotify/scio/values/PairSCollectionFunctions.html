@@ -1010,10 +1010,10 @@ of math.ceil(numItems * samplingRate) over all key values.
 estimate is within <code>eps * N</code> of the true frequency.
 <code>true frequency &lt;= estimate &lt;= true frequency + eps * N</code>, where N is the total size of
 the left hand side stream so far.
-</p></div><dl class="paramcmts block"><dt class="param">hotKeyThreshold</dt><dd class="cmt"><p>key with <code>hotKeyThreshold</code> values will be considered hot. In Dataflow
-                       service - there is optimization bottleneck in GBK, for groups bigger
-                       than 10K. Thus it is recommended to set <code>hotKeyThreshold</code> to &lt;10K, keep
-                       upper estimation error in mind.</p></dd><dt class="param">cms</dt><dd class="cmt"><p>left hand side key <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.CMSMonoid" class="extype" target="_top">com.twitter.algebird.CMSMonoid</a></p></dd></dl><dl class="attributes block"> <div class="block">Example:
+</p></div><dl class="paramcmts block"><dt class="param">hotKeyThreshold</dt><dd class="cmt"><p>key with <code>hotKeyThreshold</code> values will be considered hot. Some runners
+                       have inefficient GroupByKey implementation for groups with more than 10K
+                       values. Thus it is recommended to set <code>hotKeyThreshold</code> to below 10K,
+                       keep upper estimation error in mind.</p></dd><dt class="param">cms</dt><dd class="cmt"><p>left hand side key <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.CMSMonoid" class="extype" target="_top">com.twitter.algebird.CMSMonoid</a></p></dd></dl><dl class="attributes block"> <div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="cmt">// Implicits that enabling CMS-hashing</span>
 <span class="kw">import</span> com.twitter.algebird.CMSHasherImplicits._
 <span class="kw">val</span> keyAggregator = CMS.aggregator[K](eps, delta, seed)
@@ -1041,10 +1041,10 @@ the left hand side stream so far.
 estimate is within <code>eps * N</code> of the true frequency.
 <code>true frequency &lt;= estimate &lt;= true frequency + eps * N</code>, where N is the total size of
 the left hand side stream so far.
-</p></div><dl class="paramcmts block"><dt class="param">hotKeyThreshold</dt><dd class="cmt"><p>key with <code>hotKeyThreshold</code> values will be considered hot. In Dataflow
-                       service - there is optimization bottleneck in GBK, for groups bigger
-                       than 10K. Thus it is recommended to set <code>hotKeyThreshold</code> to &lt;10K, keep
-                       upper estimation error in mind.</p></dd><dt class="param">eps</dt><dd class="cmt"><p>One-sided error bound on the error of each point query, i.e. frequency estimate.
+</p></div><dl class="paramcmts block"><dt class="param">hotKeyThreshold</dt><dd class="cmt"><p>key with <code>hotKeyThreshold</code> values will be considered hot. Some runners
+                       have inefficient GroupByKey implementation for groups with more than 10K
+                       values. Thus it is recommended to set <code>hotKeyThreshold</code> to below 10K,
+                       keep upper estimation error in mind.</p></dd><dt class="param">eps</dt><dd class="cmt"><p>One-sided error bound on the error of each point query, i.e. frequency estimate.
            Must lie in (0, 1).</p></dd><dt class="param">seed</dt><dd class="cmt"><p>A seed to initialize the random number generator used to create the pairwise
             independent hash functions.</p></dd><dt class="param">delta</dt><dd class="cmt"><p>A bound on the probability that a query estimate does not lie within some small
              interval (an interval that depends on <code>eps</code>) around the truth. Must lie in (0, 1).</p></dd><dt class="param">sampleFraction</dt><dd class="cmt"><p>left side sample fracation. Default is <code>1.0</code> - no sampling.</p></dd><dt class="param">withReplacement</dt><dd class="cmt"><p>whether to use sampling with replacement, see <span class="extype" name="SCollection.sample()">SCollection.sample()</span></p></dd></dl><dl class="attributes block"> <div class="block">Example:

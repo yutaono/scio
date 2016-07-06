@@ -105,6 +105,40 @@
       </a>
     </span>
       <p class="shortcomment cmt">Encapsulate parsed commandline arguments.</p>
+    </li><li name="com.spotify.scio.ArraySemigroup" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ArraySemigroup[T]extendsSemigroup[Array[T]]"></a>
+      <a id="ArraySemigroup[T]:ArraySemigroup[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$ArraySemigroup.html"><span class="name">ArraySemigroup</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package@ArraySemigroup[T]extendsSemigroup[Array[T]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.DistCacheScioContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DistCacheScioContextextendsAnyRef"></a>
+      <a id="DistCacheScioContext:DistCacheScioContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="DistCacheScioContext.html"><span class="name">DistCacheScioContext</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package@DistCacheScioContextextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">An enhanced ScioContext with distributed cache features.</p>
     </li><li name="com.spotify.scio.ScioContext" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ScioContextextendsAnyRef"></a>
       <a id="ScioContext:ScioContext"></a>
@@ -121,8 +155,8 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Main entry point for Dataflow functionality.</p><div class="fullcomment"><div class="comment cmt"><p>Main entry point for Dataflow functionality. A ScioContext represents a Dataflow pipeline,
-and can be used to create SCollections and distributed caches on that cluster.
+      <p class="shortcomment cmt">Main entry point for Scio functionality.</p><div class="fullcomment"><div class="comment cmt"><p>Main entry point for Scio functionality. A ScioContext represents a pipeline and can be used to
+create SCollections and distributed caches on that cluster.
 </p></div></div>
     </li><li name="com.spotify.scio.ScioResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ScioResultextendsAnyRef"></a>
@@ -387,6 +421,23 @@ and can be used to create SCollections and distributed caches on that cluster.
       </a>
     </span>
       <p class="shortcomment cmt">Main package for Bigtable APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for Bigtable APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.bigtable._</pre></div></div>
+    </li><li name="com.spotify.scio.coders" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="coders"></a>
+      <a id="coders:coders"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="coders/package.html"><span class="name">coders</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package@coders" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li><li name="com.spotify.scio#doubleAccumulatorType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="doubleAccumulatorType:com.spotify.scio.values.AccumulatorType[Double]"></a>
       <a id="doubleAccumulatorType:AccumulatorType[Double]"></a>
@@ -404,6 +455,23 @@ and can be used to create SCollections and distributed caches on that cluster.
       </a>
     </span>
       
+    </li><li name="com.spotify.scio#doubleArraySg" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="doubleArraySg:com.twitter.algebird.Semigroup[Array[Double]]"></a>
+      <a id="doubleArraySg:Semigroup[Array[Double]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">doubleArraySg</span><span class="result">: <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Double" class="extype" target="_top">Double</a>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package@doubleArraySg:com.twitter.algebird.Semigroup[Array[Double]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> for Array[Double].</p>
     </li><li name="com.spotify.scio.experimental" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="experimental"></a>
       <a id="experimental:experimental"></a>
@@ -438,6 +506,23 @@ and can be used to create SCollections and distributed caches on that cluster.
       </a>
     </span>
       
+    </li><li name="com.spotify.scio#floatArraySg" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="floatArraySg:com.twitter.algebird.Semigroup[Array[Float]]"></a>
+      <a id="floatArraySg:Semigroup[Array[Float]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">floatArraySg</span><span class="result">: <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Float" class="extype" target="_top">Float</a>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package@floatArraySg:com.twitter.algebird.Semigroup[Array[Float]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> for Array[Float].</p>
     </li><li name="com.spotify.scio.hdfs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hdfs"></a>
       <a id="hdfs:hdfs"></a>
@@ -474,6 +559,23 @@ They can be packaged in src/main/resources directory.
       </a>
     </span>
       
+    </li><li name="com.spotify.scio#intArraySg" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="intArraySg:com.twitter.algebird.Semigroup[Array[Int]]"></a>
+      <a id="intArraySg:Semigroup[Array[Int]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">intArraySg</span><span class="result">: <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package@intArraySg:com.twitter.algebird.Semigroup[Array[Int]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> for Array[Int].</p>
     </li><li name="com.spotify.scio.io" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="io"></a>
       <a id="io:io"></a>
@@ -504,6 +606,40 @@ They can be packaged in src/main/resources directory.
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#com.spotify.scio.package@longAccumulatorType:com.spotify.scio.values.AccumulatorType[Long]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio#longArraySg" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="longArraySg:com.twitter.algebird.Semigroup[Array[Long]]"></a>
+      <a id="longArraySg:Semigroup[Array[Long]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">longArraySg</span><span class="result">: <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package@longArraySg:com.twitter.algebird.Semigroup[Array[Long]]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> for Array[Long].</p>
+    </li><li name="com.spotify.scio#makeDistCacheScioContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="makeDistCacheScioContext(self:com.spotify.scio.ScioContext):com.spotify.scio.DistCacheScioContext"></a>
+      <a id="makeDistCacheScioContext(ScioContext):DistCacheScioContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeDistCacheScioContext</span><span class="params">(<span name="self">self: <a href="ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a></span>)</span><span class="result">: <a href="DistCacheScioContext.html" class="extype" name="com.spotify.scio.DistCacheScioContext">DistCacheScioContext</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package@makeDistCacheScioContext(self:com.spotify.scio.ScioContext):com.spotify.scio.DistCacheScioContext" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
