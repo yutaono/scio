@@ -718,6 +718,23 @@ fit in memory.
       <p class="shortcomment cmt">Perform a left outer join by replicating <code>that</code> to all workers.</p><div class="fullcomment"><div class="comment cmt"><p>Perform a left outer join by replicating <code>that</code> to all workers. The right side should be tiny
 and fit in memory.
 </p></div></div>
+    </li><li name="com.spotify.scio.values.PairSCollectionFunctions#intersectByKey" visbl="pub" data-isabs="false" fullComment="no" group="per_key">
+      <a id="intersectByKey(that:com.spotify.scio.values.SCollection[K]):com.spotify.scio.values.SCollection[(K,V)]"></a>
+      <a id="intersectByKey(SCollection[K]):SCollection[(K,V)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">intersectByKey</span><span class="params">(<span name="that">that: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@intersectByKey(that:com.spotify.scio.values.SCollection[K]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Return an SCollection with the pairs from <code>this</code> whose keys are in <code>that</code>.</p>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -1053,22 +1070,22 @@ the left hand side stream so far.
 <span class="kw">val</span> p = logs.skewedJoin(logMetadata, hotKeyThreshold = <span class="num">8500</span>, eps=<span class="num">0.0005</span>, seed=<span class="num">1</span>)</pre><p>Read more about CMS -&gt; <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.CMSMonoid" class="extype" target="_top">com.twitter.algebird.CMSMonoid</a></p></li></ol>
             </div><dt>Note</dt><dd><span class="cmt"><p>Make sure to import <span class="extype" name="com.twitter.algebird.CMSHasherImplicits">com.twitter.algebird.CMSHasherImplicits</span> before using this join</p></span></dd></dl></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#subtractByKey" visbl="pub" data-isabs="false" fullComment="no" group="per_key">
-      <a id="subtractByKey[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$29:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,V)]"></a>
-      <a id="subtractByKey[W](SCollection[(K,W)])(ClassTag[W]):SCollection[(K,V)]"></a>
+      <a id="subtractByKey(that:com.spotify.scio.values.SCollection[K]):com.spotify.scio.values.SCollection[(K,V)]"></a>
+      <a id="subtractByKey(SCollection[K]):SCollection[(K,V)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">subtractByKey</span><span class="tparams">[<span name="W">W</span>]</span><span class="params">(<span name="that">that: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.subtractByKey.W">W</span>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.subtractByKey.W">W</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>)]</span>
+        <span class="name">subtractByKey</span><span class="params">(<span name="that">that: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.K">K</span>, <span class="extype" name="com.spotify.scio.values.PairSCollectionFunctions.V">V</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@subtractByKey[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$29:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.PairSCollectionFunctions@subtractByKey(that:com.spotify.scio.values.SCollection[K]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Return an SCollection with the pairs from <code>this</code> whose keys are not in <code>other</code>.</p>
+      <p class="shortcomment cmt">Return an SCollection with the pairs from <code>this</code> whose keys are not in <code>that</code>.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#sumByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
       <a id="sumByKey(implicitsg:com.twitter.algebird.Semigroup[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
       <a id="sumByKey(Semigroup[V]):SCollection[(K,V)]"></a>

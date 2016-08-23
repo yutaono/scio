@@ -230,6 +230,23 @@ an SCollection[T] into a result of type SCollection[C], for a &quot;combined typ
 and C can be different -- for example, one might combine an SCollection of type Int into an
 SCollection of type Seq[Int]. Users provide three functions:</p><p>- <code>createCombiner</code>, which turns a V into a C (e.g., creates a one-element list)</p><p>- <code>mergeValue</code>, to merge a V into a C (e.g., adds it to the end of a list)</p><p>- <code>mergeCombiners</code>, to combine two C's into a single one.
 </p></div></div>
+    </li><li name="com.spotify.scio.values.SCollectionWithFanout#context" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="context:com.spotify.scio.ScioContext"></a>
+      <a id="context:ScioContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">context</span><span class="result">: <a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithFanout@context:com.spotify.scio.ScioContext" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The ScioContext associated with this PCollection.</p><div class="fullcomment"><div class="comment cmt"><p>The ScioContext associated with this PCollection.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.spotify.scio.values.SCollectionWithFanout">SCollectionWithFanout</a> → PCollectionWrapper</dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollectionWithFanout#ct" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ct:scala.reflect.ClassTag[T]"></a>
       <a id="ct:ClassTag[T]"></a>
