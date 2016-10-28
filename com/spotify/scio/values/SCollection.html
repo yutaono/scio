@@ -1094,18 +1094,18 @@ binary operator.</p>
       <p class="shortcomment cmt">Return a sampled subset of this SCollection.</p><div class="fullcomment"><div class="comment cmt"><p>Return a sampled subset of this SCollection.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new SCollection whose single value is an Iterable of the
 samples</p></dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollection#saveAsAvroFile" visbl="pub" data-isabs="false" fullComment="yes" group="output">
-      <a id="saveAsAvroFile(path:String,numShards:Int,schema:org.apache.avro.Schema,suffix:String,codec:org.apache.avro.file.CodecFactory):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
-      <a id="saveAsAvroFile(String,Int,Schema,String,CodecFactory):Future[Tap[T]]"></a>
+      <a id="saveAsAvroFile(path:String,numShards:Int,schema:org.apache.avro.Schema,suffix:String,codec:org.apache.avro.file.CodecFactory,metadata:Map[String,AnyRef]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
+      <a id="saveAsAvroFile(String,Int,Schema,String,CodecFactory,Map[String,AnyRef]):Future[Tap[T]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsAvroFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="numShards">numShards: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">0</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>, <span name="suffix">suffix: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="codec">codec: <span class="extype" name="org.apache.avro.file.CodecFactory">CodecFactory</span> = <span class="symbol">CodecFactory.deflateCodec(6)</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]]</span>
+        <span class="name">saveAsAvroFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="numShards">numShards: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">0</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>, <span name="suffix">suffix: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="codec">codec: <span class="extype" name="org.apache.avro.file.CodecFactory">CodecFactory</span> = <span class="symbol">CodecFactory.deflateCodec(6)</span></span>, <span name="metadata">metadata: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsAvroFile(path:String,numShards:Int,schema:org.apache.avro.Schema,suffix:String,codec:org.apache.avro.file.CodecFactory):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsAvroFile(path:String,numShards:Int,schema:org.apache.avro.Schema,suffix:String,codec:org.apache.avro.file.CodecFactory,metadata:Map[String,AnyRef]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -1162,18 +1162,18 @@ samples</p></dd></dl></div>
     </span>
       <p class="shortcomment cmt">Save this SCollection as a Datastore dataset.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a Datastore dataset. Note that elements must be of type Entity.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#saveAsObjectFile" visbl="pub" data-isabs="false" fullComment="no" group="output">
-      <a id="saveAsObjectFile(path:String,numShards:Int,suffix:String):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
-      <a id="saveAsObjectFile(String,Int,String):Future[Tap[T]]"></a>
+      <a id="saveAsObjectFile(path:String,numShards:Int,suffix:String,metadata:Map[String,AnyRef]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
+      <a id="saveAsObjectFile(String,Int,String,Map[String,AnyRef]):Future[Tap[T]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsObjectFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="numShards">numShards: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">0</span></span>, <span name="suffix">suffix: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;.obj&quot;</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]]</span>
+        <span class="name">saveAsObjectFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="numShards">numShards: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">0</span></span>, <span name="suffix">suffix: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;.obj&quot;</span></span>, <span name="metadata">metadata: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>] = <span class="symbol">Map.empty</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsObjectFile(path:String,numShards:Int,suffix:String):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsObjectFile(path:String,numShards:Int,suffix:String,metadata:Map[String,AnyRef]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
