@@ -91,7 +91,7 @@
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="com.spotify.scio.bigquery.types.BigQueryType" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="com.spotify.scio.bigquery.types.BigQueryType" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="BigQueryType"></a>
       <a id="BigQueryType:BigQueryType"></a>
       <h4 class="signature">
@@ -107,7 +107,20 @@
         <img src="../../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Macro annotations and converter generators for BigQuery types.</p>
+      <p class="shortcomment cmt">Macro annotations and converter generators for BigQuery types.</p><div class="fullcomment"><div class="comment cmt"><p>Macro annotations and converter generators for BigQuery types.</p><p>The following table lists each legacy SQL data type, its standard SQL equivalent and Scala type.
+Legacy SQL          Standard SQL        Scala type
+BOOLEAN             BOOL                Boolean
+INTEGER             INT64               Long, Int
+FLOAT               FLOAT64             Double, Float
+STRING              STRING              String
+BYTES               BYTES               com.google.protobuf.ByteString, Array[Byte]
+RECORD              STRUCT              Nested case class
+REPEATED            ARRAY               List[T]
+TIMESTAMP           TIMESTAMP           org.joda.time.Instant
+DATE                DATE                org.joda.time.LocalDate
+TIME                TIME                org.joda.time.LocalTime
+DATETIME            DATETIME            org.joda.time.LocalDateTime
+</p></div></div>
     </li><li name="com.spotify.scio.bigquery.types.SchemaUtil" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="SchemaUtil"></a>
       <a id="SchemaUtil:SchemaUtil"></a>

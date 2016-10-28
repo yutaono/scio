@@ -51,7 +51,20 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Macro annotations and converter generators for BigQuery types.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Macro annotations and converter generators for BigQuery types.</p><p>The following table lists each legacy SQL data type, its standard SQL equivalent and Scala type.
+Legacy SQL          Standard SQL        Scala type
+BOOLEAN             BOOL                Boolean
+INTEGER             INT64               Long, Int
+FLOAT               FLOAT64             Double, Float
+STRING              STRING              String
+BYTES               BYTES               com.google.protobuf.ByteString, Array[Byte]
+RECORD              STRUCT              Nested case class
+REPEATED            ARRAY               List[T]
+TIMESTAMP           TIMESTAMP           org.joda.time.Instant
+DATE                DATE                org.joda.time.LocalDate
+TIME                TIME                org.joda.time.LocalTime
+DATETIME            DATETIME            org.joda.time.LocalDateTime
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -701,7 +714,7 @@ example:</p><pre>@BigQueryType.toTable
               <h3>Traits for annotated types</h3>
               
             </div><div class="group" name="Ungrouped">
-              <h3>Ungrouped</h3>
+              <h3>Other Members</h3>
               
             </div>
         </div>
