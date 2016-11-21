@@ -265,24 +265,6 @@ function can return a different result type, U, than the type of this SCollectio
 we need one operation for merging a T into an U and one operation for merging two U's. Both
 of these functions are allowed to modify and return their first argument instead of creating
 a new U to avoid memory allocation.</p></div></div>
-    </li><li name="com.spotify.scio.values.SCollection#applyOutputTransform" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="applyOutputTransform(transform:com.google.cloud.dataflow.sdk.transforms.PTransform[_&gt;:com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PDone]):com.google.cloud.dataflow.sdk.values.PDone"></a>
-      <a id="applyOutputTransform(PTransform[_&gt;:PCollection[T],PDone]):PDone"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">applyOutputTransform</span><span class="params">(<span name="transform">transform: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.PTransform" class="extype" target="_top">PTransform</a>[_ &gt;: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>], <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PDone" class="extype" target="_top">PDone</a>]</span>)</span><span class="result">: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PDone" class="extype" target="_top">PDone</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@applyOutputTransform(transform:com.google.cloud.dataflow.sdk.transforms.PTransform[_&gt;:com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PDone]):com.google.cloud.dataflow.sdk.values.PDone" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Apply a <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.PTransform" class="extype" target="_top">PTransform</a> with <span class="extype" name="PDone">PDone</span>
-output.</p>
     </li><li name="com.spotify.scio.values.SCollection#applyTransform" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="applyTransform[U](transform:com.google.cloud.dataflow.sdk.transforms.PTransform[_&gt;:com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PCollection[U]])(implicitevidence$4:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
       <a id="applyTransform[U](PTransform[_&gt;:PCollection[T],PCollection[U]])(ClassTag[U]):SCollection[U]"></a>
@@ -1144,6 +1126,23 @@ samples</p></dd></dl></div>
       </a>
     </span>
       <p class="shortcomment cmt">Save this SCollection as a BigQuery table.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a BigQuery table. Note that elements must be of type TableRow.</p></div></div>
+    </li><li name="com.spotify.scio.values.SCollection#saveAsCustomOutput" visbl="pub" data-isabs="false" fullComment="yes" group="output">
+      <a id="saveAsCustomOutput(transform:com.google.cloud.dataflow.sdk.transforms.PTransform[com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PDone]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
+      <a id="saveAsCustomOutput(PTransform[PCollection[T],PDone]):Future[Tap[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">saveAsCustomOutput</span><span class="params">(<span name="transform">transform: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.PTransform" class="extype" target="_top">PTransform</a>[<a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>], <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PDone" class="extype" target="_top">PDone</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsCustomOutput(transform:com.google.cloud.dataflow.sdk.transforms.PTransform[com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PDone]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Save this SCollection with a custom output transform.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection with a custom output transform. The transform should have a unique name.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#saveAsDatastore" visbl="pub" data-isabs="false" fullComment="yes" group="output">
       <a id="saveAsDatastore(projectId:String)(implicitev:&lt;:&lt;[T,com.google.datastore.v1.Entity]):scala.concurrent.Future[com.spotify.scio.io.Tap[com.google.datastore.v1.Entity]]"></a>
       <a id="saveAsDatastore(String)(&lt;:&lt;[T,Entity]):Future[Tap[Entity]]"></a>
