@@ -1,0 +1,247 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>metrics - com.spotify.scio.metrics</title>
+          <meta name="description" content="metrics - com.spotify.scio.metrics" />
+          <meta name="keywords" content="metrics com.spotify.scio.metrics" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'com.spotify.scio.metrics.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.spotify">spotify</a>.<a href="../package.html" class="extype" name="com.spotify.scio">scio</a></p>
+        <h1>metrics</h1><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.metrics.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">metrics</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This package contains the schema types for metrics collected during a pipeline run.</p><p>See <a href="../ScioResult.html#getMetrics:com.spotify.scio.metrics.Metrics" class="extmbr" name="com.spotify.scio.ScioResult#getMetrics">ScioResult.getMetrics</a>
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="com.spotify.scio.metrics"><span>metrics</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="com.spotify.scio.metrics.AccumulatorMetrics" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AccumulatorMetricsextendsProductwithSerializable"></a>
+      <a id="AccumulatorMetrics:AccumulatorMetrics"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$AccumulatorMetrics.html"><span class="name">AccumulatorMetrics</span></a><span class="params">(<span name="total">total: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="package$$AccumulatorValue.html" class="extype" name="com.spotify.scio.metrics.AccumulatorValue">AccumulatorValue</a>]</span>, <span name="steps">steps: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="package$$AccumulatorStepsValue.html" class="extype" name="com.spotify.scio.metrics.AccumulatorStepsValue">AccumulatorStepsValue</a>]</span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.metrics.package@AccumulatorMetricsextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.metrics.AccumulatorStepValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AccumulatorStepValueextendsProductwithSerializable"></a>
+      <a id="AccumulatorStepValue:AccumulatorStepValue"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$AccumulatorStepValue.html"><span class="name">AccumulatorStepValue</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.metrics.package@AccumulatorStepValueextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.metrics.AccumulatorStepsValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AccumulatorStepsValueextendsProductwithSerializable"></a>
+      <a id="AccumulatorStepsValue:AccumulatorStepsValue"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$AccumulatorStepsValue.html"><span class="name">AccumulatorStepsValue</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="steps">steps: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="package$$AccumulatorStepValue.html" class="extype" name="com.spotify.scio.metrics.AccumulatorStepValue">AccumulatorStepValue</a>]</span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.metrics.package@AccumulatorStepsValueextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.metrics.AccumulatorValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="AccumulatorValueextendsProductwithSerializable"></a>
+      <a id="AccumulatorValue:AccumulatorValue"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$AccumulatorValue.html"><span class="name">AccumulatorValue</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="value">value: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.metrics.package@AccumulatorValueextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.metrics.DFMetricName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DFMetricNameextendsProductwithSerializable"></a>
+      <a id="DFMetricName:DFMetricName"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$DFMetricName.html"><span class="name">DFMetricName</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="origin">origin: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="context">context: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.metrics.package@DFMetricNameextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.metrics.DFServiceMetrics" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DFServiceMetricsextendsProductwithSerializable"></a>
+      <a id="DFServiceMetrics:DFServiceMetrics"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$DFServiceMetrics.html"><span class="name">DFServiceMetrics</span></a><span class="params">(<span name="name">name: <a href="package$$DFMetricName.html" class="extype" name="com.spotify.scio.metrics.DFMetricName">DFMetricName</a></span>, <span name="scalar">scalar: <span class="extype" name="scala.AnyRef">AnyRef</span></span>, <span name="updateTime">updateTime: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.metrics.package@DFServiceMetricsextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.metrics.Metrics" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MetricsextendsProductwithSerializable"></a>
+      <a id="Metrics:Metrics"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$Metrics.html"><span class="name">Metrics</span></a><span class="params">(<span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="scalaVersion">scalaVersion: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="jobName">jobName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="jobId">jobId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="accumulators">accumulators: <a href="package$$AccumulatorMetrics.html" class="extype" name="com.spotify.scio.metrics.AccumulatorMetrics">AccumulatorMetrics</a></span>, <span name="cloudMetrics">cloudMetrics: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="package$$DFServiceMetrics.html" class="extype" name="com.spotify.scio.metrics.DFServiceMetrics">DFServiceMetrics</a>]</span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.metrics.package@MetricsextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
