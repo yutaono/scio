@@ -311,7 +311,7 @@ transforms. <a href="Accumulator.html" class="extype" name="com.spotify.scio.val
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt"><a href="SCollection.html#flatMap[U](f:T=&gt;TraversableOnce[U])(implicitevidence$11:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" class="extmbr" name="com.spotify.scio.values.SCollection#flatMap">SCollection.flatMap</a> with an additional AccumulatorContext argument.</p>
+      <p class="shortcomment cmt"><a href="SCollection.html#flatMap[U](f:T=&gt;TraversableOnce[U])(implicitevidence$12:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" class="extmbr" name="com.spotify.scio.values.SCollection#flatMap">SCollection.flatMap</a> with an additional AccumulatorContext argument.</p>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -396,7 +396,7 @@ transforms. <a href="Accumulator.html" class="extype" name="com.spotify.scio.val
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt"><a href="SCollection.html#map[U](f:T=&gt;U)(implicitevidence$14:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" class="extmbr" name="com.spotify.scio.values.SCollection#map">SCollection.map</a> with an additional AccumulatorContext argument.</p>
+      <p class="shortcomment cmt"><a href="SCollection.html#map[U](f:T=&gt;U)(implicitevidence$15:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" class="extmbr" name="com.spotify.scio.values.SCollection#map">SCollection.map</a> with an additional AccumulatorContext argument.</p>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -449,18 +449,18 @@ transforms. <a href="Accumulator.html" class="extype" name="com.spotify.scio.val
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="com.spotify.scio.values.PCollectionWrapper#pApply" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="pApply[U](transform:com.google.cloud.dataflow.sdk.transforms.PTransform[_&gt;:com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PCollection[U]])(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
-      <a id="pApply[U](PTransform[_&gt;:PCollection[T],PCollection[U]])(ClassTag[U]):SCollection[U]"></a>
+      <a id="pApply[U](transform:com.google.cloud.dataflow.sdk.transforms.PTransform[_&gt;:com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PCollection[U]],name:String)(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
+      <a id="pApply[U](PTransform[_&gt;:PCollection[T],PCollection[U]],String)(ClassTag[U]):SCollection[U]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">pApply</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="transform">transform: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.PTransform" class="extype" target="_top">PTransform</a>[_ &gt;: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithAccumulator.T">T</span>], <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.PCollectionWrapper.pApply.U">U</span>]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PCollectionWrapper.pApply.U">U</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.PCollectionWrapper.pApply.U">U</span>]</span>
+        <span class="name">pApply</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="transform">transform: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.PTransform" class="extype" target="_top">PTransform</a>[_ &gt;: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithAccumulator.T">T</span>], <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.PCollectionWrapper.pApply.U">U</span>]]</span>, <span name="name">name: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol"><span class="name"><a href="../../../package.html">CallSites.getCurrent</a></span></span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PCollectionWrapper.pApply.U">U</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.PCollectionWrapper.pApply.U">U</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithAccumulator@pApply[U](transform:com.google.cloud.dataflow.sdk.transforms.PTransform[_&gt;:com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PCollection[U]])(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithAccumulator@pApply[U](transform:com.google.cloud.dataflow.sdk.transforms.PTransform[_&gt;:com.google.cloud.dataflow.sdk.values.PCollection[T],com.google.cloud.dataflow.sdk.values.PCollection[U]],name:String)(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>

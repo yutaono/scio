@@ -66,7 +66,24 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="com.spotify.scio.coders.FloatCoder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="com.spotify.scio.coders.AnnotatedKryoRegistrar" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AnnotatedKryoRegistrarextendsAnyRef"></a>
+      <a id="AnnotatedKryoRegistrar:AnnotatedKryoRegistrar"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="AnnotatedKryoRegistrar.html"><span class="name">AnnotatedKryoRegistrar</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.coders.package@AnnotatedKryoRegistrarextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait to be added to Kryo registrar class annotated with <code>@KryoRegistrar</code>.</p>
+    </li><li name="com.spotify.scio.coders.FloatCoder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="FloatCoderextendsAtomicCoder[Float]"></a>
       <a id="FloatCoder:FloatCoder"></a>
       <h4 class="signature">
@@ -83,6 +100,24 @@
       </a>
     </span>
       
+    </li><li name="com.spotify.scio.coders.KryoRegistrar" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="KryoRegistrarextendsAnnotationwithStaticAnnotation"></a>
+      <a id="KryoRegistrar:KryoRegistrar"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="KryoRegistrar.html"><span class="name">KryoRegistrar</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.annotation.Annotation" class="extype" target="_top">Annotation</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.annotation.StaticAnnotation" class="extype" target="_top">StaticAnnotation</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.coders.package@KryoRegistrarextendsAnnotationwithStaticAnnotation" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Annotation for custom Kryo registrar classes.</p><div class="fullcomment"><div class="comment cmt"><p>Annotation for custom Kryo registrar classes.</p><p>Annotated class must extend <code>IKryoRegistrar</code> and has name that ends with &quot;KryoRegistrar&quot;.
+</p></div></div>
     </li></ol>
             </div>
 
