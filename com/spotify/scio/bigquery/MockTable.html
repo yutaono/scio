@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>Tap - com.spotify.scio.io.Tap</title>
-          <meta name="description" content="Tap - com.spotify.scio.io.Tap" />
-          <meta name="keywords" content="Tap com.spotify.scio.io.Tap" />
+          <title>MockTable - com.spotify.scio.bigquery.MockTable</title>
+          <meta name="description" content="MockTable - com.spotify.scio.bigquery.MockTable" />
+          <meta name="keywords" content="MockTable com.spotify.scio.bigquery.MockTable" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -16,7 +16,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../index.html';
-            var hash = 'com.spotify.scio.io.Tap';
+            var hash = 'com.spotify.scio.bigquery.MockTable';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -28,12 +28,12 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img alt="Trait" src="../../../../lib/trait_big.png" />
-        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.spotify">spotify</a>.<a href="../package.html" class="extype" name="com.spotify.scio">scio</a>.<a href="package.html" class="extype" name="com.spotify.scio.io">io</a></p>
-        <h1>Tap</h1><h3><span class="morelinks"><div>Related Doc:
-            <a href="package.html" class="extype" name="com.spotify.scio.io">package io</a>
+        <img alt="Class" src="../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.spotify">spotify</a>.<a href="../package.html" class="extype" name="com.spotify.scio">scio</a>.<a href="package.html" class="extype" name="com.spotify.scio.bigquery">bigquery</a></p>
+        <h1>MockTable</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="com.spotify.scio.bigquery">package bigquery</a>
           </div></span></h3><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -42,22 +42,18 @@
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">trait</span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">Tap</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">MockTable</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Placeholder to an external data set that can either be load into memory as an iterator or opened
-in a new ScioContext as an SCollection.
-</p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.Tap.T">T</span>]</dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A BigQuery table being mocked for test.
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div><div class="toggleContainer block">
-            <span class="toggle">Known Subclasses</span>
-            <div class="subClasses hiddenContent"><a href="AvroTap.html" class="extype" name="com.spotify.scio.io.AvroTap">AvroTap</a>, <a href="BigQueryTap.html" class="extype" name="com.spotify.scio.io.BigQueryTap">BigQueryTap</a>, <a href="../hdfs/package$$HdfsAvroTap.html" class="extype" name="com.spotify.scio.hdfs.HdfsAvroTap">HdfsAvroTap</a>, <a href="../hdfs/package$$HdfsTextTap.html" class="extype" name="com.spotify.scio.hdfs.HdfsTextTap">HdfsTextTap</a>, <a href="ObjectFileTap.html" class="extype" name="com.spotify.scio.io.ObjectFileTap">ObjectFileTap</a>, <a href="TFRecordFileTap.html" class="extype" name="com.spotify.scio.io.TFRecordFileTap">TFRecordFileTap</a>, <a href="TableRowJsonTap.html" class="extype" name="com.spotify.scio.io.TableRowJsonTap">TableRowJsonTap</a>, <a href="TextTap.html" class="extype" name="com.spotify.scio.io.TextTap">TextTap</a></div>
-          </div></div>
+        </div></div>
         
 
       <div id="mbrsel">
@@ -74,7 +70,7 @@ in a new ScioContext as an SCollection.
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.spotify.scio.io.Tap"><span>Tap</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.spotify.scio.bigquery.MockTable"><span>MockTable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -91,51 +87,34 @@ in a new ScioContext as an SCollection.
 
       <div id="template">
         <div id="allMembers">
-        
-
-        
-
-        <div id="values" class="values members">
-              <h3>Abstract Value Members</h3>
-              <ol><li name="com.spotify.scio.io.Tap#open" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="open(sc:com.spotify.scio.ScioContext):com.spotify.scio.values.SCollection[T]"></a>
-      <a id="open(ScioContext):SCollection[T]"></a>
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="com.spotify.scio.bigquery.MockTable#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(bq:com.spotify.scio.bigquery.BigQueryClient,schema:com.google.api.services.bigquery.model.TableSchema,original:com.google.api.services.bigquery.model.TableReference,temp:com.google.api.services.bigquery.model.TableReference):com.spotify.scio.bigquery.MockTable"></a>
+      <a id="&lt;init&gt;:MockTable"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
+        <span class="modifier"></span>
+        <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">open</span><span class="params">(<span name="sc">sc: <a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a></span>)</span><span class="result">: <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.io.Tap.T">T</span>]</span>
+        <span class="name">MockTable</span><span class="params">(<span name="bq">bq: <a href="BigQueryClient.html" class="extype" name="com.spotify.scio.bigquery.BigQueryClient">BigQueryClient</a></span>, <span name="schema">schema: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableSchema" class="extype" target="_top">TableSchema</a></span>, <span name="original">original: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableReference" class="extype" target="_top">TableReference</a></span>, <span name="temp">temp: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableReference" class="extype" target="_top">TableReference</a></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@open(sc:com.spotify.scio.ScioContext):com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@&lt;init&gt;(bq:com.spotify.scio.bigquery.BigQueryClient,schema:com.google.api.services.bigquery.model.TableSchema,original:com.google.api.services.bigquery.model.TableReference,temp:com.google.api.services.bigquery.model.TableReference):com.spotify.scio.bigquery.MockTable" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Open data set as an SCollection.</p>
-    </li><li name="com.spotify.scio.io.Tap#value" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="value:Iterator[T]"></a>
-      <a id="value:Iterator[T]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">value</span><span class="result">: <span class="extype" name="scala.Iterator">Iterator</span>[<span class="extype" name="com.spotify.scio.io.Tap.T">T</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@value:Iterator[T]" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Read data set into memory.</p>
+      
     </li></ol>
             </div>
 
+        
+
+        
+
         <div id="values" class="values members">
-              <h3>Concrete Value Members</h3>
+              <h3>Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
@@ -148,7 +127,7 @@ in a new ScioContext as an SCollection.
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@!=(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -165,7 +144,7 @@ in a new ScioContext as an SCollection.
         <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@##():Int" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@##():Int" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -182,7 +161,7 @@ in a new ScioContext as an SCollection.
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@==(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@==(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -199,7 +178,7 @@ in a new ScioContext as an SCollection.
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@asInstanceOf[T0]:T0" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -216,7 +195,7 @@ in a new ScioContext as an SCollection.
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@clone():Object" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@clone():Object" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -239,7 +218,7 @@ in a new ScioContext as an SCollection.
         <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -256,7 +235,7 @@ in a new ScioContext as an SCollection.
         <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@equals(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -273,7 +252,7 @@ in a new ScioContext as an SCollection.
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@finalize():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@finalize():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -296,7 +275,7 @@ in a new ScioContext as an SCollection.
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@getClass():Class[_]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@getClass():Class[_]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -313,7 +292,7 @@ in a new ScioContext as an SCollection.
         <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@hashCode():Int" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@hashCode():Int" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -330,28 +309,11 @@ in a new ScioContext as an SCollection.
         <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.spotify.scio.io.Tap#map" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="map[U](f:T=&gt;U)(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.io.Tap[U]"></a>
-      <a id="map[U]((T)⇒U)(ClassTag[U]):Tap[U]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">map</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.spotify.scio.io.Tap.T">T</span>) ⇒ <span class="extype" name="com.spotify.scio.io.Tap.map.U">U</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.Tap.map.U">U</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.Tap.map.U">U</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@map[U](f:T=&gt;U)(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.io.Tap[U]" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Map items from T to U.</p>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -364,7 +326,7 @@ in a new ScioContext as an SCollection.
         <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -381,7 +343,7 @@ in a new ScioContext as an SCollection.
         <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@notify():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@notify():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -398,28 +360,11 @@ in a new ScioContext as an SCollection.
         <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@notifyAll():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@notifyAll():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="com.spotify.scio.io.Tap#parent" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="parent:Option[com.spotify.scio.io.Tap[_]]"></a>
-      <a id="parent:Option[Tap[_]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">parent</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[_]]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@parent:Option[com.spotify.scio.io.Tap[_]]" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <p class="shortcomment cmt">Parent Taps this Tap's data came from after <a href="#map[U](f:T=&gt;U)(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.io.Tap[U]" class="extmbr" name="com.spotify.scio.io.Tap#map">Tap.map</a></p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -432,7 +377,7 @@ in a new ScioContext as an SCollection.
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -449,7 +394,7 @@ in a new ScioContext as an SCollection.
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@toString():String" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@toString():String" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -466,7 +411,7 @@ in a new ScioContext as an SCollection.
         <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@wait():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@wait():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -489,7 +434,7 @@ in a new ScioContext as an SCollection.
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -512,7 +457,7 @@ in a new ScioContext as an SCollection.
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.io.Tap@wait(x$1:Long):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@wait(x$1:Long):Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -523,6 +468,78 @@ in a new ScioContext as an SCollection.
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.spotify.scio.bigquery.MockTable#withData" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withData(rows:Seq[com.spotify.scio.bigquery.TableRow]):Unit"></a>
+      <a id="withData(Seq[TableRow]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withData</span><span class="params">(<span name="rows">rows: <span class="extype" name="scala.Seq">Seq</span>[<a href="package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@withData(rows:Seq[com.spotify.scio.bigquery.TableRow]):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Populate the table with mock data.</p>
+    </li><li name="com.spotify.scio.bigquery.MockTable#withSample" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withSample(minNumRows:Int,maxNumRows:Int):Unit"></a>
+      <a id="withSample(Int,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withSample</span><span class="params">(<span name="minNumRows">minNumRows: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="maxNumRows">maxNumRows: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@withSample(minNumRows:Int,maxNumRows:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Populate the table with sample data from the original table.</p><div class="fullcomment"><div class="comment cmt"><p>Populate the table with sample data from the original table.
+Note that rows are taken from the beginning of the table and not truly random.
+</p></div></div>
+    </li><li name="com.spotify.scio.bigquery.MockTable#withSample" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withSample(numRows:Int):Unit"></a>
+      <a id="withSample(Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withSample</span><span class="params">(<span name="numRows">numRows: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@withSample(numRows:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Populate the table with sample data from the original table.</p><div class="fullcomment"><div class="comment cmt"><p>Populate the table with sample data from the original table.
+Note that rows are taken from the beginning of the table and not truly random.
+</p></div></div>
+    </li><li name="com.spotify.scio.bigquery.MockTable#withTypedData" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withTypedData[T&lt;:com.spotify.scio.bigquery.types.BigQueryType.HasAnnotation](rows:Seq[T])(implicitevidence$3:scala.reflect.ClassTag[T],implicitevidence$4:reflect.runtime.universe.TypeTag[T]):Unit"></a>
+      <a id="withTypedData[T&lt;:HasAnnotation](Seq[T])(ClassTag[T],scala.reflect.api.JavaUniverse.TypeTag[T]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withTypedData</span><span class="tparams">[<span name="T">T &lt;: <a href="types/BigQueryType$$HasAnnotation.html" class="extype" name="com.spotify.scio.bigquery.types.BigQueryType.HasAnnotation">HasAnnotation</a></span>]</span><span class="params">(<span name="rows">rows: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="com.spotify.scio.bigquery.MockTable.withTypedData.T">T</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.bigquery.MockTable.withTypedData.T">T</span>]</span>, <span name="arg1">arg1: <span class="extype" name="scala.reflect.api.TypeTags.TypeTag">scala.reflect.api.JavaUniverse.TypeTag</span>[<span class="extype" name="com.spotify.scio.bigquery.MockTable.withTypedData.T">T</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigquery.MockTable@withTypedData[T&lt;:com.spotify.scio.bigquery.types.BigQueryType.HasAnnotation](rows:Seq[T])(implicitevidence$3:scala.reflect.ClassTag[T],implicitevidence$4:reflect.runtime.universe.TypeTag[T]):Unit" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Populate the table with mock data.</p>
     </li></ol>
             </div>
 

@@ -1245,6 +1245,24 @@ samples</p></dd></dl></div>
       </a>
     </span>
       <p class="shortcomment cmt">Save this SCollection as a text file.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a text file. Note that elements must be of type String.</p></div></div>
+    </li><li name="com.spotify.scio.values.SCollection#saveAsTfRecordFile" visbl="pub" data-isabs="false" fullComment="yes" group="output">
+      <a id="saveAsTfRecordFile(path:String,suffix:String,tfRecordOptions:com.spotify.scio.io.TFRecordOptions)(implicitev:&lt;:&lt;[T,Array[Byte]]):scala.concurrent.Future[com.spotify.scio.io.Tap[Array[Byte]]]"></a>
+      <a id="saveAsTfRecordFile(String,String,TFRecordOptions)(&lt;:&lt;[T,Array[Byte]]):Future[Tap[Array[Byte]]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">saveAsTfRecordFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="suffix">suffix: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;.tfrecords&quot;</span></span>, <span name="tfRecordOptions">tfRecordOptions: <a href="../io/TFRecordOptions.html" class="extype" name="com.spotify.scio.io.TFRecordOptions">TFRecordOptions</a> = <span class="symbol"><span class="name"><a href="../../../package.html">TFRecordOptions.writeDefault</a></span></span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="scala.Predef.&lt;:&lt;">&lt;:&lt;</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Byte" class="extype" target="_top">Byte</a>]]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Byte" class="extype" target="_top">Byte</a>]]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@saveAsTfRecordFile(path:String,suffix:String,tfRecordOptions:com.spotify.scio.io.TFRecordOptions)(implicitev:&lt;:&lt;[T,Array[Byte]]):scala.concurrent.Future[com.spotify.scio.io.Tap[Array[Byte]]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Save this SCollection as a TensorFlow TFRecord file.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a TensorFlow TFRecord file. Note that elements must be of type
+Array<span class="extype" name="Byte">Byte</span>.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#setCoder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="setCoder(coder:com.google.cloud.dataflow.sdk.coders.Coder[T]):com.spotify.scio.values.SCollection[T]"></a>
       <a id="setCoder(Coder[T]):SCollection[T]"></a>
