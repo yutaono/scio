@@ -59,7 +59,7 @@ available only on SCollections of key-value pairs, such as <code>groupByKey</cod
 <a href="DoubleSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.DoubleSCollectionFunctions">DoubleSCollectionFunctions</a> contains operations available only on SCollections of Doubles.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="com.spotify.scio.values.PCollectionWrapper">PCollectionWrapper</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="com.spotify.scio.values.PCollectionWrapper">PCollectionWrapper</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>], <a href="TransformNameable.html" class="extype" name="com.spotify.scio.values.TransformNameable">TransformNameable</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -77,7 +77,7 @@ available only on SCollections of key-value pairs, such as <code>groupByKey</cod
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.spotify.scio.values.SCollection"><span>SCollection</span></li><li class="in" name="com.spotify.scio.values.PCollectionWrapper"><span>PCollectionWrapper</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.spotify.scio.values.SCollection"><span>SCollection</span></li><li class="in" name="com.spotify.scio.values.PCollectionWrapper"><span>PCollectionWrapper</span></li><li class="in" name="com.spotify.scio.values.TransformNameable"><span>TransformNameable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -1680,6 +1680,23 @@ combine parts of the data to reduce load on the final global combine step.</p></
       </a>
     </span>
       <p class="shortcomment cmt">Group values in to a single global window.</p>
+    </li><li name="com.spotify.scio.values.TransformNameable#withName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withName(name:String):TransformNameable.this.type"></a>
+      <a id="withName(String):SCollection.this.type"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withName</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>.this.type</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@withName(name:String):TransformNameable.this.type" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Set a custom name for the next transform to be applied.</p><div class="fullcomment"><div class="comment cmt"><p>Set a custom name for the next transform to be applied.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="TransformNameable.html" class="extype" name="com.spotify.scio.values.TransformNameable">TransformNameable</a></dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollection#withPaneInfo" visbl="pub" data-isabs="false" fullComment="no" group="window">
       <a id="withPaneInfo:com.spotify.scio.values.SCollection[(T,com.google.cloud.dataflow.sdk.transforms.windowing.PaneInfo)]"></a>
       <a id="withPaneInfo:SCollection[(T,PaneInfo)]"></a>
@@ -1857,6 +1874,8 @@ p.withSideOutputs(side1, side2).map { (x, s) <span class="kw">=&gt;</span>
         <div id="inheritedMembers">
         <div class="parent" name="com.spotify.scio.values.PCollectionWrapper">
               <h3>Inherited from <span class="extype" name="com.spotify.scio.values.PCollectionWrapper">PCollectionWrapper</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</h3>
+            </div><div class="parent" name="com.spotify.scio.values.TransformNameable">
+              <h3>Inherited from <a href="TransformNameable.html" class="extype" name="com.spotify.scio.values.TransformNameable">TransformNameable</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

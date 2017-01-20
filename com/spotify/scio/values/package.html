@@ -230,7 +230,7 @@ transforms. <a href="Accumulator.html" class="extype" name="com.spotify.scio.val
       <p class="shortcomment cmt">An enhanced SCollection that uses an intermediate node to combine parts of the data to reduce
 load on the final global combine step.</p>
     </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="SCollectionWithHotKeyFanout[K,V]extendsAnyRef"></a>
+      <a id="SCollectionWithHotKeyFanout[K,V]extendsTransformNameable"></a>
       <a id="SCollectionWithHotKeyFanout[K,V]:SCollectionWithHotKeyFanout[K,V]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -238,10 +238,10 @@ load on the final global combine step.</p>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="SCollectionWithHotKeyFanout.html"><span class="name">SCollectionWithHotKeyFanout</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="SCollectionWithHotKeyFanout.html"><span class="name">SCollectionWithHotKeyFanout</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="result"> extends <a href="TransformNameable.html" class="extype" name="com.spotify.scio.values.TransformNameable">TransformNameable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.package@SCollectionWithHotKeyFanout[K,V]extendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.package@SCollectionWithHotKeyFanout[K,V]extendsTransformNameable" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -372,6 +372,23 @@ performing the full combine.</p>
       </a>
     </span>
       <p class="shortcomment cmt">Encapsulate context of one or more <a href="SideOutput.html" class="extype" name="com.spotify.scio.values.SideOutput">SideOutput</a>s in an <a href="SCollectionWithSideOutput.html" class="extype" name="com.spotify.scio.values.SCollectionWithSideOutput">SCollectionWithSideOutput</a>.</p>
+    </li><li name="com.spotify.scio.values.TransformNameable" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="TransformNameableextendsAnyRef"></a>
+      <a id="TransformNameable:TransformNameable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="TransformNameable.html"><span class="name">TransformNameable</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@TransformNameableextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Trait for setting custom names on transforms.</p>
     </li><li name="com.spotify.scio.values.WindowOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="WindowOptions[W&lt;:com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow]extendsProductwithSerializable"></a>
       <a id="WindowOptions[W&lt;:BoundedWindow]:WindowOptions[W]"></a>
