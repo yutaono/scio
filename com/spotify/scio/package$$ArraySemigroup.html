@@ -51,7 +51,7 @@
       
           <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]], <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]], <span class="extype" name="algebra.ring.AdditiveSemigroup">AdditiveSemigroup</span>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]], <span class="extype" name="cats.kernel.Semigroup">Semigroup</span>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]], <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -69,7 +69,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.spotify.scio.ArraySemigroup"><span>ArraySemigroup</span></li><li class="in" name="com.twitter.algebird.Semigroup"><span>Semigroup</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.spotify.scio.ArraySemigroup"><span>ArraySemigroup</span></li><li class="in" name="com.twitter.algebird.Semigroup"><span>Semigroup</span></li><li class="in" name="algebra.ring.AdditiveSemigroup"><span>AdditiveSemigroup</span></li><li class="in" name="cats.kernel.Semigroup"><span>Semigroup</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -165,6 +165,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.twitter.algebird.Semigroup#additive" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="additive:algebra.Semigroup[T]"></a>
+      <a id="additive:Semigroup[Array[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">additive</span><span class="result">: <span class="extype" name="algebra.Semigroup">Semigroup</span>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package$$ArraySemigroup@additive:algebra.Semigroup[T]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Semigroup → AdditiveSemigroup</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -205,6 +222,57 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.twitter.algebird.Semigroup#combine" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="combine(l:T,r:T):T"></a>
+      <a id="combine(Array[T],Array[T]):Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">combine</span><span class="params">(<span name="l">l: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]</span>, <span name="r">r: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package$$ArraySemigroup@combine(l:T,r:T):T" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Semigroup → Semigroup</dd></dl></div>
+    </li><li name="com.twitter.algebird.Semigroup#combineAllOption" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="combineAllOption(iter:TraversableOnce[T]):Option[T]"></a>
+      <a id="combineAllOption(TraversableOnce[Array[T]]):Option[Array[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">combineAllOption</span><span class="params">(<span name="iter">iter: <span class="extype" name="scala.TraversableOnce">TraversableOnce</span>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package$$ArraySemigroup@combineAllOption(iter:TraversableOnce[T]):Option[T]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Semigroup → Semigroup</dd></dl></div>
+    </li><li name="cats.kernel.Semigroup#combineN" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="combineN(a:&lt;?&gt;,n:&lt;?&gt;):A"></a>
+      <a id="combineN(Array[T],Int):Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">combineN</span><span class="params">(<span name="a">a: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]</span>, <span name="n">n: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package$$ArraySemigroup@combineN(a:A,n:Int):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Semigroup</dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -380,7 +448,58 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.spotify.scio.ArraySemigroup">ArraySemigroup</a> → Semigroup</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.spotify.scio.ArraySemigroup">ArraySemigroup</a> → AdditiveSemigroup</dd></dl></div>
+    </li><li name="algebra.ring.AdditiveSemigroup#positiveSumN" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="positiveSumN(a:&lt;?&gt;,n:&lt;?&gt;):A"></a>
+      <a id="positiveSumN(Array[T],Int):Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">positiveSumN</span><span class="params">(<span name="a">a: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]</span>, <span name="n">n: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package$$ArraySemigroup@positiveSumN(a:A,n:Int):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[this] </dd><dt>Definition Classes</dt><dd>AdditiveSemigroup</dd></dl></div>
+    </li><li name="cats.kernel.Semigroup#repeatedCombineN" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="repeatedCombineN(a:&lt;?&gt;,n:&lt;?&gt;):A"></a>
+      <a id="repeatedCombineN(Array[T],Int):Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">repeatedCombineN</span><span class="params">(<span name="a">a: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]</span>, <span name="n">n: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package$$ArraySemigroup@repeatedCombineN(a:A,n:Int):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[this] </dd><dt>Definition Classes</dt><dd>Semigroup</dd></dl></div>
+    </li><li name="algebra.ring.AdditiveSemigroup#sumN" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="sumN(a:&lt;?&gt;,n:&lt;?&gt;):A"></a>
+      <a id="sumN(Array[T],Int):Array[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">sumN</span><span class="params">(<span name="a">a: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]</span>, <span name="n">n: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package$$ArraySemigroup@sumN(a:A,n:Int):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AdditiveSemigroup</dd></dl></div>
     </li><li name="com.spotify.scio.ArraySemigroup#sumOption" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="sumOption(xs:TraversableOnce[Array[T]]):Option[Array[T]]"></a>
       <a id="sumOption(TraversableOnce[Array[T]]):Option[Array[T]]"></a>
@@ -432,6 +551,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.twitter.algebird.Semigroup#trySum" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="trySum(iter:TraversableOnce[T]):Option[T]"></a>
+      <a id="trySum(TraversableOnce[Array[T]]):Option[Array[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">trySum</span><span class="params">(<span name="iter">iter: <span class="extype" name="scala.TraversableOnce">TraversableOnce</span>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.package$$ArraySemigroup@trySum(iter:TraversableOnce[T]):Option[T]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Semigroup → AdditiveSemigroup</dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -512,6 +648,12 @@
         <div id="inheritedMembers">
         <div class="parent" name="com.twitter.algebird.Semigroup">
               <h3>Inherited from <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]]</h3>
+            </div><div class="parent" name="algebra.ring.AdditiveSemigroup">
+              <h3>Inherited from <span class="extype" name="algebra.ring.AdditiveSemigroup">AdditiveSemigroup</span>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]]</h3>
+            </div><div class="parent" name="cats.kernel.Semigroup">
+              <h3>Inherited from <span class="extype" name="cats.kernel.Semigroup">Semigroup</span>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]]</h3>
+            </div><div class="parent" name="scala.Serializable">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></h3>
             </div><div class="parent" name="java.io.Serializable">
               <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
             </div><div class="parent" name="scala.AnyRef">
