@@ -68,7 +68,7 @@ available only on SCollections of key-value pairs, such as <code>groupByKey</cod
         <div id="order">
               <span class="filtertype">Ordering</span>
               <ol>
-                <li class="group out"><span>Grouped</span></li>
+                
                 <li class="alpha in"><span>Alphabetic</span></li>
                 <li class="inherit out"><span>By Inheritance</span></li>
               </ol>
@@ -234,14 +234,14 @@ multiple times (use <code>.distinct()</code> to eliminate them).</p></div></div>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">aggregate</span><span class="tparams">[<span name="A">A</span>, <span name="U">U</span>]</span><span class="params">(<span name="aggregator">aggregator: <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Aggregator" class="extype" target="_top">Aggregator</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="com.spotify.scio.values.SCollection.aggregate.A">A</span>, <span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.A">A</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>]</span>
+        <span class="name">aggregate</span><span class="tparams">[<span name="A">A</span>, <span name="U">U</span>]</span><span class="params">(<span name="aggregator">aggregator: <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Aggregator" class="extype" target="_top">Aggregator</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>, <span class="extype" name="com.spotify.scio.values.SCollection.aggregate.A">A</span>, <span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.A">A</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.aggregate.U">U</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.SCollection@aggregate[A,U](aggregator:com.twitter.algebird.Aggregator[T,A,U])(implicitevidence$7:scala.reflect.ClassTag[A],implicitevidence$8:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Aggregate with <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Aggregator" class="extype" target="_top">Aggregator</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Aggregate with <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Aggregator" class="extype" target="_top">Aggregator</a>. First each item T is mapped to
+      <p class="shortcomment cmt">Aggregate with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Aggregator" class="extype" target="_top">Aggregator</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Aggregate with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Aggregator" class="extype" target="_top">Aggregator</a>. First each item T is mapped to
 A, then we reduce with a semigroup of A, then finally we present the results as U. This could
 be more powerful and better optimized in some cases.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#aggregate" visbl="pub" data-isabs="false" fullComment="yes" group="transform">
@@ -320,20 +320,20 @@ in an <a href="" class="extype" name="com.spotify.scio.values.SCollection">SColl
 <a href="#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Convert this SCollection to a SideInput, mapping each window to an Iterable, to be used with
 <a href="#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>.</p><p>The values of the Iterable for a window are not required to fit in memory, but they may also
 not be effectively cached. If it is known that every window fits in memory, and stronger
-caching is desired, use <a href="#asListSideInput:com.spotify.scio.values.SideInput[List[T]]" class="extmbr" name="com.spotify.scio.values.SCollection#asListSideInput">asListSideInput</a>.</p></div></div>
+caching is desired, use <a href="#asListSideInput:com.spotify.scio.values.SideInput[Seq[T]]" class="extmbr" name="com.spotify.scio.values.SCollection#asListSideInput">asListSideInput</a>.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#asListSideInput" visbl="pub" data-isabs="false" fullComment="no" group="side">
-      <a id="asListSideInput:com.spotify.scio.values.SideInput[List[T]]"></a>
-      <a id="asListSideInput:SideInput[List[T]]"></a>
+      <a id="asListSideInput:com.spotify.scio.values.SideInput[Seq[T]]"></a>
+      <a id="asListSideInput:SideInput[Seq[T]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">asListSideInput</span><span class="result">: <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>[<span class="extype" name="scala.List">List</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]]</span>
+        <span class="name">asListSideInput</span><span class="result">: <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>[<span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollection@asListSideInput:com.spotify.scio.values.SideInput[List[T]]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollection@asListSideInput:com.spotify.scio.values.SideInput[Seq[T]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -640,15 +640,15 @@ this SCollection, and then flattening the results.</p>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">fold</span><span class="params">(<span class="implicit">implicit </span><span name="mon">mon: <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</span>
+        <span class="name">fold</span><span class="params">(<span class="implicit">implicit </span><span name="mon">mon: <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.SCollection@fold(implicitmon:com.twitter.algebird.Monoid[T]):com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Fold with <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative function and
-&quot;zero value&quot; for T.</p><div class="fullcomment"><div class="comment cmt"><p>Fold with <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative function and
+      <p class="shortcomment cmt">Fold with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative function and
+&quot;zero value&quot; for T.</p><div class="fullcomment"><div class="comment cmt"><p>Fold with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative function and
 &quot;zero value&quot; for T. This could be more powerful and better optimized in some cases.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#fold" visbl="pub" data-isabs="false" fullComment="yes" group="transform">
       <a id="fold(zeroValue:T)(op:(T,T)=&gt;T):com.spotify.scio.values.SCollection[T]"></a>
@@ -1262,7 +1262,7 @@ samples</p></dd></dl></div>
       </a>
     </span>
       <p class="shortcomment cmt">Save this SCollection as a TensorFlow TFRecord file.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a TensorFlow TFRecord file. Note that elements must be of type
-Array<span class="extype" name="Byte">Byte</span>.</p></div></div>
+<code>Array[Byte]</code>.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollection#setCoder" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="setCoder(coder:com.google.cloud.dataflow.sdk.coders.Coder[T]):com.spotify.scio.values.SCollection[T]"></a>
       <a id="setCoder(Coder[T]):SCollection[T]"></a>
@@ -1323,14 +1323,14 @@ Array<span class="extype" name="Byte">Byte</span>.</p></div></div>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">sum</span><span class="params">(<span class="implicit">implicit </span><span name="sg">sg: <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</span>
+        <span class="name">sum</span><span class="params">(<span class="implicit">implicit </span><span name="sg">sg: <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollection.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.SCollection@sum(implicitsg:com.twitter.algebird.Semigroup[T]):com.spotify.scio.values.SCollection[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Reduce with <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Reduce with <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>. This could be more powerful and
+      <p class="shortcomment cmt">Reduce with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Reduce with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>. This could be more powerful and
 better optimized in some cases.</p></div></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>

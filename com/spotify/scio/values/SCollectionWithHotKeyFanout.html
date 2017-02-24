@@ -62,7 +62,7 @@ performing the full combine.
         <div id="order">
               <span class="filtertype">Ordering</span>
               <ol>
-                <li class="group out"><span>Grouped</span></li>
+                
                 <li class="alpha in"><span>Alphabetic</span></li>
                 <li class="inherit out"><span>By Inheritance</span></li>
               </ol>
@@ -318,15 +318,15 @@ functions:</p><p>- <code>createCombiner</code>, which turns a V into a C (e.g., 
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">foldByKey</span><span class="params">(<span class="implicit">implicit </span><span name="mon">mon: <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.K">K</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>)]</span>
+        <span class="name">foldByKey</span><span class="params">(<span class="implicit">implicit </span><span name="mon">mon: <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.K">K</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>)]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithHotKeyFanout@foldByKey(implicitmon:com.twitter.algebird.Monoid[V]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Fold by key with <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative
-function and &quot;zero value&quot; for V.</p><div class="fullcomment"><div class="comment cmt"><p>Fold by key with <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative
+      <p class="shortcomment cmt">Fold by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative
+function and &quot;zero value&quot; for V.</p><div class="fullcomment"><div class="comment cmt"><p>Fold by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative
 function and &quot;zero value&quot; for V. This could be more powerful and better optimized in some
 cases.</p></div></div>
     </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#foldByKey" visbl="pub" data-isabs="false" fullComment="no" group="per_key">
@@ -479,14 +479,14 @@ the merging locally on each mapper before sending results to a reducer, similarl
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">sumByKey</span><span class="params">(<span class="implicit">implicit </span><span name="sg">sg: <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.K">K</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>)]</span>
+        <span class="name">sumByKey</span><span class="params">(<span class="implicit">implicit </span><span name="sg">sg: <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.K">K</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>)]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithHotKeyFanout@sumByKey(implicitsg:com.twitter.algebird.Semigroup[V]):com.spotify.scio.values.SCollection[(K,V)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Reduce by key with <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Reduce by key with <a href="http://twitter.github.io/algebird/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>. This could be more powerful
+      <p class="shortcomment cmt">Reduce by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Reduce by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>. This could be more powerful
 and better optimized in some cases.
 </p></div></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">

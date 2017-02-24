@@ -86,7 +86,9 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Utilities for Breeze.</p><div class="fullcomment"><div class="comment cmt"><p>Utilities for Breeze.</p><p>Includes <span class="extype" name="Semigroup">Semigroup</span>s for <code>DenseVector</code>s and <code>DenseMatrix</code>s of <code>Float</code> and <code>Double</code>.</p><pre><span class="kw">import</span> com.spotify.scio.extra.Breeze._
+      <p class="shortcomment cmt">Utilities for Breeze.</p><div class="fullcomment"><div class="comment cmt"><p>Utilities for Breeze.</p><p>Includes <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>s for
+<a href="http://www.scalanlp.org/api/breeze/index.html#breeze.linalg.DenseVector" class="extype" target="_top">DenseVector</a>s and <a href="http://www.scalanlp.org/api/breeze/index.html#breeze.linalg.DenseMatrix" class="extype" target="_top">DenseMatrix</a>s of
+<code>Float</code> and <code>Double</code>.</p><pre><span class="kw">import</span> com.spotify.scio.extra.Breeze._
 
 <span class="kw">val</span> vectors: SCollection[DenseVector[<span class="std">Double</span>]] = <span class="cmt">// ...</span>
 vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div></div>
