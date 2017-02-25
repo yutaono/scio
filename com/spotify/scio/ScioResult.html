@@ -271,7 +271,7 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.spotify.scio.ScioResult#finalState" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="finalState:scala.concurrent.Future[com.google.cloud.dataflow.sdk.PipelineResult.State]"></a>
+      <a id="finalState:scala.concurrent.Future[org.apache.beam.sdk.PipelineResult.State]"></a>
       <a id="finalState:Future[State]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -279,10 +279,10 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">finalState</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<span class="extype" name="com.google.cloud.dataflow.sdk.PipelineResult.State">State</span>]</span>
+        <span class="name">finalState</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<span class="extype" name="org.apache.beam.sdk.PipelineResult.State">State</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.ScioResult@finalState:scala.concurrent.Future[com.google.cloud.dataflow.sdk.PipelineResult.State]" title="Permalink" target="_top">
+      <a href="../../../index.html#com.spotify.scio.ScioResult@finalState:scala.concurrent.Future[org.apache.beam.sdk.PipelineResult.State]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -362,7 +362,7 @@
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="com.spotify.scio.ScioResult#internal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="internal:com.google.cloud.dataflow.sdk.PipelineResult"></a>
+      <a id="internal:org.apache.beam.sdk.PipelineResult"></a>
       <a id="internal:PipelineResult"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -370,10 +370,10 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">internal</span><span class="result">: <span class="extype" name="com.google.cloud.dataflow.sdk.PipelineResult">PipelineResult</span></span>
+        <span class="name">internal</span><span class="result">: <span class="extype" name="org.apache.beam.sdk.PipelineResult">PipelineResult</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.ScioResult@internal:com.google.cloud.dataflow.sdk.PipelineResult" title="Permalink" target="_top">
+      <a href="../../../index.html#com.spotify.scio.ScioResult@internal:org.apache.beam.sdk.PipelineResult" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -481,7 +481,7 @@
     </span>
       <p class="shortcomment cmt">Save metrics of the finished pipeline to a file.</p>
     </li><li name="com.spotify.scio.ScioResult#state" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="state:com.google.cloud.dataflow.sdk.PipelineResult.State"></a>
+      <a id="state:org.apache.beam.sdk.PipelineResult.State"></a>
       <a id="state:State"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -489,10 +489,10 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">state</span><span class="result">: <span class="extype" name="com.google.cloud.dataflow.sdk.PipelineResult.State">State</span></span>
+        <span class="name">state</span><span class="result">: <span class="extype" name="org.apache.beam.sdk.PipelineResult.State">State</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.ScioResult@state:com.google.cloud.dataflow.sdk.PipelineResult.State" title="Permalink" target="_top">
+      <a href="../../../index.html#com.spotify.scio.ScioResult@state:org.apache.beam.sdk.PipelineResult.State" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -600,6 +600,23 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.spotify.scio.ScioResult#waitUntilFinish" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="waitUntilFinish(duration:scala.concurrent.duration.Duration):com.spotify.scio.ScioResult"></a>
+      <a id="waitUntilFinish(Duration):ScioResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">waitUntilFinish</span><span class="params">(<span name="duration">duration: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.duration.Duration" class="extype" target="_top">Duration</a> = <span class="symbol">Duration.Inf</span></span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.ScioResult">ScioResult</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.ScioResult@waitUntilFinish(duration:scala.concurrent.duration.Duration):com.spotify.scio.ScioResult" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wait until the pipeline finishes.</p>
     </li></ol>
             </div>
 

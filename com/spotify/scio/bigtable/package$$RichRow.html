@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>RichTableRow - com.spotify.scio.bigquery.RichTableRow</title>
-          <meta name="description" content="RichTableRow - com.spotify.scio.bigquery.RichTableRow" />
-          <meta name="keywords" content="RichTableRow com.spotify.scio.bigquery.RichTableRow" />
+          <title>RichRow - com.spotify.scio.bigtable.RichRow</title>
+          <meta name="description" content="RichRow - com.spotify.scio.bigtable.RichRow" />
+          <meta name="keywords" content="RichRow com.spotify.scio.bigtable.RichRow" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -16,7 +16,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../index.html';
-            var hash = 'com.spotify.scio.bigquery.package$$RichTableRow';
+            var hash = 'com.spotify.scio.bigtable.package$$RichRow';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -29,11 +29,11 @@
         <body class="type">
       <div id="definition">
         <img alt="Class" src="../../../../lib/class_big.png" />
-        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.spotify">spotify</a>.<a href="../package.html" class="extype" name="com.spotify.scio">scio</a>.<a href="package.html" class="extype" name="com.spotify.scio.bigquery">bigquery</a></p>
-        <h1>RichTableRow</h1><h3><span class="morelinks"><div>Related Doc:
-            <a href="package.html" class="extype" name="com.spotify.scio.bigquery">package bigquery</a>
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.spotify">spotify</a>.<a href="../package.html" class="extype" name="com.spotify.scio">scio</a>.<a href="package.html" class="extype" name="com.spotify.scio.bigtable">bigtable</a></p>
+        <h1>RichRow</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="com.spotify.scio.bigtable">package bigtable</a>
           </div></span></h3><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -45,11 +45,11 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">RichTableRow</span><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+        <span class="name">RichRow</span><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Enhanced version of TableRow with typed getters.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Enhanced version of <code>Row</code> with convenience methods.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyVal">AnyVal</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -69,7 +69,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.spotify.scio.bigquery.RichTableRow"><span>RichTableRow</span></li><li class="in" name="scala.AnyVal"><span>AnyVal</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.spotify.scio.bigtable.RichRow"><span>RichRow</span></li><li class="in" name="scala.AnyVal"><span>AnyVal</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -88,19 +88,19 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="com.spotify.scio.bigquery.RichTableRow#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(r:com.spotify.scio.bigquery.package.TableRow):com.spotify.scio.bigquery.package.RichTableRow"></a>
-      <a id="&lt;init&gt;:RichTableRow"></a>
+              <ol><li name="com.spotify.scio.bigtable.RichRow#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(self:com.google.bigtable.v2.Row):com.spotify.scio.bigtable.package.RichRow"></a>
+      <a id="&lt;init&gt;:RichRow"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">RichTableRow</span><span class="params">(<span name="r">r: <a href="package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a></span>)</span>
+        <span class="name">RichRow</span><span class="params">(<span name="self">self: <span class="extype" name="com.google.bigtable.v2.Row">Row</span></span>)</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@&lt;init&gt;(r:com.spotify.scio.bigquery.package.TableRow):com.spotify.scio.bigquery.package.RichTableRow" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@&lt;init&gt;(self:com.google.bigtable.v2.Row):com.spotify.scio.bigtable.package.RichRow" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -126,7 +126,7 @@
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@!=(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -143,7 +143,7 @@
         <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@##():Int" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@##():Int" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -160,7 +160,7 @@
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@==(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@==(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -177,28 +177,11 @@
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@asInstanceOf[T0]:T0" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.spotify.scio.bigquery.RichTableRow#getBoolean" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getBoolean(name:AnyRef):Boolean"></a>
-      <a id="getBoolean(AnyRef):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getBoolean</span><span class="params">(<span name="name">name: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@getBoolean(name:AnyRef):Boolean" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      
     </li><li name="scala.AnyVal#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_&lt;:AnyVal]"></a>
       <a id="getClass():Class[_&lt;:AnyVal]"></a>
@@ -211,113 +194,113 @@
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Predef.Class">Class</span>[_ &lt;: <span class="extype" name="scala.AnyVal">AnyVal</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@getClass():Class[_&lt;:AnyVal]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@getClass():Class[_&lt;:AnyVal]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyVal → Any</dd></dl></div>
-    </li><li name="com.spotify.scio.bigquery.RichTableRow#getDouble" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getDouble(name:AnyRef):Double"></a>
-      <a id="getDouble(AnyRef):Double"></a>
+    </li><li name="com.spotify.scio.bigtable.RichRow#getColumnCells" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getColumnCells(familyName:String,columnQualifier:com.google.protobuf.ByteString):List[com.google.bigtable.v2.Cell]"></a>
+      <a id="getColumnCells(String,ByteString):List[Cell]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getDouble</span><span class="params">(<span name="name">name: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+        <span class="name">getColumnCells</span><span class="params">(<span name="familyName">familyName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="columnQualifier">columnQualifier: <span class="extype" name="com.google.protobuf.ByteString">ByteString</span></span>)</span><span class="result">: <span class="extype" name="scala.List">List</span>[<span class="extype" name="com.google.bigtable.v2.Cell">Cell</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@getDouble(name:AnyRef):Double" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@getColumnCells(familyName:String,columnQualifier:com.google.protobuf.ByteString):List[com.google.bigtable.v2.Cell]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
-    </li><li name="com.spotify.scio.bigquery.RichTableRow#getLong" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getLong(name:AnyRef):Long"></a>
-      <a id="getLong(AnyRef):Long"></a>
+      <p class="shortcomment cmt">Return the Cells for the specific column.</p>
+    </li><li name="com.spotify.scio.bigtable.RichRow#getColumnLatestCell" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getColumnLatestCell(familyName:String,columnQualifier:com.google.protobuf.ByteString):Option[com.google.bigtable.v2.Cell]"></a>
+      <a id="getColumnLatestCell(String,ByteString):Option[Cell]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getLong</span><span class="params">(<span name="name">name: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>
+        <span class="name">getColumnLatestCell</span><span class="params">(<span name="familyName">familyName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="columnQualifier">columnQualifier: <span class="extype" name="com.google.protobuf.ByteString">ByteString</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="com.google.bigtable.v2.Cell">Cell</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@getLong(name:AnyRef):Long" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@getColumnLatestCell(familyName:String,columnQualifier:com.google.protobuf.ByteString):Option[com.google.bigtable.v2.Cell]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
-    </li><li name="com.spotify.scio.bigquery.RichTableRow#getRecord" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getRecord(name:AnyRef):com.spotify.scio.bigquery.package.TableRow"></a>
-      <a id="getRecord(AnyRef):TableRow"></a>
+      <p class="shortcomment cmt">The Cell for the most recent timestamp for a given column.</p>
+    </li><li name="com.spotify.scio.bigtable.RichRow#getFamilyMap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getFamilyMap(familyName:String):Map[com.google.protobuf.ByteString,com.google.protobuf.ByteString]"></a>
+      <a id="getFamilyMap(String):Map[ByteString,ByteString]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getRecord</span><span class="params">(<span name="name">name: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a></span>
+        <span class="name">getFamilyMap</span><span class="params">(<span name="familyName">familyName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>, <span class="extype" name="com.google.protobuf.ByteString">ByteString</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@getRecord(name:AnyRef):com.spotify.scio.bigquery.package.TableRow" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@getFamilyMap(familyName:String):Map[com.google.protobuf.ByteString,com.google.protobuf.ByteString]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
-    </li><li name="com.spotify.scio.bigquery.RichTableRow#getRepeated" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getRepeated(name:AnyRef):Seq[AnyRef]"></a>
-      <a id="getRepeated(AnyRef):Seq[AnyRef]"></a>
+      <p class="shortcomment cmt">Map of qualifiers to values.</p>
+    </li><li name="com.spotify.scio.bigtable.RichRow#getMap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getMap:Map[String,Map[com.google.protobuf.ByteString,Map[Long,com.google.protobuf.ByteString]]]"></a>
+      <a id="getMap:Map[String,Map[ByteString,Map[Long,ByteString]]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getRepeated</span><span class="params">(<span name="name">name: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.AnyRef">AnyRef</span>]</span>
+        <span class="name">getMap</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a>, <span class="extype" name="com.google.protobuf.ByteString">ByteString</span>]]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@getRepeated(name:AnyRef):Seq[AnyRef]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@getMap:Map[String,Map[com.google.protobuf.ByteString,Map[Long,com.google.protobuf.ByteString]]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
-    </li><li name="com.spotify.scio.bigquery.RichTableRow#getString" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getString(name:AnyRef):String"></a>
-      <a id="getString(AnyRef):String"></a>
+      <p class="shortcomment cmt">Map of families to all versions of its qualifiers and values.</p>
+    </li><li name="com.spotify.scio.bigtable.RichRow#getNoVersionMap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getNoVersionMap:Map[String,Map[com.google.protobuf.ByteString,com.google.protobuf.ByteString]]"></a>
+      <a id="getNoVersionMap:Map[String,Map[ByteString,ByteString]]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getString</span><span class="params">(<span name="name">name: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+        <span class="name">getNoVersionMap</span><span class="result">: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>, <span class="extype" name="com.google.protobuf.ByteString">ByteString</span>]]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@getString(name:AnyRef):String" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@getNoVersionMap:Map[String,Map[com.google.protobuf.ByteString,com.google.protobuf.ByteString]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
-    </li><li name="com.spotify.scio.bigquery.RichTableRow#getTimestamp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getTimestamp(name:AnyRef):org.joda.time.Instant"></a>
-      <a id="getTimestamp(AnyRef):Instant"></a>
+      <p class="shortcomment cmt">Map of families to their most recent qualifiers and values.</p>
+    </li><li name="com.spotify.scio.bigtable.RichRow#getValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="getValue(familyName:String,columnQualifier:com.google.protobuf.ByteString):Option[com.google.protobuf.ByteString]"></a>
+      <a id="getValue(String,ByteString):Option[ByteString]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getTimestamp</span><span class="params">(<span name="name">name: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="org.joda.time.Instant">Instant</span></span>
+        <span class="name">getValue</span><span class="params">(<span name="familyName">familyName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="columnQualifier">columnQualifier: <span class="extype" name="com.google.protobuf.ByteString">ByteString</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@getTimestamp(name:AnyRef):org.joda.time.Instant" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@getValue(familyName:String,columnQualifier:com.google.protobuf.ByteString):Option[com.google.protobuf.ByteString]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Get the latest version of the specified column.</p>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -330,24 +313,24 @@
         <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.spotify.scio.bigquery.RichTableRow#r" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="r:com.spotify.scio.bigquery.package.TableRow"></a>
-      <a id="r:TableRow"></a>
+    </li><li name="com.spotify.scio.bigtable.RichRow#self" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="self:com.google.bigtable.v2.Row"></a>
+      <a id="self:Row"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">r</span><span class="result">: <a href="package.html#TableRow=com.google.api.services.bigquery.model.TableRow" class="extmbr" name="com.spotify.scio.bigquery.TableRow">TableRow</a></span>
+        <span class="name">self</span><span class="result">: <span class="extype" name="com.google.bigtable.v2.Row">Row</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@r:com.spotify.scio.bigquery.package.TableRow" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@self:com.google.bigtable.v2.Row" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -364,7 +347,7 @@
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigquery.package$$RichTableRow@toString():String" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package$$RichRow@toString():String" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>

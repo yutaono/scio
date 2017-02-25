@@ -84,18 +84,18 @@
     </span>
       <p class="shortcomment cmt">Encapsulate an accumulator, similar to Hadoop counters.</p>
     </li><li name="com.spotify.scio.values.AccumulatorContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="AccumulatorContextextendsAnyRef"></a>
+      <a id="AccumulatorContextextendsAnyVal"></a>
       <a id="AccumulatorContext:AccumulatorContext"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="AccumulatorContext.html"><span class="name">AccumulatorContext</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="AccumulatorContext.html"><span class="name">AccumulatorContext</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.package@AccumulatorContextextendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.package@AccumulatorContextextendsAnyVal" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -117,7 +117,7 @@
       </a>
     </span>
       <p class="shortcomment cmt">Type class for <code>T</code> that can be used in an <a href="Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>.</p>
-    </li><li name="com.spotify.scio.values.DistCache" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+    </li><li name="com.spotify.scio.values.DistCache" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="DistCache[F]extendsSerializable"></a>
       <a id="DistCache[F]:DistCache[F]"></a>
       <h4 class="signature">
@@ -133,7 +133,9 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Encapsulate arbitrary data that can be distributed to all workers.</p>
+      <p class="shortcomment cmt">Encapsulate arbitrary data that can be distributed to all workers.</p><div class="fullcomment"><div class="comment cmt"><p>Encapsulate arbitrary data that can be distributed to all workers. Similar to Hadoop
+distributed cache.
+</p></div></div>
     </li><li name="com.spotify.scio.values.DoubleSCollectionFunctions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="DoubleSCollectionFunctionsextendsAnyRef"></a>
       <a id="DoubleSCollectionFunctions:DoubleSCollectionFunctions"></a>
@@ -184,11 +186,11 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">A Scala wrapper for <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A Scala wrapper for <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.values.PCollection" class="extype" target="_top">PCollection</a>.
-Represents an immutable, partitioned collection of elements that can be operated on in
-parallel. This class contains the basic operations available on all SCollections, such as
-<code>map</code>, <code>filter</code>, and <code>persist</code>. In addition, <a href="PairSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.PairSCollectionFunctions">PairSCollectionFunctions</a> contains operations
-available only on SCollections of key-value pairs, such as <code>groupByKey</code> and <code>join</code>;
+      <p class="shortcomment cmt">A Scala wrapper for <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A Scala wrapper for <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a>. Represents an
+immutable, partitioned collection of elements that can be operated on in parallel. This class
+contains the basic operations available on all SCollections, such as <code>map</code>, <code>filter</code>, and
+<code>persist</code>. In addition, <a href="PairSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.PairSCollectionFunctions">PairSCollectionFunctions</a> contains operations available only on
+SCollections of key-value pairs, such as <code>groupByKey</code> and <code>join</code>;
 <a href="DoubleSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.DoubleSCollectionFunctions">DoubleSCollectionFunctions</a> contains operations available only on SCollections of Doubles.
 </p></div></div>
     </li><li name="com.spotify.scio.values.SCollectionWithAccumulator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -390,7 +392,7 @@ performing the full combine.</p>
     </span>
       <p class="shortcomment cmt">Trait for setting custom names on transforms.</p>
     </li><li name="com.spotify.scio.values.WindowOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="WindowOptions[W&lt;:com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow]extendsProductwithSerializable"></a>
+      <a id="WindowOptions[W&lt;:org.apache.beam.sdk.transforms.windowing.BoundedWindow]extendsProductwithSerializable"></a>
       <a id="WindowOptions[W&lt;:BoundedWindow]:WindowOptions[W]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -398,10 +400,10 @@ performing the full combine.</p>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="WindowOptions.html"><span class="name">WindowOptions</span></a><span class="tparams">[<span name="W">W &lt;: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>]</span><span class="params">(<span name="trigger">trigger: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.TriggerBuilder" class="extype" target="_top">TriggerBuilder</a>[<span class="extype" name="com.spotify.scio.values.WindowOptions.W">W</span>] = <span class="symbol">null</span></span>, <span name="accumulationMode">accumulationMode: <span class="extype" name="com.google.cloud.dataflow.sdk.util.WindowingStrategy.AccumulationMode">AccumulationMode</span> = <span class="symbol">null</span></span>, <span name="allowedLateness">allowedLateness: <span class="extype" name="org.joda.time.Duration">Duration</span> = <span class="symbol">null</span></span>, <span name="closingBehavior">closingBehavior: <span class="extype" name="com.google.cloud.dataflow.sdk.transforms.windowing.Window.ClosingBehavior">ClosingBehavior</span> = <span class="symbol">null</span></span>, <span name="outputTimeFn">outputTimeFn: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.OutputTimeFn" class="extype" target="_top">OutputTimeFn</a>[<a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a>] = <span class="symbol">null</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="WindowOptions.html"><span class="name">WindowOptions</span></a><span class="tparams">[<span name="W">W &lt;: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>]</span><span class="params">(<span name="trigger">trigger: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.windowing.Trigger" class="extype" target="_top">Trigger</a> = <span class="symbol">null</span></span>, <span name="accumulationMode">accumulationMode: <span class="extype" name="org.apache.beam.sdk.util.WindowingStrategy.AccumulationMode">AccumulationMode</span> = <span class="symbol">null</span></span>, <span name="allowedLateness">allowedLateness: <span class="extype" name="org.joda.time.Duration">Duration</span> = <span class="symbol">null</span></span>, <span name="closingBehavior">closingBehavior: <span class="extype" name="org.apache.beam.sdk.transforms.windowing.Window.ClosingBehavior">ClosingBehavior</span> = <span class="symbol">null</span></span>, <span name="outputTimeFn">outputTimeFn: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.windowing.OutputTimeFn" class="extype" target="_top">OutputTimeFn</a>[<a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a>] = <span class="symbol">null</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.package@WindowOptions[W&lt;:com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow]extendsProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.package@WindowOptions[W&lt;:org.apache.beam.sdk.transforms.windowing.BoundedWindow]extendsProductwithSerializable" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -432,7 +434,7 @@ performing the full combine.</p>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="WindowedValue.html"><span class="name">WindowedValue</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="value">value: <span class="extype" name="com.spotify.scio.values.WindowedValue.T">T</span></span>, <span name="timestamp">timestamp: <span class="extype" name="org.joda.time.Instant">Instant</span></span>, <span name="window">window: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>, <span name="pane">pane: <a href="https://cloud.google.com/dataflow/java-sdk/JavaDoc/index.html#com.google.cloud.dataflow.sdk.transforms.windowing.PaneInfo" class="extype" target="_top">PaneInfo</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="WindowedValue.html"><span class="name">WindowedValue</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="value">value: <span class="extype" name="com.spotify.scio.values.WindowedValue.T">T</span></span>, <span name="timestamp">timestamp: <span class="extype" name="org.joda.time.Instant">Instant</span></span>, <span name="window">window: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>, <span name="pane">pane: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.windowing.PaneInfo" class="extype" target="_top">PaneInfo</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.package@WindowedValue[T]extendsProductwithSerializable" title="Permalink" target="_top">

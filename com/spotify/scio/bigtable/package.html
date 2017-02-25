@@ -89,7 +89,7 @@
         <div id="types" class="types members">
               <h3>Type Members</h3>
               <ol><li name="com.spotify.scio.bigtable.BigtableInput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="BigtableInputextendsTestIO[org.apache.hadoop.hbase.client.Result]withProductwithSerializable"></a>
+      <a id="BigtableInputextendsTestIO[com.google.bigtable.v2.Row]withProductwithSerializable"></a>
       <a id="BigtableInput:BigtableInput"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -97,33 +97,16 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="package$$BigtableInput.html"><span class="name">BigtableInput</span></a><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="instanceId">instanceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<span class="extype" name="org.apache.hadoop.hbase.client.Result">Result</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="package$$BigtableInput.html"><span class="name">BigtableInput</span></a><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="instanceId">instanceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<span class="extype" name="com.google.bigtable.v2.Row">Row</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.package@BigtableInputextendsTestIO[org.apache.hadoop.hbase.client.Result]withProductwithSerializable" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      
-    </li><li name="com.spotify.scio.bigtable.BigtableMultiTableWrite" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="BigtableMultiTableWriteextendsObject"></a>
-      <a id="BigtableMultiTableWrite:BigtableMultiTableWrite"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="BigtableMultiTableWrite.html"><span class="name">BigtableMultiTableWrite</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.package@BigtableMultiTableWriteextendsObject" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package@BigtableInputextendsTestIO[com.google.bigtable.v2.Row]withProductwithSerializable" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       
     </li><li name="com.spotify.scio.bigtable.BigtableOutput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="BigtableOutput[T&lt;:org.apache.hadoop.hbase.client.Mutation]extendsTestIO[T]withProductwithSerializable"></a>
+      <a id="BigtableOutput[T&lt;:com.google.bigtable.v2.Mutation]extendsTestIO[(com.google.protobuf.ByteString,Iterable[T])]withProductwithSerializable"></a>
       <a id="BigtableOutput[T&lt;:Mutation]:BigtableOutput[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -131,44 +114,44 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="package$$BigtableOutput.html"><span class="name">BigtableOutput</span></a><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="org.apache.hadoop.hbase.client.Mutation">Mutation</span></span>]</span><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="instanceId">instanceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<span class="extype" name="com.spotify.scio.bigtable.BigtableOutput.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="package$$BigtableOutput.html"><span class="name">BigtableOutput</span></a><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="com.google.bigtable.v2.Mutation">Mutation</span></span>]</span><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="instanceId">instanceId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableId">tableId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[(<span class="extype" name="com.google.protobuf.ByteString">ByteString</span>, <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.bigtable.BigtableOutput.T">T</span>])] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.package@BigtableOutput[T&lt;:org.apache.hadoop.hbase.client.Mutation]extendsTestIO[T]withProductwithSerializable" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package@BigtableOutput[T&lt;:com.google.bigtable.v2.Mutation]extendsTestIO[(com.google.protobuf.ByteString,Iterable[T])]withProductwithSerializable" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       
     </li><li name="com.spotify.scio.bigtable.BigtableSCollection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="BigtableSCollection[T]extendsAnyRef"></a>
+      <a id="BigtableSCollection[T]extendsAnyVal"></a>
       <a id="BigtableSCollection[T]:BigtableSCollection[T]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier">implicit </span>
+        <span class="modifier">implicit final </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="package$$BigtableSCollection.html"><span class="name">BigtableSCollection</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="package$$BigtableSCollection.html"><span class="name">BigtableSCollection</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.package@BigtableSCollection[T]extendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package@BigtableSCollection[T]extendsAnyVal" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Enhanced version of <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> with Bigtable methods.</p>
     </li><li name="com.spotify.scio.bigtable.BigtableScioContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="BigtableScioContextextendsAnyRef"></a>
+      <a id="BigtableScioContextextendsAnyVal"></a>
       <a id="BigtableScioContext:BigtableScioContext"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier">implicit </span>
+        <span class="modifier">implicit final </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="package$$BigtableScioContext.html"><span class="name">BigtableScioContext</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="package$$BigtableScioContext.html"><span class="name">BigtableScioContext</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.package@BigtableScioContextextendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package@BigtableScioContextextendsAnyVal" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -207,43 +190,23 @@
       </a>
     </span>
       
-    </li><li name="com.spotify.scio.bigtable.MultipleBigtableOutput" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="MultipleBigtableOutput[T&lt;:org.apache.hadoop.hbase.client.Mutation]extendsTestIO[(String,Iterable[T])]withProductwithSerializable"></a>
-      <a id="MultipleBigtableOutput[T&lt;:Mutation]:MultipleBigtableOutput[T]"></a>
+    </li><li name="com.spotify.scio.bigtable.RichRow" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichRowextendsAnyVal"></a>
+      <a id="RichRow:RichRow"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">case class</span>
-      </span>
-      <span class="symbol">
-        <a href="package$$MultipleBigtableOutput.html"><span class="name">MultipleBigtableOutput</span></a><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="org.apache.hadoop.hbase.client.Mutation">Mutation</span></span>]</span><span class="params">(<span name="projectId">projectId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="instanceId">instanceId: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[(<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.bigtable.MultipleBigtableOutput.T">T</span>])] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.package@MultipleBigtableOutput[T&lt;:org.apache.hadoop.hbase.client.Mutation]extendsTestIO[(String,Iterable[T])]withProductwithSerializable" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      
-    </li><li name="com.spotify.scio.bigtable.PairBigtableSCollection" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="PairBigtableSCollection[T]extendsAnyRef"></a>
-      <a id="PairBigtableSCollection[T]:PairBigtableSCollection[T]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
+        <span class="modifier">implicit final </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="package$$PairBigtableSCollection.html"><span class="name">PairBigtableSCollection</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="package$$RichRow.html"><span class="name">RichRow</span></a><span class="result"> extends <span class="extype" name="scala.AnyVal">AnyVal</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.package@PairBigtableSCollection[T]extendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package@RichRowextendsAnyVal" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Enhanced version of <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> for writing to
-multiple Bigtable tables.</p><div class="fullcomment"><div class="comment cmt"><p>Enhanced version of <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> for writing to
-multiple Bigtable tables.</p><p>Keys are table IDs and values are collections of Mutations.
-</p></div></div>
+      <p class="shortcomment cmt">Enhanced version of <code>Row</code> with convenience methods.</p>
     </li></ol>
             </div>
 
@@ -251,23 +214,40 @@ multiple Bigtable tables.</p><p>Keys are table IDs and values are collections of
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="com.spotify.scio.bigtable.Bigtable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Bigtable"></a>
-      <a id="Bigtable:Bigtable"></a>
+              <ol><li name="com.spotify.scio.bigtable.Mutations" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Mutations"></a>
+      <a id="Mutations:Mutations"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="Bigtable$.html"><span class="name">Bigtable</span></a>
+        <a href="Mutations$.html"><span class="name">Mutations</span></a>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.bigtable.package@Bigtable" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package@Mutations" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Utilities for Bigtable.</p>
+      <p class="shortcomment cmt">Helper methods for <code>Mutation</code>.</p>
+    </li><li name="com.spotify.scio.bigtable.Rows" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Rows"></a>
+      <a id="Rows:Rows"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Rows$.html"><span class="name">Rows</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.bigtable.package@Rows" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Helper methods for <code>Row</code>.</p>
     </li></ol>
             </div>
 
