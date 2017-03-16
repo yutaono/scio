@@ -364,7 +364,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="com.spotify.scio.hdfs.HdfsSCollection#saveAsHdfsAvroFile" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.spotify.scio.hdfs.HdfsSCollection#saveAsHdfsAvroFile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="saveAsHdfsAvroFile(path:String,schema:org.apache.avro.Schema,username:String,conf:org.apache.hadoop.conf.Configuration):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
       <a id="saveAsHdfsAvroFile(String,Schema,String,Configuration):Future[Tap[T]]"></a>
       <h4 class="signature">
@@ -373,14 +373,15 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsHdfsAvroFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>, <span name="username">username: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="conf">conf: <span class="extype" name="org.apache.hadoop.conf.Configuration">Configuration</span> = <span class="symbol">null</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.hdfs.HdfsSCollection.T">T</span>]]</span>
+        <span class="name">saveAsHdfsAvroFile</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <a href="https://avro.apache.org/docs/current/api/java/index.html#org.apache.avro.Schema" class="extype" target="_top">Schema</a> = <span class="symbol">null</span></span>, <span name="username">username: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">null</span></span>, <span name="conf">conf: <span class="extype" name="org.apache.hadoop.conf.Configuration">Configuration</span> = <span class="symbol">null</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.hdfs.HdfsSCollection.T">T</span>]]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.hdfs.package$$HdfsSCollection@saveAsHdfsAvroFile(path:String,schema:org.apache.avro.Schema,username:String,conf:org.apache.hadoop.conf.Configuration):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Save this SCollection as an Avro file on HDFS.</p>
+      <p class="shortcomment cmt">Save this SCollection as an Avro file.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as an Avro file.</p></div><dl class="paramcmts block"><dt class="param">schema</dt><dd class="cmt"><p>must be not null if <code>T</code> is of type
+              <a href="https://avro.apache.org/docs/current/api/java/index.html#org.apache.avro.generic.GenericRecord" class="extype" target="_top">GenericRecord</a>.</p></dd></dl></div>
     </li><li name="com.spotify.scio.hdfs.HdfsSCollection#saveAsHdfsTextFile" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="saveAsHdfsTextFile(path:String,username:String,conf:org.apache.hadoop.conf.Configuration):scala.concurrent.Future[com.spotify.scio.io.Tap[String]]"></a>
       <a id="saveAsHdfsTextFile(String,String,Configuration):Future[Tap[String]]"></a>

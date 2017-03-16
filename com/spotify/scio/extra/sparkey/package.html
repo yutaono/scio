@@ -105,36 +105,36 @@ main.withSideInputs(side)
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="com.spotify.scio.extra.sparkey.RichSparkeyReader" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="RichSparkeyReaderextendsMap[String,String]"></a>
-      <a id="RichSparkeyReader:RichSparkeyReader"></a>
+              <ol><li name="com.spotify.scio.extra.sparkey.RichStringSparkeyReader" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RichStringSparkeyReaderextendsMap[String,String]"></a>
+      <a id="RichStringSparkeyReader:RichStringSparkeyReader"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="package$$RichSparkeyReader.html"><span class="name">RichSparkeyReader</span></a><span class="result"> extends <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>
+        <a href="package$$RichStringSparkeyReader.html"><span class="name">RichStringSparkeyReader</span></a><span class="result"> extends <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../../index.html#com.spotify.scio.extra.sparkey.package@RichSparkeyReaderextendsMap[String,String]" title="Permalink" target="_top">
+      <a href="../../../../../index.html#com.spotify.scio.extra.sparkey.package@RichStringSparkeyReaderextendsMap[String,String]" title="Permalink" target="_top">
         <img src="../../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Enhanced version of <code>SparkeyReader</code> that mimics a <code>Map</code>.</p>
     </li><li name="com.spotify.scio.extra.sparkey.SparkeyPairSCollection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="SparkeyPairSCollectionextendsAnyRef"></a>
-      <a id="SparkeyPairSCollection:SparkeyPairSCollection"></a>
+      <a id="SparkeyPairSCollection[K,V]extendsAnyRef"></a>
+      <a id="SparkeyPairSCollection[K,V]:SparkeyPairSCollection[K,V]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">implicit </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="package$$SparkeyPairSCollection.html"><span class="name">SparkeyPairSCollection</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="package$$SparkeyPairSCollection.html"><span class="name">SparkeyPairSCollection</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../../index.html#com.spotify.scio.extra.sparkey.package@SparkeyPairSCollectionextendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../../../index.html#com.spotify.scio.extra.sparkey.package@SparkeyPairSCollection[K,V]extendsAnyRef" title="Permalink" target="_top">
         <img src="../../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -189,19 +189,73 @@ main.withSideInputs(side)
         <img src="../../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Represents the base URI for a Sparkey index and log file, either on the local file
-system or on GCS.</p><div class="fullcomment"><div class="comment cmt"><p>Represents the base URI for a Sparkey index and log file, either on the local file
-system or on GCS. For GCS, <code>basePath</code> should be in the form
-'gs://&lt;bucket&gt;/&lt;path&gt;/&lt;sparkey-prefix&gt;'. For local files, it should be in the form
+      <p class="shortcomment cmt">Represents the base URI for a Sparkey index and log file, either on the local or a remote file
+system.</p><div class="fullcomment"><div class="comment cmt"><p>Represents the base URI for a Sparkey index and log file, either on the local or a remote file
+system. For remote file systems, <code>basePath</code> should be in the form
+'scheme://&lt;bucket&gt;/&lt;path&gt;/&lt;sparkey-prefix&gt;'. For local files, it should be in the form
 '/&lt;path&gt;/&lt;sparkey-prefix&gt;'. Note that <code>basePath</code> must not be a folder or GCS bucket as it is
 a base path representing two files - &lt;sparkey-prefix&gt;.spi and &lt;sparkey-prefix&gt;.spl.
 </p></div></div>
+    </li><li name="com.spotify.scio.extra.sparkey.SparkeyWritable" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SparkeyWritable[K,V]extendsSerializable"></a>
+      <a id="SparkeyWritable[K,V]:SparkeyWritable[K,V]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$SparkeyWritable.html"><span class="name">SparkeyWritable</span></a><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.sparkey.package@SparkeyWritable[K,V]extendsSerializable" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
     </li></ol>
             </div>
 
         
 
-        
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="com.spotify.scio.extra.sparkey#ByteArraySparkeyWritable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ByteArraySparkeyWritable:com.spotify.scio.extra.sparkey.package.SparkeyWritable[Array[Byte],Array[Byte]]"></a>
+      <a id="ByteArraySparkeyWritable:SparkeyWritable[Array[Byte],Array[Byte]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ByteArraySparkeyWritable</span><span class="result">: <a href="package$$SparkeyWritable.html" class="extype" name="com.spotify.scio.extra.sparkey.SparkeyWritable">SparkeyWritable</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Byte" class="extype" target="_top">Byte</a>], <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Byte" class="extype" target="_top">Byte</a>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.sparkey.package@ByteArraySparkeyWritable:com.spotify.scio.extra.sparkey.package.SparkeyWritable[Array[Byte],Array[Byte]]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.extra.sparkey#stringSparkeyWritable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="stringSparkeyWritable:com.spotify.scio.extra.sparkey.package.SparkeyWritable[String,String]"></a>
+      <a id="stringSparkeyWritable:SparkeyWritable[String,String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">stringSparkeyWritable</span><span class="result">: <a href="package$$SparkeyWritable.html" class="extype" name="com.spotify.scio.extra.sparkey.SparkeyWritable">SparkeyWritable</a>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.sparkey.package@stringSparkeyWritable:com.spotify.scio.extra.sparkey.package.SparkeyWritable[String,String]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
 
         
 

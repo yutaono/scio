@@ -183,8 +183,9 @@
       </a>
     </span>
       <p class="shortcomment cmt">Aggregate the values of each key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Aggregator" class="extype" target="_top">Aggregator</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Aggregate the values of each key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Aggregator" class="extype" target="_top">Aggregator</a>. First
-each value V is mapped to A, then we reduce with a semigroup of A, then finally we present
-the results as U. This could be more powerful and better optimized in some cases.</p></div></div>
+each value <code>V</code> is mapped to <code>A</code>, then we reduce with a
+<a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> of <code>A</code>, then finally we present the results as
+<code>U</code>. This could be more powerful and better optimized in some cases.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#aggregateByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
       <a id="aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$23:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]"></a>
       <a id="aggregateByKey[U](U)((U,V)⇒U,(U,U)⇒U)(ClassTag[U]):SCollection[(K,U)]"></a>
@@ -202,10 +203,10 @@ the results as U. This could be more powerful and better optimized in some cases
       </a>
     </span>
       <p class="shortcomment cmt">Aggregate the values of each key, using given combine functions and a neutral &quot;zero value&quot;.</p><div class="fullcomment"><div class="comment cmt"><p>Aggregate the values of each key, using given combine functions and a neutral &quot;zero value&quot;.
-This function can return a different result type, U, than the type of the values in this
-SCollection, V. Thus, we need one operation for merging a V into a U and one operation for
-merging two U's. To avoid memory allocation, both of these functions are allowed to modify
-and return their first argument instead of creating a new U.</p></div></div>
+This function can return a different result type, <code>U</code>, than the type of the values in this
+SCollection, <code>V</code>. Thus, we need one operation for merging a <code>V</code> into a <code>U</code> and one operation
+for merging two <code>U</code><code>'s. To avoid memory allocation, both of these functions are allowed to
+modify and return their first argument instead of creating a new </code>U<code>.</code></p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#approxQuantilesByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
       <a id="approxQuantilesByKey(numQuantiles:Int)(implicitord:Ordering[V]):com.spotify.scio.values.SCollection[(K,Iterable[V])]"></a>
       <a id="approxQuantilesByKey(Int)(Ordering[V]):SCollection[(K,Iterable[V])]"></a>
@@ -222,7 +223,7 @@ and return their first argument instead of creating a new U.</p></div></div>
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">For each key, compute the values' data distribution using approximate <code>N</code>-tiles.</p><div class="fullcomment"><div class="comment cmt"><p>For each key, compute the values' data distribution using approximate <code>N</code>-tiles.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new SCollection whose values are Iterables of the approximate <code>N</code>-tiles of
+      <p class="shortcomment cmt">For each key, compute the values' data distribution using approximate <code>N</code>-tiles.</p><div class="fullcomment"><div class="comment cmt"><p>For each key, compute the values' data distribution using approximate <code>N</code>-tiles.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new SCollection whose values are <code>Iterable</code>s of the approximate <code>N</code>-tiles of
 the elements.</p></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
@@ -257,10 +258,10 @@ the elements.</p></dd></dl></div>
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Convert this SCollection to a SideInput, mapping key-value pairs of each window to a Map[key,
-value], to be used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Convert this SCollection to a SideInput, mapping key-value pairs of each window to a Map[key,
-value], to be used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>. It is required that each key of the
-input be associated with a single value.
+      <p class="shortcomment cmt">Convert this SCollection to a SideInput, mapping key-value pairs of each window to a
+<code>Map[key, value]</code>, to be used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Convert this SCollection to a SideInput, mapping key-value pairs of each window to a
+<code>Map[key, value]</code>, to be used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>. It is required that each
+key of the input be associated with a single value.</p><p>Currently, the resulting map is required to fit into memory.
 </p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#asMultiMapSideInput" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asMultiMapSideInput:com.spotify.scio.values.SideInput[Map[K,Iterable[V]]]"></a>
@@ -278,10 +279,10 @@ input be associated with a single value.
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Convert this SCollection to a SideInput, mapping key-value pairs of each window to a Map[key,
-Iterable[value]], to be used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Convert this SCollection to a SideInput, mapping key-value pairs of each window to a Map[key,
-Iterable[value]], to be used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>. It is not required that the
-keys in the input collection be unique.
+      <p class="shortcomment cmt">Convert this SCollection to a SideInput, mapping key-value pairs of each window to a
+<code>Map[key, Iterable[value]]</code>, to be used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Convert this SCollection to a SideInput, mapping key-value pairs of each window to a
+<code>Map[key, Iterable[value]]</code>, to be used with <a href="SCollection.html#withSideInputs(sides:com.spotify.scio.values.SideInput[_]*):com.spotify.scio.values.SCollectionWithSideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#withSideInputs">SCollection.withSideInputs</a>. In contrast to
+<a href="#asMapSideInput:com.spotify.scio.values.SideInput[Map[K,V]]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#asMapSideInput">asMapSideInput</a>, it is not required that the keys in the input collection be unique.</p><p>Currently, the resulting map is required to fit into memory.
 </p></div></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
@@ -379,10 +380,10 @@ the list of values for that key in <code>this</code> as well as <code>that</code
     </span>
       <p class="shortcomment cmt">Generic function to combine the elements for each key using a custom set of aggregation
 functions.</p><div class="fullcomment"><div class="comment cmt"><p>Generic function to combine the elements for each key using a custom set of aggregation
-functions. Turns an SCollection[(K, V)] into a result of type SCollection[(K, C)], for a
-&quot;combined type&quot; C Note that V and C can be different -- for example, one might group an
-SCollection of type (Int, Int) into an RDD of type (Int, Seq[Int]). Users provide three
-functions:</p><p>- <code>createCombiner</code>, which turns a V into a C (e.g., creates a one-element list)</p><p>- <code>mergeValue</code>, to merge a V into a C (e.g., adds it to the end of a list)</p><p>- <code>mergeCombiners</code>, to combine two C's into a single one.</p></div></div>
+functions. Turns an <code>SCollection[(K, V)]</code> into a result of type <code>SCollection[(K, C)]</code>, for a
+&quot;combined type&quot; <code>C</code> Note that <code>V</code> and <code>C</code> can be different -- for example, one might group an
+SCollection of type <code>(Int, Int)</code> into an SCollection of type <code>(Int, Seq[Int])</code>. Users provide
+three functions:</p><p>- <code>createCombiner</code>, which turns a <code>V</code> into a <code>C</code> (e.g., creates a one-element list)</p><p>- <code>mergeValue</code>, to merge a <code>V</code> into a <code>C</code> (e.g., adds it to the end of a list)</p><p>- <code>mergeCombiners</code>, to combine two <code>C</code>'s into a single one.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#countApproxDistinctByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
       <a id="countApproxDistinctByKey(maximumEstimationError:Double):com.spotify.scio.values.SCollection[(K,Long)]"></a>
       <a id="countApproxDistinctByKey(Double):SCollection[(K,Long)]"></a>
@@ -417,7 +418,7 @@ functions:</p><p>- <code>createCombiner</code>, which turns a V into a C (e.g., 
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Count approximate number of distinct values for each key in the SCollection.</p><div class="fullcomment"><div class="comment cmt"><p>Count approximate number of distinct values for each key in the SCollection.</p></div><dl class="paramcmts block"><dt class="param">sampleSize</dt><dd class="cmt"><p>the number of entries in the statisticalsample; the higher this number, the
+      <p class="shortcomment cmt">Count approximate number of distinct values for each key in the SCollection.</p><div class="fullcomment"><div class="comment cmt"><p>Count approximate number of distinct values for each key in the SCollection.</p></div><dl class="paramcmts block"><dt class="param">sampleSize</dt><dd class="cmt"><p>the number of entries in the statistical sample; the higher this number, the
 more accurate the estimate will be; should be <code>&gt;= 16</code>.</p></dd></dl></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#countByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
       <a id="countByKey:com.spotify.scio.values.SCollection[(K,Long)]"></a>
@@ -509,8 +510,8 @@ more accurate the estimate will be; should be <code>&gt;= 16</code>.</p></dd></d
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Pass each value in the key-value pair SCollection through a flatMap function without changing
-the keys.</p>
+      <p class="shortcomment cmt">Pass each value in the key-value pair SCollection through a <code>flatMap</code> function without
+changing the keys.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#foldByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
       <a id="foldByKey(implicitmon:com.twitter.algebird.Monoid[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
       <a id="foldByKey(Monoid[V]):SCollection[(K,V)]"></a>
@@ -528,8 +529,8 @@ the keys.</p>
       </a>
     </span>
       <p class="shortcomment cmt">Fold by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative
-function and &quot;zero value&quot; for V.</p><div class="fullcomment"><div class="comment cmt"><p>Fold by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative
-function and &quot;zero value&quot; for V. This could be more powerful and better optimized in some
+function and &quot;zero value&quot; for <code>V</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Fold by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative
+function and &quot;zero value&quot; for <code>V</code>. This could be more powerful and better optimized in some
 cases.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#foldByKey" visbl="pub" data-isabs="false" fullComment="no" group="per_key">
       <a id="foldByKey(zeroValue:V)(op:(V,V)=&gt;V):com.spotify.scio.values.SCollection[(K,V)]"></a>
@@ -571,7 +572,7 @@ resulting SCollection will either contain all pairs (k, (Some(v), Some(w))) for 
 or the pair (k, (Some(v), None)) if no elements in <code>that</code> have key k. Similarly, for each
 element (k, w) in <code>that</code>, the resulting SCollection will either contain all pairs (k,
 (Some(v), Some(w))) for v in <code>this</code>, or the pair (k, (None, Some(w))) if no elements in
-<code>this</code> have key k. Uses the given Partitioner to partition the output SCollection.</p></div></div>
+<code>this</code> have key k.</p></div></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -610,8 +611,8 @@ elements within each group is not guaranteed, and may even differ each time the 
 SCollection is evaluated.</p><p>Note: This operation may be very expensive. If you are grouping in order to perform an
 aggregation (such as a sum or average) over each key, using
 <a href="#aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$23:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#aggregateByKey">PairSCollectionFunctions.aggregateByKey</a> or
-<a href="#reduceByKey(op:(V,V)=&gt;V):com.spotify.scio.values.SCollection[(K,V)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#reduceByKey">PairSCollectionFunctions.reduceByKey</a> will provide much better performance.</p><p>Note: As currently implemented, groupByKey must be able to hold all the key-value pairs for
-any key in memory. If a key has too many values, it can result in an OutOfMemoryError.</p></div></div>
+<a href="#reduceByKey(op:(V,V)=&gt;V):com.spotify.scio.values.SCollection[(K,V)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#reduceByKey">PairSCollectionFunctions.reduceByKey</a> will provide much better performance.</p><p>Note: As currently implemented, <code>groupByKey</code> must be able to hold all the key-value pairs for
+any key in memory. If a key has too many values, it can result in an <code>OutOfMemoryError</code>.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#groupWith" visbl="pub" data-isabs="false" fullComment="no" group="cogroup">
       <a id="groupWith[W1,W2,W3](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)],that3:com.spotify.scio.values.SCollection[(K,W3)])(implicitevidence$12:scala.reflect.ClassTag[W1],implicitevidence$13:scala.reflect.ClassTag[W2],implicitevidence$14:scala.reflect.ClassTag[W3]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2],Iterable[W3]))]"></a>
       <a id="groupWith[W1,W2,W3](SCollection[(K,W1)],SCollection[(K,W2)],SCollection[(K,W3)])(ClassTag[W1],ClassTag[W2],ClassTag[W3]):SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2],Iterable[W3]))]"></a>
@@ -628,7 +629,7 @@ any key in memory. If a key has too many values, it can result in an OutOfMemory
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Alias for cogroup.</p>
+      <p class="shortcomment cmt">Alias for <code>cogroup</code>.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#groupWith" visbl="pub" data-isabs="false" fullComment="no" group="cogroup">
       <a id="groupWith[W1,W2](that1:com.spotify.scio.values.SCollection[(K,W1)],that2:com.spotify.scio.values.SCollection[(K,W2)])(implicitevidence$10:scala.reflect.ClassTag[W1],implicitevidence$11:scala.reflect.ClassTag[W2]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2]))]"></a>
       <a id="groupWith[W1,W2](SCollection[(K,W1)],SCollection[(K,W2)])(ClassTag[W1],ClassTag[W2]):SCollection[(K,(Iterable[V],Iterable[W1],Iterable[W2]))]"></a>
@@ -645,7 +646,7 @@ any key in memory. If a key has too many values, it can result in an OutOfMemory
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Alias for cogroup.</p>
+      <p class="shortcomment cmt">Alias for <code>cogroup</code>.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#groupWith" visbl="pub" data-isabs="false" fullComment="no" group="cogroup">
       <a id="groupWith[W](that:com.spotify.scio.values.SCollection[(K,W)])(implicitevidence$9:scala.reflect.ClassTag[W]):com.spotify.scio.values.SCollection[(K,(Iterable[V],Iterable[W]))]"></a>
       <a id="groupWith[W](SCollection[(K,W)])(ClassTag[W]):SCollection[(K,(Iterable[V],Iterable[W]))]"></a>
@@ -662,7 +663,7 @@ any key in memory. If a key has too many values, it can result in an OutOfMemory
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Alias for cogroup.</p>
+      <p class="shortcomment cmt">Alias for <code>cogroup</code>.</p>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <a id="hashCode():Int"></a>
@@ -771,7 +772,7 @@ and fit in memory.
       <p class="shortcomment cmt">Return an SCollection containing all pairs of elements with matching keys in <code>this</code> and
 <code>that</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Return an SCollection containing all pairs of elements with matching keys in <code>this</code> and
 <code>that</code>. Each pair of elements will be returned as a (k, (v1, v2)) tuple, where (k, v1) is in
-<code>this</code> and (k, v2) is in <code>that</code>. Uses the given Partitioner to partition the output RDD.</p></div></div>
+<code>this</code> and (k, v2) is in <code>that</code>.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#keys" visbl="pub" data-isabs="false" fullComment="no" group="transform">
       <a id="keys:com.spotify.scio.values.SCollection[K]"></a>
       <a id="keys:SCollection[K]"></a>
@@ -807,8 +808,7 @@ and fit in memory.
     </span>
       <p class="shortcomment cmt">Perform a left outer join of <code>this</code> and <code>that</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Perform a left outer join of <code>this</code> and <code>that</code>. For each element (k, v) in <code>this</code>, the
 resulting SCollection will either contain all pairs (k, (v, Some(w))) for w in <code>that</code>, or the
-pair (k, (v, None)) if no elements in <code>that</code> have key k. Uses the given Partitioner to
-partition the output SCollection.</p></div></div>
+pair (k, (v, None)) if no elements in <code>that</code> have key k.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#mapValues" visbl="pub" data-isabs="false" fullComment="no" group="transform">
       <a id="mapValues[U](f:V=&gt;U)(implicitevidence$28:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]"></a>
       <a id="mapValues[U]((V)⇒U)(ClassTag[U]):SCollection[(K,U)]"></a>
@@ -825,8 +825,8 @@ partition the output SCollection.</p></div></div>
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Pass each value in the key-value pair SCollection through a map function without changing the
-keys.</p>
+      <p class="shortcomment cmt">Pass each value in the key-value pair SCollection through a <code>map</code> function without changing
+the keys.</p>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#maxByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
       <a id="maxByKey(implicitord:Ordering[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
       <a id="maxByKey(Ordering[V]):SCollection[(K,V)]"></a>
@@ -843,7 +843,7 @@ keys.</p>
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Return the max of values for each key as defined by the implicit Ordering[T].</p><div class="fullcomment"><div class="comment cmt"><p>Return the max of values for each key as defined by the implicit Ordering[T].</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new SCollection of (key, maximum value) pairs</p></dd></dl></div>
+      <p class="shortcomment cmt">Return the max of values for each key as defined by the implicit <code>Ordering[T]</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Return the max of values for each key as defined by the implicit <code>Ordering[T]</code>.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new SCollection of (key, maximum value) pairs</p></dd></dl></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#minByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
       <a id="minByKey(implicitord:Ordering[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
       <a id="minByKey(Ordering[V]):SCollection[(K,V)]"></a>
@@ -860,7 +860,7 @@ keys.</p>
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Return the min of values for each key as defined by the implicit Ordering[T].</p><div class="fullcomment"><div class="comment cmt"><p>Return the min of values for each key as defined by the implicit Ordering[T].</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new SCollection of (key, minimum value) pairs</p></dd></dl></div>
+      <p class="shortcomment cmt">Return the min of values for each key as defined by the implicit <code>Ordering[T]</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Return the min of values for each key as defined by the implicit <code>Ordering[T]</code>.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new SCollection of (key, minimum value) pairs</p></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -949,8 +949,7 @@ the merging locally on each mapper before sending results to a reducer, similarl
     </span>
       <p class="shortcomment cmt">Perform a right outer join of <code>this</code> and <code>that</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Perform a right outer join of <code>this</code> and <code>that</code>. For each element (k, w) in <code>that</code>, the
 resulting SCollection will either contain all pairs (k, (Some(v), w)) for v in <code>this</code>, or the
-pair (k, (None, w)) if no elements in <code>this</code> have key k. Uses the given Partitioner to
-partition the output SCollection.</p></div></div>
+pair (k, (None, w)) if no elements in <code>this</code> have key k.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#sampleByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
       <a id="sampleByKey(withReplacement:Boolean,fractions:Map[K,Double]):com.spotify.scio.values.SCollection[(K,V)]"></a>
       <a id="sampleByKey(Boolean,Map[K,Double]):SCollection[(K,V)]"></a>
@@ -970,7 +969,7 @@ partition the output SCollection.</p></div></div>
       <p class="shortcomment cmt">Return a subset of this SCollection sampled by key (via stratified sampling).</p><div class="fullcomment"><div class="comment cmt"><p>Return a subset of this SCollection sampled by key (via stratified sampling).</p><p>Create a sample of this SCollection using variable sampling rates for different keys as
 specified by <code>fractions</code>, a key to sampling rate map, via simple random sampling with one
 pass over the SCollection, to produce a sample of size that's approximately equal to the sum
-of math.ceil(numItems * samplingRate) over all key values.
+of <code>math.ceil(numItems * samplingRate)</code> over all key values.
 </p></div><dl class="paramcmts block"><dt class="param">withReplacement</dt><dd class="cmt"><p>whether to sample with or without replacement</p></dd><dt class="param">fractions</dt><dd class="cmt"><p>map of specific keys to sampling rates</p></dd><dt>returns</dt><dd class="cmt"><p>SCollection containing the sampled subset</p></dd></dl></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#sampleByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
       <a id="sampleByKey(sampleSize:Int):com.spotify.scio.values.SCollection[(K,Iterable[V])]"></a>
@@ -1028,9 +1027,9 @@ estimate is within <code>eps * N</code> of the true frequency.
 <code>true frequency &lt;= estimate &lt;= true frequency + eps * N</code>, where N is the total size of
 the left hand side stream so far.
 </p></div><dl class="paramcmts block"><dt class="param">hotKeyThreshold</dt><dd class="cmt"><p>key with <code>hotKeyThreshold</code> values will be considered hot. Some runners
-                       have inefficient GroupByKey implementation for groups with more than 10K
-                       values. Thus it is recommended to set <code>hotKeyThreshold</code> to below 10K,
-                       keep upper estimation error in mind.</p></dd><dt class="param">cms</dt><dd class="cmt"><p>left hand side key <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.CMSMonoid" class="extype" target="_top">com.twitter.algebird.CMSMonoid</a></p></dd></dl><dl class="attributes block"> <div class="block">Example:
+                       have inefficient <code>GroupByKey</code> implementation for groups with more than
+                       10K values. Thus it is recommended to set <code>hotKeyThreshold</code> to below
+                       10K, keep upper estimation error in mind.</p></dd><dt class="param">cms</dt><dd class="cmt"><p>left hand side key <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.CMSMonoid" class="extype" target="_top">com.twitter.algebird.CMSMonoid</a></p></dd></dl><dl class="attributes block"> <div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="cmt">// Implicits that enabling CMS-hashing</span>
 <span class="kw">import</span> com.twitter.algebird.CMSHasherImplicits._
 <span class="kw">val</span> keyAggregator = CMS.aggregator[K](eps, delta, seed)
@@ -1059,13 +1058,14 @@ estimate is within <code>eps * N</code> of the true frequency.
 <code>true frequency &lt;= estimate &lt;= true frequency + eps * N</code>, where N is the total size of
 the left hand side stream so far.
 </p></div><dl class="paramcmts block"><dt class="param">hotKeyThreshold</dt><dd class="cmt"><p>key with <code>hotKeyThreshold</code> values will be considered hot. Some runners
-                       have inefficient GroupByKey implementation for groups with more than 10K
-                       values. Thus it is recommended to set <code>hotKeyThreshold</code> to below 10K,
-                       keep upper estimation error in mind. If you sample input via
+                       have inefficient <code>GroupByKey</code> implementation for groups with more than
+                       10K values. Thus it is recommended to set <code>hotKeyThreshold</code> to below
+                       10K, keep upper estimation error in mind. If you sample input via
                        <code>sampleFraction</code> make sure to adjust <code>hotKeyThreshold</code> accordingly.</p></dd><dt class="param">eps</dt><dd class="cmt"><p>One-sided error bound on the error of each point query, i.e. frequency estimate.
-           Must lie in (0, 1).</p></dd><dt class="param">seed</dt><dd class="cmt"><p>A seed to initialize the random number generator used to create the pairwise
+           Must lie in <code>(0, 1)</code>.</p></dd><dt class="param">seed</dt><dd class="cmt"><p>A seed to initialize the random number generator used to create the pairwise
             independent hash functions.</p></dd><dt class="param">delta</dt><dd class="cmt"><p>A bound on the probability that a query estimate does not lie within some small
-             interval (an interval that depends on <code>eps</code>) around the truth. Must lie in (0, 1).</p></dd><dt class="param">sampleFraction</dt><dd class="cmt"><p>left side sample fraction. Default is <code>1.0</code> - no sampling.</p></dd><dt class="param">withReplacement</dt><dd class="cmt"><p>whether to use sampling with replacement, see
+             interval (an interval that depends on <code>eps</code>) around the truth. Must lie in
+             <code>(0, 1)</code>.</p></dd><dt class="param">sampleFraction</dt><dd class="cmt"><p>left side sample fraction. Default is <code>1.0</code> - no sampling.</p></dd><dt class="param">withReplacement</dt><dd class="cmt"><p>whether to use sampling with replacement, see
                        <a href="SCollection.html#sample(withReplacement:Boolean,fraction:Double):com.spotify.scio.values.SCollection[T]" class="extmbr" name="com.spotify.scio.values.SCollection#sample">SCollection.sample</a>.</p></dd></dl><dl class="attributes block"> <div class="block">Example:
                <ol><li class="cmt"><p></p><pre><span class="cmt">// Implicits that enabling CMS-hashing</span>
 <span class="kw">import</span> com.twitter.algebird.CMSHasherImplicits._
@@ -1105,7 +1105,7 @@ the left hand side stream so far.
       </a>
     </span>
       <p class="shortcomment cmt">Reduce by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Reduce by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>. This could be more powerful
-and better optimized in some cases.</p></div></div>
+and better optimized than <a href="#reduceByKey(op:(V,V)=&gt;V):com.spotify.scio.values.SCollection[(K,V)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#reduceByKey">reduceByKey</a> in some cases.</p></div></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#swap" visbl="pub" data-isabs="false" fullComment="no" group="transform">
       <a id="swap:com.spotify.scio.values.SCollection[(V,K)]"></a>
       <a id="swap:SCollection[(V,K)]"></a>
@@ -1174,8 +1174,8 @@ and better optimized in some cases.</p></div></div>
       </a>
     </span>
       <p class="shortcomment cmt">Return the top k (largest) values for each key from this SCollection as defined by the
-specified implicit Ordering[T].</p><div class="fullcomment"><div class="comment cmt"><p>Return the top k (largest) values for each key from this SCollection as defined by the
-specified implicit Ordering[T].</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new SCollection of (key, top k) pairs</p></dd></dl></div>
+specified implicit <code>Ordering[T]</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Return the top k (largest) values for each key from this SCollection as defined by the
+specified implicit <code>Ordering[T]</code>.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a new SCollection of (key, top k) pairs</p></dd></dl></div>
     </li><li name="com.spotify.scio.values.PairSCollectionFunctions#values" visbl="pub" data-isabs="false" fullComment="no" group="transform">
       <a id="values:com.spotify.scio.values.SCollection[V]"></a>
       <a id="values:SCollection[V]"></a>
@@ -1333,7 +1333,7 @@ not be sent through an intermediate node.</p></dd></dl></div>
               <h3>Transformations</h3>
               
             </div><div class="group" name="Ungrouped">
-              <h3>Other Members</h3>
+              <h3>Ungrouped</h3>
               
             </div>
         </div>

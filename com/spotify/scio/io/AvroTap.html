@@ -45,11 +45,12 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">AvroTap</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$2">evidence$2: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>]</span>)</span><span class="result"> extends <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">AvroTap</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <a href="https://avro.apache.org/docs/current/api/java/index.html#org.apache.avro.Schema" class="extype" target="_top">Schema</a> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$2">evidence$2: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>]</span>)</span><span class="result"> extends <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Tap for Avro files on local file system or GCS.</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Tap for Avro files on local file system or GCS.</p></div><dl class="paramcmts block"><dt class="param">schema</dt><dd class="cmt"><p>must be not null if <code>T</code> is of type
+              <a href="https://avro.apache.org/docs/current/api/java/index.html#org.apache.avro.generic.GenericRecord" class="extype" target="_top">GenericRecord</a>.</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -88,7 +89,7 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="com.spotify.scio.io.AvroTap#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="com.spotify.scio.io.AvroTap#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="&lt;init&gt;(path:String,schema:org.apache.avro.Schema)(implicitevidence$2:scala.reflect.ClassTag[T]):com.spotify.scio.io.AvroTap[T]"></a>
       <a id="&lt;init&gt;:AvroTap[T]"></a>
       <h4 class="signature">
@@ -97,14 +98,15 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">AvroTap</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>]</span>)</span>
+        <span class="name">AvroTap</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <a href="https://avro.apache.org/docs/current/api/java/index.html#org.apache.avro.Schema" class="extype" target="_top">Schema</a> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>]</span>)</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.io.AvroTap@&lt;init&gt;(path:String,schema:org.apache.avro.Schema)(implicitevidence$2:scala.reflect.ClassTag[T]):com.spotify.scio.io.AvroTap[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">schema</dt><dd class="cmt"><p>must be not null if <code>T</code> is of type
+              <a href="https://avro.apache.org/docs/current/api/java/index.html#org.apache.avro.generic.GenericRecord" class="extype" target="_top">GenericRecord</a>.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -295,7 +297,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Map items from T to U.</p><div class="fullcomment"><div class="comment cmt"><p>Map items from T to U.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a></dd></dl></div>
+      <p class="shortcomment cmt">Map items from <code>T</code> to <code>U</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Map items from <code>T</code> to <code>U</code>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -363,7 +365,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Open data set as an SCollection.</p><div class="fullcomment"><div class="comment cmt"><p>Open data set as an SCollection.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.spotify.scio.io.AvroTap">AvroTap</a> → <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a></dd></dl></div>
+      <p class="shortcomment cmt">Open data set as an <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Open data set as an <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.spotify.scio.io.AvroTap">AvroTap</a> → <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a></dd></dl></div>
     </li><li name="com.spotify.scio.io.Tap#parent" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="parent:Option[com.spotify.scio.io.Tap[_]]"></a>
       <a id="parent:Option[Tap[_]]"></a>
@@ -380,7 +382,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Parent Taps this Tap's data came from after <a href="Tap.html#map[U](f:T=&gt;U)(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.io.Tap[U]" class="extmbr" name="com.spotify.scio.io.Tap#map">Tap.map</a></p><div class="fullcomment"><div class="comment cmt"><p>Parent Taps this Tap's data came from after <a href="Tap.html#map[U](f:T=&gt;U)(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.io.Tap[U]" class="extmbr" name="com.spotify.scio.io.Tap#map">Tap.map</a></p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a></dd></dl></div>
+      <p class="shortcomment cmt">Parent of this Tap before <a href="Tap.html#map[U](f:T=&gt;U)(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.io.Tap[U]" class="extmbr" name="com.spotify.scio.io.Tap#map">map</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Parent of this Tap before <a href="Tap.html#map[U](f:T=&gt;U)(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.io.Tap[U]" class="extmbr" name="com.spotify.scio.io.Tap#map">map</a>.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a></dd></dl></div>
     </li><li name="com.spotify.scio.io.AvroTap#path" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="path:String"></a>
       <a id="path:String"></a>
@@ -407,14 +409,15 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">schema</span><span class="result">: <span class="extype" name="org.apache.avro.Schema">Schema</span></span>
+        <span class="name">schema</span><span class="result">: <a href="https://avro.apache.org/docs/current/api/java/index.html#org.apache.avro.Schema" class="extype" target="_top">Schema</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.io.AvroTap@schema:org.apache.avro.Schema" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">must be not null if <code>T</code> is of type
+              <a href="https://avro.apache.org/docs/current/api/java/index.html#org.apache.avro.generic.GenericRecord" class="extype" target="_top">GenericRecord</a>.</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>

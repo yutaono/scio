@@ -161,7 +161,7 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Get the total value of an accumulator.</p>
+      <p class="shortcomment cmt">Get the total value of an <a href="values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>.</p>
     </li><li name="com.spotify.scio.ScioResult#accumulatorValuesAtSteps" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="accumulatorValuesAtSteps[T](acc:com.spotify.scio.values.Accumulator[T]):Map[String,T]"></a>
       <a id="accumulatorValuesAtSteps[T](Accumulator[T]):Map[String,T]"></a>
@@ -178,7 +178,8 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Get the values of an accumulator at each step it was used.</p>
+      <p class="shortcomment cmt">Get the values of an <a href="values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a> at each step it was
+used.</p>
     </li><li name="com.spotify.scio.ScioResult#accumulators" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="accumulators:Seq[com.spotify.scio.values.Accumulator[_]]"></a>
       <a id="accumulators:Seq[Accumulator[_]]"></a>
@@ -270,7 +271,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.spotify.scio.ScioResult#finalState" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.spotify.scio.ScioResult#finalState" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalState:scala.concurrent.Future[org.apache.beam.sdk.PipelineResult.State]"></a>
       <a id="finalState:Future[State]"></a>
       <h4 class="signature">
@@ -286,7 +287,9 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt"><code>Future</code> for pipeline's final state.</p><div class="fullcomment"><div class="comment cmt"><p><code>Future</code> for pipeline's final state. The <code>Future</code> will be completed once the pipeline
+completes successfully.
+</p></div></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -600,6 +603,26 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.spotify.scio.ScioResult#waitUntilDone" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="waitUntilDone(duration:scala.concurrent.duration.Duration):com.spotify.scio.ScioResult"></a>
+      <a id="waitUntilDone(Duration):ScioResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">waitUntilDone</span><span class="params">(<span name="duration">duration: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.duration.Duration" class="extype" target="_top">Duration</a> = <span class="symbol">Duration.Inf</span></span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.ScioResult">ScioResult</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#com.spotify.scio.ScioResult@waitUntilDone(duration:scala.concurrent.duration.Duration):com.spotify.scio.ScioResult" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Wait until the pipeline finishes with the State <code>Done</code> (as opposed to <code>CANCELLED</code> or
+<code>FAILED</code>).</p><div class="fullcomment"><div class="comment cmt"><p>Wait until the pipeline finishes with the State <code>Done</code> (as opposed to <code>CANCELLED</code> or
+<code>FAILED</code>). Throws exception otherwise.
+</p></div></div>
     </li><li name="com.spotify.scio.ScioResult#waitUntilFinish" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="waitUntilFinish(duration:scala.concurrent.duration.Duration):com.spotify.scio.ScioResult"></a>
       <a id="waitUntilFinish(Duration):ScioResult"></a>

@@ -49,7 +49,8 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Enhanced version of <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> with accumulator
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Enhanced version of <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> with
+<a href="../values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>
 helpers.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
@@ -167,7 +168,7 @@ helpers.
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.spotify.scio.accumulators.AccumulatorSCollection#accumulate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.spotify.scio.accumulators.AccumulatorSCollection#accumulate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="accumulate(as:com.spotify.scio.values.Accumulator[T]*):com.spotify.scio.values.SCollection[T]"></a>
       <a id="accumulate(Accumulator[T]*):SCollection[T]"></a>
       <h4 class="signature">
@@ -183,8 +184,10 @@ helpers.
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Accumulate elements with the given accumulators.</p>
-    </li><li name="com.spotify.scio.accumulators.AccumulatorSCollection#accumulateBy" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Accumulate elements with the given <a href="../values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s.</p><div class="fullcomment"><div class="comment cmt"><p>Accumulate elements with the given <a href="../values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s.</p><p>For example:</p><pre><span class="kw">val</span> max = sc.maxAccumulator[<span class="std">Int</span>](<span class="lit">"max"</span>)
+<span class="kw">val</span> min = sc.maxAccumulator[<span class="std">Int</span>](<span class="lit">"min"</span>)
+sc.parallelize(<span class="num">1</span> to <span class="num">100</span>).accumulate(max, min)</pre></div></div>
+    </li><li name="com.spotify.scio.accumulators.AccumulatorSCollection#accumulateBy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="accumulateBy[U](as:com.spotify.scio.values.Accumulator[U]*)(f:T=&gt;U):com.spotify.scio.values.SCollection[T]"></a>
       <a id="accumulateBy[U](Accumulator[U]*)((T)⇒U):SCollection[T]"></a>
       <h4 class="signature">
@@ -200,7 +203,11 @@ helpers.
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Accumulate elements with the given accumulators by applying <code>f</code>.</p>
+      <p class="shortcomment cmt">Accumulate elements with the given <a href="../values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s by
+applying <code>f</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Accumulate elements with the given <a href="../values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s by
+applying <code>f</code>.</p><p>For example:</p><pre><span class="kw">val</span> max = sc.maxAccumulator[<span class="std">Int</span>](<span class="lit">"max"</span>)
+<span class="kw">val</span> min = sc.maxAccumulator[<span class="std">Int</span>](<span class="lit">"min"</span>)
+sc.textFile(<span class="lit">"input.txt"</span>).accumulateBy(max, min)(_.length)</pre></div></div>
     </li><li name="com.spotify.scio.accumulators.AccumulatorSCollection#accumulateCount" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="accumulateCount:com.spotify.scio.values.SCollection[T]"></a>
       <a id="accumulateCount:SCollection[T]"></a>
@@ -217,7 +224,8 @@ helpers.
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Count elements with an automatically created accumulator.</p>
+      <p class="shortcomment cmt">Count elements with an automatically created
+<a href="../values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>.</p>
     </li><li name="com.spotify.scio.accumulators.AccumulatorSCollection#accumulateCount" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="accumulateCount(acc:com.spotify.scio.values.Accumulator[Long]):com.spotify.scio.values.SCollection[T]"></a>
       <a id="accumulateCount(Accumulator[Long]):SCollection[T]"></a>
@@ -234,7 +242,7 @@ helpers.
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Count elements with an accumulator.</p>
+      <p class="shortcomment cmt">Count elements with an <a href="../values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>.</p>
     </li><li name="com.spotify.scio.accumulators.AccumulatorSCollection#accumulateCountFilter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="accumulateCountFilter(f:T=&gt;Boolean):com.spotify.scio.values.SCollection[T]"></a>
       <a id="accumulateCountFilter((T)⇒Boolean):SCollection[T]"></a>
@@ -251,8 +259,10 @@ helpers.
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Count positive and negative results in a filter with automatically created accumulators.</p>
-    </li><li name="com.spotify.scio.accumulators.AccumulatorSCollection#accumulateCountFilter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Count positive and negative results in a
+<a href="../values/SCollection.html#filter(f:T=&gt;Boolean):com.spotify.scio.values.SCollection[T]" class="extmbr" name="com.spotify.scio.values.SCollection#filter">SCollection.filter</a> with automatically
+created <a href="../values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s.</p>
+    </li><li name="com.spotify.scio.accumulators.AccumulatorSCollection#accumulateCountFilter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="accumulateCountFilter(accPos:com.spotify.scio.values.Accumulator[Long],accNeg:com.spotify.scio.values.Accumulator[Long])(f:T=&gt;Boolean):com.spotify.scio.values.SCollection[T]"></a>
       <a id="accumulateCountFilter(Accumulator[Long],Accumulator[Long])((T)⇒Boolean):SCollection[T]"></a>
       <h4 class="signature">
@@ -268,7 +278,13 @@ helpers.
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Count positive and negative results in a filter with the given accumulators.</p>
+      <p class="shortcomment cmt">Count positive and negative results in a
+<a href="../values/SCollection.html#filter(f:T=&gt;Boolean):com.spotify.scio.values.SCollection[T]" class="extmbr" name="com.spotify.scio.values.SCollection#filter">SCollection.filter</a> with the given
+<a href="../values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s.</p><div class="fullcomment"><div class="comment cmt"><p>Count positive and negative results in a
+<a href="../values/SCollection.html#filter(f:T=&gt;Boolean):com.spotify.scio.values.SCollection[T]" class="extmbr" name="com.spotify.scio.values.SCollection#filter">SCollection.filter</a> with the given
+<a href="../values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a>s.</p><p>For example:</p><pre><span class="kw">val</span> pos = sc.sumAccumulator[<span class="std">Long</span>](<span class="lit">"positive"</span>)
+<span class="kw">val</span> neg = sc.sumAccumulator[<span class="std">Long</span>](<span class="lit">"negative"</span>)
+sc.parallelize(<span class="num">1</span> to <span class="num">100</span>).accumulateCountFilter(pos, neg)(_ &gt; <span class="num">95</span>)</pre></div></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>

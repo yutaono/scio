@@ -147,7 +147,24 @@ load on the final global combine step.
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.spotify.scio.values.SCollectionWithFanout#aggregate" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="com.spotify.scio.values.SCollectionWithFanout#aggregate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="aggregate[A,U](aggregator:com.twitter.algebird.Aggregator[T,A,U])(implicitevidence$3:scala.reflect.ClassTag[A],implicitevidence$4:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
+      <a id="aggregate[A,U](Aggregator[T,A,U])(ClassTag[A],ClassTag[U]):SCollection[U]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">aggregate</span><span class="tparams">[<span name="A">A</span>, <span name="U">U</span>]</span><span class="params">(<span name="aggregator">aggregator: <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Aggregator" class="extype" target="_top">Aggregator</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.T">T</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.aggregate.A">A</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.aggregate.U">U</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.aggregate.A">A</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.aggregate.U">U</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.aggregate.U">U</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithFanout@aggregate[A,U](aggregator:com.twitter.algebird.Aggregator[T,A,U])(implicitevidence$3:scala.reflect.ClassTag[A],implicitevidence$4:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><a href="SCollection.html#aggregate[A,U](aggregator:com.twitter.algebird.Aggregator[T,A,U])(implicitevidence$7:scala.reflect.ClassTag[A],implicitevidence$8:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" class="extmbr" name="com.spotify.scio.values.SCollection#aggregate">SCollection.aggregate</a> with fan out.</p>
+    </li><li name="com.spotify.scio.values.SCollectionWithFanout#aggregate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="aggregate[U](zeroValue:U)(seqOp:(U,T)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$2:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]"></a>
       <a id="aggregate[U](U)((U,T)⇒U,(U,U)⇒U)(ClassTag[U]):SCollection[U]"></a>
       <h4 class="signature">
@@ -163,12 +180,7 @@ load on the final global combine step.
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Aggregate the elements using given combine functions and a neutral &quot;zero value&quot;.</p><div class="fullcomment"><div class="comment cmt"><p>Aggregate the elements using given combine functions and a neutral &quot;zero value&quot;. This
-function can return a different result type, U, than the type of this SCollection, T. Thus,
-we need one operation for merging a T into an U and one operation for merging two U's. Both
-of these functions are allowed to modify and return their first argument instead of creating
-a new U to avoid memory allocation.
-</p></div></div>
+      <p class="shortcomment cmt"><a href="SCollection.html#aggregate[U](zeroValue:U)(seqOp:(U,T)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$6:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" class="extmbr" name="com.spotify.scio.values.SCollection#aggregate">SCollection.aggregate</a> with fan out.</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -209,8 +221,8 @@ a new U to avoid memory allocation.
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.spotify.scio.values.SCollectionWithFanout#combine" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="combine[C](createCombiner:T=&gt;C)(mergeValue:(C,T)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$3:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[C]"></a>
+    </li><li name="com.spotify.scio.values.SCollectionWithFanout#combine" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="combine[C](createCombiner:T=&gt;C)(mergeValue:(C,T)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$5:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[C]"></a>
       <a id="combine[C]((T)⇒C)((C,T)⇒C)((C,C)⇒C)(ClassTag[C]):SCollection[C]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -221,15 +233,11 @@ a new U to avoid memory allocation.
         <span class="name">combine</span><span class="tparams">[<span name="C">C</span>]</span><span class="params">(<span name="createCombiner">createCombiner: (<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.T">T</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.combine.C">C</span></span>)</span><span class="params">(<span name="mergeValue">mergeValue: (<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.combine.C">C</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.T">T</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.combine.C">C</span></span>)</span><span class="params">(<span name="mergeCombiners">mergeCombiners: (<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.combine.C">C</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.combine.C">C</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.combine.C">C</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.combine.C">C</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.combine.C">C</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithFanout@combine[C](createCombiner:T=&gt;C)(mergeValue:(C,T)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$3:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[C]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithFanout@combine[C](createCombiner:T=&gt;C)(mergeValue:(C,T)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$5:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[C]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Generic function to combine the elements using a custom set of aggregation functions.</p><div class="fullcomment"><div class="comment cmt"><p>Generic function to combine the elements using a custom set of aggregation functions. Turns
-an SCollection[T] into a result of type SCollection[C], for a &quot;combined type&quot; C. Note that V
-and C can be different -- for example, one might combine an SCollection of type Int into an
-SCollection of type Seq[Int]. Users provide three functions:</p><p>- <code>createCombiner</code>, which turns a V into a C (e.g., creates a one-element list)</p><p>- <code>mergeValue</code>, to merge a V into a C (e.g., adds it to the end of a list)</p><p>- <code>mergeCombiners</code>, to combine two C's into a single one.
-</p></div></div>
+      <p class="shortcomment cmt"><a href="SCollection.html#combine[C](createCombiner:T=&gt;C)(mergeValue:(C,T)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$10:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[C]" class="extmbr" name="com.spotify.scio.values.SCollection#combine">SCollection.combine</a> with fan out.</p>
     </li><li name="com.spotify.scio.values.SCollectionWithFanout#context" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="context:com.spotify.scio.ScioContext"></a>
       <a id="context:ScioContext"></a>
@@ -246,7 +254,10 @@ SCollection of type Seq[Int]. Users provide three functions:</p><p>- <code>creat
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">The ScioContext associated with this PCollection.</p><div class="fullcomment"><div class="comment cmt"><p>The ScioContext associated with this PCollection.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.spotify.scio.values.SCollectionWithFanout">SCollectionWithFanout</a> → PCollectionWrapper</dd></dl></div>
+      <p class="shortcomment cmt">The <a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a> associated with this
+<a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a>.</p><div class="fullcomment"><div class="comment cmt"><p>The <a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a> associated with this
+<a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.spotify.scio.values.SCollectionWithFanout">SCollectionWithFanout</a> → PCollectionWrapper</dd></dl></div>
     </li><li name="com.spotify.scio.values.SCollectionWithFanout#ct" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ct:scala.reflect.ClassTag[T]"></a>
       <a id="ct:ClassTag[T]"></a>
@@ -321,7 +332,7 @@ SCollection of type Seq[Int]. Users provide three functions:</p><p>- <code>creat
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.spotify.scio.values.SCollectionWithFanout#fold" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="com.spotify.scio.values.SCollectionWithFanout#fold" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="fold(implicitmon:com.twitter.algebird.Monoid[T]):com.spotify.scio.values.SCollection[T]"></a>
       <a id="fold(Monoid[T]):SCollection[T]"></a>
       <h4 class="signature">
@@ -337,11 +348,8 @@ SCollection of type Seq[Int]. Users provide three functions:</p><p>- <code>creat
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Fold with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative function and
-&quot;zero value&quot; for T.</p><div class="fullcomment"><div class="comment cmt"><p>Fold with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative function and
-&quot;zero value&quot; for T. This could be more powerful and better optimized in some cases.
-</p></div></div>
-    </li><li name="com.spotify.scio.values.SCollectionWithFanout#fold" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt"><a href="SCollection.html#fold(implicitmon:com.twitter.algebird.Monoid[T]):com.spotify.scio.values.SCollection[T]" class="extmbr" name="com.spotify.scio.values.SCollection#fold">SCollection.fold</a> with fan out.</p>
+    </li><li name="com.spotify.scio.values.SCollectionWithFanout#fold" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="fold(zeroValue:T)(op:(T,T)=&gt;T):com.spotify.scio.values.SCollection[T]"></a>
       <a id="fold(T)((T,T)⇒T):SCollection[T]"></a>
       <h4 class="signature">
@@ -357,10 +365,7 @@ SCollection of type Seq[Int]. Users provide three functions:</p><p>- <code>creat
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Aggregate the elements using a given associative function and a neutral &quot;zero value&quot;.</p><div class="fullcomment"><div class="comment cmt"><p>Aggregate the elements using a given associative function and a neutral &quot;zero value&quot;. The
-function op(t1, t2) is allowed to modify t1 and return it as its result value to avoid object
-allocation; however, it should not modify t2.
-</p></div></div>
+      <p class="shortcomment cmt"><a href="SCollection.html#fold(zeroValue:T)(op:(T,T)=&gt;T):com.spotify.scio.values.SCollection[T]" class="extmbr" name="com.spotify.scio.values.SCollection#fold">SCollection.fold</a> with fan out.</p>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -404,14 +409,14 @@ allocation; however, it should not modify t2.
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">internal</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.T">T</span>]</span>
+        <span class="name">internal</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.T">T</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithFanout@internal:org.apache.beam.sdk.values.PCollection[T]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">The PCollection being wrapped internally.</p><div class="fullcomment"><div class="comment cmt"><p>The PCollection being wrapped internally.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.spotify.scio.values.SCollectionWithFanout">SCollectionWithFanout</a> → PCollectionWrapper</dd></dl></div>
+      <p class="shortcomment cmt">The <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a> being wrapped internally.</p><div class="fullcomment"><div class="comment cmt"><p>The <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a> being wrapped internally.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.spotify.scio.values.SCollectionWithFanout">SCollectionWithFanout</a> → PCollectionWrapper</dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -489,7 +494,7 @@ allocation; however, it should not modify t2.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">pApply</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="transform">transform: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.PTransform" class="extype" target="_top">PTransform</a>[_ &gt;: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.T">T</span>], <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.PCollectionWrapper.pApply.U">U</span>]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PCollectionWrapper.pApply.U">U</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.PCollectionWrapper.pApply.U">U</span>]</span>
+        <span class="name">pApply</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="transform">transform: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.PTransform" class="extype" target="_top">PTransform</a>[_ &gt;: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithFanout.T">T</span>], <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a>[<span class="extype" name="com.spotify.scio.values.PCollectionWrapper.pApply.U">U</span>]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.PCollectionWrapper.pApply.U">U</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.values.PCollectionWrapper.pApply.U">U</span>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithFanout@pApply[U](transform:org.apache.beam.sdk.transforms.PTransform[_&gt;:org.apache.beam.sdk.values.PCollection[T],org.apache.beam.sdk.values.PCollection[U]])(implicitevidence$1:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" title="Permalink" target="_top">
@@ -513,9 +518,8 @@ allocation; however, it should not modify t2.
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Reduce the elements of this SCollection using the specified commutative and associative
-binary operator.</p>
-    </li><li name="com.spotify.scio.values.SCollectionWithFanout#sum" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt"><a href="SCollection.html#reduce(op:(T,T)=&gt;T):com.spotify.scio.values.SCollection[T]" class="extmbr" name="com.spotify.scio.values.SCollection#reduce">SCollection.reduce</a> with fan out.</p>
+    </li><li name="com.spotify.scio.values.SCollectionWithFanout#sum" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="sum(implicitsg:com.twitter.algebird.Semigroup[T]):com.spotify.scio.values.SCollection[T]"></a>
       <a id="sum(Semigroup[T]):SCollection[T]"></a>
       <h4 class="signature">
@@ -531,9 +535,7 @@ binary operator.</p>
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Reduce with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Reduce with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>. This could be more powerful and
-better optimized in some cases.
-</p></div></div>
+      <p class="shortcomment cmt"><a href="SCollection.html#sum(implicitsg:com.twitter.algebird.Semigroup[T]):com.spotify.scio.values.SCollection[T]" class="extmbr" name="com.spotify.scio.values.SCollection#sum">SCollection.sum</a> with fan out.</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>

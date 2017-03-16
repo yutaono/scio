@@ -66,7 +66,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="com.spotify.scio.io.AvroTap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="com.spotify.scio.io.AvroTap" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="AvroTap[T]extendsTap[T]withProductwithSerializable"></a>
       <a id="AvroTap[T]:AvroTap[T]"></a>
       <h4 class="signature">
@@ -75,14 +75,15 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="AvroTap.html"><span class="name">AvroTap</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$2">evidence$2: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>]</span>)</span><span class="result"> extends <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="AvroTap.html"><span class="name">AvroTap</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <a href="https://avro.apache.org/docs/current/api/java/index.html#org.apache.avro.Schema" class="extype" target="_top">Schema</a> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="evidence$2">evidence$2: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>]</span>)</span><span class="result"> extends <a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.AvroTap.T">T</span>] with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.io.package@AvroTap[T]extendsTap[T]withProductwithSerializable" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Tap for Avro files on local file system or GCS.</p>
+      <p class="shortcomment cmt">Tap for Avro files on local file system or GCS.</p><div class="fullcomment"><div class="comment cmt"><p>Tap for Avro files on local file system or GCS.</p></div><dl class="paramcmts block"><dt class="param">schema</dt><dd class="cmt"><p>must be not null if <code>T</code> is of type
+              <a href="https://avro.apache.org/docs/current/api/java/index.html#org.apache.avro.generic.GenericRecord" class="extype" target="_top">GenericRecord</a>.</p></dd></dl></div>
     </li><li name="com.spotify.scio.io.BigQueryTap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="BigQueryTapextendsTap[com.spotify.scio.bigquery.TableRow]withProductwithSerializable"></a>
       <a id="BigQueryTap:BigQueryTap"></a>
@@ -100,7 +101,7 @@
       </a>
     </span>
       <p class="shortcomment cmt">Tap for BigQuery tables.</p>
-    </li><li name="com.spotify.scio.io.ObjectFileTap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.spotify.scio.io.ObjectFileTap" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ObjectFileTap[T]extendsTap[T]withProductwithSerializable"></a>
       <a id="ObjectFileTap[T]:ObjectFileTap[T]"></a>
       <h4 class="signature">
@@ -116,7 +117,9 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Tap for object files on local file system or GCS.</p>
+      <p class="shortcomment cmt">Tap for object files on local file system or GCS.</p><div class="fullcomment"><div class="comment cmt"><p>Tap for object files on local file system or GCS. Note that serialization is not guaranteed to
+be compatible across Scio releases.
+</p></div></div>
     </li><li name="com.spotify.scio.io.TFRecordFileTap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TFRecordFileTapextendsTap[Array[Byte]]withProductwithSerializable"></a>
       <a id="TFRecordFileTap:TFRecordFileTap"></a>
@@ -167,7 +170,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Tap for JSON files on local file system or GCS.</p>
+      <p class="shortcomment cmt">Tap for BigQuery TableRow JSON files on local file system or GCS.</p>
     </li><li name="com.spotify.scio.io.Tap" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="Tap[T]extendsAnyRef"></a>
       <a id="Tap[T]:Tap[T]"></a>
@@ -184,8 +187,8 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Placeholder to an external data set that can either be load into memory as an iterator or opened
-in a new ScioContext as an SCollection.</p>
+      <p class="shortcomment cmt">Placeholder to an external data set that can either be load into memory as an iterator or
+opened in a new <a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a> as an <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>.</p>
     </li><li name="com.spotify.scio.io.TapNotAvailableException" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TapNotAvailableExceptionextendsException"></a>
       <a id="TapNotAvailableException:TapNotAvailableException"></a>

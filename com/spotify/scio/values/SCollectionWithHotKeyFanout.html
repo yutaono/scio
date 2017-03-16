@@ -88,27 +88,7 @@ performing the full combine.
 
       <div id="template">
         <div id="allMembers">
-        <div id="constructors" class="members">
-              <h3>Instance Constructors</h3>
-              <ol><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(self:com.spotify.scio.values.PairSCollectionFunctions[K,V],hotKeyFanout:Either[K=&gt;Int,Int])(implicitevidence$1:scala.reflect.ClassTag[K],implicitevidence$2:scala.reflect.ClassTag[V]):com.spotify.scio.values.SCollectionWithHotKeyFanout[K,V]"></a>
-      <a id="&lt;init&gt;:SCollectionWithHotKeyFanout[K,V]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">new</span>
-      </span>
-      <span class="symbol">
-        <span class="name">SCollectionWithHotKeyFanout</span><span class="params">(<span name="self">self: <a href="PairSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.PairSCollectionFunctions">PairSCollectionFunctions</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.K">K</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>]</span>, <span name="hotKeyFanout">hotKeyFanout: <span class="extype" name="scala.Either">Either</span>[(<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.K">K</span>) ⇒ <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.K">K</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>]</span>)</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithHotKeyFanout@&lt;init&gt;(self:com.spotify.scio.values.PairSCollectionFunctions[K,V],hotKeyFanout:Either[K=&gt;Int,Int])(implicitevidence$1:scala.reflect.ClassTag[K],implicitevidence$2:scala.reflect.ClassTag[V]):com.spotify.scio.values.SCollectionWithHotKeyFanout[K,V]" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      
-    </li></ol>
-            </div>
+        
 
         
 
@@ -167,7 +147,25 @@ performing the full combine.
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#aggregateByKey" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#aggregateByKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="aggregateByKey[A,U](aggregator:com.twitter.algebird.Aggregator[V,A,U])(implicitevidence$4:scala.reflect.ClassTag[A],implicitevidence$5:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]"></a>
+      <a id="aggregateByKey[A,U](Aggregator[V,A,U])(ClassTag[A],ClassTag[U]):SCollection[(K,U)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">aggregateByKey</span><span class="tparams">[<span name="A">A</span>, <span name="U">U</span>]</span><span class="params">(<span name="aggregator">aggregator: <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Aggregator" class="extype" target="_top">Aggregator</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.aggregateByKey.A">A</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.aggregateByKey.U">U</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.aggregateByKey.A">A</span>]</span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.aggregateByKey.U">U</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.K">K</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.aggregateByKey.U">U</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithHotKeyFanout@aggregateByKey[A,U](aggregator:com.twitter.algebird.Aggregator[V,A,U])(implicitevidence$4:scala.reflect.ClassTag[A],implicitevidence$5:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt"><a href="PairSCollectionFunctions.html#aggregateByKey[A,U](aggregator:com.twitter.algebird.Aggregator[V,A,U])(implicitevidence$24:scala.reflect.ClassTag[A],implicitevidence$25:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#aggregateByKey">PairSCollectionFunctions.aggregateByKey</a>
+with hot key fanout.</p>
+    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#aggregateByKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$3:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]"></a>
       <a id="aggregateByKey[U](U)((U,V)⇒U,(U,U)⇒U)(ClassTag[U]):SCollection[(K,U)]"></a>
       <h4 class="signature">
@@ -183,12 +181,8 @@ performing the full combine.
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Aggregate the values of each key, using given combine functions and a neutral &quot;zero value&quot;.</p><div class="fullcomment"><div class="comment cmt"><p>Aggregate the values of each key, using given combine functions and a neutral &quot;zero value&quot;.
-This function can return a different result type, U, than the type of the values in this
-SCollection, V. Thus, we need one operation for merging a V into a U and one operation for
-merging two U's. To avoid memory allocation, both of these functions are allowed to modify
-and return their first argument instead of creating a new U.
-</p></div></div>
+      <p class="shortcomment cmt"><a href="PairSCollectionFunctions.html#aggregateByKey[U](zeroValue:U)(seqOp:(U,V)=&gt;U,combOp:(U,U)=&gt;U)(implicitevidence$23:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[(K,U)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#aggregateByKey">PairSCollectionFunctions.aggregateByKey</a> with
+hot key fanout.</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -229,8 +223,8 @@ and return their first argument instead of creating a new U.
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#combineByKey" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="combineByKey[C](createCombiner:V=&gt;C)(mergeValue:(C,V)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$4:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[(K,C)]"></a>
+    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#combineByKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="combineByKey[C](createCombiner:V=&gt;C)(mergeValue:(C,V)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$6:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[(K,C)]"></a>
       <a id="combineByKey[C]((V)⇒C)((C,V)⇒C)((C,C)⇒C)(ClassTag[C]):SCollection[(K,C)]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -241,17 +235,11 @@ and return their first argument instead of creating a new U.
         <span class="name">combineByKey</span><span class="tparams">[<span name="C">C</span>]</span><span class="params">(<span name="createCombiner">createCombiner: (<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.combineByKey.C">C</span></span>)</span><span class="params">(<span name="mergeValue">mergeValue: (<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.combineByKey.C">C</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.V">V</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.combineByKey.C">C</span></span>)</span><span class="params">(<span name="mergeCombiners">mergeCombiners: (<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.combineByKey.C">C</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.combineByKey.C">C</span>) ⇒ <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.combineByKey.C">C</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.combineByKey.C">C</span>]</span>)</span><span class="result">: <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.K">K</span>, <span class="extype" name="com.spotify.scio.values.SCollectionWithHotKeyFanout.combineByKey.C">C</span>)]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithHotKeyFanout@combineByKey[C](createCombiner:V=&gt;C)(mergeValue:(C,V)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$4:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[(K,C)]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.values.SCollectionWithHotKeyFanout@combineByKey[C](createCombiner:V=&gt;C)(mergeValue:(C,V)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$6:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[(K,C)]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Generic function to combine the elements for each key using a custom set of aggregation
-functions.</p><div class="fullcomment"><div class="comment cmt"><p>Generic function to combine the elements for each key using a custom set of aggregation
-functions. Turns an SCollection[(K, V)] into a result of type SCollection[(K, C)], for a
-&quot;combined type&quot; C Note that V and C can be different -- for example, one might group an
-SCollection of type (Int, Int) into an RDD of type (Int, Seq[Int]). Users provide three
-functions:</p><p>- <code>createCombiner</code>, which turns a V into a C (e.g., creates a one-element list)</p><p>- <code>mergeValue</code>, to merge a V into a C (e.g., adds it to the end of a list)</p><p>- <code>mergeCombiners</code>, to combine two C's into a single one.
-</p></div></div>
+      <p class="shortcomment cmt"><a href="PairSCollectionFunctions.html#combineByKey[C](createCombiner:V=&gt;C)(mergeValue:(C,V)=&gt;C)(mergeCombiners:(C,C)=&gt;C)(implicitevidence$26:scala.reflect.ClassTag[C]):com.spotify.scio.values.SCollection[(K,C)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#combineByKey">PairSCollectionFunctions.combineByKey</a> with hot key fanout.</p>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -309,7 +297,7 @@ functions:</p><p>- <code>createCombiner</code>, which turns a V into a C (e.g., 
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#foldByKey" visbl="pub" data-isabs="false" fullComment="yes" group="per_key">
+    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#foldByKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="foldByKey(implicitmon:com.twitter.algebird.Monoid[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
       <a id="foldByKey(Monoid[V]):SCollection[(K,V)]"></a>
       <h4 class="signature">
@@ -325,11 +313,9 @@ functions:</p><p>- <code>createCombiner</code>, which turns a V into a C (e.g., 
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Fold by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative
-function and &quot;zero value&quot; for V.</p><div class="fullcomment"><div class="comment cmt"><p>Fold by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Monoid" class="extype" target="_top">Monoid</a>, which defines the associative
-function and &quot;zero value&quot; for V. This could be more powerful and better optimized in some
-cases.</p></div></div>
-    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#foldByKey" visbl="pub" data-isabs="false" fullComment="no" group="per_key">
+      <p class="shortcomment cmt"><a href="PairSCollectionFunctions.html#foldByKey(implicitmon:com.twitter.algebird.Monoid[V]):com.spotify.scio.values.SCollection[(K,V)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#foldByKey">PairSCollectionFunctions.foldByKey</a> with
+hot key fanout.</p>
+    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#foldByKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="foldByKey(zeroValue:V)(op:(V,V)=&gt;V):com.spotify.scio.values.SCollection[(K,V)]"></a>
       <a id="foldByKey(V)((V,V)⇒V):SCollection[(K,V)]"></a>
       <h4 class="signature">
@@ -345,9 +331,8 @@ cases.</p></div></div>
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Merge the values for each key using an associative function and a neutral &quot;zero value&quot; which
-may be added to the result an arbitrary number of times, and must not change the result
-(e.g., Nil for list concatenation, 0 for addition, or 1 for multiplication.).</p>
+      <p class="shortcomment cmt"><a href="PairSCollectionFunctions.html#foldByKey(zeroValue:V)(op:(V,V)=&gt;V):com.spotify.scio.values.SCollection[(K,V)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#foldByKey">PairSCollectionFunctions.foldByKey</a> with
+hot key fanout.</p>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -450,7 +435,7 @@ may be added to the result an arbitrary number of times, and must not change the
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#reduceByKey" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#reduceByKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="reduceByKey(op:(V,V)=&gt;V):com.spotify.scio.values.SCollection[(K,V)]"></a>
       <a id="reduceByKey((V,V)⇒V):SCollection[(K,V)]"></a>
       <h4 class="signature">
@@ -466,11 +451,8 @@ may be added to the result an arbitrary number of times, and must not change the
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Merge the values for each key using an associative reduce function.</p><div class="fullcomment"><div class="comment cmt"><p>Merge the values for each key using an associative reduce function. This will also perform
-the merging locally on each mapper before sending results to a reducer, similarly to a
-&quot;combiner&quot; in MapReduce.
-</p></div></div>
-    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#sumByKey" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <p class="shortcomment cmt"><a href="PairSCollectionFunctions.html#reduceByKey(op:(V,V)=&gt;V):com.spotify.scio.values.SCollection[(K,V)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#reduceByKey">PairSCollectionFunctions.reduceByKey</a> with hot key fanout.</p>
+    </li><li name="com.spotify.scio.values.SCollectionWithHotKeyFanout#sumByKey" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="sumByKey(implicitsg:com.twitter.algebird.Semigroup[V]):com.spotify.scio.values.SCollection[(K,V)]"></a>
       <a id="sumByKey(Semigroup[V]):SCollection[(K,V)]"></a>
       <h4 class="signature">
@@ -486,9 +468,7 @@ the merging locally on each mapper before sending results to a reducer, similarl
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Reduce by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Reduce by key with <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>. This could be more powerful
-and better optimized in some cases.
-</p></div></div>
+      <p class="shortcomment cmt"><a href="PairSCollectionFunctions.html#sumByKey(implicitsg:com.twitter.algebird.Semigroup[V]):com.spotify.scio.values.SCollection[(K,V)]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#sumByKey">PairSCollectionFunctions.sumByKey</a> with hot key fanout.</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -629,10 +609,7 @@ and better optimized in some cases.
         </div>
 
         <div id="groupedMembers">
-        <div class="group" name="per_key">
-              <h3>per_key</h3>
-              
-            </div><div class="group" name="Ungrouped">
+        <div class="group" name="Ungrouped">
               <h3>Ungrouped</h3>
               
             </div>

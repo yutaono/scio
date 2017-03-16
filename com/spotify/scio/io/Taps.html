@@ -173,7 +173,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">avroFile</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.Taps.avroFile.T">T</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.Taps.avroFile.T">T</span>]]</span>
+        <span class="name">avroFile</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <a href="https://avro.apache.org/docs/current/api/java/index.html#org.apache.avro.Schema" class="extype" target="_top">Schema</a> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.Taps.avroFile.T">T</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.Taps.avroFile.T">T</span>]]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.io.Taps@avroFile[T](path:String,schema:org.apache.avro.Schema)(implicitevidence$1:scala.reflect.ClassTag[T]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
@@ -414,6 +414,23 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="com.spotify.scio.io.Taps#objectFile" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="objectFile[T](path:String)(implicitevidence$5:scala.reflect.ClassTag[T]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
+      <a id="objectFile[T](String)(ClassTag[T]):Future[Tap[T]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">objectFile</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.io.Taps.objectFile.T">T</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.concurrent.Future" class="extype" target="_top">Future</a>[<a href="Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.io.Taps.objectFile.T">T</span>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.io.Taps@objectFile[T](path:String)(implicitevidence$5:scala.reflect.ClassTag[T]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Get a <code>Future[Tap[T]]</code> of an object file.</p>
     </li><li name="com.spotify.scio.io.Taps#protobufFile" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="protobufFile[T](path:String)(implicitevidence$4:scala.reflect.ClassTag[T],implicitev:&lt;:&lt;[T,com.google.protobuf.Message]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a>
       <a id="protobufFile[T](String)(ClassTag[T],&lt;:&lt;[T,Message]):Future[Tap[T]]"></a>
@@ -464,7 +481,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Get a <code>Future[Tap[TableRow]]</code> of TableRow for a JSON file.</p>
+      <p class="shortcomment cmt">Get a <code>Future[Tap[TableRow]]</code> for a BigQuery TableRow JSON file.</p>
     </li><li name="com.spotify.scio.io.Taps#textFile" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="textFile(path:String):scala.concurrent.Future[com.spotify.scio.io.Tap[String]]"></a>
       <a id="textFile(String):Future[Tap[String]]"></a>
@@ -515,7 +532,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Get a <code>Future[Tap[T]]</code> for BigQuery source.</p>
+      <p class="shortcomment cmt">Get a <code>Future[Tap[T]]</code> for typed BigQuery source.</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>

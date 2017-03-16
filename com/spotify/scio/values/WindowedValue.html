@@ -45,11 +45,11 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">WindowedValue</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="value">value: <span class="extype" name="com.spotify.scio.values.WindowedValue.T">T</span></span>, <span name="timestamp">timestamp: <span class="extype" name="org.joda.time.Instant">Instant</span></span>, <span name="window">window: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>, <span name="pane">pane: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.windowing.PaneInfo" class="extype" target="_top">PaneInfo</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <span class="name">WindowedValue</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="value">value: <span class="extype" name="com.spotify.scio.values.WindowedValue.T">T</span></span>, <span name="timestamp">timestamp: <span class="extype" name="org.joda.time.Instant">Instant</span></span>, <span name="window">window: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>, <span name="pane">pane: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.PaneInfo" class="extype" target="_top">PaneInfo</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Value with window information to be used inside a <a href="WindowedSCollection.html" class="extype" name="com.spotify.scio.values.WindowedSCollection">WindowedSCollection</a>.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Equals" class="extype" target="_top">Equals</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -97,7 +97,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">WindowedValue</span><span class="params">(<span name="value">value: <span class="extype" name="com.spotify.scio.values.WindowedValue.T">T</span></span>, <span name="timestamp">timestamp: <span class="extype" name="org.joda.time.Instant">Instant</span></span>, <span name="window">window: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>, <span name="pane">pane: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.windowing.PaneInfo" class="extype" target="_top">PaneInfo</a></span>)</span>
+        <span class="name">WindowedValue</span><span class="params">(<span name="value">value: <span class="extype" name="com.spotify.scio.values.WindowedValue.T">T</span></span>, <span name="timestamp">timestamp: <span class="extype" name="org.joda.time.Instant">Instant</span></span>, <span name="window">window: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>, <span name="pane">pane: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.PaneInfo" class="extype" target="_top">PaneInfo</a></span>)</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.WindowedValue@&lt;init&gt;(value:T,timestamp:org.joda.time.Instant,window:org.apache.beam.sdk.transforms.windowing.BoundedWindow,pane:org.apache.beam.sdk.transforms.windowing.PaneInfo):com.spotify.scio.values.WindowedValue[T]" title="Permalink" target="_top">
@@ -339,7 +339,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">pane</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.windowing.PaneInfo" class="extype" target="_top">PaneInfo</a></span>
+        <span class="name">pane</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.PaneInfo" class="extype" target="_top">PaneInfo</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.WindowedValue@pane:org.apache.beam.sdk.transforms.windowing.PaneInfo" title="Permalink" target="_top">
@@ -476,7 +476,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">window</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.5.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>
+        <span class="name">window</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.WindowedValue@window:org.apache.beam.sdk.transforms.windowing.BoundedWindow" title="Permalink" target="_top">
@@ -484,6 +484,40 @@
       </a>
     </span>
       
+    </li><li name="com.spotify.scio.values.WindowedValue#withPane" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withPane(p:org.apache.beam.sdk.transforms.windowing.PaneInfo):com.spotify.scio.values.WindowedValue[T]"></a>
+      <a id="withPane(PaneInfo):WindowedValue[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withPane</span><span class="params">(<span name="p">p: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.PaneInfo" class="extype" target="_top">PaneInfo</a></span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.WindowedValue">WindowedValue</a>[<span class="extype" name="com.spotify.scio.values.WindowedValue.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.WindowedValue@withPane(p:org.apache.beam.sdk.transforms.windowing.PaneInfo):com.spotify.scio.values.WindowedValue[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Make a copy with new pane.</p>
+    </li><li name="com.spotify.scio.values.WindowedValue#withTimestamp" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withTimestamp(t:org.joda.time.Instant):com.spotify.scio.values.WindowedValue[T]"></a>
+      <a id="withTimestamp(Instant):WindowedValue[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withTimestamp</span><span class="params">(<span name="t">t: <span class="extype" name="org.joda.time.Instant">Instant</span></span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.WindowedValue">WindowedValue</a>[<span class="extype" name="com.spotify.scio.values.WindowedValue.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.WindowedValue@withTimestamp(t:org.joda.time.Instant):com.spotify.scio.values.WindowedValue[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Make a copy with new timestamp.</p>
     </li><li name="com.spotify.scio.values.WindowedValue#withValue" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="withValue[U](v:U):com.spotify.scio.values.WindowedValue[U]"></a>
       <a id="withValue[U](U):WindowedValue[U]"></a>
@@ -500,7 +534,24 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Make a copy with new value.</p>
+    </li><li name="com.spotify.scio.values.WindowedValue#withWindow" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withWindow(w:org.apache.beam.sdk.transforms.windowing.BoundedWindow):com.spotify.scio.values.WindowedValue[T]"></a>
+      <a id="withWindow(BoundedWindow):WindowedValue[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withWindow</span><span class="params">(<span name="w">w: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.values.WindowedValue">WindowedValue</a>[<span class="extype" name="com.spotify.scio.values.WindowedValue.T">T</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.WindowedValue@withWindow(w:org.apache.beam.sdk.transforms.windowing.BoundedWindow):com.spotify.scio.values.WindowedValue[T]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Make a copy with new window.</p>
     </li></ol>
             </div>
 

@@ -189,7 +189,10 @@ DATETIME        DATETIME        org.joda.time.LocalDateTime</pre></div><div clas
     </span>
       <p class="shortcomment cmt">Macro annotation for a BigQuery SELECT query.</p><div class="fullcomment"><div class="comment cmt"><p>Macro annotation for a BigQuery SELECT query.</p><p>Generate case classes for a BigQuery SELECT query. Note that <code>query</code> must be a string
 literal of the SELECT query with optional <code>.stripMargin</code> at the end. For example:</p><pre>@BigQueryType.fromQuery(<span class="lit">"SELECT field1, field2 FROM [project:dataset.table]"</span>)</pre><p>String formatting syntax can be used in <code>query</code> when additional <code>args</code> are supplied. For
-example:</p><pre>@BigQueryType.fromQuery(<span class="lit">"SELECT field1, field2 FROM [%s]"</span>, <span class="lit">"table"</span>)</pre><p>Also generate a companion object with convenience methods.</p></div></div>
+example:</p><pre>@BigQueryType.fromQuery(<span class="lit">"SELECT field1, field2 FROM [%s]"</span>, <span class="lit">"table"</span>)</pre><p>Also generate a companion object with convenience methods.</p><p>Both <a href="https://cloud.google.com/bigquery/docs/reference/legacy-sql" target="_blank">Legacy SQL</a> and
+<a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/" target="_blank">Standard SQL</a> dialects are
+supported. By default the query dialect will be automatically detected. To override this
+behavior, start the query string with <code>#legacysql</code> or <code>#standardsql</code>.</p></div></div>
     </li><li name="com.spotify.scio.bigquery.types.BigQueryType.fromSchema" visbl="pub" data-isabs="false" fullComment="yes" group="annotation">
       <a id="fromSchemaextendsAnnotationwithStaticAnnotation"></a>
       <a id="fromSchema:fromSchema"></a>

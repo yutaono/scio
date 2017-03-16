@@ -89,7 +89,7 @@
         <div id="types" class="types members">
               <h3>Type Members</h3>
               <ol><li name="com.spotify.scio.Args" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ArgsextendsAnyRef"></a>
+      <a id="ArgsextendsSerializable"></a>
       <a id="Args:Args"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -97,31 +97,14 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="Args.html"><span class="name">Args</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="Args.html"><span class="name">Args</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.package@ArgsextendsAnyRef" title="Permalink" target="_top">
+      <a href="../../../index.html#com.spotify.scio.package@ArgsextendsSerializable" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <p class="shortcomment cmt">Encapsulate parsed commandline arguments.</p>
-    </li><li name="com.spotify.scio.ArraySemigroup" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ArraySemigroup[T]extendsSemigroup[Array[T]]"></a>
-      <a id="ArraySemigroup[T]:ArraySemigroup[T]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="package$$ArraySemigroup.html"><span class="name">ArraySemigroup</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Array" class="extype" target="_top">Array</a>[<span class="extype" name="com.spotify.scio.ArraySemigroup.T">T</span>]]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.package@ArraySemigroup[T]extendsSemigroup[Array[T]]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      
     </li><li name="com.spotify.scio.DistCacheScioContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="DistCacheScioContextextendsAnyRef"></a>
       <a id="DistCacheScioContext:DistCacheScioContext"></a>
@@ -191,7 +174,7 @@ create SCollections and distributed caches on that cluster.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Wait for Tap to be available and get Tap reference from Future.</p>
+      <p class="shortcomment cmt">Wait for <a href="io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a> to be available and get Tap reference from <code>Future</code>.</p>
     </li><li name="com.spotify.scio.WaitableNestedFutureTap" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="WaitableNestedFutureTap[T]extendsAnyRef"></a>
       <a id="WaitableNestedFutureTap[T]:WaitableNestedFutureTap[T]"></a>
@@ -208,7 +191,8 @@ create SCollections and distributed caches on that cluster.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Wait for nested Tap to be available, flatten result and get Tap reference from Future.</p>
+      <p class="shortcomment cmt">Wait for nested <a href="io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a> to be available, flatten result and get Tap
+reference from <code>Future</code>.</p>
     </li></ol>
             </div>
 
@@ -232,7 +216,7 @@ create SCollections and distributed caches on that cluster.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Alias for WindowingStrategy AccumulationMode.ACCUMULATING_FIRED_PANES.</p>
+      <p class="shortcomment cmt">Alias for WindowingStrategy <code>AccumulationMode.ACCUMULATING_FIRED_PANES</code>.</p>
     </li><li name="com.spotify.scio.Args" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Args"></a>
       <a id="Args:Args"></a>
@@ -242,7 +226,7 @@ create SCollections and distributed caches on that cluster.
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="Args$.html"><span class="name">Args</span></a>
+        <a href="Args$.html"><span class="name">Args</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../index.html#com.spotify.scio.package@Args" title="Permalink" target="_top">
@@ -267,7 +251,7 @@ create SCollections and distributed caches on that cluster.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Alias for BigQuery CreateDisposition.</p>
+      <p class="shortcomment cmt">Alias for BigQuery <code>CreateDisposition</code>.</p>
     </li><li name="com.spotify.scio#CREATE_NEVER" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="CREATE_NEVER:org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.CreateDisposition"></a>
       <a id="CREATE_NEVER:CreateDisposition"></a>
@@ -284,7 +268,7 @@ create SCollections and distributed caches on that cluster.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Alias for BigQuery CreateDisposition.</p>
+      <p class="shortcomment cmt">Alias for BigQuery <code>CreateDisposition</code>.</p>
     </li><li name="com.spotify.scio.ContextAndArgs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ContextAndArgs"></a>
       <a id="ContextAndArgs:ContextAndArgs"></a>
@@ -318,7 +302,7 @@ create SCollections and distributed caches on that cluster.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Alias for WindowingStrategy AccumulationMode.DISCARDING_FIRED_PANES.</p>
+      <p class="shortcomment cmt">Alias for WindowingStrategy <code>AccumulationMode.DISCARDING_FIRED_PANES</code>.</p>
     </li><li name="com.spotify.scio.ScioContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ScioContext"></a>
       <a id="ScioContext:ScioContext"></a>
@@ -352,7 +336,7 @@ create SCollections and distributed caches on that cluster.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Alias for BigQuery WriteDisposition.</p>
+      <p class="shortcomment cmt">Alias for BigQuery <code>WriteDisposition</code>.</p>
     </li><li name="com.spotify.scio#WRITE_EMPTY" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="WRITE_EMPTY:org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.WriteDisposition"></a>
       <a id="WRITE_EMPTY:WriteDisposition"></a>
@@ -369,7 +353,7 @@ create SCollections and distributed caches on that cluster.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Alias for BigQuery WriteDisposition.</p>
+      <p class="shortcomment cmt">Alias for BigQuery <code>WriteDisposition</code>.</p>
     </li><li name="com.spotify.scio#WRITE_TRUNCATE" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="WRITE_TRUNCATE:org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.WriteDisposition"></a>
       <a id="WRITE_TRUNCATE:WriteDisposition"></a>
@@ -386,8 +370,8 @@ create SCollections and distributed caches on that cluster.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Alias for BigQuery WriteDisposition.</p>
-    </li><li name="com.spotify.scio.accumulators" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Alias for BigQuery <code>WriteDisposition</code>.</p>
+    </li><li name="com.spotify.scio.accumulators" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="accumulators"></a>
       <a id="accumulators:accumulators"></a>
       <h4 class="signature">
@@ -403,7 +387,7 @@ create SCollections and distributed caches on that cluster.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Main package for <a href="values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a> helper APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for <a href="values/Accumulator.html" class="extype" name="com.spotify.scio.values.Accumulator">Accumulator</a> helper APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.accumulators._</pre></div></div>
     </li><li name="com.spotify.scio.bigquery" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="bigquery"></a>
       <a id="bigquery:bigquery"></a>
@@ -488,7 +472,7 @@ create SCollections and distributed caches on that cluster.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt"><a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> for Array[Double].</p>
+      <p class="shortcomment cmt"><a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> for <code>Array[Double]</code>.</p>
     </li><li name="com.spotify.scio.extra" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="extra"></a>
       <a id="extra:extra"></a>
@@ -522,7 +506,7 @@ create SCollections and distributed caches on that cluster.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt"><a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> for Array[Float].</p>
+      <p class="shortcomment cmt"><a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> for <code>Array[Float]</code>.</p>
     </li><li name="com.spotify.scio.hdfs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hdfs"></a>
       <a id="hdfs:hdfs"></a>
@@ -575,7 +559,7 @@ They can be packaged in src/main/resources directory.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt"><a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> for Array[Int].</p>
+      <p class="shortcomment cmt"><a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> for <code>Array[Int]</code>.</p>
     </li><li name="com.spotify.scio.io" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="io"></a>
       <a id="io:io"></a>
@@ -626,24 +610,7 @@ They can be packaged in src/main/resources directory.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt"><a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> for Array[Long].</p>
-    </li><li name="com.spotify.scio#makeDistCacheScioContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="makeDistCacheScioContext(self:com.spotify.scio.ScioContext):com.spotify.scio.DistCacheScioContext"></a>
-      <a id="makeDistCacheScioContext(ScioContext):DistCacheScioContext"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">makeDistCacheScioContext</span><span class="params">(<span name="self">self: <a href="ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a></span>)</span><span class="result">: <a href="DistCacheScioContext.html" class="extype" name="com.spotify.scio.DistCacheScioContext">DistCacheScioContext</a></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#com.spotify.scio.package@makeDistCacheScioContext(self:com.spotify.scio.ScioContext):com.spotify.scio.DistCacheScioContext" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      
+      <p class="shortcomment cmt"><a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a> for <code>Array[Long]</code>.</p>
     </li><li name="com.spotify.scio.metrics" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="metrics"></a>
       <a id="metrics:metrics"></a>
@@ -660,7 +627,7 @@ They can be packaged in src/main/resources directory.
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">This package contains the schema types for metrics collected during a pipeline run.</p><div class="fullcomment"><div class="comment cmt"><p>This package contains the schema types for metrics collected during a pipeline run.</p><p>See <a href="ScioResult.html#getMetrics:com.spotify.scio.metrics.Metrics" class="extmbr" name="com.spotify.scio.ScioResult#getMetrics">ScioResult.getMetrics</a>
+      <p class="shortcomment cmt">This package contains the schema types for metrics collected during a pipeline run.</p><div class="fullcomment"><div class="comment cmt"><p>This package contains the schema types for metrics collected during a pipeline run.</p><p>See <a href="ScioResult.html#getMetrics:com.spotify.scio.metrics.Metrics" class="extmbr" name="com.spotify.scio.ScioResult#getMetrics">ScioResult.getMetrics</a>.
 </p></div></div>
     </li><li name="com.spotify.scio.options" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="options"></a>

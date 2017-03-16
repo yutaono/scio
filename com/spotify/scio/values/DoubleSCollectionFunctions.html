@@ -49,7 +49,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Extra functions available on SCollections of Doubles through an implicit conversion.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Extra functions available on SCollections of <code>Double</code>s through an implicit conversion.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -341,9 +341,10 @@ maximum value of the last position and all NaN entries will be counted in that b
       <p class="shortcomment cmt">Compute a histogram of the data using <code>bucketCount</code> number of buckets evenly spaced between
 the minimum and maximum of the SCollection.</p><div class="fullcomment"><div class="comment cmt"><p>Compute a histogram of the data using <code>bucketCount</code> number of buckets evenly spaced between
 the minimum and maximum of the SCollection. For example if the min value is 0 and the max is
-100 and there are two buckets the resulting buckets will be [0, 50) [50, 100]. <code>bucketCount</code>
-must be at least 1. If the SCollection contains infinity, NaN throws an exception. If the
-elements in SCollection do not vary (max == min) always returns a single bucket.
+100 and there are two buckets the resulting buckets will be <code>[0, 50)</code> <code>[50, 100]</code>.
+<code>bucketCount</code> must be at least 1. If the SCollection contains infinity, NaN throws an
+exception. If the elements in SCollection do not vary (max == min) always returns a single
+bucket.
 </p></div></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -465,8 +466,9 @@ estimating the variance by dividing by N-1 instead of N).</p>
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Return an SCollection with a single <a href="../util/StatCounter.html" class="extype" name="com.spotify.scio.util.StatCounter">StatCounter</a> object that captures the mean, variance and count of the SCollection's elements
-in one operation.</p>
+      <p class="shortcomment cmt">Return an SCollection with a single
+<a href="../util/StatCounter.html" class="extype" name="com.spotify.scio.util.StatCounter">StatCounter</a> object that captures the mean, variance and
+count of the SCollection's elements in one operation.</p>
     </li><li name="com.spotify.scio.values.DoubleSCollectionFunctions#stdev" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="stdev:com.spotify.scio.values.SCollection[Double]"></a>
       <a id="stdev:SCollection[Double]"></a>
