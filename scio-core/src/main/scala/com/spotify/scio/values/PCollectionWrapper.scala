@@ -20,7 +20,7 @@ package com.spotify.scio.values
 import com.spotify.scio.{Implicits, ScioContext}
 import org.apache.beam.sdk.coders.Coder
 import org.apache.beam.sdk.transforms.{Combine, DoFn, PTransform, ParDo}
-import org.apache.beam.sdk.values.{KV, PCollection, POutput}
+import org.apache.beam.sdk.values.{KV, PCollection, PInput, POutput}
 
 import scala.reflect.ClassTag
 
@@ -40,11 +40,11 @@ private[values] trait PCollectionWrapper[T] extends TransformNameable {
   implicit protected val ct: ClassTag[T]
 
   private[scio] def applyInternal[Output <: POutput]
-  (transform: PTransform[_ >: PCollection[T], Output]): Output =
+  (transform: PTransform[_ >: PCollection[T] <: PInput, Output]): Output =
     internal.apply(this.tfName, transform)
 
   protected def pApply[U: ClassTag]
-  (transform: PTransform[_ >: PCollection[T], PCollection[U]]): SCollection[U] = {
+  (transform: PTransform[_ >: PCollection[T] <: PInput, PCollection[U]]): SCollection[U] = {
     val t = if (classOf[Combine.Globally[T, U]] isAssignableFrom transform.getClass) {
       // In case PCollection is windowed
       transform.asInstanceOf[Combine.Globally[T, U]].withoutDefaults()

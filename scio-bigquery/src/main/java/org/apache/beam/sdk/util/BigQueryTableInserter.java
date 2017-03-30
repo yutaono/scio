@@ -17,6 +17,7 @@
  */
 package org.apache.beam.sdk.util;
 
+import org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers;
 import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO;
 import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.CreateDisposition;
 import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.WriteDisposition;
@@ -344,7 +345,7 @@ public class BigQueryTableInserter {
       boolean empty = isEmpty(ref);
       if (empty) {
         if (writeDisposition == WriteDisposition.WRITE_TRUNCATE) {
-          LOG.info("Empty table found, not removing {}", BigQueryIO.toTableSpec(ref));
+          LOG.info("Empty table found, not removing {}", BigQueryHelpers.toTableSpec(ref));
         }
         return table;
 
@@ -359,7 +360,7 @@ public class BigQueryTableInserter {
       }
 
       // Delete table and fall through to re-creating it below.
-      LOG.info("Deleting table {}", BigQueryIO.toTableSpec(ref));
+      LOG.info("Deleting table {}", BigQueryHelpers.toTableSpec(ref));
       Bigquery.Tables.Delete delete = client.tables()
           .delete(ref.getProjectId(), ref.getDatasetId(), ref.getTableId());
       delete.execute();
@@ -407,7 +408,7 @@ public class BigQueryTableInserter {
    */
   @Nullable
   public Table tryCreateTable(TableReference ref, TableSchema schema) throws IOException {
-    LOG.info("Trying to create BigQuery table: {}", BigQueryIO.toTableSpec(ref));
+    LOG.info("Trying to create BigQuery table: {}", BigQueryHelpers.toTableSpec(ref));
     BackOff backoff =
         new ExponentialBackOff.Builder()
             .setMaxElapsedTimeMillis(RETRY_CREATE_TABLE_DURATION_MILLIS)

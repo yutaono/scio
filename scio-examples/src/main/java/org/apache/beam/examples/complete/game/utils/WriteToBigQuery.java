@@ -121,7 +121,7 @@ public class WriteToBigQuery<InputT>
   public PDone expand(PCollection<InputT> teamAndScore) {
     return teamAndScore
       .apply("ConvertToRow", ParDo.of(new BuildRowFn()))
-      .apply(BigQueryIO.Write
+      .apply(BigQueryIO.<TableRow>write()
                 .to(getTable(teamAndScore.getPipeline(),
                     tableName))
                 .withSchema(getSchema())

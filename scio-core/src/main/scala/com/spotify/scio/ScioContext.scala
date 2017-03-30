@@ -42,6 +42,7 @@ import org.apache.avro.specific.SpecificRecordBase
 import org.apache.beam.runners.dataflow.DataflowRunner
 import org.apache.beam.runners.dataflow.options._
 import org.apache.beam.sdk.PipelineResult.State
+import org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers
 import org.apache.beam.sdk.io.gcp.{bigquery => bqio, datastore => dsio}
 import org.apache.beam.sdk.options._
 import org.apache.beam.sdk.transforms.Combine.CombineFn
@@ -474,13 +475,13 @@ class ScioContext private[scio] (val options: PipelineOptions,
     } else if (this.bigQueryClient.isCacheEnabled) {
       val queryJob = this.bigQueryClient.newQueryJob(sqlQuery, flattenResults)
       _queryJobs.append(queryJob)
-      wrap(this.applyInternal(bqio.BigQueryIO.Read.from(queryJob.table).withoutValidation()))
+      wrap(this.applyInternal(bqio.BigQueryIO.read.from(queryJob.table).withoutValidation()))
         .setName(sqlQuery)
     } else {
       val baseQuery = if (!flattenResults) {
-        bqio.BigQueryIO.Read.fromQuery(sqlQuery).withoutResultFlattening()
+        bqio.BigQueryIO.read.fromQuery(sqlQuery).withoutResultFlattening()
       } else {
-        bqio.BigQueryIO.Read.fromQuery(sqlQuery)
+        bqio.BigQueryIO.read.fromQuery(sqlQuery)
       }
       val query = if (this.bigQueryClient.isLegacySql(sqlQuery, flattenResults)) {
         baseQuery
@@ -496,11 +497,11 @@ class ScioContext private[scio] (val options: PipelineOptions,
    * @group input
    */
   def bigQueryTable(table: TableReference): SCollection[TableRow] = requireNotClosed {
-    val tableSpec: String = bqio.BigQueryIO.toTableSpec(table)
+    val tableSpec: String = BigQueryHelpers.toTableSpec(table)
     if (this.isTest) {
       this.getTestInput(BigQueryIO(tableSpec))
     } else {
-      wrap(this.applyInternal(bqio.BigQueryIO.Read.from(table))).setName(tableSpec)
+      wrap(this.applyInternal(bqio.BigQueryIO.read.from(table))).setName(tableSpec)
     }
   }
 
@@ -509,7 +510,7 @@ class ScioContext private[scio] (val options: PipelineOptions,
    * @group input
    */
   def bigQueryTable(tableSpec: String): SCollection[TableRow] =
-    this.bigQueryTable(bqio.BigQueryIO.parseTableSpec(tableSpec))
+    this.bigQueryTable(BigQueryHelpers.parseTableSpec(tableSpec))
 
   /**
    * Get a typed SCollection for a BigQuery SELECT query or table.
@@ -556,7 +557,7 @@ class ScioContext private[scio] (val options: PipelineOptions,
       }
     } else {
       // newSource can be either table or query
-      val table = scala.util.Try(bqio.BigQueryIO.parseTableSpec(newSource)).toOption
+      val table = scala.util.Try(BigQueryHelpers.parseTableSpec(newSource)).toOption
       if (table.isDefined) {
         this.bigQueryTable(table.get)
       } else {

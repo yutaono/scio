@@ -36,11 +36,10 @@ import com.google.common.base.Charsets
 import com.google.common.hash.Hashing
 import com.google.common.io.Files
 import com.spotify.scio.bigquery.types.BigQueryType.HasAnnotation
-import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO
+import org.apache.beam.sdk.io.gcp.bigquery.{BigQueryHelpers, BigQueryIO, BigQueryTableRowIterator}
 import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.CreateDisposition._
 import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.WriteDisposition._
 import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.{CreateDisposition, WriteDisposition}
-import org.apache.beam.sdk.io.gcp.bigquery.BigQueryTableRowIterator
 import org.apache.beam.sdk.options.GcpOptions.DefaultProjectFactory
 import org.apache.beam.sdk.util.BigQueryTableInserter
 import org.apache.commons.io.FileUtils
@@ -149,7 +148,7 @@ class BigQueryClient private (private val projectId: String,
       val temp = temporaryTable(location)
 
       // Create temporary table view and get schema
-      logger.info(s"Creating temporary view ${BigQueryIO.toTableSpec(temp)}")
+      logger.info(s"Creating temporary view ${BigQueryHelpers.toTableSpec(temp)}")
       val view = new ViewDefinition().setQuery(sqlQuery)
       val viewTable = new Table().setView(view).setTableReference(temp)
       val schema = bigquery
@@ -157,7 +156,7 @@ class BigQueryClient private (private val projectId: String,
         .execute().getSchema
 
       // Delete temporary table
-      logger.info(s"Deleting temporary view ${BigQueryIO.toTableSpec(temp)}")
+      logger.info(s"Deleting temporary view ${BigQueryHelpers.toTableSpec(temp)}")
       bigquery.tables().delete(temp.getProjectId, temp.getDatasetId, temp.getTableId).execute()
 
       schema
@@ -180,7 +179,7 @@ class BigQueryClient private (private val projectId: String,
 
   /** Get rows from a table. */
   def getTableRows(tableSpec: String): Iterator[TableRow] =
-    getTableRows(BigQueryIO.parseTableSpec(tableSpec))
+    getTableRows(BigQueryHelpers.parseTableSpec(tableSpec))
 
   /** Get rows from a table. */
   def getTableRows(table: TableReference): Iterator[TableRow] = new Iterator[TableRow] {
@@ -210,17 +209,17 @@ class BigQueryClient private (private val projectId: String,
 
   /** Get schema from a table. */
   def getTableSchema(tableSpec: String): TableSchema =
-    getTableSchema(BigQueryIO.parseTableSpec(tableSpec))
+    getTableSchema(BigQueryHelpers.parseTableSpec(tableSpec))
 
   /** Get schema from a table. */
   def getTableSchema(table: TableReference): TableSchema =
-    withCacheKey(BigQueryIO.toTableSpec(table)) {
+    withCacheKey(BigQueryHelpers.toTableSpec(table)) {
       getTable(table).getSchema
     }
 
   /** Get table metadata. */
   def getTable(tableSpec: String): Table =
-    getTable(BigQueryIO.parseTableSpec(tableSpec))
+    getTable(BigQueryHelpers.parseTableSpec(tableSpec))
 
   /** Get table metadata. */
   def getTable(table: TableReference): Table = {
@@ -238,7 +237,7 @@ class BigQueryClient private (private val projectId: String,
             destinationTable: String = null,
             flattenResults: Boolean = false): TableReference =
     if (destinationTable != null) {
-      val tableRef = BigQueryIO.parseTableSpec(destinationTable)
+      val tableRef = BigQueryHelpers.parseTableSpec(destinationTable)
       val queryJob = delayedQueryJob(sqlQuery, tableRef, flattenResults)
       queryJob.waitForResult()
       tableRef
@@ -262,7 +261,7 @@ class BigQueryClient private (private val projectId: String,
                      writeDisposition: WriteDisposition = WRITE_EMPTY,
                      createDisposition: CreateDisposition = CREATE_IF_NEEDED): Unit =
     writeTableRows(
-      BigQueryIO.parseTableSpec(tableSpec), rows, schema, writeDisposition, createDisposition)
+      BigQueryHelpers.parseTableSpec(tableSpec), rows, schema, writeDisposition, createDisposition)
 
   /** Wait for all jobs to finish. */
   def waitForJobs(jobs: QueryJob*): Unit = {
@@ -335,7 +334,7 @@ class BigQueryClient private (private val projectId: String,
       }
     } else {
       // newSource can be either table or query
-      val table = scala.util.Try(BigQueryIO.parseTableSpec(newSource)).toOption
+      val table = scala.util.Try(BigQueryHelpers.parseTableSpec(newSource)).toOption
       if (table.isDefined) {
         self.getTableRows(table.get)
       } else {
@@ -368,7 +367,7 @@ class BigQueryClient private (private val projectId: String,
    writeDisposition: WriteDisposition = WRITE_EMPTY,
    createDisposition: CreateDisposition = CREATE_IF_NEEDED): Unit =
     writeTypedRows(
-      BigQueryIO.parseTableSpec(tableSpec), rows,
+      BigQueryHelpers.parseTableSpec(tableSpec), rows,
       writeDisposition, createDisposition)
 
   // =======================================================================
@@ -383,7 +382,7 @@ class BigQueryClient private (private val projectId: String,
       val time = BigInt(getTable(temp).getLastModifiedTime)
       if (sourceTimes.forall(_ < time)) {
         logger.info(s"Cache hit for query: `$sqlQuery`")
-        logger.info(s"Existing destination table: ${BigQueryIO.toTableSpec(temp)}")
+        logger.info(s"Existing destination table: ${BigQueryHelpers.toTableSpec(temp)}")
         new QueryJob {
           override def waitForResult(): Unit = {}
           override val jobReference: Option[JobReference] = None
@@ -392,7 +391,7 @@ class BigQueryClient private (private val projectId: String,
         }
       } else {
         logger.info(s"Cache invalid for query: `$sqlQuery`")
-        logger.info(s"New destination table: ${BigQueryIO.toTableSpec(temp)}")
+        logger.info(s"New destination table: ${BigQueryHelpers.toTableSpec(temp)}")
         setCacheDestinationTable(sqlQuery, temp)
         delayedQueryJob(sqlQuery, temp, flattenResults)
       }
@@ -400,7 +399,7 @@ class BigQueryClient private (private val projectId: String,
       case NonFatal(_) =>
         val temp = temporaryTable(extractLocation(sqlQuery).getOrElse(DEFAULT_LOCATION))
         logger.info(s"Cache miss for query: `$sqlQuery`")
-        logger.info(s"New destination table: ${BigQueryIO.toTableSpec(temp)}")
+        logger.info(s"New destination table: ${BigQueryHelpers.toTableSpec(temp)}")
         setCacheDestinationTable(sqlQuery, temp)
         delayedQueryJob(sqlQuery, temp, flattenResults)
     }
@@ -582,10 +581,10 @@ class BigQueryClient private (private val projectId: String,
   }.toOption
 
   private def setCacheDestinationTable(key: String, table: TableReference): Unit =
-    Files.write(BigQueryIO.toTableSpec(table), tableCacheFile(key), Charsets.UTF_8)
+    Files.write(BigQueryHelpers.toTableSpec(table), tableCacheFile(key), Charsets.UTF_8)
 
   private def getCacheDestinationTable(key: String): Option[TableReference] = Try {
-    BigQueryIO.parseTableSpec(scala.io.Source.fromFile(tableCacheFile(key)).mkString)
+    BigQueryHelpers.parseTableSpec(scala.io.Source.fromFile(tableCacheFile(key)).mkString)
   }.toOption
 
   private def cacheFile(key: String, suffix: String): File = {

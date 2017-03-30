@@ -40,10 +40,11 @@ import org.apache.avro.Schema
 import org.apache.avro.file.CodecFactory
 import org.apache.avro.generic.GenericRecord
 import org.apache.avro.specific.SpecificRecordBase
-import org.apache.beam.runners.direct.DirectRunner
 import org.apache.beam.sdk.coders.Coder
+import org.apache.beam.sdk.io.gcp.bigquery.BigQueryHelpers
 import org.apache.beam.sdk.io.gcp.bigquery.BigQueryIO.Write.{CreateDisposition, WriteDisposition}
 import org.apache.beam.sdk.io.gcp.{bigquery => bqio, datastore => dsio}
+import org.apache.beam.sdk.options.PipelineOptions
 import org.apache.beam.sdk.transforms.DoFn.ProcessElement
 import org.apache.beam.sdk.transforms._
 import org.apache.beam.sdk.transforms.windowing._
@@ -125,7 +126,8 @@ sealed trait SCollection[T] extends PCollectionWrapper[T] {
    * Apply a [[org.apache.beam.sdk.transforms.PTransform PTransform]] and wrap the output in an
    * [[SCollection]].
    */
-  def applyTransform[U: ClassTag](transform: PTransform[_ >: PCollection[T], PCollection[U]])
+  def applyTransform[U: ClassTag](transform:
+                                  PTransform[_ >: PCollection[T] <: PInput,PCollection[U]])
   : SCollection[U] =
     this.pApply(transform).setCoder(this.getCoder[U])
 
@@ -859,7 +861,7 @@ sealed trait SCollection[T] extends PCollectionWrapper[T] {
   }
 
   private def pathWithShards(path: String) = {
-    if (this.context.pipeline.getRunner.isInstanceOf[DirectRunner] &&
+    if (ScioUtil.isLocalRunner(this.context.pipeline.asInstanceOf[PipelineOptions]) &&
       ScioUtil.isLocalUri(new URI(path))) {
       context.addPreRunFn(() => {
         // Create output directory when running locally with local file system
@@ -942,7 +944,7 @@ sealed trait SCollection[T] extends PCollectionWrapper[T] {
                      createDisposition: CreateDisposition,
                      tableDescription: String)
                     (implicit ev: T <:< TableRow): Future[Tap[TableRow]] = {
-    val tableSpec = bqio.BigQueryIO.toTableSpec(table)
+    val tableSpec = BigQueryHelpers.toTableSpec(table)
     if (context.isTest) {
       context.testOut(BigQueryIO(tableSpec))(this.asInstanceOf[SCollection[TableRow]])
 
@@ -952,7 +954,7 @@ sealed trait SCollection[T] extends PCollectionWrapper[T] {
         saveAsInMemoryTap.asInstanceOf[Future[Tap[TableRow]]]
       }
     } else {
-      var transform = bqio.BigQueryIO.Write.to(table)
+      var transform = bqio.BigQueryIO.write[TableRow].to(table)
       if (schema != null) transform = transform.withSchema(schema)
       if (createDisposition != null) transform = transform.withCreateDisposition(createDisposition)
       if (writeDisposition != null) transform = transform.withWriteDisposition(writeDisposition)
@@ -978,7 +980,7 @@ sealed trait SCollection[T] extends PCollectionWrapper[T] {
                      tableDescription: String = null)
                     (implicit ev: T <:< TableRow): Future[Tap[TableRow]] =
     saveAsBigQuery(
-      bqio.BigQueryIO.parseTableSpec(tableSpec),
+      BigQueryHelpers.parseTableSpec(tableSpec),
       schema,
       writeDisposition,
       createDisposition,
@@ -1042,7 +1044,7 @@ sealed trait SCollection[T] extends PCollectionWrapper[T] {
                          (implicit ct: ClassTag[T], tt: TypeTag[T], ev: T <:< HasAnnotation)
   : Future[Tap[T]] =
     saveAsTypedBigQuery(
-      bqio.BigQueryIO.parseTableSpec(tableSpec),
+      BigQueryHelpers.parseTableSpec(tableSpec),
       writeDisposition, createDisposition)
 
   /**

@@ -78,7 +78,7 @@ object BeamExample {
 
     // Underlying Beam pipeline
     val pipeline: Pipeline = sc.pipeline
-    println(pipeline.getRunner)
+    println(pipeline.getOptions.getRunner)
 
     // Apply a Beam source PTransform and get a Scio SCollection
     val accounts: SCollection[Account] = sc.customInput("Input", pubsubIn(args("inputTopic")))
