@@ -1,0 +1,901 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>BaseAsyncDoFn - com.spotify.scio.extra.transforms.BaseAsyncDoFn</title>
+          <meta name="description" content="BaseAsyncDoFn - com.spotify.scio.extra.transforms.BaseAsyncDoFn" />
+          <meta name="keywords" content="BaseAsyncDoFn com.spotify.scio.extra.transforms.BaseAsyncDoFn" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'com.spotify.scio.extra.transforms.BaseAsyncDoFn';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Class" src="../../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="com">com</a>.<a href="../../../package.html" class="extype" name="com.spotify">spotify</a>.<a href="../../package.html" class="extype" name="com.spotify.scio">scio</a>.<a href="../package.html" class="extype" name="com.spotify.scio.extra">extra</a>.<a href="package.html" class="extype" name="com.spotify.scio.extra.transforms">transforms</a></p>
+        <h1>BaseAsyncDoFn</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="com.spotify.scio.extra.transforms">package transforms</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BaseAsyncDoFn</span><span class="tparams">[<span name="InputT">InputT</span>, <span name="OutputT">OutputT</span>, <span name="ResourceT">ResourceT</span>, <span name="FutureT">FutureT</span>]</span><span class="result"> extends <a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.ResourceT">ResourceT</span>]</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.ResourceT">ResourceT</span>], <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>], <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.display.HasDisplayData" class="extype" target="_top">HasDisplayData</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">Known Subclasses</span>
+            <div class="subClasses hiddenContent"><a href="GuavaAsyncDoFn.html" class="extype" name="com.spotify.scio.extra.transforms.GuavaAsyncDoFn">GuavaAsyncDoFn</a>, <a href="JavaAsyncDoFn.html" class="extype" name="com.spotify.scio.extra.transforms.JavaAsyncDoFn">JavaAsyncDoFn</a>, <a href="ScalaAsyncDoFn.html" class="extype" name="com.spotify.scio.extra.transforms.ScalaAsyncDoFn">ScalaAsyncDoFn</a></div>
+          </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn"><span>BaseAsyncDoFn</span></li><li class="in" name="com.spotify.scio.extra.transforms.DoFnWithResource"><span>DoFnWithResource</span></li><li class="in" name="org.apache.beam.sdk.transforms.DoFn"><span>DoFn</span></li><li class="in" name="org.apache.beam.sdk.transforms.display.HasDisplayData"><span>HasDisplayData</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="com.spotify.scio.extra.transforms.BaseAsyncDoFn#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;():com.spotify.scio.extra.transforms.BaseAsyncDoFn[InputT,OutputT,ResourceT,FutureT]"></a>
+      <a id="&lt;init&gt;:BaseAsyncDoFn[InputT,OutputT,ResourceT,FutureT]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">BaseAsyncDoFn</span><span class="params">()</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@&lt;init&gt;():com.spotify.scio.extra.transforms.BaseAsyncDoFn[InputT,OutputT,ResourceT,FutureT]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.apache.beam.sdk.transforms.DoFn.Context" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ContextextendsObject"></a>
+      <a id="Context:Context"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Context</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@ContextextendsObject" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
+    </li><li name="org.apache.beam.sdk.transforms.DoFn.OnTimerContext" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="OnTimerContextextendsDoFn[InputT,OutputT]#Context"></a>
+      <a id="OnTimerContext:OnTimerContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">OnTimerContext</span><span class="result"> extends <span class="extype" name="org.apache.beam.sdk.transforms.DoFn.Context">Context</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@OnTimerContextextendsDoFn[InputT,OutputT]#Context" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
+    </li><li name="org.apache.beam.sdk.transforms.DoFn.ProcessContext" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ProcessContextextendsDoFn[InputT,OutputT]#Context"></a>
+      <a id="ProcessContext:ProcessContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ProcessContext</span><span class="result"> extends <span class="extype" name="org.apache.beam.sdk.transforms.DoFn.Context">Context</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@ProcessContextextendsDoFn[InputT,OutputT]#Context" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="org.apache.beam.sdk.transforms.DoFn.Context" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="Context"></a>
+      <a id="Context:Context"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Context</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@Context" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
+    </li><li name="org.apache.beam.sdk.transforms.DoFn.ProcessContext" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="ProcessContext"></a>
+      <a id="ProcessContext:ProcessContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ProcessContext</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@ProcessContext" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
+    </li><li name="com.spotify.scio.extra.transforms.BaseAsyncDoFn#addCallback" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="addCallback(future:FutureT,onSuccess:java.util.function.Function[OutputT,Void],onFailure:java.util.function.Function[Throwable,Void]):FutureT"></a>
+      <a id="addCallback(FutureT,Function[OutputT,Void],Function[Throwable,Void]):FutureT"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addCallback</span><span class="params">(<span name="future">future: <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.FutureT">FutureT</span></span>, <span name="onSuccess">onSuccess: <span class="extype" name="java.util.function.Function">Function</span>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="java.lang.Void">Void</span>]</span>, <span name="onFailure">onFailure: <span class="extype" name="java.util.function.Function">Function</span>[<span class="extype" name="java.lang.Throwable">Throwable</span>, <span class="extype" name="java.lang.Void">Void</span>]</span>)</span><span class="result">: <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.FutureT">FutureT</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@addCallback(future:FutureT,onSuccess:java.util.function.Function[OutputT,Void],onFailure:java.util.function.Function[Throwable,Void]):FutureT" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="package.html" class="extype" name="com.spotify.scio.extra.transforms">com.spotify.scio.extra.transforms</a>] </dd></dl></div>
+    </li><li name="com.spotify.scio.extra.transforms.DoFnWithResource#createResource" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="createResource():ResourceT"></a>
+      <a id="createResource():ResourceT"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">createResource</span><span class="params">()</span><span class="result">: <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.ResourceT">ResourceT</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@createResource():ResourceT" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a></dd></dl></div>
+    </li><li name="com.spotify.scio.extra.transforms.DoFnWithResource#getResourceType" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="getResourceType():com.spotify.scio.extra.transforms.DoFnWithResource.ResourceType"></a>
+      <a id="getResourceType():ResourceType"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getResourceType</span><span class="params">()</span><span class="result">: <span class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource.ResourceType">ResourceType</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@getResourceType():com.spotify.scio.extra.transforms.DoFnWithResource.ResourceType" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a></dd></dl></div>
+    </li><li name="com.spotify.scio.extra.transforms.BaseAsyncDoFn#processElement" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="processElement(input:InputT):FutureT"></a>
+      <a id="processElement(InputT):FutureT"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">processElement</span><span class="params">(<span name="input">input: <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span></span>)</span><span class="result">: <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.FutureT">FutureT</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@processElement(input:InputT):FutureT" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.extra.transforms.BaseAsyncDoFn#waitForFutures" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="waitForFutures(futures:Iterable[FutureT]):Unit"></a>
+      <a id="waitForFutures(Iterable[FutureT]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">waitForFutures</span><span class="params">(<span name="futures">futures: <span class="extype" name="java.lang.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.FutureT">FutureT</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@waitForFutures(futures:Iterable[FutureT]):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="package.html" class="extype" name="com.spotify.scio.extra.transforms">com.spotify.scio.extra.transforms</a>] </dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@##():Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@clone():Object" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="org.apache.beam.sdk.transforms.DoFn#createAggregator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="createAggregator[AggInputT](x$1:String,x$2:org.apache.beam.sdk.transforms.SerializableFunction[Iterable[AggInputT],AggInputT]):org.apache.beam.sdk.transforms.Aggregator[AggInputT,AggInputT]"></a>
+      <a id="createAggregator[AggInputT](String,SerializableFunction[Iterable[AggInputT],AggInputT]):Aggregator[AggInputT,AggInputT]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">createAggregator</span><span class="tparams">[<span name="AggInputT">AggInputT</span>]</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="java.lang.String">String</span></span>, <span name="arg1">arg1: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.SerializableFunction" class="extype" target="_top">SerializableFunction</a>[<span class="extype" name="java.lang.Iterable">Iterable</span>[<span class="extype" name="org.apache.beam.sdk.transforms.DoFn.createAggregator.AggInputT">AggInputT</span>], <span class="extype" name="org.apache.beam.sdk.transforms.DoFn.createAggregator.AggInputT">AggInputT</span>]</span>)</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.Aggregator" class="extype" target="_top">Aggregator</a>[<span class="extype" name="org.apache.beam.sdk.transforms.DoFn.createAggregator.AggInputT">AggInputT</span>, <span class="extype" name="org.apache.beam.sdk.transforms.DoFn.createAggregator.AggInputT">AggInputT</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@createAggregator[AggInputT](x$1:String,x$2:org.apache.beam.sdk.transforms.SerializableFunction[Iterable[AggInputT],AggInputT]):org.apache.beam.sdk.transforms.Aggregator[AggInputT,AggInputT]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
+    </li><li name="org.apache.beam.sdk.transforms.DoFn#createAggregator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="createAggregator[AggInputT,AggOutputT](x$1:String,x$2:org.apache.beam.sdk.transforms.Combine.CombineFn[_&gt;:AggInputT,_,AggOutputT]):org.apache.beam.sdk.transforms.Aggregator[AggInputT,AggOutputT]"></a>
+      <a id="createAggregator[AggInputT,AggOutputT](String,CombineFn[_&gt;:AggInputT,_,AggOutputT]):Aggregator[AggInputT,AggOutputT]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">createAggregator</span><span class="tparams">[<span name="AggInputT">AggInputT</span>, <span name="AggOutputT">AggOutputT</span>]</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="java.lang.String">String</span></span>, <span name="arg1">arg1: <span class="extype" name="org.apache.beam.sdk.transforms.Combine.CombineFn">CombineFn</span>[_ &gt;: <span class="extype" name="org.apache.beam.sdk.transforms.DoFn.createAggregator.AggInputT">AggInputT</span>, _, <span class="extype" name="org.apache.beam.sdk.transforms.DoFn.createAggregator.AggOutputT">AggOutputT</span>]</span>)</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.Aggregator" class="extype" target="_top">Aggregator</a>[<span class="extype" name="org.apache.beam.sdk.transforms.DoFn.createAggregator.AggInputT">AggInputT</span>, <span class="extype" name="org.apache.beam.sdk.transforms.DoFn.createAggregator.AggOutputT">AggOutputT</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@createAggregator[AggInputT,AggOutputT](x$1:String,x$2:org.apache.beam.sdk.transforms.Combine.CombineFn[_&gt;:AggInputT,_,AggOutputT]):org.apache.beam.sdk.transforms.Aggregator[AggInputT,AggOutputT]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="com.spotify.scio.extra.transforms.BaseAsyncDoFn#finishBundle" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="finishBundle(c:BaseAsyncDoFn.this.Context):Unit"></a>
+      <a id="finishBundle(Context):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finishBundle</span><span class="params">(<span name="c">c: <a href="#ContextextendsObject" class="extmbr" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.Context">Context</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@finishBundle(c:BaseAsyncDoFn.this.Context):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.beam.sdk.transforms.DoFn#getAllowedTimestampSkew" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getAllowedTimestampSkew():org.joda.time.Duration"></a>
+      <a id="getAllowedTimestampSkew():Duration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getAllowedTimestampSkew</span><span class="params">()</span><span class="result">: <span class="extype" name="org.joda.time.Duration">Duration</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@getAllowedTimestampSkew():org.joda.time.Duration" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.apache.beam.sdk.transforms.DoFn#getInputTypeDescriptor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getInputTypeDescriptor():org.apache.beam.sdk.values.TypeDescriptor[InputT]"></a>
+      <a id="getInputTypeDescriptor():TypeDescriptor[InputT]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getInputTypeDescriptor</span><span class="params">()</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.values.TypeDescriptor" class="extype" target="_top">TypeDescriptor</a>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@getInputTypeDescriptor():org.apache.beam.sdk.values.TypeDescriptor[InputT]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
+    </li><li name="org.apache.beam.sdk.transforms.DoFn#getOutputTypeDescriptor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getOutputTypeDescriptor():org.apache.beam.sdk.values.TypeDescriptor[OutputT]"></a>
+      <a id="getOutputTypeDescriptor():TypeDescriptor[OutputT]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getOutputTypeDescriptor</span><span class="params">()</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.values.TypeDescriptor" class="extype" target="_top">TypeDescriptor</a>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@getOutputTypeDescriptor():org.apache.beam.sdk.values.TypeDescriptor[OutputT]" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
+    </li><li name="com.spotify.scio.extra.transforms.DoFnWithResource#getResource" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getResource():ResourceT"></a>
+      <a id="getResource():ResourceT"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getResource</span><span class="params">()</span><span class="result">: <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.ResourceT">ResourceT</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@getResource():ResourceT" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="com.spotify.scio.extra.transforms.DoFnWithResource#populateDisplayData" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="populateDisplayData(builder:org.apache.beam.sdk.transforms.display.DisplayData.Builder):Unit"></a>
+      <a id="populateDisplayData(Builder):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">populateDisplayData</span><span class="params">(<span name="builder">builder: <span class="extype" name="org.apache.beam.sdk.transforms.display.DisplayData.Builder">Builder</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@populateDisplayData(builder:org.apache.beam.sdk.transforms.display.DisplayData.Builder):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a> → DoFn → HasDisplayData</dd></dl></div>
+    </li><li name="com.spotify.scio.extra.transforms.BaseAsyncDoFn#processElement" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="processElement(c:BaseAsyncDoFn.this.ProcessContext):Unit"></a>
+      <a id="processElement(ProcessContext):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">processElement</span><span class="params">(<span name="c">c: <a href="#ProcessContextextendsDoFn[InputT,OutputT]#Context" class="extmbr" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.ProcessContext">ProcessContext</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@processElement(c:BaseAsyncDoFn.this.ProcessContext):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.extra.transforms.DoFnWithResource#setup" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setup():Unit"></a>
+      <a id="setup():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setup</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@setup():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a></dd></dl></div>
+    </li><li name="com.spotify.scio.extra.transforms.BaseAsyncDoFn#startBundle" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="startBundle(c:BaseAsyncDoFn.this.Context):Unit"></a>
+      <a id="startBundle(Context):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">startBundle</span><span class="params">(<span name="c">c: <a href="#ContextextendsObject" class="extmbr" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.Context">Context</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@startBundle(c:BaseAsyncDoFn.this.Context):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@toString():String" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="org.apache.beam.sdk.transforms.DoFn#prepareForProcessing" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="prepareForProcessing():Unit"></a>
+      <a id="prepareForProcessing():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version ) see corresponding Javadoc for more information.">prepareForProcessing</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../index.html#com.spotify.scio.extra.transforms.BaseAsyncDoFn@prepareForProcessing():Unit" title="Permalink" target="_top">
+        <img src="../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd><dt>Annotations</dt><dd>
+                <span class="name">@Deprecated</span>
+              
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version )</i> see corresponding Javadoc for more information.</p></dd></dl></div>
+    </li></ol>
+            </div>
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="com.spotify.scio.extra.transforms.DoFnWithResource">
+              <h3>Inherited from <a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.ResourceT">ResourceT</span>]</h3>
+            </div><div class="parent" name="org.apache.beam.sdk.transforms.DoFn">
+              <h3>Inherited from <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>]</h3>
+            </div><div class="parent" name="org.apache.beam.sdk.transforms.display.HasDisplayData">
+              <h3>Inherited from <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.display.HasDisplayData" class="extype" target="_top">HasDisplayData</a></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
