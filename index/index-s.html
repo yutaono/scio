@@ -128,6 +128,12 @@
       <div class="name">saveAsHdfsTextFile</div>
       <div class="occurrences"><a href="../com/spotify/scio/hdfs/package$$HdfsSCollection.html" class="extype" name="com.spotify.scio.hdfs.HdfsSCollection">HdfsSCollection</a> </div>
     </div><div class="entry">
+      <div class="name">saveAsJdbc</div>
+      <div class="occurrences"><a href="../com/spotify/scio/jdbc/package$$JdbcSCollection.html" class="extype" name="com.spotify.scio.jdbc.JdbcSCollection">JdbcSCollection</a> </div>
+    </div><div class="entry">
+      <div class="name">saveAsJsonFile</div>
+      <div class="occurrences"><a href="../com/spotify/scio/extra/json/package$$JsonSCollection.html" class="extype" name="com.spotify.scio.extra.json.JsonSCollection">JsonSCollection</a> </div>
+    </div><div class="entry">
       <div class="name">saveAsObjectFile</div>
       <div class="occurrences"><a href="../com/spotify/scio/values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> </div>
     </div><div class="entry">
@@ -174,13 +180,28 @@
       <div class="occurrences"><a href="../com/spotify/scio/package.html" class="extype" name="com.spotify.scio">scio</a> </div>
     </div><div class="entry">
       <div class="name">self</div>
-      <div class="occurrences"><a href="../com/spotify/scio/accumulators/package$$AccumulatorSCollection.html" class="extype" name="com.spotify.scio.accumulators.AccumulatorSCollection">AccumulatorSCollection</a> <a href="../com/spotify/scio/bigtable/package$$BigtableSCollection.html" class="extype" name="com.spotify.scio.bigtable.BigtableSCollection">BigtableSCollection</a> <a href="../com/spotify/scio/bigtable/package$$BigtableScioContext.html" class="extype" name="com.spotify.scio.bigtable.BigtableScioContext">BigtableScioContext</a> <a href="../com/spotify/scio/bigtable/package$$RichRow.html" class="extype" name="com.spotify.scio.bigtable.RichRow">RichRow</a> <a href="../com/spotify/scio/extra/Collections$$TopArray.html" class="extype" name="com.spotify.scio.extra.Collections.TopArray">TopArray</a> <a href="../com/spotify/scio/extra/Collections$$TopByKeyArray.html" class="extype" name="com.spotify.scio.extra.Collections.TopByKeyArray">TopByKeyArray</a> <a href="../com/spotify/scio/extra/Collections$$TopByKeyIterable.html" class="extype" name="com.spotify.scio.extra.Collections.TopByKeyIterable">TopByKeyIterable</a> <a href="../com/spotify/scio/extra/Collections$$TopIterable.html" class="extype" name="com.spotify.scio.extra.Collections.TopIterable">TopIterable</a> <a href="../com/spotify/scio/extra/Iterators$$RichIterator.html" class="extype" name="com.spotify.scio.extra.Iterators.RichIterator">RichIterator</a> <a href="../com/spotify/scio/extra/sparkey/package$$RichStringSparkeyReader.html" class="extype" name="com.spotify.scio.extra.sparkey.RichStringSparkeyReader">RichStringSparkeyReader</a> <a href="../com/spotify/scio/extra/sparkey/package$$SparkeyPairSCollection.html" class="extype" name="com.spotify.scio.extra.sparkey.SparkeyPairSCollection">SparkeyPairSCollection</a> <a href="../com/spotify/scio/extra/sparkey/package$$SparkeySCollection.html" class="extype" name="com.spotify.scio.extra.sparkey.SparkeySCollection">SparkeySCollection</a> <a href="../com/spotify/scio/extra/sparkey/package$$SparkeyScioContext.html" class="extype" name="com.spotify.scio.extra.sparkey.SparkeyScioContext">SparkeyScioContext</a> <a href="../com/spotify/scio/extra/transforms/package$$PipeSCollection.html" class="extype" name="com.spotify.scio.extra.transforms.PipeSCollection">PipeSCollection</a> <a href="../com/spotify/scio/extra/transforms/package$$URISCollection.html" class="extype" name="com.spotify.scio.extra.transforms.URISCollection">URISCollection</a> <a href="../com/spotify/scio/hdfs/package$$HdfsSCollection.html" class="extype" name="com.spotify.scio.hdfs.HdfsSCollection">HdfsSCollection</a> <a href="../com/spotify/scio/hdfs/package$$HdfsScioContext.html" class="extype" name="com.spotify.scio.hdfs.HdfsScioContext">HdfsScioContext</a> <a href="../com/spotify/scio/hdfs/package$$HdfsTaps.html" class="extype" name="com.spotify.scio.hdfs.HdfsTaps">HdfsTaps</a> <a href="../com/spotify/scio/testing/package$$TestStreamScioContext.html" class="extype" name="com.spotify.scio.testing.TestStreamScioContext">TestStreamScioContext</a> <a href="../com/spotify/scio/values/PairSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.PairSCollectionFunctions">PairSCollectionFunctions</a> </div>
+      <div class="occurrences"><a href="../com/spotify/scio/accumulators/package$$AccumulatorSCollection.html" class="extype" name="com.spotify.scio.accumulators.AccumulatorSCollection">AccumulatorSCollection</a> <a href="../com/spotify/scio/bigtable/package$$BigtableSCollection.html" class="extype" name="com.spotify.scio.bigtable.BigtableSCollection">BigtableSCollection</a> <a href="../com/spotify/scio/bigtable/package$$BigtableScioContext.html" class="extype" name="com.spotify.scio.bigtable.BigtableScioContext">BigtableScioContext</a> <a href="../com/spotify/scio/bigtable/package$$RichRow.html" class="extype" name="com.spotify.scio.bigtable.RichRow">RichRow</a> <a href="../com/spotify/scio/extra/Collections$$TopArray.html" class="extype" name="com.spotify.scio.extra.Collections.TopArray">TopArray</a> <a href="../com/spotify/scio/extra/Collections$$TopByKeyArray.html" class="extype" name="com.spotify.scio.extra.Collections.TopByKeyArray">TopByKeyArray</a> <a href="../com/spotify/scio/extra/Collections$$TopByKeyIterable.html" class="extype" name="com.spotify.scio.extra.Collections.TopByKeyIterable">TopByKeyIterable</a> <a href="../com/spotify/scio/extra/Collections$$TopIterable.html" class="extype" name="com.spotify.scio.extra.Collections.TopIterable">TopIterable</a> <a href="../com/spotify/scio/extra/Iterators$$RichIterator.html" class="extype" name="com.spotify.scio.extra.Iterators.RichIterator">RichIterator</a> <a href="../com/spotify/scio/extra/json/package$$JsonSCollection.html" class="extype" name="com.spotify.scio.extra.json.JsonSCollection">JsonSCollection</a> <a href="../com/spotify/scio/extra/json/package$$JsonScioContext.html" class="extype" name="com.spotify.scio.extra.json.JsonScioContext">JsonScioContext</a> <a href="../com/spotify/scio/extra/sparkey/package$$RichStringSparkeyReader.html" class="extype" name="com.spotify.scio.extra.sparkey.RichStringSparkeyReader">RichStringSparkeyReader</a> <a href="../com/spotify/scio/extra/sparkey/package$$SparkeyPairSCollection.html" class="extype" name="com.spotify.scio.extra.sparkey.SparkeyPairSCollection">SparkeyPairSCollection</a> <a href="../com/spotify/scio/extra/sparkey/package$$SparkeySCollection.html" class="extype" name="com.spotify.scio.extra.sparkey.SparkeySCollection">SparkeySCollection</a> <a href="../com/spotify/scio/extra/sparkey/package$$SparkeyScioContext.html" class="extype" name="com.spotify.scio.extra.sparkey.SparkeyScioContext">SparkeyScioContext</a> <a href="../com/spotify/scio/extra/transforms/package$$PipeSCollection.html" class="extype" name="com.spotify.scio.extra.transforms.PipeSCollection">PipeSCollection</a> <a href="../com/spotify/scio/extra/transforms/package$$URISCollection.html" class="extype" name="com.spotify.scio.extra.transforms.URISCollection">URISCollection</a> <a href="../com/spotify/scio/hdfs/package$$HdfsSCollection.html" class="extype" name="com.spotify.scio.hdfs.HdfsSCollection">HdfsSCollection</a> <a href="../com/spotify/scio/hdfs/package$$HdfsScioContext.html" class="extype" name="com.spotify.scio.hdfs.HdfsScioContext">HdfsScioContext</a> <a href="../com/spotify/scio/hdfs/package$$HdfsTaps.html" class="extype" name="com.spotify.scio.hdfs.HdfsTaps">HdfsTaps</a> <a href="../com/spotify/scio/jdbc/package$$JdbcSCollection.html" class="extype" name="com.spotify.scio.jdbc.JdbcSCollection">JdbcSCollection</a> <a href="../com/spotify/scio/jdbc/package$$JdbcScioContext.html" class="extype" name="com.spotify.scio.jdbc.JdbcScioContext">JdbcScioContext</a> <a href="../com/spotify/scio/testing/package$$TestStreamScioContext.html" class="extype" name="com.spotify.scio.testing.TestStreamScioContext">TestStreamScioContext</a> <a href="../com/spotify/scio/values/PairSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.PairSCollectionFunctions">PairSCollectionFunctions</a> </div>
     </div><div class="entry">
       <div class="name">session</div>
       <div class="occurrences"><a href="../com/spotify/scio/extra/Iterators$$TimeSeriesIterator.html" class="extype" name="com.spotify.scio.extra.Iterators.TimeSeriesIterator">TimeSeriesIterator</a> </div>
     </div><div class="entry">
       <div class="name">setAppName</div>
       <div class="occurrences"><a href="../com/spotify/scio/ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a> </div>
+    </div><div class="entry">
+      <div class="name">setBlocking</div>
+      <div class="occurrences"><a href="../com/spotify/scio/options/ScioOptions.html" class="extype" name="com.spotify.scio.options.ScioOptions">ScioOptions</a> </div>
+    </div><div class="entry">
+      <div class="name">setCloudSqlDb</div>
+      <div class="occurrences"><a href="../com/spotify/scio/jdbc/CloudSqlOptions.html" class="extype" name="com.spotify.scio.jdbc.CloudSqlOptions">CloudSqlOptions</a> </div>
+    </div><div class="entry">
+      <div class="name">setCloudSqlInstanceConnectionName</div>
+      <div class="occurrences"><a href="../com/spotify/scio/jdbc/CloudSqlOptions.html" class="extype" name="com.spotify.scio.jdbc.CloudSqlOptions">CloudSqlOptions</a> </div>
+    </div><div class="entry">
+      <div class="name">setCloudSqlPassword</div>
+      <div class="occurrences"><a href="../com/spotify/scio/jdbc/CloudSqlOptions.html" class="extype" name="com.spotify.scio.jdbc.CloudSqlOptions">CloudSqlOptions</a> </div>
+    </div><div class="entry">
+      <div class="name">setCloudSqlUsername</div>
+      <div class="occurrences"><a href="../com/spotify/scio/jdbc/CloudSqlOptions.html" class="extype" name="com.spotify.scio.jdbc.CloudSqlOptions">CloudSqlOptions</a> </div>
     </div><div class="entry">
       <div class="name">setCoder</div>
       <div class="occurrences"><a href="../com/spotify/scio/values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> </div>
@@ -221,6 +242,9 @@
       <div class="name">sparseOuterJoin</div>
       <div class="occurrences"><a href="../com/spotify/scio/values/PairSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.PairSCollectionFunctions">PairSCollectionFunctions</a> </div>
     </div><div class="entry">
+      <div class="name">sparseOuterJoinImpl</div>
+      <div class="occurrences"><a href="../com/spotify/scio/values/PairSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.PairSCollectionFunctions">PairSCollectionFunctions</a> </div>
+    </div><div class="entry">
       <div class="name">spotify</div>
       <div class="occurrences"><a href="../com/package.html" class="extype" name="com">com</a> </div>
     </div><div class="entry">
@@ -229,6 +253,12 @@
     </div><div class="entry">
       <div class="name">state</div>
       <div class="occurrences"><a href="../com/spotify/scio/ScioResult.html" class="extype" name="com.spotify.scio.ScioResult">ScioResult</a> <a href="../com/spotify/scio/metrics/package$$Metrics.html" class="extype" name="com.spotify.scio.metrics.Metrics">Metrics</a> </div>
+    </div><div class="entry">
+      <div class="name">statement</div>
+      <div class="occurrences"><a href="../com/spotify/scio/jdbc/package$$JdbcWriteOptions.html" class="extype" name="com.spotify.scio.jdbc.JdbcWriteOptions">JdbcWriteOptions</a> </div>
+    </div><div class="entry">
+      <div class="name">statementPreparator</div>
+      <div class="occurrences"><a href="../com/spotify/scio/jdbc/package$$JdbcReadOptions.html" class="extype" name="com.spotify.scio.jdbc.JdbcReadOptions">JdbcReadOptions</a> </div>
     </div><div class="entry">
       <div class="name">stats</div>
       <div class="occurrences"><a href="../com/spotify/scio/values/DoubleSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.DoubleSCollectionFunctions">DoubleSCollectionFunctions</a> </div>

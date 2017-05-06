@@ -86,9 +86,8 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Utilities for Breeze.</p><div class="fullcomment"><div class="comment cmt"><p>Utilities for Breeze.</p><p>Includes <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>s for
-<a href="http://www.scalanlp.org/api/breeze/index.html#breeze.linalg.DenseVector" class="extype" target="_top">DenseVector</a>s and <a href="http://www.scalanlp.org/api/breeze/index.html#breeze.linalg.DenseMatrix" class="extype" target="_top">DenseMatrix</a>s of
-<code>Float</code> and <code>Double</code>.</p><pre><span class="kw">import</span> com.spotify.scio.extra.Breeze._
+      <p class="shortcomment cmt">Utilities for Breeze.</p><div class="fullcomment"><div class="comment cmt"><p>Utilities for Breeze.</p><p>Includes <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>s for Breeze data types like
+<a href="http://www.scalanlp.org/api/breeze/index.html#breeze.linalg.DenseVector" class="extype" target="_top">DenseVector</a>s and <span class="extype" name="breeze.linalg.DenseMatrix">DenseMatrix</span>s.</p><pre><span class="kw">import</span> com.spotify.scio.extra.Breeze._
 
 <span class="kw">val</span> vectors: SCollection[DenseVector[<span class="std">Double</span>]] = <span class="cmt">// ...</span>
 vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div></div>
@@ -145,6 +144,33 @@ i.timeSeries(_.timestamp).session(<span class="num">3600000</span>)
 <span class="cmt">// 60 minutes sliding windows, one every 10 minutes, offset by 5 minutes</span>
 <span class="cmt">// E.g. minute [5, 65), [15, 75), [25, 85), [35, 95) ...</span>
 i.timeSeries(_.timestamp).session(<span class="num">3600000</span>, <span class="num">600000</span>, <span class="num">300000</span>)</pre></div></div>
+    </li><li name="com.spotify.scio.extra.json" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="json"></a>
+      <a id="json:json"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="json/package.html"><span class="name">json</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.extra.package@json" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Main package for JSON APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for JSON APIs. Import all.</p><p>This package uses <a href="https://circe.github.io/circe/" target="_blank">Circe</a> for JSON handling under the hood.</p><pre><span class="kw">import</span> com.spotify.scio.extra.json._
+
+<span class="cmt">// define a type-safe JSON schema</span>
+<span class="kw">case</span> <span class="kw">class</span> Record(i: <span class="std">Int</span>, d: <span class="std">Double</span>, s: <span class="std">String</span>)
+
+<span class="cmt">// read JSON as case classes</span>
+sc.jsonFile[Record](<span class="lit">"input.json"</span>)
+
+<span class="cmt">// write case classes as JSON</span>
+sc.parallelize((<span class="num">1</span> to <span class="num">10</span>).map(x <span class="kw">=&gt;</span> Record(x, x.toDouble, x.toString))
+  .saveAsJsonFile(<span class="lit">"output"</span>)</pre></div></div>
     </li><li name="com.spotify.scio.extra.nn" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="nn"></a>
       <a id="nn:nn"></a>

@@ -199,7 +199,7 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="PipelineSpec.html"><span class="name">PipelineSpec</span></a><span class="result"> extends <a href="http://doc.scalatest.org/3.0.2/index.html#org.scalatest.FlatSpec" class="extype" target="_top">FlatSpec</a> with <a href="http://doc.scalatest.org/3.0.2/index.html#org.scalatest.Matchers" class="extype" target="_top">Matchers</a> with <a href="SCollectionMatchers.html" class="extype" name="com.spotify.scio.testing.SCollectionMatchers">SCollectionMatchers</a> with <a href="PipelineTestUtils.html" class="extype" name="com.spotify.scio.testing.PipelineTestUtils">PipelineTestUtils</a> with <a href="RunEnforcementJobTest.html" class="extype" name="com.spotify.scio.testing.RunEnforcementJobTest">RunEnforcementJobTest</a></span>
+        <a href="PipelineSpec.html"><span class="name">PipelineSpec</span></a><span class="result"> extends <a href="http://doc.scalatest.org/3.0.3/index.html#org.scalatest.FlatSpec" class="extype" target="_top">FlatSpec</a> with <a href="http://doc.scalatest.org/3.0.3/index.html#org.scalatest.Matchers" class="extype" target="_top">Matchers</a> with <a href="SCollectionMatchers.html" class="extype" name="com.spotify.scio.testing.SCollectionMatchers">SCollectionMatchers</a> with <a href="PipelineTestUtils.html" class="extype" name="com.spotify.scio.testing.PipelineTestUtils">PipelineTestUtils</a> with <a href="RunEnforcementJobTest.html" class="extype" name="com.spotify.scio.testing.RunEnforcementJobTest">RunEnforcementJobTest</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.testing.package@PipelineSpecextendsFlatSpecwithMatcherswithSCollectionMatcherswithPipelineTestUtilswithRunEnforcementJobTest" title="Permalink" target="_top">
@@ -273,7 +273,7 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="RunEnforcementJobTest.html"><span class="name">RunEnforcementJobTest</span></a><span class="result"> extends <a href="http://doc.scalatest.org/3.0.2/index.html#org.scalatest.FlatSpec" class="extype" target="_top">FlatSpec</a></span>
+        <a href="RunEnforcementJobTest.html"><span class="name">RunEnforcementJobTest</span></a><span class="result"> extends <a href="http://doc.scalatest.org/3.0.3/index.html#org.scalatest.FlatSpec" class="extype" target="_top">FlatSpec</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.testing.package@RunEnforcementJobTestextendsFlatSpec" title="Permalink" target="_top">
@@ -297,7 +297,7 @@
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">Trait with ScalaTest <a href="http://doc.scalatest.org/3.0.2/index.html#org.scalatest.matchers.Matcher" class="extype" target="_top">Matcher</a>s for
+      <p class="shortcomment cmt">Trait with ScalaTest <a href="http://doc.scalatest.org/3.0.3/index.html#org.scalatest.matchers.Matcher" class="extype" target="_top">Matcher</a>s for
 <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>s.</p>
     </li><li name="com.spotify.scio.testing.TFRecordIO" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TFRecordIOextendsTestIO[Array[Byte]]withProductwithSerializable"></a>
@@ -447,7 +447,7 @@ To be used in a <a href="PipelineSpec.html" class="extype" name="com.spotify.sci
       .input(TextIO(<span class="lit">"in.txt"</span>), inData)
 
       <span class="cmt">// Mock distributed cache</span>
-      .distCache(DistCacheIO(<span class="lit">"gs://dataflow-samples/samples/misc/months.txt"</span>, distCache)
+      .distCache(DistCacheIO(<span class="lit">"gs://dataflow-samples/samples/misc/months.txt"</span>), distCache)
 
       <span class="cmt">// Verify output</span>
       .output(TextIO(<span class="lit">"out.txt"</span>)) { actual <span class="kw">=&gt;</span> actual should containInAnyOrder (expected) }

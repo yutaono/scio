@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>Breeze - com.spotify.scio.extra.Breeze</title>
-          <meta name="description" content="Breeze - com.spotify.scio.extra.Breeze" />
-          <meta name="keywords" content="Breeze com.spotify.scio.extra.Breeze" />
+          <title>CloudSqlOptionsRegistrar - com.spotify.scio.jdbc.CloudSqlOptionsRegistrar</title>
+          <meta name="description" content="CloudSqlOptionsRegistrar - com.spotify.scio.jdbc.CloudSqlOptionsRegistrar" />
+          <meta name="keywords" content="CloudSqlOptionsRegistrar com.spotify.scio.jdbc.CloudSqlOptionsRegistrar" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -16,7 +16,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../index.html';
-            var hash = 'com.spotify.scio.extra.Breeze$';
+            var hash = 'com.spotify.scio.jdbc.CloudSqlOptionsRegistrar';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -26,14 +26,14 @@
    	  </script>
     
         </head>
-        <body class="value">
+        <body class="type">
       <div id="definition">
-        <img alt="Object" src="../../../../lib/object_big.png" />
-        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.spotify">spotify</a>.<a href="../package.html" class="extype" name="com.spotify.scio">scio</a>.<a href="package.html" class="extype" name="com.spotify.scio.extra">extra</a></p>
-        <h1>Breeze</h1><h3><span class="morelinks"><div>Related Doc:
-            <a href="package.html" class="extype" name="com.spotify.scio.extra">package extra</a>
+        <img alt="Class" src="../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="com">com</a>.<a href="../../package.html" class="extype" name="com.spotify">spotify</a>.<a href="../package.html" class="extype" name="com.spotify.scio">scio</a>.<a href="package.html" class="extype" name="com.spotify.scio.jdbc">jdbc</a></p>
+        <h1>CloudSqlOptionsRegistrar</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="com.spotify.scio.jdbc">package jdbc</a>
           </div></span></h3><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -42,20 +42,16 @@
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">object</span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">Breeze</span>
+        <span class="name">CloudSqlOptionsRegistrar</span><span class="result"> extends <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.options.PipelineOptionsRegistrar" class="extype" target="_top">PipelineOptionsRegistrar</a></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Utilities for Breeze.</p><p>Includes <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>s for Breeze data types like
-<a href="http://www.scalanlp.org/api/breeze/index.html#breeze.linalg.DenseVector" class="extype" target="_top">DenseVector</a>s and <span class="extype" name="breeze.linalg.DenseMatrix">DenseMatrix</span>s.</p><pre><span class="kw">import</span> com.spotify.scio.extra.Breeze._
-
-<span class="kw">val</span> vectors: SCollection[DenseVector[<span class="std">Double</span>]] = <span class="cmt">// ...</span>
-vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.options.PipelineOptionsRegistrar" class="extype" target="_top">PipelineOptionsRegistrar</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -73,7 +69,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="com.spotify.scio.extra.Breeze"><span>Breeze</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="com.spotify.scio.jdbc.CloudSqlOptionsRegistrar"><span>CloudSqlOptionsRegistrar</span></li><li class="in" name="org.apache.beam.sdk.options.PipelineOptionsRegistrar"><span>PipelineOptionsRegistrar</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -90,7 +86,27 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
 
       <div id="template">
         <div id="allMembers">
-        
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="com.spotify.scio.jdbc.CloudSqlOptionsRegistrar#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;():com.spotify.scio.jdbc.CloudSqlOptionsRegistrar"></a>
+      <a id="&lt;init&gt;:CloudSqlOptionsRegistrar"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">CloudSqlOptionsRegistrar</span><span class="params">()</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@&lt;init&gt;():com.spotify.scio.jdbc.CloudSqlOptionsRegistrar" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
 
         
 
@@ -110,7 +126,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@!=(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -127,7 +143,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@##():Int" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@##():Int" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -144,7 +160,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@==(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -161,28 +177,11 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@asInstanceOf[T0]:T0" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.spotify.scio.extra.Breeze#breezeSemigroup" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="breezeSemigroup[M[_],T](implicitevidence$1:scala.reflect.ClassTag[T],implicitadd:breeze.linalg.operators.OpAdd.Impl2[M[T],M[T],M[T]],implicitaddInto:breeze.linalg.operators.OpAdd.InPlaceImpl2[M[T],M[T]],implicitcopy:breeze.linalg.support.CanCopy[M[T]]):com.twitter.algebird.Semigroup[M[T]]"></a>
-      <a id="breezeSemigroup[M[_],T](ClassTag[T],breeze.linalg.operators.OpAdd.Impl2[M[T],M[T],M[T]],breeze.linalg.operators.OpAdd.InPlaceImpl2[M[T],M[T]],CanCopy[M[T]]):Semigroup[M[T]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">breezeSemigroup</span><span class="tparams">[<span name="M">M<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="T">T</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.reflect.ClassTag" class="extype" target="_top">ClassTag</a>[<span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.T">T</span>]</span>, <span name="add">add: <span class="extype" name="breeze.generic.UFunc.Impl2">breeze.linalg.operators.OpAdd.Impl2</span>[<span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.M">M</span>[<span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.T">T</span>], <span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.M">M</span>[<span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.T">T</span>], <span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.M">M</span>[<span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.T">T</span>]]</span>, <span name="addInto">addInto: <span class="extype" name="breeze.generic.UFunc.InPlaceImpl2">breeze.linalg.operators.OpAdd.InPlaceImpl2</span>[<span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.M">M</span>[<span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.T">T</span>], <span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.M">M</span>[<span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.T">T</span>]]</span>, <span name="copy">copy: <a href="http://www.scalanlp.org/api/breeze/index.html#breeze.linalg.support.CanCopy" class="extype" target="_top">CanCopy</a>[<span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.M">M</span>[<span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.T">T</span>]]</span>)</span><span class="result">: <a href="http://twitter.github.io/algebird/api/index.html#com.twitter.algebird.Semigroup" class="extype" target="_top">Semigroup</a>[<span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.M">M</span>[<span class="extype" name="com.spotify.scio.extra.Breeze.breezeSemigroup.T">T</span>]]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@breezeSemigroup[M[_],T](implicitevidence$1:scala.reflect.ClassTag[T],implicitadd:breeze.linalg.operators.OpAdd.Impl2[M[T],M[T],M[T]],implicitaddInto:breeze.linalg.operators.OpAdd.InPlaceImpl2[M[T],M[T]],implicitcopy:breeze.linalg.support.CanCopy[M[T]]):com.twitter.algebird.Semigroup[M[T]]" title="Permalink" target="_top">
-        <img src="../../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -195,7 +194,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@clone():Object" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@clone():Object" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -218,7 +217,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -235,7 +234,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@equals(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -252,7 +251,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@finalize():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@finalize():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -275,11 +274,28 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@getClass():Class[_]" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@getClass():Class[_]" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.spotify.scio.jdbc.CloudSqlOptionsRegistrar#getPipelineOptions" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getPipelineOptions():Iterable[Class[_&lt;:org.apache.beam.sdk.options.PipelineOptions]]"></a>
+      <a id="getPipelineOptions():Iterable[Class[_&lt;:PipelineOptions]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getPipelineOptions</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Iterable">Iterable</span>[<span class="extype" name="java.lang.Class">Class</span>[_ &lt;: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.options.PipelineOptions" class="extype" target="_top">PipelineOptions</a>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@getPipelineOptions():Iterable[Class[_&lt;:org.apache.beam.sdk.options.PipelineOptions]]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="com.spotify.scio.jdbc.CloudSqlOptionsRegistrar">CloudSqlOptionsRegistrar</a> → PipelineOptionsRegistrar</dd></dl></div>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <a id="hashCode():Int"></a>
@@ -292,7 +308,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@hashCode():Int" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@hashCode():Int" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -309,7 +325,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -326,7 +342,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -343,7 +359,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@notify():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@notify():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -360,7 +376,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@notifyAll():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@notifyAll():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -377,7 +393,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -394,7 +410,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@toString():String" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@toString():String" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -411,7 +427,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@wait():Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@wait():Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -434,7 +450,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -457,7 +473,7 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../../index.html#com.spotify.scio.extra.Breeze$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+      <a href="../../../../index.html#com.spotify.scio.jdbc.CloudSqlOptionsRegistrar@wait(x$1:Long):Unit" title="Permalink" target="_top">
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -477,7 +493,9 @@ vectors.sum  <span class="cmt">// implicit Semigroup[T]</span></pre></div><div c
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="org.apache.beam.sdk.options.PipelineOptionsRegistrar">
+              <h3>Inherited from <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.options.PipelineOptionsRegistrar" class="extype" target="_top">PipelineOptionsRegistrar</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>

@@ -72,7 +72,7 @@ To be used in a <a href="PipelineSpec.html" class="extype" name="com.spotify.sci
       .input(TextIO(<span class="lit">"in.txt"</span>), inData)
 
       <span class="cmt">// Mock distributed cache</span>
-      .distCache(DistCacheIO(<span class="lit">"gs://dataflow-samples/samples/misc/months.txt"</span>, distCache)
+      .distCache(DistCacheIO(<span class="lit">"gs://dataflow-samples/samples/misc/months.txt"</span>), distCache)
 
       <span class="cmt">// Verify output</span>
       .output(TextIO(<span class="lit">"out.txt"</span>)) { actual <span class="kw">=&gt;</span> actual should containInAnyOrder (expected) }
