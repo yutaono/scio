@@ -50,7 +50,9 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Macro annotation for a BigQuery table.</p><p>Generate case classes for a BigQuery table. Note that <code>tableSpec</code> must be a string literal in
-the form of <code>project:dataset.table</code> with optional <code>.stripMargin</code> at the end. For example:</p><pre>@BigQueryType.fromTable(<span class="lit">"project:dataset.table"</span>) <span class="kw">class</span> MyRecord</pre><p>Also generate a companion object with convenience methods.</p></div><div class="toggleContainer block">
+the form of <code>project:dataset.table</code> with optional <code>.stripMargin</code> at the end. For example:</p><pre>@BigQueryType.fromTable(<span class="lit">"project:dataset.table"</span>) <span class="kw">class</span> MyRecord</pre><p>String formatting syntax can be used in <code>tableSpec</code> when additional <code>args</code> are supplied. For
+example:</p><pre>@BigQueryType.fromTable(<span class="lit">"project:dataset.%s"</span>, <span class="lit">"table"</span>)</pre><p>&quot;$LATEST&quot; can be used as a placeholder for table partitions. The latest partition available
+will be used. For example:</p><pre>@BigQueryType.fromTable(<span class="lit">"project:dataset.table_%s"</span>, <span class="lit">"$LATEST"</span>)</pre><p>Also generate a companion object with convenience methods.</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.annotation.StaticAnnotation" class="extype" target="_top">StaticAnnotation</a>, <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.annotation.Annotation" class="extype" target="_top">Annotation</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>

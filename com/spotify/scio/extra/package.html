@@ -144,6 +144,23 @@ i.timeSeries(_.timestamp).session(<span class="num">3600000</span>)
 <span class="cmt">// 60 minutes sliding windows, one every 10 minutes, offset by 5 minutes</span>
 <span class="cmt">// E.g. minute [5, 65), [15, 75), [25, 85), [35, 95) ...</span>
 i.timeSeries(_.timestamp).session(<span class="num">3600000</span>, <span class="num">600000</span>, <span class="num">300000</span>)</pre></div></div>
+    </li><li name="com.spotify.scio.extra.checkpoint" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="checkpoint"></a>
+      <a id="checkpoint:checkpoint"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="checkpoint/package.html"><span class="name">checkpoint</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.extra.package@checkpoint" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Main package for checkpoint API.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for checkpoint API. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.extra.checkpoint._</pre></div></div>
     </li><li name="com.spotify.scio.extra.json" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="json"></a>
       <a id="json:json"></a>
@@ -171,6 +188,26 @@ sc.jsonFile[Record](<span class="lit">"input.json"</span>)
 <span class="cmt">// write case classes as JSON</span>
 sc.parallelize((<span class="num">1</span> to <span class="num">10</span>).map(x <span class="kw">=&gt;</span> Record(x, x.toDouble, x.toString))
   .saveAsJsonFile(<span class="lit">"output"</span>)</pre></div></div>
+    </li><li name="com.spotify.scio.extra.libsvm" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="libsvm"></a>
+      <a id="libsvm:libsvm"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="libsvm/package.html"><span class="name">libsvm</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.extra.package@libsvm" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Main package for reading the Lib SVM Format</p><div class="fullcomment"><div class="comment cmt"><p>Main package for reading the Lib SVM Format</p><pre><span class="kw">import</span> com.spotify.scio.extra.libsvm._
+
+<span class="cmt">// Read SVM Lib as Label, SparseVector</span>
+sc.libSVMFile(<span class="lit">"input.svm"</span>)</pre></div></div>
     </li><li name="com.spotify.scio.extra.nn" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="nn"></a>
       <a id="nn:nn"></a>
