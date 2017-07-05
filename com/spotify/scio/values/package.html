@@ -186,7 +186,7 @@ distributed cache.
         <img src="../../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <p class="shortcomment cmt">A Scala wrapper for <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A Scala wrapper for <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.values.PCollection" class="extype" target="_top">PCollection</a>. Represents an
+      <p class="shortcomment cmt">A Scala wrapper for <a href=https://beam.apache.org/documentation/sdks/javadoc/0.6.0/org/apache/beam/sdk/values/PCollection.html class="extype" target="_top">PCollection</a>.</p><div class="fullcomment"><div class="comment cmt"><p>A Scala wrapper for <a href=https://beam.apache.org/documentation/sdks/javadoc/0.6.0/org/apache/beam/sdk/values/PCollection.html class="extype" target="_top">PCollection</a>. Represents an
 immutable, partitioned collection of elements that can be operated on in parallel. This class
 contains the basic operations available on all SCollections, such as <code>map</code>, <code>filter</code>, and
 <code>sum</code>. In addition, <a href="PairSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.PairSCollectionFunctions">PairSCollectionFunctions</a> contains operations available only on
@@ -374,6 +374,40 @@ performing the full combine.</p>
       </a>
     </span>
       <p class="shortcomment cmt">Encapsulate context of one or more <a href="SideOutput.html" class="extype" name="com.spotify.scio.values.SideOutput">SideOutput</a>s in an <a href="SCollectionWithSideOutput.html" class="extype" name="com.spotify.scio.values.SCollectionWithSideOutput">SCollectionWithSideOutput</a>.</p>
+    </li><li name="com.spotify.scio.values.TFRecordSCollectionFunctions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TFRecordSCollectionFunctions[T&lt;:Array[Byte]]extendsAnyRef"></a>
+      <a id="TFRecordSCollectionFunctions[T&lt;:Array[Byte]]:TFRecordSCollectionFunctions[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="TFRecordSCollectionFunctions.html"><span class="name">TFRecordSCollectionFunctions</span></a><span class="tparams">[<span name="T">T &lt;: <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Array" class="extype" target="_top">Array</a>[<a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Byte" class="extype" target="_top">Byte</a>]</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@TFRecordSCollectionFunctions[T&lt;:Array[Byte]]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="com.spotify.scio.values.TensorFlowSCollectionFunctions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TensorFlowSCollectionFunctions[T]extendsSerializable"></a>
+      <a id="TensorFlowSCollectionFunctions[T]:TensorFlowSCollectionFunctions[T]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="TensorFlowSCollectionFunctions.html"><span class="name">TensorFlowSCollectionFunctions</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#com.spotify.scio.values.package@TensorFlowSCollectionFunctions[T]extendsSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Enhanced version of <a href="SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> with TensorFlow methods.</p>
     </li><li name="com.spotify.scio.values.TransformNameable" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="TransformNameableextendsAnyRef"></a>
       <a id="TransformNameable:TransformNameable"></a>
@@ -400,7 +434,7 @@ performing the full combine.</p>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="WindowOptions.html"><span class="name">WindowOptions</span></a><span class="tparams">[<span name="W">W &lt;: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>]</span><span class="params">(<span name="trigger">trigger: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.Trigger" class="extype" target="_top">Trigger</a> = <span class="symbol">null</span></span>, <span name="accumulationMode">accumulationMode: <span class="extype" name="org.apache.beam.sdk.util.WindowingStrategy.AccumulationMode">AccumulationMode</span> = <span class="symbol">null</span></span>, <span name="allowedLateness">allowedLateness: <span class="extype" name="org.joda.time.Duration">Duration</span> = <span class="symbol">null</span></span>, <span name="closingBehavior">closingBehavior: <span class="extype" name="org.apache.beam.sdk.transforms.windowing.Window.ClosingBehavior">ClosingBehavior</span> = <span class="symbol">null</span></span>, <span name="outputTimeFn">outputTimeFn: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.OutputTimeFn" class="extype" target="_top">OutputTimeFn</a>[<a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a>] = <span class="symbol">null</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="WindowOptions.html"><span class="name">WindowOptions</span></a><span class="tparams">[<span name="W">W &lt;: <a href=https://beam.apache.org/documentation/sdks/javadoc/0.6.0/org/apache/beam/sdk/transforms/windowing/BoundedWindow.html class="extype" target="_top">BoundedWindow</a></span>]</span><span class="params">(<span name="trigger">trigger: <a href=https://beam.apache.org/documentation/sdks/javadoc/0.6.0/org/apache/beam/sdk/transforms/windowing/Trigger.html class="extype" target="_top">Trigger</a> = <span class="symbol">null</span></span>, <span name="accumulationMode">accumulationMode: <span class="extype" name="org.apache.beam.sdk.util.WindowingStrategy.AccumulationMode">AccumulationMode</span> = <span class="symbol">null</span></span>, <span name="allowedLateness">allowedLateness: <span class="extype" name="org.joda.time.Duration">Duration</span> = <span class="symbol">null</span></span>, <span name="closingBehavior">closingBehavior: <span class="extype" name="org.apache.beam.sdk.transforms.windowing.Window.ClosingBehavior">ClosingBehavior</span> = <span class="symbol">null</span></span>, <span name="outputTimeFn">outputTimeFn: <a href=https://beam.apache.org/documentation/sdks/javadoc/0.6.0/org/apache/beam/sdk/transforms/windowing/OutputTimeFn.html class="extype" target="_top">OutputTimeFn</a>[<a href=https://beam.apache.org/documentation/sdks/javadoc/0.6.0/org/apache/beam/sdk/transforms/windowing/BoundedWindow.html class="extype" target="_top">BoundedWindow</a>] = <span class="symbol">null</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.package@WindowOptions[W&lt;:org.apache.beam.sdk.transforms.windowing.BoundedWindow]extendsProductwithSerializable" title="Permalink" target="_top">
@@ -434,7 +468,7 @@ performing the full combine.</p>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="WindowedValue.html"><span class="name">WindowedValue</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="value">value: <span class="extype" name="com.spotify.scio.values.WindowedValue.T">T</span></span>, <span name="timestamp">timestamp: <span class="extype" name="org.joda.time.Instant">Instant</span></span>, <span name="window">window: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.BoundedWindow" class="extype" target="_top">BoundedWindow</a></span>, <span name="pane">pane: <a href="https://beam.apache.org/documentation/sdks/javadoc/0.6.0/index.html#org.apache.beam.sdk.transforms.windowing.PaneInfo" class="extype" target="_top">PaneInfo</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+        <a href="WindowedValue.html"><span class="name">WindowedValue</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="value">value: <span class="extype" name="com.spotify.scio.values.WindowedValue.T">T</span></span>, <span name="timestamp">timestamp: <span class="extype" name="org.joda.time.Instant">Instant</span></span>, <span name="window">window: <a href=https://beam.apache.org/documentation/sdks/javadoc/0.6.0/org/apache/beam/sdk/transforms/windowing/BoundedWindow.html class="extype" target="_top">BoundedWindow</a></span>, <span name="pane">pane: <a href=https://beam.apache.org/documentation/sdks/javadoc/0.6.0/org/apache/beam/sdk/transforms/windowing/PaneInfo.html class="extype" target="_top">PaneInfo</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.11/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.values.package@WindowedValue[T]extendsProductwithSerializable" title="Permalink" target="_top">
