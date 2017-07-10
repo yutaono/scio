@@ -391,7 +391,8 @@ lazy val scioTensorFlow: Project = Project(
   description := "Scio add-on for TensorFlow",
   libraryDependencies ++= Seq(
     "org.tensorflow" % "tensorflow" % tensorFlowVersion,
-    "org.tensorflow" % "proto" % tensorFlowVersion
+    "org.tensorflow" % "proto" % tensorFlowVersion,
+    "com.google.apis" % "google-api-services-compute" % "beta-rev61-1.22.0"
   )
 ).dependsOn(
   scioCore,
