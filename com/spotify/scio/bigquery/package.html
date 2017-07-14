@@ -47,7 +47,17 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Main package for BigQuery APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.bigquery._</pre></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Main package for BigQuery APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.bigquery._</pre><p>There are two BigQuery dialects,
+<a href="https://cloud.google.com/bigquery/docs/reference/legacy-sql" target="_blank">legacy</a> and
+<a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/" target="_blank">standard</a>.
+APIs that take a BigQuery query string as argument, e.g.
+<a href="BigQueryClient.html#getQueryRows(sqlQuery:String,flattenResults:Boolean):Iterator[com.spotify.scio.bigquery.TableRow]" class="extmbr" name="com.spotify.scio.bigquery.BigQueryClient#getQueryRows">BigQueryClient.getQueryRows</a>,
+<a href="BigQueryClient.html#getQuerySchema(sqlQuery:String):com.google.api.services.bigquery.model.TableSchema" class="extmbr" name="com.spotify.scio.bigquery.BigQueryClient#getQuerySchema">BigQueryClient.getQuerySchema</a>,
+<a href="BigQueryClient.html#getTypedRows[T&lt;:com.spotify.scio.bigquery.types.BigQueryType.HasAnnotation](newSource:String)(implicitevidence$1:reflect.runtime.universe.TypeTag[T]):Iterator[T]" class="extmbr" name="com.spotify.scio.bigquery.BigQueryClient#getTypedRows">BigQueryClient.getTypedRows</a> and
+<a href="types/BigQueryType$$fromQuery.html" class="extype" name="com.spotify.scio.bigquery.types.BigQueryType.fromQuery">BigQueryType.fromQuery</a>, automatically
+detects the query's dialect. To override this, start the query with either <code>#legacysql</code> or
+<code>#standardsql</code> comment line.
+</p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -167,7 +177,7 @@
         <span class="kind">type</span>
       </span>
       <span class="symbol">
-        <span class="name">TableRow</span><span class="result"> = <a href=https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/TableRow.html class="extype" target="_top">google.api.services.bigquery.model.TableRow</a></span>
+        <span class="name">TableRow</span><span class="result"> = <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/index.html#com.google.api.services.bigquery.model.TableRow" class="extype" target="_top">google.api.services.bigquery.model.TableRow</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../index.html#com.spotify.scio.bigquery.package@TableRow=com.google.api.services.bigquery.model.TableRow" title="Permalink" target="_top">
