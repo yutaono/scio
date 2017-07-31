@@ -31,7 +31,6 @@ import java.net.URI;
 import java.nio.file.Path;
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * A {@link DoFn} that downloads {@link URI} elements and processes them as local {@link Path}s.
@@ -103,10 +102,13 @@ public class FileDownloadDoFn<OutputT> extends DoFn<URI, OutputT> {
       return;
     }
     LOG.info("Processing batch of {}", batch.size());
-    List<URI> uris = batch.stream().map(e -> e.uri).collect(Collectors.toList());
-    remoteFileUtil.download(uris).stream()
-        .map(fn::apply)
-        .forEach(c::output);
+    List<URI> uris = Lists.newArrayList();
+    for (Element e : batch) {
+      uris.add(e.uri);
+    }
+    for (Path p : remoteFileUtil.download(uris)) {
+      c.output(fn.apply(p));
+    }
     if (!keep) {
       LOG.info("Deleting batch of {}", batch.size());
       remoteFileUtil.delete(uris);
@@ -119,16 +121,15 @@ public class FileDownloadDoFn<OutputT> extends DoFn<URI, OutputT> {
       return;
     }
     LOG.info("Processing batch of {}", batch.size());
-    List<URI> uris = batch.stream().map(e -> e.uri).collect(Collectors.toList());
-    List<OutputT> outputs = remoteFileUtil.download(uris).stream()
-        .map(fn::apply)
-        .collect(Collectors.toList());
-        //.forEach(c::output);
-    Iterator<OutputT> i1 = outputs.iterator();
+    List<URI> uris = Lists.newArrayList();
+    for (Element e : batch) {
+      uris.add(e.uri);
+    }
+    Iterator<Path> i1 = remoteFileUtil.download(uris).iterator();
     Iterator<Element> i2 = batch.iterator();
     while (i1.hasNext() && i2.hasNext()) {
       Element e = i2.next();
-      c.output(i1.next(), e.timestamp, e.window);
+      c.output(fn.apply(i1.next()), e.timestamp, e.window);
     }
     if (!keep) {
       LOG.info("Deleting batch of {}", batch.size());
