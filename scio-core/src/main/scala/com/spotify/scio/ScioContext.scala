@@ -136,6 +136,7 @@ object ScioContext {
     } else {
       val args = Args(appArgs)
       if (appArgs.nonEmpty) {
+        // TODO: make this more robust for lists and quoted values
         pipelineOpts.as(classOf[ScioOptions]).setAppArguments(args.toString("", ", ", ""))
       }
       (pipelineOpts, args)
