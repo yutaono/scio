@@ -24,6 +24,9 @@ import org.apache.avro.generic.GenericRecord
 import org.scalatest.{FlatSpec, Matchers}
 
 class TypeProviderTest extends FlatSpec with Matchers {
+  @AvroType.fromSchema("/test.avsc")
+  class FromResource
+
   @AvroType.fromSchema(
     """{"type":"record","name": "Record","fields":[{"name":"f1","type":"int"}]}""")
   class StringLiteralRecord

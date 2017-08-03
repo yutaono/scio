@@ -44,9 +44,9 @@ import scala.util.Try
 private[types] object TypeProvider {
   private val logger = LoggerFactory.getLogger(this.getClass)
 
-  private lazy val ioChannelFactoryGetter = {
-    java.lang.Thread.currentThread().setContextClassLoader(getClass.getClassLoader)
+  java.lang.Thread.currentThread().setContextClassLoader(getClass.getClassLoader)
 
+  private lazy val ioChannelFactoryGetter = {
     val gcpOptions = PipelineOptionsFactory.create().as(classOf[GcpOptions])
 
     if (sys.props("bigquery.project") != null) {
@@ -68,6 +68,25 @@ private[types] object TypeProvider {
   def schemaImpl(c: blackbox.Context)(annottees: c.Expr[Any]*): c.Expr[Any] = {
     val schemaString = extractStrings(c, "Missing schema").head
     val schema = new Schema.Parser().parse(schemaString)
+    schemaToType(c)(schema, annottees)
+  }
+
+  def resourceImpl(c: blackbox.Context)(annottees: c.Expr[Any]*): c.Expr[Any] = {
+    val resource = extractStrings(c, "Missing resource").head
+
+    val resourceStream = getClass.getResourceAsStream(resource)
+    assume(resourceStream != null, s"Couldn't find resource $resource")
+
+    val schema = new Schema.Parser().parse(resourceStream)
+    schemaToType(c)(schema, annottees)
+  }
+
+  def schemaFileImpl(c: blackbox.Context)(annottees: c.Expr[Any]*): c.Expr[Any] = {
+    val file = extractStrings(c, "Missing file").head
+    val factory = ioChannelFactoryGetter(file)
+    val fileInputStream = Channels.newInputStream(factory.open(file))
+
+    val schema = new Schema.Parser().parse(fileInputStream)
     schemaToType(c)(schema, annottees)
   }
 

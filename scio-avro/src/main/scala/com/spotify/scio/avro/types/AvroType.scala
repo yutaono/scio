@@ -124,6 +124,14 @@ object AvroType {
     def macroTransform(annottees: Any*): Any = macro TypeProvider.pathImpl
   }
 
+  class fromResource(resource: String) extends StaticAnnotation {
+    def macroTransform(annottees: Any*): Any = macro TypeProvider.resourceImpl
+  }
+
+  class fromSchemaFile(schemaFile: String) extends StaticAnnotation {
+    def macroTransform(annottees: Any*): Any = macro TypeProvider.schemaFileImpl
+  }
+
   /**
    * Macro annotation for case classes to be saved to Avro files.
    *
