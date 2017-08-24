@@ -1,148 +1,160 @@
 <!DOCTYPE html >
 <html>
         <head>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <title></title>
           <meta name="description" content="" />
           <meta name="keywords" content="" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="lib/index.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
       <script type="text/javascript" src="lib/jquery.js"></script>
-      <script type="text/javascript" src="lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="lib/jquery.layout.js"></script>
+      <script type="text/javascript" src="lib/jquery.panzoom.min.js"></script>
+      <script type="text/javascript" src="lib/jquery.mousewheel.min.js"></script>
       <script type="text/javascript" src="lib/index.js"></script>
+      <script type="text/javascript" src="index.js"></script>
       <script type="text/javascript" src="lib/scheduler.js"></script>
+      <script type="text/javascript" src="lib/template.js"></script>
+      <script type="text/javascript" src="lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+        /* this variable can be used by the JS to determine the path to the root document */
+        var toRoot = '';
+      </script>
     
         </head>
         <body>
-      <div id="library">
-        <img class="class icon" alt="class icon" src="lib/class.png" />
-        <img class="trait icon" alt="trait icon" src="lib/trait.png" />
-        <img class="object icon" alt="trait icon" src="lib/object.png" />
-        <img class="package icon" alt="trait icon" src="lib/package.png" />
-      </div>
-      <div id="browser" class="ui-layout-west">
-      <div class="ui-west-center">
-      <div id="filter">
-          <div id="textfilter"></div>
-          <div id="letters"><a target="template" href="index/index-_.html">#</a><a target="template" href="index/index-a.html">A</a><a target="template" href="index/index-b.html">B</a><a target="template" href="index/index-c.html">C</a><a target="template" href="index/index-d.html">D</a><a target="template" href="index/index-e.html">E</a><a target="template" href="index/index-f.html">F</a><a target="template" href="index/index-g.html">G</a><a target="template" href="index/index-h.html">H</a><a target="template" href="index/index-i.html">I</a><a target="template" href="index/index-j.html">J</a><a target="template" href="index/index-k.html">K</a><a target="template" href="index/index-l.html">L</a><a target="template" href="index/index-m.html">M</a><a target="template" href="index/index-n.html">N</a><a target="template" href="index/index-o.html">O</a><a target="template" href="index/index-p.html">P</a><a target="template" href="index/index-q.html">Q</a><a target="template" href="index/index-r.html">R</a><a target="template" href="index/index-s.html">S</a><a target="template" href="index/index-t.html">T</a><a target="template" href="index/index-u.html">U</a><a target="template" href="index/index-v.html">V</a><a target="template" href="index/index-w.html">W</a><span>X</span><span>Y</span><a target="template" href="index/index-z.html">Z</a> – <span>deprecated</span></div>
-      </div>
-      <div class="pack" id="tpl">
-            
-            <ol class="templates"></ol>
-            <ol class="packages"> <li class="pack" title="com">
-            <a class="tplshow" href="com/package.html" target="template">com</a>
-            <ol class="templates"></ol>
-            <ol class="packages"> <li class="pack" title="com.spotify">
-            <a class="tplshow" href="com/spotify/package.html" target="template">com.spotify</a>
-            <ol class="templates"></ol>
-            <ol class="packages"> <li class="pack" title="com.spotify.scio">
-            <a class="tplshow" href="com/spotify/scio/package.html" target="template">com.spotify.scio</a>
-            <ol class="templates"><li title="com.spotify.scio.Args"><a class="tplshow" href="com/spotify/scio/Args$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/Args.html" target="template"><span class="class">(class)</span><span class="tplLink">Args</span></a></li><li title="com.spotify.scio.ContextAndArgs"><a class="tplshow" href="com/spotify/scio/ContextAndArgs$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">ContextAndArgs</span></a></li><li title="com.spotify.scio.DistCacheScioContext"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/DistCacheScioContext.html" target="template"><span class="class">(class)</span><span class="tplLink">DistCacheScioContext</span></a></li><li title="com.spotify.scio.ScioContext"><a class="tplshow" href="com/spotify/scio/ScioContext$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/ScioContext.html" target="template"><span class="class">(class)</span><span class="tplLink">ScioContext</span></a></li><li title="com.spotify.scio.ScioResult"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/ScioResult.html" target="template"><span class="class">(class)</span><span class="tplLink">ScioResult</span></a></li><li title="com.spotify.scio.TFScioConextFunctions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/TFScioConextFunctions.html" target="template"><span class="class">(class)</span><span class="tplLink">TFScioConextFunctions</span></a></li><li title="com.spotify.scio.WaitableFutureTap"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/package$$WaitableFutureTap.html" target="template"><span class="class">(class)</span><span class="tplLink">WaitableFutureTap</span></a></li><li title="com.spotify.scio.WaitableNestedFutureTap"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/package$$WaitableNestedFutureTap.html" target="template"><span class="class">(class)</span><span class="tplLink">WaitableNestedFutureTap</span></a></li></ol>
-            <ol class="packages"> <li class="pack" title="com.spotify.scio.accumulators">
-            <a class="tplshow" href="com/spotify/scio/accumulators/package.html" target="template">com.spotify.scio.accumulators</a>
-            <ol class="templates"><li title="com.spotify.scio.accumulators.AccumulatorSCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/accumulators/package$$AccumulatorSCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">AccumulatorSCollection</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.avro">
-            <a class="tplshow" href="com/spotify/scio/avro/package.html" target="template">com.spotify.scio.avro</a>
-            <ol class="templates"></ol>
-            <ol class="packages"> <li class="pack" title="com.spotify.scio.avro.types">
-            <a class="tplshow" href="com/spotify/scio/avro/types/package.html" target="template">com.spotify.scio.avro.types</a>
-            <ol class="templates"><li title="com.spotify.scio.avro.types.AvroType"><a class="tplshow" href="com/spotify/scio/avro/types/AvroType$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/avro/types/AvroType.html" target="template"><span class="class">(class)</span><span class="tplLink">AvroType</span></a></li><li title="com.spotify.scio.avro.types.doc"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/avro/types/package$$doc.html" target="template"><span class="class">(class)</span><span class="tplLink">doc</span></a></li><li title="com.spotify.scio.avro.types.SchemaUtil"><a class="tplshow" href="com/spotify/scio/avro/types/SchemaUtil$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">SchemaUtil</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li></ol>
-          </li><li class="pack" title="com.spotify.scio.bigquery">
-            <a class="tplshow" href="com/spotify/scio/bigquery/package.html" target="template">com.spotify.scio.bigquery</a>
-            <ol class="templates"><li title="com.spotify.scio.bigquery.BigQueryClient"><a class="tplshow" href="com/spotify/scio/bigquery/BigQueryClient$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/bigquery/BigQueryClient.html" target="template"><span class="class">(class)</span><span class="tplLink">BigQueryClient</span></a></li><li title="com.spotify.scio.bigquery.BigQueryUtil"><a class="tplshow" href="com/spotify/scio/bigquery/BigQueryUtil$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">BigQueryUtil</span></a></li><li title="com.spotify.scio.bigquery.Date"><a class="tplshow" href="com/spotify/scio/bigquery/package$$Date$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">Date</span></a></li><li title="com.spotify.scio.bigquery.DateTime"><a class="tplshow" href="com/spotify/scio/bigquery/package$$DateTime$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">DateTime</span></a></li><li title="com.spotify.scio.bigquery.MockBigQuery"><a class="tplshow" href="com/spotify/scio/bigquery/MockBigQuery$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/bigquery/MockBigQuery.html" target="template"><span class="class">(class)</span><span class="tplLink">MockBigQuery</span></a></li><li title="com.spotify.scio.bigquery.MockTable"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/bigquery/MockTable.html" target="template"><span class="class">(class)</span><span class="tplLink">MockTable</span></a></li><li title="com.spotify.scio.bigquery.RichTableRow"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/bigquery/package$$RichTableRow.html" target="template"><span class="class">(class)</span><span class="tplLink">RichTableRow</span></a></li><li title="com.spotify.scio.bigquery.TableRow"><a class="tplshow" href="com/spotify/scio/bigquery/package$$TableRow$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">TableRow</span></a></li><li title="com.spotify.scio.bigquery.Time"><a class="tplshow" href="com/spotify/scio/bigquery/package$$Time$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">Time</span></a></li><li title="com.spotify.scio.bigquery.Timestamp"><a class="tplshow" href="com/spotify/scio/bigquery/package$$Timestamp$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">Timestamp</span></a></li></ol>
-            <ol class="packages"> <li class="pack" title="com.spotify.scio.bigquery.types">
-            <a class="tplshow" href="com/spotify/scio/bigquery/types/package.html" target="template">com.spotify.scio.bigquery.types</a>
-            <ol class="templates"><li title="com.spotify.scio.bigquery.types.BigQueryType"><a class="tplshow" href="com/spotify/scio/bigquery/types/BigQueryType$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/bigquery/types/BigQueryType.html" target="template"><span class="class">(class)</span><span class="tplLink">BigQueryType</span></a></li><li title="com.spotify.scio.bigquery.types.description"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/bigquery/types/package$$description.html" target="template"><span class="class">(class)</span><span class="tplLink">description</span></a></li><li title="com.spotify.scio.bigquery.types.SchemaUtil"><a class="tplshow" href="com/spotify/scio/bigquery/types/SchemaUtil$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">SchemaUtil</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li></ol>
-          </li><li class="pack" title="com.spotify.scio.bigtable">
-            <a class="tplshow" href="com/spotify/scio/bigtable/package.html" target="template">com.spotify.scio.bigtable</a>
-            <ol class="templates"><li title="com.spotify.scio.bigtable.BigtableInput"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/bigtable/package$$BigtableInput.html" target="template"><span class="case class">(case class)</span><span class="tplLink">BigtableInput</span></a></li><li title="com.spotify.scio.bigtable.BigtableOutput"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/bigtable/package$$BigtableOutput.html" target="template"><span class="case class">(case class)</span><span class="tplLink">BigtableOutput</span></a></li><li title="com.spotify.scio.bigtable.BigtableScioContext"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/bigtable/package$$BigtableScioContext.html" target="template"><span class="class">(class)</span><span class="tplLink">BigtableScioContext</span></a></li><li title="com.spotify.scio.bigtable.BigtableSCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/bigtable/package$$BigtableSCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">BigtableSCollection</span></a></li><li title="com.spotify.scio.bigtable.BigtableUtil"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/bigtable/BigtableUtil.html" target="template"><span class="class">(class)</span><span class="tplLink">BigtableUtil</span></a></li><li title="com.spotify.scio.bigtable.ChannelPoolCreator"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/bigtable/ChannelPoolCreator.html" target="template"><span class="class">(class)</span><span class="tplLink">ChannelPoolCreator</span></a></li><li title="com.spotify.scio.bigtable.Mutations"><a class="tplshow" href="com/spotify/scio/bigtable/Mutations$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">Mutations</span></a></li><li title="com.spotify.scio.bigtable.RichRow"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/bigtable/package$$RichRow.html" target="template"><span class="class">(class)</span><span class="tplLink">RichRow</span></a></li><li title="com.spotify.scio.bigtable.Rows"><a class="tplshow" href="com/spotify/scio/bigtable/Rows$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">Rows</span></a></li><li title="com.spotify.scio.bigtable.TableAdmin"><a class="tplshow" href="com/spotify/scio/bigtable/TableAdmin$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">TableAdmin</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.cassandra">
-            <a class="tplshow" href="com/spotify/scio/cassandra/package.html" target="template">com.spotify.scio.cassandra</a>
-            <ol class="templates"><li title="com.spotify.scio.cassandra.CassandraIO"><a class="tplshow" href="com/spotify/scio/cassandra/package$$CassandraIO$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/cassandra/package$$CassandraIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">CassandraIO</span></a></li><li title="com.spotify.scio.cassandra.CassandraOptions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/cassandra/package$$CassandraOptions.html" target="template"><span class="case class">(case class)</span><span class="tplLink">CassandraOptions</span></a></li><li title="com.spotify.scio.cassandra.CassandraSCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/cassandra/package$$CassandraSCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">CassandraSCollection</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.coders">
-            <a class="tplshow" href="com/spotify/scio/coders/package.html" target="template">com.spotify.scio.coders</a>
-            <ol class="templates"><li title="com.spotify.scio.coders.AnnotatedKryoRegistrar"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/coders/AnnotatedKryoRegistrar.html" target="template"><span class="trait">(trait)</span><span class="tplLink">AnnotatedKryoRegistrar</span></a></li><li title="com.spotify.scio.coders.FloatCoder"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/coders/FloatCoder.html" target="template"><span class="class">(class)</span><span class="tplLink">FloatCoder</span></a></li><li title="com.spotify.scio.coders.JodaLocalDateSerializer"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/coders/JodaLocalDateSerializer.html" target="template"><span class="class">(class)</span><span class="tplLink">JodaLocalDateSerializer</span></a></li><li title="com.spotify.scio.coders.JodaLocalDateTimeSerializer"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/coders/JodaLocalDateTimeSerializer.html" target="template"><span class="class">(class)</span><span class="tplLink">JodaLocalDateTimeSerializer</span></a></li><li title="com.spotify.scio.coders.KryoRegistrar"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/coders/KryoRegistrar.html" target="template"><span class="class">(class)</span><span class="tplLink">KryoRegistrar</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.elasticsearch">
-            <a class="tplshow" href="com/spotify/scio/elasticsearch/package.html" target="template">com.spotify.scio.elasticsearch</a>
-            <ol class="templates"><li title="com.spotify.scio.elasticsearch.ElasticsearchIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/elasticsearch/package$$ElasticsearchIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">ElasticsearchIO</span></a></li><li title="com.spotify.scio.elasticsearch.ElasticsearchOptions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/elasticsearch/package$$ElasticsearchOptions.html" target="template"><span class="case class">(case class)</span><span class="tplLink">ElasticsearchOptions</span></a></li><li title="com.spotify.scio.elasticsearch.ElasticsearchSCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/elasticsearch/package$$ElasticsearchSCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">ElasticsearchSCollection</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.extra">
-            <a class="tplshow" href="com/spotify/scio/extra/package.html" target="template">com.spotify.scio.extra</a>
-            <ol class="templates"><li title="com.spotify.scio.extra.Breeze"><a class="tplshow" href="com/spotify/scio/extra/Breeze$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">Breeze</span></a></li><li title="com.spotify.scio.extra.Collections"><a class="tplshow" href="com/spotify/scio/extra/Collections$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">Collections</span></a></li><li title="com.spotify.scio.extra.Iterators"><a class="tplshow" href="com/spotify/scio/extra/Iterators$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">Iterators</span></a></li></ol>
-            <ol class="packages"> <li class="pack" title="com.spotify.scio.extra.checkpoint">
-            <a class="tplshow" href="com/spotify/scio/extra/checkpoint/package.html" target="template">com.spotify.scio.extra.checkpoint</a>
-            <ol class="templates"><li title="com.spotify.scio.extra.checkpoint.CheckpointScioContext"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/checkpoint/package$$CheckpointScioContext.html" target="template"><span class="class">(class)</span><span class="tplLink">CheckpointScioContext</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.extra.json">
-            <a class="tplshow" href="com/spotify/scio/extra/json/package.html" target="template">com.spotify.scio.extra.json</a>
-            <ol class="templates"><li title="com.spotify.scio.extra.json.DecodeError"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/json/package$$DecodeError.html" target="template"><span class="case class">(case class)</span><span class="tplLink">DecodeError</span></a></li><li title="com.spotify.scio.extra.json.JsonIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/json/package$$JsonIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JsonIO</span></a></li><li title="com.spotify.scio.extra.json.JsonScioContext"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/json/package$$JsonScioContext.html" target="template"><span class="class">(class)</span><span class="tplLink">JsonScioContext</span></a></li><li title="com.spotify.scio.extra.json.JsonSCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/json/package$$JsonSCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">JsonSCollection</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.extra.libsvm">
-            <a class="tplshow" href="com/spotify/scio/extra/libsvm/package.html" target="template">com.spotify.scio.extra.libsvm</a>
-            <ol class="templates"><li title="com.spotify.scio.extra.libsvm.SVMReader"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/libsvm/package$$SVMReader.html" target="template"><span class="class">(class)</span><span class="tplLink">SVMReader</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.extra.nn">
-            <a class="tplshow" href="com/spotify/scio/extra/nn/package.html" target="template">com.spotify.scio.extra.nn</a>
-            <ol class="templates"><li title="com.spotify.scio.extra.nn.NearestNeighbor"><a class="tplshow" href="com/spotify/scio/extra/nn/NearestNeighbor$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/extra/nn/NearestNeighbor.html" target="template"><span class="trait">(trait)</span><span class="tplLink">NearestNeighbor</span></a></li><li title="com.spotify.scio.extra.nn.NearestNeighborBuilder"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/nn/NearestNeighborBuilder.html" target="template"><span class="trait">(trait)</span><span class="tplLink">NearestNeighborBuilder</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.extra.sparkey">
-            <a class="tplshow" href="com/spotify/scio/extra/sparkey/package.html" target="template">com.spotify.scio.extra.sparkey</a>
-            <ol class="templates"><li title="com.spotify.scio.extra.sparkey.RichStringSparkeyReader"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/sparkey/package$$RichStringSparkeyReader.html" target="template"><span class="class">(class)</span><span class="tplLink">RichStringSparkeyReader</span></a></li><li title="com.spotify.scio.extra.sparkey.SparkeyPairSCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/sparkey/package$$SparkeyPairSCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">SparkeyPairSCollection</span></a></li><li title="com.spotify.scio.extra.sparkey.SparkeyScioContext"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/sparkey/package$$SparkeyScioContext.html" target="template"><span class="class">(class)</span><span class="tplLink">SparkeyScioContext</span></a></li><li title="com.spotify.scio.extra.sparkey.SparkeySCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/sparkey/package$$SparkeySCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">SparkeySCollection</span></a></li><li title="com.spotify.scio.extra.sparkey.SparkeyUri"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/sparkey/SparkeyUri.html" target="template"><span class="trait">(trait)</span><span class="tplLink">SparkeyUri</span></a></li><li title="com.spotify.scio.extra.sparkey.SparkeyWritable"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/sparkey/package$$SparkeyWritable.html" target="template"><span class="trait">(trait)</span><span class="tplLink">SparkeyWritable</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.extra.transforms">
-            <a class="tplshow" href="com/spotify/scio/extra/transforms/package.html" target="template">com.spotify.scio.extra.transforms</a>
-            <ol class="templates"><li title="com.spotify.scio.extra.transforms.BaseAsyncDoFn"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/transforms/BaseAsyncDoFn.html" target="template"><span class="class">(class)</span><span class="tplLink">BaseAsyncDoFn</span></a></li><li title="com.spotify.scio.extra.transforms.DoFnWithResource"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/transforms/DoFnWithResource.html" target="template"><span class="class">(class)</span><span class="tplLink">DoFnWithResource</span></a></li><li title="com.spotify.scio.extra.transforms.FileDownloadDoFn"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/transforms/FileDownloadDoFn.html" target="template"><span class="class">(class)</span><span class="tplLink">FileDownloadDoFn</span></a></li><li title="com.spotify.scio.extra.transforms.GuavaAsyncDoFn"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/transforms/GuavaAsyncDoFn.html" target="template"><span class="class">(class)</span><span class="tplLink">GuavaAsyncDoFn</span></a></li><li title="com.spotify.scio.extra.transforms.JavaAsyncDoFn"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/transforms/JavaAsyncDoFn.html" target="template"><span class="class">(class)</span><span class="tplLink">JavaAsyncDoFn</span></a></li><li title="com.spotify.scio.extra.transforms.PipeDoFn"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/transforms/PipeDoFn.html" target="template"><span class="class">(class)</span><span class="tplLink">PipeDoFn</span></a></li><li title="com.spotify.scio.extra.transforms.PipeSCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/transforms/package$$PipeSCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">PipeSCollection</span></a></li><li title="com.spotify.scio.extra.transforms.RateLimiterDoFn"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/transforms/RateLimiterDoFn.html" target="template"><span class="class">(class)</span><span class="tplLink">RateLimiterDoFn</span></a></li><li title="com.spotify.scio.extra.transforms.RateLimitingSCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/transforms/package$$RateLimitingSCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">RateLimitingSCollection</span></a></li><li title="com.spotify.scio.extra.transforms.ScalaAsyncDoFn"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/transforms/ScalaAsyncDoFn.html" target="template"><span class="class">(class)</span><span class="tplLink">ScalaAsyncDoFn</span></a></li><li title="com.spotify.scio.extra.transforms.URISCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/extra/transforms/package$$URISCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">URISCollection</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li></ol>
-          </li><li class="pack" title="com.spotify.scio.hdfs">
-            <a class="tplshow" href="com/spotify/scio/hdfs/package.html" target="template">com.spotify.scio.hdfs</a>
-            <ol class="templates"><li title="com.spotify.scio.hdfs.HdfsAvroTap"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/hdfs/package$$HdfsAvroTap.html" target="template"><span class="case class">(case class)</span><span class="tplLink">HdfsAvroTap</span></a></li><li title="com.spotify.scio.hdfs.HdfsScioContext"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/hdfs/package$$HdfsScioContext.html" target="template"><span class="class">(class)</span><span class="tplLink">HdfsScioContext</span></a></li><li title="com.spotify.scio.hdfs.HdfsSCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/hdfs/package$$HdfsSCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">HdfsSCollection</span></a></li><li title="com.spotify.scio.hdfs.HdfsTaps"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/hdfs/package$$HdfsTaps.html" target="template"><span class="class">(class)</span><span class="tplLink">HdfsTaps</span></a></li><li title="com.spotify.scio.hdfs.HdfsTextTap"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/hdfs/package$$HdfsTextTap.html" target="template"><span class="case class">(case class)</span><span class="tplLink">HdfsTextTap</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.io">
-            <a class="tplshow" href="com/spotify/scio/io/package.html" target="template">com.spotify.scio.io</a>
-            <ol class="templates"><li title="com.spotify.scio.io.AvroTap"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/io/AvroTap.html" target="template"><span class="case class">(case class)</span><span class="tplLink">AvroTap</span></a></li><li title="com.spotify.scio.io.BigQueryTap"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/io/BigQueryTap.html" target="template"><span class="case class">(case class)</span><span class="tplLink">BigQueryTap</span></a></li><li title="com.spotify.scio.io.HdfsFileStorage"><a class="tplshow" href="com/spotify/scio/io/HdfsFileStorage$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">HdfsFileStorage</span></a></li><li title="com.spotify.scio.io.ObjectFileTap"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/io/ObjectFileTap.html" target="template"><span class="case class">(case class)</span><span class="tplLink">ObjectFileTap</span></a></li><li title="com.spotify.scio.io.TableRowJsonTap"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/io/TableRowJsonTap.html" target="template"><span class="case class">(case class)</span><span class="tplLink">TableRowJsonTap</span></a></li><li title="com.spotify.scio.io.Tap"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/io/Tap.html" target="template"><span class="trait">(trait)</span><span class="tplLink">Tap</span></a></li><li title="com.spotify.scio.io.TapNotAvailableException"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/io/TapNotAvailableException.html" target="template"><span class="class">(class)</span><span class="tplLink">TapNotAvailableException</span></a></li><li title="com.spotify.scio.io.Taps"><a class="tplshow" href="com/spotify/scio/io/Taps$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/io/Taps.html" target="template"><span class="trait">(trait)</span><span class="tplLink">Taps</span></a></li><li title="com.spotify.scio.io.TextTap"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/io/TextTap.html" target="template"><span class="case class">(case class)</span><span class="tplLink">TextTap</span></a></li><li title="com.spotify.scio.io.TFFileStorageFunctions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/io/TFFileStorageFunctions.html" target="template"><span class="class">(class)</span><span class="tplLink">TFFileStorageFunctions</span></a></li><li title="com.spotify.scio.io.TFRecordFileTap"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/io/TFRecordFileTap.html" target="template"><span class="case class">(case class)</span><span class="tplLink">TFRecordFileTap</span></a></li><li title="com.spotify.scio.io.TFRecordOptions"><a class="tplshow" href="com/spotify/scio/io/TFRecordOptions$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/io/TFRecordOptions.html" target="template"><span class="case class">(case class)</span><span class="tplLink">TFRecordOptions</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.jdbc">
-            <a class="tplshow" href="com/spotify/scio/jdbc/package.html" target="template">com.spotify.scio.jdbc</a>
-            <ol class="templates"><li title="com.spotify.scio.jdbc.CloudSqlOptions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/jdbc/CloudSqlOptions.html" target="template"><span class="trait">(trait)</span><span class="tplLink">CloudSqlOptions</span></a></li><li title="com.spotify.scio.jdbc.CloudSqlOptionsRegistrar"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/jdbc/CloudSqlOptionsRegistrar.html" target="template"><span class="class">(class)</span><span class="tplLink">CloudSqlOptionsRegistrar</span></a></li><li title="com.spotify.scio.jdbc.JdbcConnectionOptions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/jdbc/package$$JdbcConnectionOptions.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JdbcConnectionOptions</span></a></li><li title="com.spotify.scio.jdbc.JdbcIO"><a class="tplshow" href="com/spotify/scio/jdbc/package$$JdbcIO$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/jdbc/package$$JdbcIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JdbcIO</span></a></li><li title="com.spotify.scio.jdbc.JdbcIoOptions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/jdbc/package$$JdbcIoOptions.html" target="template"><span class="trait">(trait)</span><span class="tplLink">JdbcIoOptions</span></a></li><li title="com.spotify.scio.jdbc.JdbcReadOptions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/jdbc/package$$JdbcReadOptions.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JdbcReadOptions</span></a></li><li title="com.spotify.scio.jdbc.JdbcScioContext"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/jdbc/package$$JdbcScioContext.html" target="template"><span class="class">(class)</span><span class="tplLink">JdbcScioContext</span></a></li><li title="com.spotify.scio.jdbc.JdbcSCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/jdbc/package$$JdbcSCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">JdbcSCollection</span></a></li><li title="com.spotify.scio.jdbc.JdbcWriteOptions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/jdbc/package$$JdbcWriteOptions.html" target="template"><span class="case class">(case class)</span><span class="tplLink">JdbcWriteOptions</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.metrics">
-            <a class="tplshow" href="com/spotify/scio/metrics/package.html" target="template">com.spotify.scio.metrics</a>
-            <ol class="templates"><li title="com.spotify.scio.metrics.AccumulatorMetrics"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/metrics/package$$AccumulatorMetrics.html" target="template"><span class="case class">(case class)</span><span class="tplLink">AccumulatorMetrics</span></a></li><li title="com.spotify.scio.metrics.AccumulatorStepsValue"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/metrics/package$$AccumulatorStepsValue.html" target="template"><span class="case class">(case class)</span><span class="tplLink">AccumulatorStepsValue</span></a></li><li title="com.spotify.scio.metrics.AccumulatorStepValue"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/metrics/package$$AccumulatorStepValue.html" target="template"><span class="case class">(case class)</span><span class="tplLink">AccumulatorStepValue</span></a></li><li title="com.spotify.scio.metrics.AccumulatorValue"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/metrics/package$$AccumulatorValue.html" target="template"><span class="case class">(case class)</span><span class="tplLink">AccumulatorValue</span></a></li><li title="com.spotify.scio.metrics.DFMetricName"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/metrics/package$$DFMetricName.html" target="template"><span class="case class">(case class)</span><span class="tplLink">DFMetricName</span></a></li><li title="com.spotify.scio.metrics.DFServiceMetrics"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/metrics/package$$DFServiceMetrics.html" target="template"><span class="case class">(case class)</span><span class="tplLink">DFServiceMetrics</span></a></li><li title="com.spotify.scio.metrics.Metrics"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/metrics/package$$Metrics.html" target="template"><span class="case class">(case class)</span><span class="tplLink">Metrics</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.options">
-            <a class="tplshow" href="com/spotify/scio/options/package.html" target="template">com.spotify.scio.options</a>
-            <ol class="templates"><li title="com.spotify.scio.options.ScioOptions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/options/ScioOptions.html" target="template"><span class="trait">(trait)</span><span class="tplLink">ScioOptions</span></a></li><li title="com.spotify.scio.options.ScioOptionsRegistrar"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/options/ScioOptionsRegistrar.html" target="template"><span class="class">(class)</span><span class="tplLink">ScioOptionsRegistrar</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.testing">
-            <a class="tplshow" href="com/spotify/scio/testing/package.html" target="template">com.spotify.scio.testing</a>
-            <ol class="templates"><li title="com.spotify.scio.testing.AvroIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/AvroIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">AvroIO</span></a></li><li title="com.spotify.scio.testing.BigQueryIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/BigQueryIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">BigQueryIO</span></a></li><li title="com.spotify.scio.testing.CustomIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/CustomIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">CustomIO</span></a></li><li title="com.spotify.scio.testing.DatastoreIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/DatastoreIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">DatastoreIO</span></a></li><li title="com.spotify.scio.testing.DistCacheIO"><a class="tplshow" href="com/spotify/scio/testing/DistCacheIO$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/testing/DistCacheIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">DistCacheIO</span></a></li><li title="com.spotify.scio.testing.JobTest"><a class="tplshow" href="com/spotify/scio/testing/JobTest$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">JobTest</span></a></li><li title="com.spotify.scio.testing.ObjectFileIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/ObjectFileIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">ObjectFileIO</span></a></li><li title="com.spotify.scio.testing.PipelineSpec"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/PipelineSpec.html" target="template"><span class="trait">(trait)</span><span class="tplLink">PipelineSpec</span></a></li><li title="com.spotify.scio.testing.PipelineTestUtils"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/PipelineTestUtils.html" target="template"><span class="trait">(trait)</span><span class="tplLink">PipelineTestUtils</span></a></li><li title="com.spotify.scio.testing.ProtobufIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/ProtobufIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">ProtobufIO</span></a></li><li title="com.spotify.scio.testing.PubsubIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/PubsubIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">PubsubIO</span></a></li><li title="com.spotify.scio.testing.RunEnforcementJobTest"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/RunEnforcementJobTest.html" target="template"><span class="trait">(trait)</span><span class="tplLink">RunEnforcementJobTest</span></a></li><li title="com.spotify.scio.testing.SCollectionMatchers"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/SCollectionMatchers.html" target="template"><span class="trait">(trait)</span><span class="tplLink">SCollectionMatchers</span></a></li><li title="com.spotify.scio.testing.TableRowJsonIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/TableRowJsonIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">TableRowJsonIO</span></a></li><li title="com.spotify.scio.testing.TestIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/TestIO.html" target="template"><span class="class">(class)</span><span class="tplLink">TestIO</span></a></li><li title="com.spotify.scio.testing.TestStreamScioContext"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/package$$TestStreamScioContext.html" target="template"><span class="class">(class)</span><span class="tplLink">TestStreamScioContext</span></a></li><li title="com.spotify.scio.testing.TextIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/TextIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">TextIO</span></a></li><li title="com.spotify.scio.testing.TFRecordIO"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/testing/TFRecordIO.html" target="template"><span class="case class">(case class)</span><span class="tplLink">TFRecordIO</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.util">
-            <a class="tplshow" href="com/spotify/scio/util/package.html" target="template">com.spotify.scio.util</a>
-            <ol class="templates"><li title="com.spotify.scio.util.InnerClosureFinder"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/util/InnerClosureFinder.html" target="template"><span class="class">(class)</span><span class="tplLink">InnerClosureFinder</span></a></li><li title="com.spotify.scio.util.MultiJoin"><a class="tplshow" href="com/spotify/scio/util/MultiJoin$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/util/MultiJoin.html" target="template"><span class="trait">(trait)</span><span class="tplLink">MultiJoin</span></a></li><li title="com.spotify.scio.util.RemoteFileUtil"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/util/RemoteFileUtil.html" target="template"><span class="class">(class)</span><span class="tplLink">RemoteFileUtil</span></a></li><li title="com.spotify.scio.util.StatCounter"><a class="tplshow" href="com/spotify/scio/util/StatCounter$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/util/StatCounter.html" target="template"><span class="class">(class)</span><span class="tplLink">StatCounter</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li><li class="pack" title="com.spotify.scio.values">
-            <a class="tplshow" href="com/spotify/scio/values/package.html" target="template">com.spotify.scio.values</a>
-            <ol class="templates"><li title="com.spotify.scio.values.Accumulator"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/Accumulator.html" target="template"><span class="trait">(trait)</span><span class="tplLink">Accumulator</span></a></li><li title="com.spotify.scio.values.AccumulatorContext"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/AccumulatorContext.html" target="template"><span class="class">(class)</span><span class="tplLink">AccumulatorContext</span></a></li><li title="com.spotify.scio.values.AccumulatorType"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/AccumulatorType.html" target="template"><span class="trait">(trait)</span><span class="tplLink">AccumulatorType</span></a></li><li title="com.spotify.scio.values.DistCache"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/DistCache.html" target="template"><span class="trait">(trait)</span><span class="tplLink">DistCache</span></a></li><li title="com.spotify.scio.values.DoubleSCollectionFunctions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/DoubleSCollectionFunctions.html" target="template"><span class="class">(class)</span><span class="tplLink">DoubleSCollectionFunctions</span></a></li><li title="com.spotify.scio.values.MockDistCache"><a class="tplshow" href="com/spotify/scio/values/MockDistCache$.html" target="template"><span class="object">(object)</span><div class="placeholder"></div><span class="tplLink">MockDistCache</span></a></li><li title="com.spotify.scio.values.PairSCollectionFunctions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/PairSCollectionFunctions.html" target="template"><span class="class">(class)</span><span class="tplLink">PairSCollectionFunctions</span></a></li><li title="com.spotify.scio.values.SCollection"><a class="tplshow" href="com/spotify/scio/values/SCollection$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/values/SCollection.html" target="template"><span class="trait">(trait)</span><span class="tplLink">SCollection</span></a></li><li title="com.spotify.scio.values.SCollectionWithAccumulator"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/SCollectionWithAccumulator.html" target="template"><span class="class">(class)</span><span class="tplLink">SCollectionWithAccumulator</span></a></li><li title="com.spotify.scio.values.SCollectionWithFanout"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/SCollectionWithFanout.html" target="template"><span class="class">(class)</span><span class="tplLink">SCollectionWithFanout</span></a></li><li title="com.spotify.scio.values.SCollectionWithHotKeyFanout"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/SCollectionWithHotKeyFanout.html" target="template"><span class="class">(class)</span><span class="tplLink">SCollectionWithHotKeyFanout</span></a></li><li title="com.spotify.scio.values.SCollectionWithSideInput"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/SCollectionWithSideInput.html" target="template"><span class="class">(class)</span><span class="tplLink">SCollectionWithSideInput</span></a></li><li title="com.spotify.scio.values.SCollectionWithSideOutput"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/SCollectionWithSideOutput.html" target="template"><span class="class">(class)</span><span class="tplLink">SCollectionWithSideOutput</span></a></li><li title="com.spotify.scio.values.SideInput"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/SideInput.html" target="template"><span class="trait">(trait)</span><span class="tplLink">SideInput</span></a></li><li title="com.spotify.scio.values.SideInputContext"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/SideInputContext.html" target="template"><span class="class">(class)</span><span class="tplLink">SideInputContext</span></a></li><li title="com.spotify.scio.values.SideOutput"><a class="tplshow" href="com/spotify/scio/values/SideOutput$.html" target="template"><span class="object">(object)</span></a><a class="tplshow" href="com/spotify/scio/values/SideOutput.html" target="template"><span class="trait">(trait)</span><span class="tplLink">SideOutput</span></a></li><li title="com.spotify.scio.values.SideOutputCollections"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/SideOutputCollections.html" target="template"><span class="class">(class)</span><span class="tplLink">SideOutputCollections</span></a></li><li title="com.spotify.scio.values.SideOutputContext"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/SideOutputContext.html" target="template"><span class="class">(class)</span><span class="tplLink">SideOutputContext</span></a></li><li title="com.spotify.scio.values.TensorFlowSCollectionFunctions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/TensorFlowSCollectionFunctions.html" target="template"><span class="class">(class)</span><span class="tplLink">TensorFlowSCollectionFunctions</span></a></li><li title="com.spotify.scio.values.TFRecordSCollectionFunctions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/TFRecordSCollectionFunctions.html" target="template"><span class="class">(class)</span><span class="tplLink">TFRecordSCollectionFunctions</span></a></li><li title="com.spotify.scio.values.TransformNameable"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/TransformNameable.html" target="template"><span class="trait">(trait)</span><span class="tplLink">TransformNameable</span></a></li><li title="com.spotify.scio.values.WindowedSCollection"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/WindowedSCollection.html" target="template"><span class="class">(class)</span><span class="tplLink">WindowedSCollection</span></a></li><li title="com.spotify.scio.values.WindowedValue"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/WindowedValue.html" target="template"><span class="case class">(case class)</span><span class="tplLink">WindowedValue</span></a></li><li title="com.spotify.scio.values.WindowOptions"><div class="placeholder"></div><a class="tplshow" href="com/spotify/scio/values/WindowOptions.html" target="template"><span class="case class">(case class)</span><span class="tplLink">WindowOptions</span></a></li></ol>
-            <ol class="packages"> </ol>
-          </li></ol>
-          </li></ol>
-          </li></ol>
-          </li></ol>
-          </div></div><script src="index.js"></script>
+      <div id="search">
+        <span id="doc-title"><span id="doc-version"></span></span>
+        <span class="close-results"><span class="left">&lt;</span> Back</span>
+        <div id="textfilter">
+          <span class="input">
+            <input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/" />
+            <i class="clear material-icons"></i>
+            <i id="search-icon" class="material-icons"></i>
+          </span>
+        </div>
     </div>
-      <div id="content" class="ui-layout-center">
-        <iframe id="template" name="template" src="package.html"></iframe>
+      <div id="search-results">
+        <div id="search-progress">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="results-content">
+          <div id="entity-results"></div>
+          <div id="member-results"></div>
+        </div>
+      </div>
+      <div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;">
+        <div id="content-container" style="-webkit-overflow-scrolling: touch;">
+          <div id="subpackage-spacer">
+            <div id="packages">
+              <h1>Packages</h1>
+              <ul>
+                <li name="_root_.root" visbl="pub" class="indented0 current" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="_root_"></a><a id="root:_root_"></a>
+      <span class="permalink">
+      <a href="index.html#_root_" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">root</span>
+      </span>
+      
+      
+    </li><li name="_root_.com" visbl="pub" class="indented1 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="com"></a><a id="com:com"></a>
+      <span class="permalink">
+      <a href="index.html#com" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="com/index.html">
+              <span class="name">com</span>
+            </a>
+      </span>
+      
+      
+    </li>
+              </ul>
+            </div>
+          </div>
+          <div id="content">
+            <body class="package value">
+      <div id="definition">
+        <div class="big-circle package">p</div>
+        
+        <h1>root package<span class="permalink">
+      <a href="index.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span></h1>
+        
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">root</span>
+      </span>
+      </h4>
+
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+    </body>
+          </div>
+        </div>
       </div>
     </body>
       </html>
