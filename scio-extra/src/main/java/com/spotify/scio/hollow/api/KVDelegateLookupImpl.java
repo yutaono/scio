@@ -13,20 +13,12 @@ public class KVDelegateLookupImpl extends HollowObjectAbstractDelegate implement
         this.typeAPI = typeAPI;
     }
 
-    public String getKey(int ordinal) {
+    public byte[] getKey(int ordinal) {
         return typeAPI.getKey(ordinal);
     }
 
-    public boolean isKeyEqual(int ordinal, String testValue) {
-        return typeAPI.isKeyEqual(ordinal, testValue);
-    }
-
-    public String getValue(int ordinal) {
+    public byte[] getValue(int ordinal) {
         return typeAPI.getValue(ordinal);
-    }
-
-    public boolean isValueEqual(int ordinal, String testValue) {
-        return typeAPI.isValueEqual(ordinal, testValue);
     }
 
     public KVTypeAPI getTypeAPI() {

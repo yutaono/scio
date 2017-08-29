@@ -9,8 +9,8 @@ import com.netflix.hollow.api.objects.delegate.HollowCachedDelegate;
 @SuppressWarnings("all")
 public class KVDelegateCachedImpl extends HollowObjectAbstractDelegate implements HollowCachedDelegate, KVDelegate {
 
-    private final String key;
-    private final String value;
+    private final byte[] key;
+    private final byte[] value;
    private KVTypeAPI typeAPI;
 
     public KVDelegateCachedImpl(KVTypeAPI typeAPI, int ordinal) {
@@ -19,24 +19,12 @@ public class KVDelegateCachedImpl extends HollowObjectAbstractDelegate implement
         this.typeAPI = typeAPI;
     }
 
-    public String getKey(int ordinal) {
+    public byte[] getKey(int ordinal) {
         return key;
     }
 
-    public boolean isKeyEqual(int ordinal, String testValue) {
-        if(testValue == null)
-            return key == null;
-        return testValue.equals(key);
-    }
-
-    public String getValue(int ordinal) {
+    public byte[] getValue(int ordinal) {
         return value;
-    }
-
-    public boolean isValueEqual(int ordinal, String testValue) {
-        if(testValue == null)
-            return value == null;
-        return testValue.equals(value);
     }
 
     @Override

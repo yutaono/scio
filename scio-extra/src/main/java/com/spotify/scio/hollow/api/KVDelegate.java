@@ -6,13 +6,9 @@ import com.netflix.hollow.api.objects.delegate.HollowObjectDelegate;
 @SuppressWarnings("all")
 public interface KVDelegate extends HollowObjectDelegate {
 
-    public String getKey(int ordinal);
+    public byte[] getKey(int ordinal);
 
-    public boolean isKeyEqual(int ordinal, String testValue);
-
-    public String getValue(int ordinal);
-
-    public boolean isValueEqual(int ordinal, String testValue);
+    public byte[] getValue(int ordinal);
 
     public KVTypeAPI getTypeAPI();
 

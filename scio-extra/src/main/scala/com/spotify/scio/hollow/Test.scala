@@ -20,20 +20,9 @@ package com.spotify.scio.hollow
 import java.io.File
 import java.util.logging.{Level, Logger}
 
-import com.netflix.hollow.api.codegen.HollowAPIGenerator
-import com.netflix.hollow.api.consumer.HollowConsumer
-import com.netflix.hollow.api.consumer.fs.{HollowFilesystemAnnouncementWatcher, HollowFilesystemBlobRetriever}
-import com.netflix.hollow.api.producer.HollowProducer
-import com.netflix.hollow.api.producer.HollowProducer.Populator
-import com.netflix.hollow.api.producer.fs.{HollowFilesystemAnnouncer, HollowFilesystemPublisher}
-import com.netflix.hollow.core.write.HollowWriteStateEngine
-import com.netflix.hollow.core.write.objectmapper.HollowObjectMapper
-import com.spotify.scio.hollow.api.{KVAPI, KVPrimaryKeyIndex}
 import org.apache.commons.io.FileUtils
 
-import scala.collection.JavaConverters._
 import scala.concurrent.Future
-import scala.reflect.ClassTag
 
 object Test {
 
@@ -44,71 +33,36 @@ object Test {
   }
 
   def test(): Unit = {
-    //    val temp = Files.createTempDirectory("hollow-").toFile
-    val temp = new File("/tmp/hollow-temp")
-    FileUtils.deleteDirectory(temp)
-    println(temp.toString)
+//    val temp = Files.createTempDirectory("hollow-").toFile
+//    val temp = new File("/tmp/hollow-temp")
+//    FileUtils.deleteDirectory(temp)
+//    println(temp.toString)
+//    val storage = HollowStorage.forLocalFs(temp)
+
+    val storage = HollowStorage.forFs("gs://scio-playground-us/hollow")
+    val writer = new HollowKVWriter(storage)
 
     import scala.concurrent.ExecutionContext.Implicits.global
     Future {
       println("!!!!! FIRST WRITE")
-      write(temp, (1 to 100).map(x => (s"key$x", s"val$x")))
+      writer.write((1 to 100).map(x => (s"key$x".getBytes(), s"val$x".getBytes())))
 
-      Thread.sleep(3000)
+      Thread.sleep(5000)
 
       println("!!!!! SECOND WRITE")
-      write(temp, (1 to 105).map(x => (s"key$x", s"val$x")))
+      writer.write((1 to 105).map(x => (s"key$x".getBytes(), s"val$x".getBytes())))
     }
 
-    Thread.sleep(1000)
-    read(temp)
-  }
+    Thread.sleep(2000)
 
-  private def write(file: File, data: Seq[(String, String)]): Unit = {
-    val publisher = new HollowFilesystemPublisher(file)
-    val announcer = new HollowFilesystemAnnouncer(file)
-    val retriever = new HollowFilesystemBlobRetriever(file)
-    val watcher = new HollowFilesystemAnnouncementWatcher(file)
-
-    val producer = HollowProducer
-      .withPublisher(publisher)
-      .withAnnouncer(announcer)
-      .build()
-
-    producer.initializeDataModel(classOf[KV])
-    producer.restore(watcher.getLatestVersion, retriever)
-
-    producer.runCycle(new Populator {
-      override def populate(state: HollowProducer.WriteState): Unit = {
-        println(s"WRITE: prior state: ${state.getPriorState}, version: ${state.getVersion}")
-        data.foreach(kv => state.add(KV.of(kv._1, kv._2)))
-      }
-    })
-  }
-
-
-  private def read(file: File): Unit = {
-    val retriever = new HollowFilesystemBlobRetriever(file)
-    val watcher = new HollowFilesystemAnnouncementWatcher(file)
-
-    val consumer = HollowConsumer
-      .withBlobRetriever(retriever)
-      .withAnnouncementWatcher(watcher)
-      .withGeneratedAPIClass(classOf[KVAPI])
-      .build()
-
-    consumer.triggerRefresh()
-    val api = consumer.getAPI.asInstanceOf[KVAPI]
-
-    val idx = new KVPrimaryKeyIndex(consumer)
-
+    val reader = new HollowKVReader(storage)
     (1 to 5).foreach { x =>
       println(s"READ $x")
-      api.getAllKV.asScala
+      reader.iterable
         .takeRight(3)
-        .foreach(kv => println(kv.getKey, kv.getValue))
-      println(Option(idx.findMatch("key105")).map(kv => (kv.getKey, kv.getValue)))
-      Thread.sleep(1000)
+        .foreach(kv => println(new String(kv._1), new String(kv._2)))
+      println(reader.getString("key105"))
+      Thread.sleep(3000)
     }
   }
 

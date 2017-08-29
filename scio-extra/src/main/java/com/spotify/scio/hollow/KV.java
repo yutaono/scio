@@ -20,29 +20,29 @@ package com.spotify.scio.hollow;
 import com.netflix.hollow.core.write.objectmapper.HollowInline;
 import com.netflix.hollow.core.write.objectmapper.HollowPrimaryKey;
 
-@HollowPrimaryKey(fields="key")
+@HollowPrimaryKey(fields = "key")
 public class KV {
 
   @HollowInline
-  private final String key;
+  private final byte[] key;
 
   @HollowInline
-  private final String value;
+  private final byte[] value;
 
-  public static KV of(String key, String value) {
+  public static KV of(byte[] key, byte[] value) {
     return new KV(key, value);
   }
 
-  private KV(String key, String value) {
+  private KV(byte[] key, byte[] value) {
     this.key = key;
     this.value = value;
   }
 
-  public String getKey() {
+  public byte[] getKey() {
     return key;
   }
 
-  public String getValue() {
+  public byte[] getValue() {
     return value;
   }
 

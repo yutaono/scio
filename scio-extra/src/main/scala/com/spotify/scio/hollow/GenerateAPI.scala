@@ -25,22 +25,25 @@ object GenerateAPI {
 
   def main(args: Array[String]): Unit = {
     val pkg = "com.spotify.scio.hollow.api"
-    val cls = Thread.currentThread().getContextClassLoader.loadClass(args(0))
-    val api = cls.getSimpleName + "API"
 
-    // scalastyle:off regex
-    println(s"Generating API for $pkg.$api")
-    // scalastyle:on regex
+    for (clsName <- args) {
+      val cls = Thread.currentThread().getContextClassLoader.loadClass(clsName)
+      val api = cls.getSimpleName + "API"
 
-    val writeEngine = new HollowWriteStateEngine
-    val mapper = new HollowObjectMapper(writeEngine)
-    mapper.initializeTypeState(cls)
-    val generator = new HollowAPIGenerator.Builder()
-      .withAPIClassname(api)
-      .withPackageName(pkg)
-      .withDataModel(writeEngine)
-      .build()
-    generator.generateFiles("scio-extra/src/main/java/" + pkg.replaceAll("\\.", "/"))
+      // scalastyle:off regex
+      println(s"Generating API for $pkg.$api")
+      // scalastyle:on regex
+
+      val writeEngine = new HollowWriteStateEngine
+      val mapper = new HollowObjectMapper(writeEngine)
+      mapper.initializeTypeState(cls)
+      val generator = new HollowAPIGenerator.Builder()
+        .withAPIClassname(api)
+        .withPackageName(pkg)
+        .withDataModel(writeEngine)
+        .build()
+      generator.generateFiles("scio-extra/src/main/java/" + pkg.replaceAll("\\.", "/"))
+    }
   }
 
 }

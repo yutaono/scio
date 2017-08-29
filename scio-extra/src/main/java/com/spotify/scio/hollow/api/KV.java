@@ -10,20 +10,12 @@ public class KV extends HollowObject {
         super(delegate, ordinal);
     }
 
-    public String getKey() {
+    public byte[] getKey() {
         return delegate().getKey(ordinal);
     }
 
-    public boolean isKeyEqual(String testValue) {
-        return delegate().isKeyEqual(ordinal, testValue);
-    }
-
-    public String getValue() {
+    public byte[] getValue() {
         return delegate().getValue(ordinal);
-    }
-
-    public boolean isValueEqual(String testValue) {
-        return delegate().isValueEqual(ordinal, testValue);
     }
 
     public KVAPI api() {
