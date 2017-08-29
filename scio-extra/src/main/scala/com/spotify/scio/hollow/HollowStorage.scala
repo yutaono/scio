@@ -39,9 +39,9 @@ trait HollowStorage {
 
 object HollowStorage {
   def forLocalFs(directory: File): HollowStorage = new HollowLocalFsStorage(directory)
-  def forFs(directory: String): HollowStorage = {
+  def forFs(directory: String, watcherIntervalSeconds: Int = 60): HollowStorage = {
     FileSystems.setDefaultPipelineOptions(PipelineOptionsFactory.create())
-    new HollowFsStorage(FileSystems.matchNewResource(directory, true))
+    new HollowFsStorage(FileSystems.matchNewResource(directory, true), watcherIntervalSeconds)
   }
 }
 

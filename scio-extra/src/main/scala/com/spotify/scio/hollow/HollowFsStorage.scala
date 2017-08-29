@@ -35,7 +35,7 @@ import org.slf4j.LoggerFactory
 import scala.collection.JavaConverters._
 import scala.io.Source
 
-private class HollowFsStorage(val directory: ResourceId, watcherIntervalSeconds: Int = 60)
+private class HollowFsStorage(val directory: ResourceId, watcherIntervalSeconds: Int)
   extends HollowStorage {
   override def publisher: HollowProducer.Publisher = new HollowFsPublisher(directory)
   override def announcer: HollowProducer.Announcer = new HollowFsAnnouncer(directory)
