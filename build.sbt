@@ -415,6 +415,7 @@ lazy val scioExtra: Project = Project(
   commonSettings ++ itSettings,
   description := "Scio extra utilities",
   libraryDependencies ++= Seq(
+    "com.netflix.hollow" % "hollow" % "2.6.8",
     "com.spotify.sparkey" % "sparkey" % sparkeyVersion,
     "com.twitter" %% "algebird-core" % algebirdVersion,
     "org.scalanlp" %% "breeze" % breezeVersion,
