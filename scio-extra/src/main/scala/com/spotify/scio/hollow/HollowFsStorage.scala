@@ -35,11 +35,13 @@ import org.slf4j.LoggerFactory
 import scala.collection.JavaConverters._
 import scala.io.Source
 
-private class HollowFsStorage(val directory: ResourceId) extends HollowStorage {
+private class HollowFsStorage(val directory: ResourceId, watcherIntervalSeconds: Int = 60)
+  extends HollowStorage {
   override def publisher: HollowProducer.Publisher = new HollowFsPublisher(directory)
   override def announcer: HollowProducer.Announcer = new HollowFsAnnouncer(directory)
   override def retriever: HollowConsumer.BlobRetriever = new HollowFsRetriever(directory)
-  override def watcher: HollowConsumer.AnnouncementWatcher = new HollowFsWatcher(directory)
+  override def watcher: HollowConsumer.AnnouncementWatcher =
+    new HollowFsWatcher(directory, watcherIntervalSeconds)
 }
 
 private class HollowFsPublisher(val blobStoreDir: ResourceId) extends HollowProducer.Publisher {
@@ -145,7 +147,7 @@ private class HollowFsRetriever(val blobStoreDir: ResourceId) extends HollowCons
 }
 
 // scalastyle:off no.finalize
-private class HollowFsWatcher(val publishDir: ResourceId, intervalSeconds: Int = 1)
+private class HollowFsWatcher(val publishDir: ResourceId, intervalSeconds: Int)
   extends HollowConsumer.AnnouncementWatcher {
 
   private val logger = LoggerFactory.getLogger(this.getClass)
