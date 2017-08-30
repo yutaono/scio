@@ -154,7 +154,7 @@ private[scio] class KryoAtomicCoder[T] extends AtomicCoder[T] {
 
 }
 
-private[scio] object KryoAtomicCoder {
+/*private[scio]*/ object KryoAtomicCoder {
   def apply[T]: Coder[T] = new KryoAtomicCoder[T]
 
   private val kryo: ThreadLocal[Kryo] = new ThreadLocal[Kryo] {

@@ -18,8 +18,10 @@
 import java.util.UUID
 
 import com.spotify.scio._
-import com.spotify.scio.hollow.{HollowKVReader, HollowKVWriter, HollowStorage}
-import org.apache.beam.sdk.transforms.{DoFn, ParDo}
+import com.spotify.scio.coders.KryoAtomicCoder
+import com.spotify.scio.hollow.{HollowKVReader, HollowKVWriter, HollowStorage, KV}
+import org.apache.beam.sdk.coders.{KvCoder, VarIntCoder}
+import org.apache.beam.sdk.transforms.{DoFn, GroupByKey, ParDo}
 import org.apache.beam.sdk.transforms.DoFn.ProcessElement
 
 // scalastyle:off
@@ -54,6 +56,20 @@ object HollowTest {
   def write1(): Unit = {
     val args = baseArgs ++ s"--n=700 --out=$txt1".split("\\s+")
     HollowWriteTest1.main(args)
+  }
+}
+
+object ShuffleTest {
+  def main(argz: Array[String]): Unit = {
+    import scala.collection.JavaConverters._
+    val (sc, _) = ContextAndArgs(argz)
+    sc.parallelize(Seq.fill(700)(1000000L)).applyTransform(ParDo.of(new UUIDDoFn))
+      .map(org.apache.beam.sdk.values.KV.of(0: java.lang.Integer, _))
+      .setCoder(KvCoder.of(VarIntCoder.of(), KryoAtomicCoder[(String, String)]))
+      .applyTransform(GroupByKey.create())
+      .map(_.getValue.asScala.size)
+      .materialize
+    sc.close()
   }
 }
 
