@@ -31,7 +31,7 @@ import scala.collection.JavaConverters._
  * Main package for Annoy side input APIs. Import all.
  *
  * {{{
- *   import com.spotify.scio.extra.annoy._
+ * import com.spotify.scio.extra.annoy._
  * }}}
  *
  * Two metrics are available, Angular and Euclidean.
@@ -39,28 +39,28 @@ import scala.collection.JavaConverters._
  * To save an `SCollection[(Int, Array[Float])]` to an Annoy file:
  *
  * {{{
- *   val s = sc.parallelize(Seq( 1-> Array(1.2f, 3.4f), 2 -> Array(2.2f, 1.2f)))
+ * val s = sc.parallelize(Seq( 1-> Array(1.2f, 3.4f), 2 -> Array(2.2f, 1.2f)))
  * }}}
  *
- * // Save to a temporary location:
+ * Save to a temporary location:
  * {{{
- *   val s1: SCollection[AnnoyUri] = s.asAnnoy(Angular, 40, 10)
+ * val s1: SCollection[AnnoyUri] = s.asAnnoy(Angular, 40, 10)
  * }}}
  *
- * // Save to a specific location:
+ * Save to a specific location:
  * {{{
  *   val s1: SCollection[AnnoyUri] = s.asAnnoy(Angular, 40, 10, "gs://<bucket>/<path>")
  * }}}
  *
  * `SCollection[AnnoyUri]` can be converted into a side input:
  * {{{
- *   val s = sc.parallelize(Seq( 1-> Array(1.2f, 3.4f), 2 -> Array(2.2f, 1.2f)))
- *   val side: SideInput[AnnoyReader] = s.asAnnoySideInput(metric, dimension, numTrees)
+ * val s = sc.parallelize(Seq( 1-> Array(1.2f, 3.4f), 2 -> Array(2.2f, 1.2f)))
+ * val side: SideInput[AnnoyReader] = s.asAnnoySideInput(metric, dimension, numTrees)
  * }}}
  *
  * There's syntactic sugar for saving an SCollection and converting it to a side input:
  * {{{
- *   val s = sc.parallelize(Seq( 1-> Array(1.2f, 3.4f), 2 -> Array(2.2f, 1.2f)))
+ * val s = sc.parallelize(Seq( 1-> Array(1.2f, 3.4f), 2 -> Array(2.2f, 1.2f)))
  *   .asAnnoySideInput(metric, dimension, numTrees)
  * }}}
  *
@@ -69,37 +69,36 @@ import scala.collection.JavaConverters._
  *   sc.annoySideInput(metric, dimension, numTrees, "gs://<bucket>/<path>")
  * }}}
  *
- * `AnnoyReader` provides nearest neighbor lookups by vector as well as item lookups
+ * `AnnoyReader` provides nearest neighbor lookups by vector as well as item lookups:
  * {{{
- *  val data = (0 until 1000).map(x => (x, Array.fill(40)(r.nextFloat())))
- *  val main: SCollection[(Int, Array[Float])] = sc.parallelize(data)
- *  val side: SideInput[AnnoyReader] = main.asAnnoySideInput(metric, dimension, numTrees)
+ * val data = (0 until 1000).map(x => (x, Array.fill(40)(r.nextFloat())))
+ * val main: SCollection[(Int, Array[Float])] = sc.parallelize(data)
+ * val side: SideInput[AnnoyReader] = main.asAnnoySideInput(metric, dimension, numTrees)
  *
- *  main.withSideInput(side)
- *  .map { (x, s) =>
- *    val annoyReader = s(side)
+ * main.withSideInput(side)
+ *   .map { (x, s) =>
+ *     val annoyReader = s(side)
  *
- *    x.foreach { i =>
- *    annoyReader.getNearest(
- *      // get vector by item id, allocating a new vector each time
- *      val v1 = annoyIndex.getItemVector(i)
+ *     x.foreach { i =>
+ *     annoyReader.getNearest(
+ *       // get vector by item id, allocating a new vector each time
+ *       val v1 = annoyIndex.getItemVector(i)
  *
- *      // get vector by item id, copy vector into pre-allocated Array[Float]
- *      val v2:Array[Float] = Array.fill(dim)(-1.0f)
- *      annoyIndex.getItemVector(i, v2)
+ *       // get vector by item id, copy vector into pre-allocated Array[Float]
+ *       val v2: Array[Float] = Array.fill(dim)(-1.0f)
+ *       annoyIndex.getItemVector(i, v2)
  *
- *      // get 10 nearest neighbors by vector
- *      val results:Array[Int] = annoyIndex.getNearest(v2,10)
- *    }
- *  }
- *
+ *       // get 10 nearest neighbors by vector
+ *       val results: Array[Int] = annoyIndex.getNearest(v2,10)
+ *     }
+ *   }
  * }}}
  */
 package object annoy {
 
-  sealed trait ScioAnnoyMetric
-  case object Angular extends ScioAnnoyMetric
-  case object Euclidean extends ScioAnnoyMetric
+  sealed trait AnnoyMetric
+  case object Angular extends AnnoyMetric
+  case object Euclidean extends AnnoyMetric
 
   private val logger = LoggerFactory.getLogger(this.getClass)
 
@@ -111,49 +110,48 @@ package object annoy {
    * @param metric One of Angular (cosine distance) or Euclidean
    * @param dim Number of dimensions in vectors
    */
-  class AnnoyReader(path: String, metric: ScioAnnoyMetric, dim: Int) {
+  class AnnoyReader private[annoy] (path: String, metric: AnnoyMetric, dim: Int) {
 
     require(dim > 0, "Vector dimension should be > 0")
 
     import com.spotify.annoy._
 
-    val indexType = metric match {
-      case Angular => IndexType.ANGULAR
-      case Euclidean => IndexType.EUCLIDEAN
+    private val index = {
+      val indexType = metric match {
+        case Angular => IndexType.ANGULAR
+        case Euclidean => IndexType.EUCLIDEAN
+      }
+      new ANNIndex(dim, path, indexType)
     }
 
-    val index = new ANNIndex(dim, path, indexType)
-
     /**
-     * Gets vector associated with item i
+     * Gets vector associated with item i.
      */
     def getItemVector(i: Int): Array[Float] = index.getItemVector(i)
 
     /**
-     * Copies vector associated with item i into vector v
+     * Copies vector associated with item i into vector v.
      */
     def getItemVector(i: Int, v: Array[Float]): Unit = index.getItemVector(i, v)
 
     /**
-     * Gets maxNumResults nearest neighbors for vector v
+     * Gets maxNumResults nearest neighbors for vector v.
      */
-    def getNearest(v: Array[Float], maxNumResults: Int): Array[Int] = {
-      index.getNearest(v, maxNumResults).asScala.map(Integer2int(_)).toArray[Int]
-    }
+    def getNearest(v: Array[Float], maxNumResults: Int): Seq[Int] =
+      index.getNearest(v, maxNumResults).asScala.asInstanceOf[Seq[Int]]
 
   }
 
-  /** Enhanced version of [[ScioContext]] with Annoy methods */
+  /** Enhanced version of [[ScioContext]] with Annoy methods. */
   implicit class AnnoyScioContext(val self: ScioContext) extends AnyVal {
     /**
-     * Create a SideInput of `AnnoyIndex` from an [[AnnoyUri]] base path, to be used with
+     * Create a SideInput of [[AnnoyReader]] from an [[AnnoyUri]] base path, to be used with
      * [[com.spotify.scio.values.SCollection.withSideInputs SCollection.withSideInputs]]
      *
      * @param metric Metric (Angular, Euclidean) used to build the Annoy index
      * @param dim Number of dimensions in vectors used to build the Annoy index
      */
-    def annoySideInput(path: String, metric: ScioAnnoyMetric, dim: Int)
-    : SideInput[AnnoyReader] = {
+    def annoySideInput(path: String, metric: AnnoyMetric, dim: Int): SideInput[AnnoyReader] = {
       val uri = AnnoyUri(path, self.options)
       val view = self.parallelize(Seq(uri)).applyInternal(View.asSingleton())
       new AnnoySideInput(view, metric, dim)
@@ -173,7 +171,7 @@ package object annoy {
      *               that they will take at most 2x the memory of the vectors.
      * @return A singleton SCollection containing the [[AnnoyUri]] of the saved files
      */
-    def asAnnoy(path: String, metric: ScioAnnoyMetric, dim: Int, nTrees: Int)
+    def asAnnoy(path: String, metric: AnnoyMetric, dim: Int, nTrees: Int)
     : SCollection[AnnoyUri] = {
       val uri = AnnoyUri(path, self.context.options)
       require(!uri.exists, s"Annoy URI ${uri.path} already exists")
@@ -190,10 +188,13 @@ package object annoy {
                 val (k, v) = it.next()
                 annoyIndex.addItem(k, v)
               }
-            } finally {
-              val elapsedTime = (System.nanoTime() - startTime) / 1000000000.0
-              logger.info(s"Built index with ${annoyIndex.size} items in ${elapsedTime} seconds")
               uri.saveAndClose(annoyIndex)
+              val elapsedTime = (System.nanoTime() - startTime) / 1000000000.0
+              logger.info(s"Built index with ${annoyIndex.size} items in $elapsedTime seconds")
+            } catch {
+              case e: Throwable =>
+                annoyIndex.free()
+                throw e
             }
             uri
           }
@@ -209,7 +210,7 @@ package object annoy {
      *               that they will take at most 2x the memory of the vectors.
      * @return A singleton SCollection containing the [[AnnoyUri]] of the saved files
      */
-    def asAnnoy(metric: ScioAnnoyMetric, dim: Int, nTrees: Int): SCollection[AnnoyUri] = {
+    def asAnnoy(metric: AnnoyMetric, dim: Int, nTrees: Int): SCollection[AnnoyUri] = {
       val uuid = UUID.randomUUID()
       val path = s"${self.context.options.getTempLocation}/annoy-build-$uuid"
       this.asAnnoy(path, metric, dim, nTrees)
@@ -227,10 +228,8 @@ package object annoy {
      *               that they will take at most 2x the memory of the vectors.
      * @return SideInput[AnnoyReader]
      */
-    def asAnnoySideInput(metric: ScioAnnoyMetric, dim: Int, nTrees: Int)
-    : SideInput[AnnoyReader] = {
+    def asAnnoySideInput(metric: AnnoyMetric, dim: Int, nTrees: Int): SideInput[AnnoyReader] =
       self.asAnnoy(metric, dim, nTrees).asAnnoySideInput(metric, dim)
-    }
   }
 
   /**
@@ -243,21 +242,17 @@ package object annoy {
      * @param dim Number of dimensions in vectors used to build the Annoy index
      * @return SideInput[AnnoyReader]
      */
-    def asAnnoySideInput(metric: ScioAnnoyMetric, dim: Int)
-    : SideInput[AnnoyReader] = {
+    def asAnnoySideInput(metric: AnnoyMetric, dim: Int): SideInput[AnnoyReader] = {
       val view = self.applyInternal(View.asSingleton())
       new AnnoySideInput(view, metric, dim)
     }
   }
 
   private class AnnoySideInput(val view: PCollectionView[AnnoyUri],
-                               metric: ScioAnnoyMetric,
+                               metric: AnnoyMetric,
                                dim: Int)
     extends SideInput[AnnoyReader] {
-    override def get[I,O](context: DoFn[I, O]#ProcessContext): AnnoyReader = {
+    override def get[I,O](context: DoFn[I, O]#ProcessContext): AnnoyReader =
       context.sideInput(view).getReader(metric, dim)
-    }
   }
 }
-
-

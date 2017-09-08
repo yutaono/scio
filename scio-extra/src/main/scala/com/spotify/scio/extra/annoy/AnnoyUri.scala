@@ -24,7 +24,6 @@ import java.nio.file.{Files, Paths}
 import annoy4s._
 import com.spotify.scio.util.{RemoteFileUtil, ScioUtil}
 import com.sun.jna.Native
-import org.apache.beam.sdk.extensions.gcp.options.GcsOptions
 import org.apache.beam.sdk.options.PipelineOptions
 
 /**
@@ -32,27 +31,25 @@ import org.apache.beam.sdk.options.PipelineOptions
  */
 trait AnnoyUri extends Serializable {
   val path: String
-  private[annoy] def getReader(metric: ScioAnnoyMetric, dim: Int): AnnoyReader
+  private[annoy] def getReader(metric: AnnoyMetric, dim: Int): AnnoyReader
   private[annoy] def saveAndClose(annoyIndex: AnnoyWriter): Unit
   private[annoy] def exists: Boolean
   override def toString: String = path
 }
 
 private[annoy] object AnnoyUri {
-
   def apply(path: String, opts: PipelineOptions): AnnoyUri =
     if (ScioUtil.isLocalUri(new URI(path))) {
       new LocalAnnoyUri(path)
     } else {
-      new RemoteAnnoyUri(path, opts.as(classOf[GcsOptions]))
+      new RemoteAnnoyUri(path, opts)
     }
-
 }
 
 private class LocalAnnoyUri(val path: String) extends AnnoyUri {
 
-  override private[annoy] def getReader(metric: ScioAnnoyMetric, dim: Int): AnnoyReader
-  = new AnnoyReader(path, metric, dim)
+  override private[annoy] def getReader(metric: AnnoyMetric, dim: Int): AnnoyReader =
+    new AnnoyReader(path, metric, dim)
   override private[annoy] def saveAndClose(w: AnnoyWriter): Unit = {
     try {
       w.build()
@@ -69,13 +66,12 @@ private class RemoteAnnoyUri(val path: String, options: PipelineOptions) extends
 
   val rfu: RemoteFileUtil = RemoteFileUtil.create(options)
 
-  override private[annoy] def getReader(metric: ScioAnnoyMetric, dim: Int)
-  : AnnoyReader = {
+  override private[annoy] def getReader(metric: AnnoyMetric, dim: Int): AnnoyReader = {
     val localPath = rfu.download(new URI(path))
-    new AnnoyReader(localPath.toString(), metric, dim)
+    new AnnoyReader(localPath.toString, metric, dim)
   }
   override private[annoy] def saveAndClose(w: AnnoyWriter): Unit = {
-    val tempFile = Files.createTempDirectory("annoy").resolve("data")
+    val tempFile = Files.createTempDirectory("annoy-").resolve("data")
     try {
       w.build()
       w.save(tempFile.toString)
@@ -89,9 +85,9 @@ private class RemoteAnnoyUri(val path: String, options: PipelineOptions) extends
 
 }
 
-private[annoy] class AnnoyWriter(metric: ScioAnnoyMetric, dim: Int, nTrees: Int) {
+private[annoy] class AnnoyWriter(metric: AnnoyMetric, dim: Int, nTrees: Int) {
 
-  val annoy4sIndex = metric match {
+  private val annoy4sIndex = metric match {
     case Angular => AnnoyWriter.lib.createAngular(dim)
     case Euclidean => AnnoyWriter.lib.createAngular(dim)
   }
@@ -106,7 +102,5 @@ private[annoy] class AnnoyWriter(metric: ScioAnnoyMetric, dim: Int, nTrees: Int)
 }
 
 private[annoy] object AnnoyWriter {
-  val lib = Native.loadLibrary("annoy", classOf[AnnoyLibrary])
-    .asInstanceOf[AnnoyLibrary]
+  private val lib = Native.loadLibrary("annoy", classOf[AnnoyLibrary]).asInstanceOf[AnnoyLibrary]
 }
-

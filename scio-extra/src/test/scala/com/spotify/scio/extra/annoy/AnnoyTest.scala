@@ -18,26 +18,26 @@
 package com.spotify.scio.extra.annoy
 
 import java.io.File
+import java.nio.file.Files
 
-import com.google.common.io.Files
 import com.spotify.annoy.{ANNIndex, IndexType}
 import com.spotify.scio.ScioContext
 import com.spotify.scio.testing.PipelineSpec
 
 class AnnoyTest extends PipelineSpec {
 
+  val metric = Angular
+  val dim = 2
+  val nTrees = 10
+
   val sideData = Seq((1, Array(2.5f,7.2f)), (2, Array(1.2f, 2.2f)), (3, Array(5.6f, 3.4f)))
 
   "SCollection" should "support .asAnnoy with temporary local file" in {
     val sc = ScioContext()
-    val metric = Angular
-    val dim = 2
-    val nTrees = 10
     val p = sc.parallelize(sideData).asAnnoy(metric, dim, nTrees).materialize
     sc.close().waitUntilFinish()
 
     val path = p.waitForResult().value.next().path
-
     val reader = new ANNIndex(dim, path, IndexType.ANGULAR)
 
     sideData.foreach { s =>
@@ -49,14 +49,10 @@ class AnnoyTest extends PipelineSpec {
 
   it should "support .asAnnoy with specified local file" in {
     val sc = ScioContext()
-    val metric = Angular
-    val dim = 2
-    val nTrees = 10
     val p = sc.parallelize(sideData).asAnnoy("test.tree", metric, dim, nTrees).materialize
     sc.close().waitUntilFinish()
 
     val path = p.waitForResult().value.next().path
-
     val reader = new ANNIndex(dim, path, IndexType.ANGULAR)
 
     sideData.foreach { s =>
@@ -67,17 +63,16 @@ class AnnoyTest extends PipelineSpec {
   }
 
   it should "throw exception when Annoy file already exists" in {
-    val tmpDir = Files.createTempDir()
-    val path = tmpDir + "test.tree"
-    val index = new File(path)
-    val annoy = Files.touch(index)
+    val tmpDir = Files.createTempDirectory("annoy-test-")
+    val path = tmpDir.resolve("annoy.tree")
+    Files.createFile(path)
     // scalastyle:off no.whitespace.before.left.bracket
     the [IllegalArgumentException] thrownBy {
       runWithContext {
-        _.parallelize(sideData).asAnnoy(path, Angular, 40, 10)
+        _.parallelize(sideData).asAnnoy(path.toString, Angular, 40, 10)
       }
     } should have message s"requirement failed: Annoy URI $path already exists"
     // scalastyle:on no.whitespace.before.left.bracket
-    index.delete()
+    Files.delete(path)
   }
 }
