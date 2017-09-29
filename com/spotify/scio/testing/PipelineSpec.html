@@ -3811,6 +3811,24 @@ verified.
 </p></div><dl class="paramcmts block"><dt class="param">data</dt><dd class="cmt"><p>input data</p></dd><dt class="param">fn</dt><dd class="cmt"><p>transform to be tested</p></dd><dt>returns</dt><dd class="cmt"><p>output data</p><pre>runWithData(<span class="std">Seq</span>(<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>)) { p <span class="kw">=&gt;</span>
   p.sum
 } shouldBe <span class="std">Seq</span>(<span class="num">6</span>)</pre></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="PipelineTestUtils.html" class="extype" name="com.spotify.scio.testing.PipelineTestUtils">PipelineTestUtils</a></dd></dl></div>
+    </li><li name="com.spotify.scio.testing.PipelineTestUtils#runWithLocalOutput" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="runWithLocalOutput[U](fn:com.spotify.scio.ScioContext=&gt;com.spotify.scio.values.SCollection[U]):(com.spotify.scio.ScioResult,Seq[U])"></a><a id="runWithLocalOutput[U]((ScioContext)⇒SCollection[U]):(ScioResult,Seq[U])"></a>
+      <span class="permalink">
+      <a href="../../../../com/spotify/scio/testing/PipelineSpec.html#runWithLocalOutput[U](fn:com.spotify.scio.ScioContext=&gt;com.spotify.scio.values.SCollection[U]):(com.spotify.scio.ScioResult,Seq[U])" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">runWithLocalOutput</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="fn">fn: (<a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a>) ⇒ <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.testing.PipelineTestUtils.runWithLocalOutput.U">U</span>]</span>)</span><span class="result">: (<a href="../ScioResult.html" class="extype" name="com.spotify.scio.ScioResult">ScioResult</a>, <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="com.spotify.scio.testing.PipelineTestUtils.runWithLocalOutput.U">U</span>])</span>
+      </span>
+      
+      <p class="shortcomment cmt">Test pipeline components with a <a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a> and materialized resulting collection.</p><div class="fullcomment"><div class="comment cmt"><p>Test pipeline components with a <a href="../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a> and materialized resulting collection.</p><p>The result <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> from <code>fn</code> is extracted and to be
+verified.
+</p></div><dl class="paramcmts block"><dt class="param">fn</dt><dd class="cmt"><p>transform to be tested</p></dd><dt>returns</dt><dd class="cmt"><p>a tuple containing the <a href="../ScioResult.html" class="extype" name="com.spotify.scio.ScioResult">ScioResult</a> and the materialized result of fn as a <span class="extype" name="Seq[U">Seq[U</span>]</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="PipelineTestUtils.html" class="extype" name="com.spotify.scio.testing.PipelineTestUtils">PipelineTestUtils</a></dd></dl></div>
     </li><li name="com.spotify.scio.testing.SCollectionMatchers#satisfy" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="satisfy[T](predicate:Iterable[T]=&gt;Boolean)(implicitevidence$6:scala.reflect.ClassTag[T]):org.scalatest.matchers.Matcher[com.spotify.scio.values.SCollection[T]]"></a><a id="satisfy[T]((Iterable[T])⇒Boolean)(ClassTag[T]):Matcher[SCollection[T]]"></a>
       <span class="permalink">

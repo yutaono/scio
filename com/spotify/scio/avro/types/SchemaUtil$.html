@@ -137,12 +137,12 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../index.html">
+        <a title="Main package for Avro APIs." href="../index.html">
               <span class="name">avro</span>
             </a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
+      <p class="shortcomment cmt">Main package for Avro APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for Avro APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.avro._</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
     </li><li name="com.spotify.scio.avro.types" visbl="pub" class="indented5 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="types"></a><a id="types:types"></a>
       <span class="permalink">
@@ -166,6 +166,12 @@
                         <a class="class" href="AvroType.html" title="Type class for case class T annotated for Avro IO."></a>
                         <a href="AvroType.html" title="Type class for case class T annotated for Avro IO.">
                           AvroType
+                        </a>
+                      </li><li class="current-entities indented5">
+                        <span class="separator"></span>
+                        <a class="object" href="ConverterUtil$.html" title=""></a>
+                        <a href="ConverterUtil$.html" title="">
+                          ConverterUtil
                         </a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
@@ -517,9 +523,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="com.spotify.scio.avro.types.SchemaUtil#toPrettyString" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="toPrettyString(schema:org.apache.avro.Schema,indent:Int):String"></a><a id="toPrettyString(Schema,Int):String"></a>
+      <a id="toPrettyString(className:String,schema:org.apache.avro.Schema,indent:Int):String"></a><a id="toPrettyString(String,Schema,Int):String"></a>
       <span class="permalink">
-      <a href="../../../../../com/spotify/scio/avro/types/SchemaUtil$.html#toPrettyString(schema:org.apache.avro.Schema,indent:Int):String" title="Permalink">
+      <a href="../../../../../com/spotify/scio/avro/types/SchemaUtil$.html#toPrettyString(className:String,schema:org.apache.avro.Schema,indent:Int):String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -528,7 +534,23 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toPrettyString</span><span class="params">(<span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span></span>, <span name="indent">indent: <a href="http://www.scala-lang.org/api/2.12.3/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a> = <span class="symbol">0</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+        <span class="name">toPrettyString</span><span class="params">(<span name="className">className: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span></span>, <span name="indent">indent: <a href="http://www.scala-lang.org/api/2.12.3/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Convert schema to case class definitions.</p>
+    </li><li name="com.spotify.scio.avro.types.SchemaUtil#toPrettyString1" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="toPrettyString1(schema:org.apache.avro.Schema,indent:Int):String"></a><a id="toPrettyString1(Schema,Int):String"></a>
+      <span class="permalink">
+      <a href="../../../../../com/spotify/scio/avro/types/SchemaUtil$.html#toPrettyString1(schema:org.apache.avro.Schema,indent:Int):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toPrettyString1</span><span class="params">(<span name="schema">schema: <span class="extype" name="org.apache.avro.Schema">Schema</span></span>, <span name="indent">indent: <a href="http://www.scala-lang.org/api/2.12.3/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a> = <span class="symbol">0</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
       </span>
       
       <p class="shortcomment cmt">Convert schema to case class definitions.</p>

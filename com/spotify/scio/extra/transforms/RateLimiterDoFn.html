@@ -212,12 +212,6 @@
                         </a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
-                        <a class="class" href="package$$RateLimitingSCollection.html" title="Enhanced version of SCollection with rate limiting methods."></a>
-                        <a href="package$$RateLimitingSCollection.html" title="Enhanced version of SCollection with rate limiting methods.">
-                          RateLimitingSCollection
-                        </a>
-                      </li><li class="current-entities indented5">
-                        <span class="separator"></span>
                         <a class="class" href="ScalaAsyncDoFn.html" title="A DoFn that handles asynchronous requests to an
 external service that returns Scala Futures."></a>
                         <a href="ScalaAsyncDoFn.html" title="A DoFn that handles asynchronous requests to an
@@ -268,7 +262,7 @@ external service that returns Scala Futures.">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a>[<span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>, <span class="extype" name="com.google.common.util.concurrent.RateLimiter">RateLimiter</span>], <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>], <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/transforms/display/HasDisplayData.html#org.apache.beam.sdk.transforms.display.HasDisplayData" class="extype" name="org.apache.beam.sdk.transforms.display.HasDisplayData">HasDisplayData</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a>[<span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>, <span class="extype" name="com.google.common.util.concurrent.RateLimiter">RateLimiter</span>], <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>], <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/transforms/display/HasDisplayData.html#org.apache.beam.sdk.transforms.display.HasDisplayData" class="extype" name="org.apache.beam.sdk.transforms.display.HasDisplayData">HasDisplayData</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
         </div></div>
         
 
@@ -380,6 +374,22 @@ external service that returns Scala Futures.">
       </span>
       <span class="symbol">
         <span class="name">ProcessContext</span><span class="result"> extends <span class="extype" name="org.apache.beam.sdk.transforms.DoFn.WindowedContext">WindowedContext</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
+    </li><li name="org.apache.beam.sdk.transforms.DoFn.ProcessContinuation" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ProcessContinuationextendsObject"></a><a id="ProcessContinuation:ProcessContinuation"></a>
+      <span class="permalink">
+      <a href="../../../../../com/spotify/scio/extra/transforms/RateLimiterDoFn.html#ProcessContinuationextendsObject" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ProcessContinuation</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
@@ -658,7 +668,7 @@ external service that returns Scala Futures.">
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getInputTypeDescriptor</span><span class="params">()</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/values/TypeDescriptor.html#org.apache.beam.sdk.values.TypeDescriptor" class="extype" name="org.apache.beam.sdk.values.TypeDescriptor">TypeDescriptor</a>[<span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>]</span>
+        <span class="name">getInputTypeDescriptor</span><span class="params">()</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/TypeDescriptor.html#org.apache.beam.sdk.values.TypeDescriptor" class="extype" name="org.apache.beam.sdk.values.TypeDescriptor">TypeDescriptor</a>[<span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
@@ -674,7 +684,7 @@ external service that returns Scala Futures.">
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getOutputTypeDescriptor</span><span class="params">()</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/values/TypeDescriptor.html#org.apache.beam.sdk.values.TypeDescriptor" class="extype" name="org.apache.beam.sdk.values.TypeDescriptor">TypeDescriptor</a>[<span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>]</span>
+        <span class="name">getOutputTypeDescriptor</span><span class="params">()</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/TypeDescriptor.html#org.apache.beam.sdk.values.TypeDescriptor" class="extype" name="org.apache.beam.sdk.values.TypeDescriptor">TypeDescriptor</a>[<span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>DoFn</dd></dl></div>
@@ -996,7 +1006,7 @@ external service that returns Scala Futures.">
             </div><div class="parent" name="org.apache.beam.sdk.transforms.DoFn">
               <h3>Inherited from <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>]</h3>
             </div><div class="parent" name="org.apache.beam.sdk.transforms.display.HasDisplayData">
-              <h3>Inherited from <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/transforms/display/HasDisplayData.html#org.apache.beam.sdk.transforms.display.HasDisplayData" class="extype" name="org.apache.beam.sdk.transforms.display.HasDisplayData">HasDisplayData</a></h3>
+              <h3>Inherited from <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/transforms/display/HasDisplayData.html#org.apache.beam.sdk.transforms.display.HasDisplayData" class="extype" name="org.apache.beam.sdk.transforms.display.HasDisplayData">HasDisplayData</a></h3>
             </div><div class="parent" name="java.io.Serializable">
               <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
             </div><div class="parent" name="scala.AnyRef">

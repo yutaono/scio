@@ -209,6 +209,12 @@ detects the query's dialect. To override this, start the query with either <code
                         </a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
+                        <a class="class" href="package$$RichTableReference.html" title="Enhanced version of TableReference."></a>
+                        <a href="package$$RichTableReference.html" title="Enhanced version of TableReference.">
+                          RichTableReference
+                        </a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
                         <a class="class" href="package$$RichTableRow.html" title="Enhanced version of TableRow with typed getters."></a>
                         <a href="package$$RichTableRow.html" title="Enhanced version of TableRow with typed getters.">
                           RichTableRow
@@ -811,6 +817,42 @@ returned instead if one exists.
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="com.spotify.scio.bigquery.BigQueryClient#tableExists" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tableExists(tableSpec:String):Boolean"></a><a id="tableExists(String):Boolean"></a>
+      <span class="permalink">
+      <a href="../../../../com/spotify/scio/bigquery/BigQueryClient.html#tableExists(tableSpec:String):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tableExists</span><span class="params">(<span name="tableSpec">tableSpec: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.3/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Check if table exists.</p><div class="fullcomment"><div class="comment cmt"><p>Check if table exists. Returns <code>true</code> if table exists, <code>false</code> is table definitely does not
+exist, throws in other cases (BigQuery exception, network issue etc.).
+</p></div></div>
+    </li><li name="com.spotify.scio.bigquery.BigQueryClient#tableExists" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="tableExists(table:com.google.api.services.bigquery.model.TableReference):Boolean"></a><a id="tableExists(TableReference):Boolean"></a>
+      <span class="permalink">
+      <a href="../../../../com/spotify/scio/bigquery/BigQueryClient.html#tableExists(table:com.google.api.services.bigquery.model.TableReference):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">tableExists</span><span class="params">(<span name="table">table: <a href="https://developers.google.com/resources/api-libraries/documentation/bigquery/v2/java/latest/com/google/api/services/bigquery/model/TableReference.html#com.google.api.services.bigquery.model.TableReference" class="extype" name="com.google.api.services.bigquery.model.TableReference">TableReference</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.3/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Check if table exists.</p><div class="fullcomment"><div class="comment cmt"><p>Check if table exists. Returns <code>true</code> if table exists, <code>false</code> is table definitely does not
+exist, throws in other cases (BigQuery exception, network issue etc.).
+</p></div></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">

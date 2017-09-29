@@ -404,6 +404,22 @@ To be used in a <a href="PipelineSpec.html" class="extype" name="com.spotify.sci
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.spotify.scio.testing.JobTest.Builder#counter" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="counter(counter:org.apache.beam.sdk.metrics.Counter)(assertion:Long=&gt;Unit):com.spotify.scio.testing.JobTest.Builder"></a><a id="counter(Counter)((Long)⇒Unit):Builder"></a>
+      <span class="permalink">
+      <a href="../../../../com/spotify/scio/testing/JobTest$$Builder.html#counter(counter:org.apache.beam.sdk.metrics.Counter)(assertion:Long=&gt;Unit):com.spotify.scio.testing.JobTest.Builder" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">counter</span><span class="params">(<span name="counter">counter: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/metrics/Counter.html#org.apache.beam.sdk.metrics.Counter" class="extype" name="org.apache.beam.sdk.metrics.Counter">Counter</a></span>)</span><span class="params">(<span name="assertion">assertion: (<a href="http://www.scala-lang.org/api/2.12.3/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a>) ⇒ <a href="http://www.scala-lang.org/api/2.12.3/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.testing.JobTest.Builder">Builder</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Evaluate a <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/metrics/Counter.html" class="extype" name="org.apache.beam.sdk.metrics.Counter">Counter</a> in the pipeline being tested.</p><div class="fullcomment"><div class="comment cmt"><p>Evaluate a <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/metrics/Counter.html" class="extype" name="org.apache.beam.sdk.metrics.Counter">Counter</a> in the pipeline being tested.</p></div><dl class="paramcmts block"><dt class="param">counter</dt><dd class="cmt"><p>counter to be evaluated</p></dd><dt class="param">assertion</dt><dd class="cmt"><p>assertion for the counter result's committed value</p></dd></dl></div>
     </li><li name="com.spotify.scio.testing.JobTest.Builder#distCache" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="distCache[T](key:com.spotify.scio.testing.DistCacheIO[T],value:T):com.spotify.scio.testing.JobTest.Builder"></a><a id="distCache[T](DistCacheIO[T],T):Builder"></a>
       <span class="permalink">
@@ -423,6 +439,24 @@ To be used in a <a href="PipelineSpec.html" class="extype" name="com.spotify.sci
 match the one used inside the pipeline, e.g. <code>DistCacheIO[Set[String]](&quot;dc.txt&quot;)</code> with
 <code>sc.distCache(&quot;dc.txt&quot;)(f =&gt; scala.io.Source.fromFile(f).getLines().toSet)</code>.
 </p></div></div>
+    </li><li name="com.spotify.scio.testing.JobTest.Builder#distribution" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="distribution(distribution:org.apache.beam.sdk.metrics.Distribution)(assertion:org.apache.beam.sdk.metrics.DistributionResult=&gt;Unit):com.spotify.scio.testing.JobTest.Builder"></a><a id="distribution(Distribution)((DistributionResult)⇒Unit):Builder"></a>
+      <span class="permalink">
+      <a href="../../../../com/spotify/scio/testing/JobTest$$Builder.html#distribution(distribution:org.apache.beam.sdk.metrics.Distribution)(assertion:org.apache.beam.sdk.metrics.DistributionResult=&gt;Unit):com.spotify.scio.testing.JobTest.Builder" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">distribution</span><span class="params">(<span name="distribution">distribution: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/metrics/Distribution.html#org.apache.beam.sdk.metrics.Distribution" class="extype" name="org.apache.beam.sdk.metrics.Distribution">Distribution</a></span>)</span><span class="params">(<span name="assertion">assertion: (<a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/metrics/DistributionResult.html#org.apache.beam.sdk.metrics.DistributionResult" class="extype" name="org.apache.beam.sdk.metrics.DistributionResult">DistributionResult</a>) ⇒ <a href="http://www.scala-lang.org/api/2.12.3/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.testing.JobTest.Builder">Builder</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Evaluate a <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/metrics/Distribution.html" class="extype" name="org.apache.beam.sdk.metrics.Distribution">Distribution</a> in the pipeline being
+tested.</p><div class="fullcomment"><div class="comment cmt"><p>Evaluate a <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/metrics/Distribution.html" class="extype" name="org.apache.beam.sdk.metrics.Distribution">Distribution</a> in the pipeline being
+tested.</p></div><dl class="paramcmts block"><dt class="param">distribution</dt><dd class="cmt"><p>distribution to be evaluated</p></dd><dt class="param">assertion</dt><dd class="cmt"><p>assertion for the distribution result's committed value</p></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -477,6 +511,22 @@ match the one used inside the pipeline, e.g. <code>DistCacheIO[Set[String]](&quo
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="com.spotify.scio.testing.JobTest.Builder#gauge" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="gauge(gauge:org.apache.beam.sdk.metrics.Gauge)(assertion:org.apache.beam.sdk.metrics.GaugeResult=&gt;Unit):com.spotify.scio.testing.JobTest.Builder"></a><a id="gauge(Gauge)((GaugeResult)⇒Unit):Builder"></a>
+      <span class="permalink">
+      <a href="../../../../com/spotify/scio/testing/JobTest$$Builder.html#gauge(gauge:org.apache.beam.sdk.metrics.Gauge)(assertion:org.apache.beam.sdk.metrics.GaugeResult=&gt;Unit):com.spotify.scio.testing.JobTest.Builder" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">gauge</span><span class="params">(<span name="gauge">gauge: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/metrics/Gauge.html#org.apache.beam.sdk.metrics.Gauge" class="extype" name="org.apache.beam.sdk.metrics.Gauge">Gauge</a></span>)</span><span class="params">(<span name="assertion">assertion: (<a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/metrics/GaugeResult.html#org.apache.beam.sdk.metrics.GaugeResult" class="extype" name="org.apache.beam.sdk.metrics.GaugeResult">GaugeResult</a>) ⇒ <a href="http://www.scala-lang.org/api/2.12.3/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.testing.JobTest.Builder">Builder</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Evaluate a <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/metrics/Gauge.html" class="extype" name="org.apache.beam.sdk.metrics.Gauge">Gauge</a> in the pipeline being tested.</p><div class="fullcomment"><div class="comment cmt"><p>Evaluate a <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/metrics/Gauge.html" class="extype" name="org.apache.beam.sdk.metrics.Gauge">Gauge</a> in the pipeline being tested.</p></div><dl class="paramcmts block"><dt class="param">gauge</dt><dd class="cmt"><p>gauge to be evaluated</p></dd><dt class="param">assertion</dt><dd class="cmt"><p>assertion for the gauge result's committed value</p></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -593,9 +643,9 @@ inside the pipeline, e.g. <code>AvroIO[MyRecord](&quot;in.avro&quot;)</code> wit
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="com.spotify.scio.testing.JobTest.Builder#output" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="output[T](key:com.spotify.scio.testing.TestIO[T])(value:com.spotify.scio.values.SCollection[T]=&gt;Unit):com.spotify.scio.testing.JobTest.Builder"></a><a id="output[T](TestIO[T])((SCollection[T])⇒Unit):Builder"></a>
+      <a id="output[T](key:com.spotify.scio.testing.TestIO[T])(assertion:com.spotify.scio.values.SCollection[T]=&gt;Unit):com.spotify.scio.testing.JobTest.Builder"></a><a id="output[T](TestIO[T])((SCollection[T])⇒Unit):Builder"></a>
       <span class="permalink">
-      <a href="../../../../com/spotify/scio/testing/JobTest$$Builder.html#output[T](key:com.spotify.scio.testing.TestIO[T])(value:com.spotify.scio.values.SCollection[T]=&gt;Unit):com.spotify.scio.testing.JobTest.Builder" title="Permalink">
+      <a href="../../../../com/spotify/scio/testing/JobTest$$Builder.html#output[T](key:com.spotify.scio.testing.TestIO[T])(assertion:com.spotify.scio.values.SCollection[T]=&gt;Unit):com.spotify.scio.testing.JobTest.Builder" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -604,14 +654,14 @@ inside the pipeline, e.g. <code>AvroIO[MyRecord](&quot;in.avro&quot;)</code> wit
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">output</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="key">key: <a href="TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<span class="extype" name="com.spotify.scio.testing.JobTest.Builder.output.T">T</span>]</span>)</span><span class="params">(<span name="value">value: (<a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.testing.JobTest.Builder.output.T">T</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.12.3/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.testing.JobTest.Builder">Builder</a></span>
+        <span class="name">output</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="key">key: <a href="TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<span class="extype" name="com.spotify.scio.testing.JobTest.Builder.output.T">T</span>]</span>)</span><span class="params">(<span name="assertion">assertion: (<a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.testing.JobTest.Builder.output.T">T</span>]) ⇒ <a href="http://www.scala-lang.org/api/2.12.3/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.testing.JobTest.Builder">Builder</a></span>
       </span>
       
       <p class="shortcomment cmt">Evaluate an output of the pipeline being tested.</p><div class="fullcomment"><div class="comment cmt"><p>Evaluate an output of the pipeline being tested. Note that <code>TestIO[T]</code> must match the one
 used inside the pipeline, e.g. <code>AvroIO[MyRecord](&quot;out.avro&quot;)</code> with
 <code>data.saveAsAvroFile(&quot;out.avro&quot;)</code> where <code>data</code> is of type <code>SCollection[MyRecord]</code>.
-</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>assertions for output data. See <a href="SCollectionMatchers.html" class="extype" name="com.spotify.scio.testing.SCollectionMatchers">SCollectionMatchers</a> for available matchers
-             on an <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>.</p></dd></dl></div>
+</p></div><dl class="paramcmts block"><dt class="param">assertion</dt><dd class="cmt"><p>assertion for output data. See <a href="SCollectionMatchers.html" class="extype" name="com.spotify.scio.testing.SCollectionMatchers">SCollectionMatchers</a> for available
+                 matchers on an <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>.</p></dd></dl></div>
     </li><li name="com.spotify.scio.testing.JobTest.Builder#run" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="run():Unit"></a>
       <span class="permalink">

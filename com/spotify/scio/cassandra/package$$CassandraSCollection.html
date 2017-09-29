@@ -502,9 +502,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="com.spotify.scio.cassandra.CassandraSCollection#saveAsCassandra" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="saveAsCassandra(opts:com.spotify.scio.cassandra.package.CassandraOptions)(f:T=&gt;Seq[Any]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a><a id="saveAsCassandra(CassandraOptions)((T)⇒Seq[Any]):Future[Tap[T]]"></a>
+      <a id="saveAsCassandra(opts:com.spotify.scio.cassandra.package.CassandraOptions,parallelism:Int)(f:T=&gt;Seq[Any]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]"></a><a id="saveAsCassandra(CassandraOptions,Int)((T)⇒Seq[Any]):Future[Tap[T]]"></a>
       <span class="permalink">
-      <a href="../../../../com/spotify/scio/cassandra/package$$CassandraSCollection.html#saveAsCassandra(opts:com.spotify.scio.cassandra.package.CassandraOptions)(f:T=&gt;Seq[Any]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink">
+      <a href="../../../../com/spotify/scio/cassandra/package$$CassandraSCollection.html#saveAsCassandra(opts:com.spotify.scio.cassandra.package.CassandraOptions,parallelism:Int)(f:T=&gt;Seq[Any]):scala.concurrent.Future[com.spotify.scio.io.Tap[T]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -513,7 +513,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">saveAsCassandra</span><span class="params">(<span name="opts">opts: <a href="package$$CassandraOptions.html" class="extype" name="com.spotify.scio.cassandra.CassandraOptions">CassandraOptions</a></span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="com.spotify.scio.cassandra.CassandraSCollection.T">T</span>) ⇒ <span class="extype" name="scala.Seq">Seq</span>[<a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.3/scala/concurrent/Future.html#scala.concurrent.Future" class="extype" name="scala.concurrent.Future">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.cassandra.CassandraSCollection.T">T</span>]]</span>
+        <span class="name">saveAsCassandra</span><span class="params">(<span name="opts">opts: <a href="package$$CassandraOptions.html" class="extype" name="com.spotify.scio.cassandra.CassandraOptions">CassandraOptions</a></span>, <span name="parallelism">parallelism: <a href="http://www.scala-lang.org/api/2.12.3/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a> = <span class="symbol">0</span></span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="com.spotify.scio.cassandra.CassandraSCollection.T">T</span>) ⇒ <span class="extype" name="scala.Seq">Seq</span>[<a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.3/scala/concurrent/Future.html#scala.concurrent.Future" class="extype" name="scala.concurrent.Future">Future</a>[<a href="../io/Tap.html" class="extype" name="com.spotify.scio.io.Tap">Tap</a>[<span class="extype" name="com.spotify.scio.cassandra.CassandraSCollection.T">T</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Save this SCollection as a Cassandra table.</p><div class="fullcomment"><div class="comment cmt"><p>Save this SCollection as a Cassandra table.</p><p>Cassandra <span class="extype" name="org.apache.cassandra.hadoop.cql3.CqlBulkRecordWriter">CqlBulkRecordWriter</span> is
@@ -521,7 +521,7 @@ used to perform bulk writes for better throughput. The <span class="extype" name
 table partition key before written to the cluster. Therefore writes only occur at the end of
 each window in streaming mode. The bulk writer writes to all nodes in a cluster so remote
 nodes in a multi-datacenter cluster may become a bottleneck.
-</p></div></div>
+</p></div><dl class="paramcmts block"><dt class="param">opts</dt><dd class="cmt"><p>Cassandra options</p></dd><dt class="param">parallelism</dt><dd class="cmt"><p>number of concurrent bulk writers, default to number of Cassandra nodes</p></dd><dt class="param">f</dt><dd class="cmt"><p>function to convert input data to values for the CQL statement</p></dd></dl></div>
     </li><li name="com.spotify.scio.cassandra.CassandraSCollection#self" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="self:com.spotify.scio.values.SCollection[T]"></a><a id="self:SCollection[T]"></a>
       <span class="permalink">

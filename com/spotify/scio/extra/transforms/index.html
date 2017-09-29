@@ -143,6 +143,44 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
+    </li><li name="com.spotify.scio.extra.annoy" visbl="pub" class="indented5 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="annoy"></a><a id="annoy:annoy"></a>
+      <span class="permalink">
+      <a href="../../../../com/spotify/scio/extra/index.html#annoy" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="Main package for Annoy side input APIs." href="../annoy/index.html">
+              <span class="name">annoy</span>
+            </a>
+      </span>
+      
+      <p class="shortcomment cmt">Main package for Annoy side input APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for Annoy side input APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.extra.annoy._</pre><p>Two metrics are available, Angular and Euclidean.</p><p>To save an <code>SCollection[(Int, Array[Float])]</code> to an Annoy file:</p><pre><span class="kw">val</span> s = sc.parallelize(<span class="std">Seq</span>( <span class="num">1</span>-&gt; <span class="std">Array</span>(<span class="num">1.2</span>f, <span class="num">3.4</span>f), <span class="num">2</span> -&gt; <span class="std">Array</span>(<span class="num">2.2</span>f, <span class="num">1.2</span>f)))</pre><p>Save to a temporary location:</p><pre><span class="kw">val</span> s1 = s.asAnnoy(Angular, <span class="num">40</span>, <span class="num">10</span>)</pre><p>Save to a specific location:</p><pre><span class="kw">val</span> s1 = s.asAnnoy(Angular, <span class="num">40</span>, <span class="num">10</span>, <span class="lit">"gs://<bucket>/<path>"</span>)</pre><p><code>SCollection[AnnoyUri]</code> can be converted into a side input:</p><pre><span class="kw">val</span> s = sc.parallelize(<span class="std">Seq</span>( <span class="num">1</span>-&gt; <span class="std">Array</span>(<span class="num">1.2</span>f, <span class="num">3.4</span>f), <span class="num">2</span> -&gt; <span class="std">Array</span>(<span class="num">2.2</span>f, <span class="num">1.2</span>f)))
+<span class="kw">val</span> side = s.asAnnoySideInput(metric, dimension, numTrees)</pre><p>There's syntactic sugar for saving an SCollection and converting it to a side input:</p><pre><span class="kw">val</span> s = sc
+  .parallelize(<span class="std">Seq</span>( <span class="num">1</span>-&gt; <span class="std">Array</span>(<span class="num">1.2</span>f, <span class="num">3.4</span>f), <span class="num">2</span> -&gt; <span class="std">Array</span>(<span class="num">2.2</span>f, <span class="num">1.2</span>f)))
+  .asAnnoySideInput(metric, dimension, numTrees)</pre><p>An existing Annoy file can be converted to a side input directly:</p><pre>sc.annoySideInput(metric, dimension, numTrees, <span class="lit">"gs://<bucket>/<path>"</span>)</pre><p><code>AnnoyReader</code> provides nearest neighbor lookups by vector as well as item lookups:</p><pre><span class="kw">val</span> data = (<span class="num">0</span> until <span class="num">1000</span>).map(x <span class="kw">=&gt;</span> (x, <span class="std">Array</span>.fill(<span class="num">40</span>)(r.nextFloat())))
+<span class="kw">val</span> main = sc.parallelize(data)
+<span class="kw">val</span> side = main.asAnnoySideInput(metric, dimension, numTrees)
+
+main.keys.withSideInput(side)
+  .map { (i, s) <span class="kw">=&gt;</span>
+    <span class="kw">val</span> annoyReader = s(side)
+
+    <span class="cmt">// get vector by item id, allocating a new Array[Float] each time</span>
+    <span class="kw">val</span> v1 = annoyReader.getItemVector(i)
+
+    <span class="cmt">// get vector by item id, copy vector into pre-allocated Array[Float]</span>
+    <span class="kw">val</span> v2 = <span class="std">Array</span>.fill(dim)(-<span class="num">1.0</span>f)
+    annoyReader.getItemVector(i, v2)
+
+    <span class="cmt">// get 10 nearest neighbors by vector</span>
+    <span class="kw">val</span> results = annoyReader.getNearest(v2, <span class="num">10</span>)
+  }</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.spotify.scio.extra">extra</a></dd></dl></div>
     </li><li name="com.spotify.scio.extra.checkpoint" visbl="pub" class="indented5 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="checkpoint"></a><a id="checkpoint:checkpoint"></a>
       <span class="permalink">
@@ -327,12 +365,6 @@ main.withSideInputs(side)
                         <a class="class" href="RateLimiterDoFn.html" title=""></a>
                         <a href="RateLimiterDoFn.html" title="">
                           RateLimiterDoFn
-                        </a>
-                      </li><li class="current-entities indented5">
-                        <span class="separator"></span>
-                        <a class="class" href="package$$RateLimitingSCollection.html" title="Enhanced version of SCollection with rate limiting methods."></a>
-                        <a href="package$$RateLimitingSCollection.html" title="Enhanced version of SCollection with rate limiting methods.">
-                          RateLimitingSCollection
                         </a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
@@ -543,24 +575,6 @@ external service that returns Scala Futures.">
       </span>
       
       
-    </li><li name="com.spotify.scio.extra.transforms.RateLimitingSCollection" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="RateLimitingSCollection[T]extendsAnyRef"></a><a id="RateLimitingSCollection[T]:RateLimitingSCollection[T]"></a>
-      <span class="permalink">
-      <a href="../../../../../com/spotify/scio/extra/transforms/index.html#RateLimitingSCollection[T]extendsAnyRef" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">implicit </span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a title="Enhanced version of SCollection with rate limiting methods." href="package$$RateLimitingSCollection.html">
-              <span class="name">RateLimitingSCollection</span>
-            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Enhanced version of <span class="extype" name="SCollection">SCollection</span> with rate limiting methods.</p>
     </li><li name="com.spotify.scio.extra.transforms.ScalaAsyncDoFn" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="ScalaAsyncDoFn[I,O,R]extendsBaseAsyncDoFn[I,O,R,scala.concurrent.Future[O]]"></a><a id="ScalaAsyncDoFn[I,O,R]:ScalaAsyncDoFn[I,O,R]"></a>
       <span class="permalink">

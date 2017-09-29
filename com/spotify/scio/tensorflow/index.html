@@ -137,12 +137,12 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../avro/index.html">
+        <a title="Main package for Avro APIs." href="../avro/index.html">
               <span class="name">avro</span>
             </a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
+      <p class="shortcomment cmt">Main package for Avro APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for Avro APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.avro._</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
     </li><li name="com.spotify.scio.bigquery" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="bigquery"></a><a id="bigquery:bigquery"></a>
       <span class="permalink">
@@ -369,6 +369,12 @@ detects the query's dialect. To override this, start the query with either <code
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <span class="separator"></span>
+                        <a class="class" href="package$$TFExampleIO.html" title=""></a>
+                        <a href="package$$TFExampleIO.html" title="">
+                          TFExampleIO
+                        </a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
                         <a class="class" href="package$$TFRecordIO.html" title=""></a>
                         <a href="package$$TFRecordIO.html" title="">
                           TFRecordIO
@@ -507,7 +513,25 @@ detects the query's dialect. To override this, start the query with either <code
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="com.spotify.scio.tensorflow.TFRecordIO" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="com.spotify.scio.tensorflow.TFExampleIO" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TFExampleIOextendsTestIO[org.tensorflow.example.Example]withProductwithSerializable"></a><a id="TFExampleIO:TFExampleIO"></a>
+      <span class="permalink">
+      <a href="../../../../com/spotify/scio/tensorflow/index.html#TFExampleIOextendsTestIO[org.tensorflow.example.Example]withProductwithSerializable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="package$$TFExampleIO.html">
+              <span class="name">TFExampleIO</span>
+            </a><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<span class="extype" name="org.tensorflow.example.Example">Example</span>] with <a href="http://www.scala-lang.org/api/2.12.3/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.3/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      
+      
+    </li><li name="com.spotify.scio.tensorflow.TFRecordIO" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="TFRecordIOextendsTestIO[Array[Byte]]withProductwithSerializable"></a><a id="TFRecordIO:TFRecordIO"></a>
       <span class="permalink">
       <a href="../../../../com/spotify/scio/tensorflow/index.html#TFRecordIOextendsTestIO[Array[Byte]]withProductwithSerializable" title="Permalink">
@@ -533,7 +557,39 @@ detects the query's dialect. To override this, start the query with either <code
         <div class="values members">
               <h3>Value Members</h3>
               <ol>
-                <li name="com.spotify.scio.tensorflow#makeTFFileStorageFunctions" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+                <li name="com.spotify.scio.tensorflow#FeatureDesc" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="FeatureDesc:com.spotify.scio.values.TFExampleSCollectionFunctions.FeatureDesc.type"></a><a id="FeatureDesc:values.TFExampleSCollectionFunctions.FeatureDesc.type"></a>
+      <span class="permalink">
+      <a href="../../../../com/spotify/scio/tensorflow/index.html#FeatureDesc:com.spotify.scio.values.TFExampleSCollectionFunctions.FeatureDesc.type" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">FeatureDesc</span><span class="result">: <span class="extype" name="com.spotify.scio.values.TFExampleSCollectionFunctions.FeatureDesc">values.TFExampleSCollectionFunctions.FeatureDesc</span>.type</span>
+      </span>
+      
+      <p class="shortcomment cmt">Expose <span class="extype" name="TFExampleSCollectionFunctions.FeatureDesc">TFExampleSCollectionFunctions.FeatureDesc</span>.</p>
+    </li><li name="com.spotify.scio.tensorflow#makeTFExampleSCollectionFunctions" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="makeTFExampleSCollectionFunctions[T&lt;:org.tensorflow.example.Example](s:com.spotify.scio.values.SCollection[T]):com.spotify.scio.values.TFExampleSCollectionFunctions[T]"></a><a id="makeTFExampleSCollectionFunctions[T&lt;:Example](SCollection[T]):TFExampleSCollectionFunctions[T]"></a>
+      <span class="permalink">
+      <a href="../../../../com/spotify/scio/tensorflow/index.html#makeTFExampleSCollectionFunctions[T&lt;:org.tensorflow.example.Example](s:com.spotify.scio.values.SCollection[T]):com.spotify.scio.values.TFExampleSCollectionFunctions[T]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">makeTFExampleSCollectionFunctions</span><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="org.tensorflow.example.Example">Example</span></span>]</span><span class="params">(<span name="s">s: <a href="../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.tensorflow.makeTFExampleSCollectionFunctions.T">T</span>]</span>)</span><span class="result">: <a href="../values/TFExampleSCollectionFunctions.html" class="extype" name="com.spotify.scio.values.TFExampleSCollectionFunctions">TFExampleSCollectionFunctions</a>[<span class="extype" name="com.spotify.scio.tensorflow.makeTFExampleSCollectionFunctions.T">T</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Implicit conversion from <span class="extype" name="SCollection">SCollection</span> to <span class="extype" name="TFExampleSCollectionFunctions">TFExampleSCollectionFunctions</span>.</p>
+    </li><li name="com.spotify.scio.tensorflow#makeTFFileStorageFunctions" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="makeTFFileStorageFunctions(s:com.spotify.scio.io.FileStorage):com.spotify.scio.io.TFFileStorageFunctions"></a><a id="makeTFFileStorageFunctions(FileStorage):TFFileStorageFunctions"></a>
       <span class="permalink">
       <a href="../../../../com/spotify/scio/tensorflow/index.html#makeTFFileStorageFunctions(s:com.spotify.scio.io.FileStorage):com.spotify.scio.io.TFFileStorageFunctions" title="Permalink">

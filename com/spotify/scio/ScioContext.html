@@ -137,12 +137,12 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="avro/index.html">
+        <a title="Main package for Avro APIs." href="avro/index.html">
               <span class="name">avro</span>
             </a>
       </span>
       
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
+      <p class="shortcomment cmt">Main package for Avro APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for Avro APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.avro._</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
     </li><li name="com.spotify.scio.bigquery" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="bigquery"></a><a id="bigquery:bigquery"></a>
       <span class="permalink">
@@ -666,7 +666,7 @@ NOTE: currently one can only add artifacts before pipeline object is created.
       </span>
       
       <p class="shortcomment cmt">Get an SCollection for an Avro file.</p><div class="fullcomment"><div class="comment cmt"><p>Get an SCollection for an Avro file.</p></div><dl class="paramcmts block"><dt class="param">schema</dt><dd class="cmt"><p>must be not null if <code>T</code> is of type
-              <a href="https://avro.apache.org/docs/1.8.1/api/java/org/apache/avro/generic/GenericRecord.html" class="extype" name="org.apache.avro.generic.GenericRecord">GenericRecord</a>.</p></dd></dl></div>
+              <span class="extype" name="org.apache.avro.generic.GenericRecord">GenericRecord</span>.</p></dd></dl></div>
     </li><li name="com.spotify.scio.ScioContext#bigQuerySelect" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="input">
       <a id="bigQuerySelect(sqlQuery:String,flattenResults:Boolean):com.spotify.scio.values.SCollection[com.spotify.scio.bigquery.TableRow]"></a><a id="bigQuerySelect(String,Boolean):SCollection[TableRow]"></a>
       <span class="permalink">
@@ -769,7 +769,7 @@ behavior, start the query string with <code>#legacysql</code> or <code>#standard
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">customInput</span><span class="tparams">[<span name="T">T</span>, <span name="I">I &gt;: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/values/PBegin.html#org.apache.beam.sdk.values.PBegin" class="extype" name="org.apache.beam.sdk.values.PBegin">PBegin</a> &lt;: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/values/PInput.html#org.apache.beam.sdk.values.PInput" class="extype" name="org.apache.beam.sdk.values.PInput">PInput</a></span>]</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="transform">transform: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/transforms/PTransform.html#org.apache.beam.sdk.transforms.PTransform" class="extype" name="org.apache.beam.sdk.transforms.PTransform">PTransform</a>[<span class="extype" name="com.spotify.scio.ScioContext.customInput.I">I</span>, <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/values/PCollection.html#org.apache.beam.sdk.values.PCollection" class="extype" name="org.apache.beam.sdk.values.PCollection">PCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.customInput.T">T</span>]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.3/scala/reflect/ClassTag.html#scala.reflect.ClassTag" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.customInput.T">T</span>]</span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.customInput.T">T</span>]</span>
+        <span class="name">customInput</span><span class="tparams">[<span name="T">T</span>, <span name="I">I &gt;: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/PBegin.html#org.apache.beam.sdk.values.PBegin" class="extype" name="org.apache.beam.sdk.values.PBegin">PBegin</a> &lt;: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/PInput.html#org.apache.beam.sdk.values.PInput" class="extype" name="org.apache.beam.sdk.values.PInput">PInput</a></span>]</span><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="transform">transform: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/transforms/PTransform.html#org.apache.beam.sdk.transforms.PTransform" class="extype" name="org.apache.beam.sdk.transforms.PTransform">PTransform</a>[<span class="extype" name="com.spotify.scio.ScioContext.customInput.I">I</span>, <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/PCollection.html#org.apache.beam.sdk.values.PCollection" class="extype" name="org.apache.beam.sdk.values.PCollection">PCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.customInput.T">T</span>]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.3/scala/reflect/ClassTag.html#scala.reflect.ClassTag" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.customInput.T">T</span>]</span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.customInput.T">T</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Get an SCollection with a custom input transform.</p><div class="fullcomment"><div class="comment cmt"><p>Get an SCollection with a custom input transform. The transform should have a unique name.</p></div></div>
@@ -1000,7 +1000,7 @@ serialization is not guaranteed to be compatible across Scio releases.</p></div>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">options</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/options/PipelineOptions.html#org.apache.beam.sdk.options.PipelineOptions" class="extype" name="org.apache.beam.sdk.options.PipelineOptions">PipelineOptions</a></span>
+        <span class="name">options</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/options/PipelineOptions.html#org.apache.beam.sdk.options.PipelineOptions" class="extype" name="org.apache.beam.sdk.options.PipelineOptions">PipelineOptions</a></span>
       </span>
       
       
@@ -1016,7 +1016,7 @@ serialization is not guaranteed to be compatible across Scio releases.</p></div>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">optionsAs</span><span class="tparams">[<span name="T">T &lt;: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/options/PipelineOptions.html#org.apache.beam.sdk.options.PipelineOptions" class="extype" name="org.apache.beam.sdk.options.PipelineOptions">PipelineOptions</a></span>]</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.3/scala/reflect/ClassTag.html#scala.reflect.ClassTag" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.optionsAs.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="com.spotify.scio.ScioContext.optionsAs.T">T</span></span>
+        <span class="name">optionsAs</span><span class="tparams">[<span name="T">T &lt;: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/options/PipelineOptions.html#org.apache.beam.sdk.options.PipelineOptions" class="extype" name="org.apache.beam.sdk.options.PipelineOptions">PipelineOptions</a></span>]</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.3/scala/reflect/ClassTag.html#scala.reflect.ClassTag" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.optionsAs.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="com.spotify.scio.ScioContext.optionsAs.T">T</span></span>
       </span>
       
       <p class="shortcomment cmt">Get PipelineOptions as a more specific sub-type.</p>
@@ -1096,7 +1096,7 @@ serialization is not guaranteed to be compatible across Scio releases.</p></div>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">pipeline</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/Pipeline.html#org.apache.beam.sdk.Pipeline" class="extype" name="org.apache.beam.sdk.Pipeline">Pipeline</a></span>
+        <span class="name">pipeline</span><span class="result">: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/Pipeline.html#org.apache.beam.sdk.Pipeline" class="extype" name="org.apache.beam.sdk.Pipeline">Pipeline</a></span>
       </span>
       
       <p class="shortcomment cmt">Underlying pipeline.</p>
@@ -1426,10 +1426,10 @@ behavior, start the query string with <code>#legacysql</code> or <code>#standard
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wrap</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/values/PCollection.html#org.apache.beam.sdk.values.PCollection" class="extype" name="org.apache.beam.sdk.values.PCollection">PCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.wrap.T">T</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.3/scala/reflect/ClassTag.html#scala.reflect.ClassTag" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.wrap.T">T</span>]</span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.wrap.T">T</span>]</span>
+        <span class="name">wrap</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="p">p: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/PCollection.html#org.apache.beam.sdk.values.PCollection" class="extype" name="org.apache.beam.sdk.values.PCollection">PCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.wrap.T">T</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.3/scala/reflect/ClassTag.html#scala.reflect.ClassTag" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioContext.wrap.T">T</span>]</span>)</span><span class="result">: <a href="values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.ScioContext.wrap.T">T</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Wrap a <a href="https://beam.apache.org/documentation/sdks/javadoc/2.0.0/org/apache/beam/sdk/values/PCollection.html" class="extype" name="org.apache.beam.sdk.values.PCollection">PCollection</a>.</p>
+      <p class="shortcomment cmt">Wrap a <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/PCollection.html" class="extype" name="org.apache.beam.sdk.values.PCollection">PCollection</a>.</p>
     </li>
               </ol>
             </div>

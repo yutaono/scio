@@ -163,9 +163,21 @@
       <p class="shortcomment cmt">Main package for Parquet Avro APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for Parquet Avro APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.parquet.avro._</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.spotify.scio.parquet">parquet</a></dd></dl></div>
     </li><li class="current-entities indented5">
                         <span class="separator"></span>
+                        <a class="class" href="package$$ParquetAvroSCollection.html" title="Enhanced version of SCollection with Parquet Avro methods."></a>
+                        <a href="package$$ParquetAvroSCollection.html" title="Enhanced version of SCollection with Parquet Avro methods.">
+                          ParquetAvroSCollection
+                        </a>
+                      </li><li class="current-entities indented5">
+                        <span class="separator"></span>
                         <a class="class" href="" title="Enhanced version of ScioContext with Parquet Avro methods."></a>
                         <a href="" title="Enhanced version of ScioContext with Parquet Avro methods.">
                           ParquetAvroScioContext
+                        </a>
+                      </li><li class="current-entities indented5">
+                        <span class="separator"></span>
+                        <a class="class" href="ParquetAvroSink.html" title=""></a>
+                        <a href="ParquetAvroSink.html" title="">
+                          ParquetAvroSink
                         </a>
                       </li>
               </ul>
@@ -379,11 +391,11 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">parquetAvroFile</span><span class="tparams">[<span name="T">T &lt;: <a href="https://avro.apache.org/docs/1.8.1/api/java/org/apache/avro/specific/SpecificRecordBase.html#org.apache.avro.specific.SpecificRecordBase" class="extype" name="org.apache.avro.specific.SpecificRecordBase">SpecificRecordBase</a></span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="projection">projection: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>, <span name="predicate">predicate: <span class="extype" name="org.apache.parquet.filter2.predicate.FilterPredicate">FilterPredicate</span> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.3/scala/reflect/ClassTag.html#scala.reflect.ClassTag" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="com.spotify.scio.parquet.avro.ParquetAvroScioContext.parquetAvroFile.T">T</span>]</span>)</span><span class="result">: <a href="../../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.parquet.avro.ParquetAvroScioContext.parquetAvroFile.T">T</span>]</span>
+        <span class="name">parquetAvroFile</span><span class="tparams">[<span name="T">T &lt;: <span class="extype" name="org.apache.avro.specific.SpecificRecordBase">SpecificRecordBase</span></span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="projection">projection: <span class="extype" name="org.apache.avro.Schema">Schema</span> = <span class="symbol">null</span></span>, <span name="predicate">predicate: <span class="extype" name="org.apache.parquet.filter2.predicate.FilterPredicate">FilterPredicate</span> = <span class="symbol">null</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.3/scala/reflect/ClassTag.html#scala.reflect.ClassTag" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="com.spotify.scio.parquet.avro.ParquetAvroScioContext.parquetAvroFile.T">T</span>]</span>)</span><span class="result">: <a href="../../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.parquet.avro.ParquetAvroScioContext.parquetAvroFile.T">T</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Get an SCollection for a Parquet file as Avro records.</p><div class="fullcomment"><div class="comment cmt"><p>Get an SCollection for a Parquet file as Avro records.</p><p>Note that due to limitations of the underlying <span class="extype" name="HadoopInputFormatIO">HadoopInputFormatIO</span>,
-Avro <a href="https://avro.apache.org/docs/1.8.1/api/java/org/apache/avro/generic/GenericRecord.html" class="extype" name="org.apache.avro.generic.GenericRecord">GenericRecord</a> and dynamic work rebalancing
+Avro <span class="extype" name="org.apache.avro.generic.GenericRecord">GenericRecord</span> and dynamic work rebalancing
 are not supported. Without the latter, pipelines may not autoscale up or down during the
 initial read and subsequent fused transforms.
 </p></div></div>
