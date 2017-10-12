@@ -438,7 +438,26 @@ To be used in a <a href="PipelineSpec.html" class="extype" name="com.spotify.sci
       <p class="shortcomment cmt">Feed an distributed cache to the pipeline being tested.</p><div class="fullcomment"><div class="comment cmt"><p>Feed an distributed cache to the pipeline being tested. Note that <code>DistCacheIO[T]</code> must
 match the one used inside the pipeline, e.g. <code>DistCacheIO[Set[String]](&quot;dc.txt&quot;)</code> with
 <code>sc.distCache(&quot;dc.txt&quot;)(f =&gt; scala.io.Source.fromFile(f).getLines().toSet)</code>.
-</p></div></div>
+</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>mock value, must be serializable.</p></dd></dl></div>
+    </li><li name="com.spotify.scio.testing.JobTest.Builder#distCacheFunc" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="distCacheFunc[T](key:com.spotify.scio.testing.DistCacheIO[T],initFn:()=&gt;T):com.spotify.scio.testing.JobTest.Builder"></a><a id="distCacheFunc[T](DistCacheIO[T],()⇒T):Builder"></a>
+      <span class="permalink">
+      <a href="../../../../com/spotify/scio/testing/JobTest$$Builder.html#distCacheFunc[T](key:com.spotify.scio.testing.DistCacheIO[T],initFn:()=&gt;T):com.spotify.scio.testing.JobTest.Builder" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">distCacheFunc</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="key">key: <a href="DistCacheIO.html" class="extype" name="com.spotify.scio.testing.DistCacheIO">DistCacheIO</a>[<span class="extype" name="com.spotify.scio.testing.JobTest.Builder.distCacheFunc.T">T</span>]</span>, <span name="initFn">initFn: () ⇒ <span class="extype" name="com.spotify.scio.testing.JobTest.Builder.distCacheFunc.T">T</span></span>)</span><span class="result">: <a href="" class="extype" name="com.spotify.scio.testing.JobTest.Builder">Builder</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Feed an distributed cache to the pipeline being tested.</p><div class="fullcomment"><div class="comment cmt"><p>Feed an distributed cache to the pipeline being tested. Note that <code>DistCacheIO[T]</code> must
+match the one used inside the pipeline, e.g. <code>DistCacheIO[Set[String]](&quot;dc.txt&quot;)</code> with
+<code>sc.distCache(&quot;dc.txt&quot;)(f =&gt; scala.io.Source.fromFile(f).getLines().toSet)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">initFn</dt><dd class="cmt"><p>init function, must be serializable.</p></dd></dl></div>
     </li><li name="com.spotify.scio.testing.JobTest.Builder#distribution" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="distribution(distribution:org.apache.beam.sdk.metrics.Distribution)(assertion:org.apache.beam.sdk.metrics.DistributionResult=&gt;Unit):com.spotify.scio.testing.JobTest.Builder"></a><a id="distribution(Distribution)((DistributionResult)⇒Unit):Builder"></a>
       <span class="permalink">
