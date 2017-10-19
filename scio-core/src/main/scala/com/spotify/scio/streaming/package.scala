@@ -18,10 +18,12 @@
 package com.spotify.scio
 
 import com.spotify.scio.util.Functions
-import com.spotify.scio.values.SCollection
+import com.spotify.scio.values.{SCollection, SideInput}
 import org.apache.beam.sdk.io.GenerateSequence
 import org.apache.beam.sdk.values.WindowingStrategy.AccumulationMode
 import org.joda.time.{Duration, Instant}
+
+import scala.reflect.ClassTag
 
 /**
  * Main package for streaming APIs. Import all.
@@ -66,6 +68,20 @@ package object streaming {
         t = t.withTimestampFn(f)
       }
       self.customInput("sequence", t).asInstanceOf[SCollection[Long]]
+    }
+
+    def refreshingSideInput[T: ClassTag](interval: Duration, f: Instant => T): SideInput[Seq[T]] = {
+      val now = Instant.now()
+      val fn = (x: Long) => {
+        val r = new Instant(now.plus(interval.multipliedBy(x)))
+        println("side", r)
+        r
+      }
+      self.sequence(0, interval = interval, maxReadTime = interval.multipliedBy(10),
+        timestampFn = fn)
+        .withFixedWindows(interval)
+        .map(x => f(new Instant(now.plus(interval.multipliedBy(x)))))
+        .asListSideInput
     }
   }
 }
