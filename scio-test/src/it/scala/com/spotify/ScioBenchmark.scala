@@ -118,6 +118,7 @@ object ScioBenchmark {
     GroupByKey,
     GroupAll,
     Join,
+    JoinOne,
     HashJoin,
     SingletonSideInput,
     IterableSideInput,
@@ -177,6 +178,13 @@ object ScioBenchmark {
   object Join extends Benchmark(shuffleConf) {
     override def run(sc: ScioContext): Unit =
       randomKVs(sc, 100 * M, 10 * M) join randomKVs(sc, 50 * M, 5 * M)
+  }
+
+  // LHS: 100M items, 10M keys, average 1 values per key
+  // RHS: 50M items, 5M keys, average 1 values per key
+  object JoinOne extends Benchmark(shuffleConf) {
+    override def run(sc: ScioContext): Unit =
+      randomKVs(sc, 100 * M, 100 * M) join randomKVs(sc, 50 * M, 50 * M)
   }
 
   // LHS: 100M items, 10M keys, average 10 values per key
