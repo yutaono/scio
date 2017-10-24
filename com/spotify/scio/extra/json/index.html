@@ -65,9 +65,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../../../../../index.html">
-              <span class="name">root</span>
-            </a>
+        <a title="" href="../../../../../index.html"><span class="name">root</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
@@ -83,9 +81,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../../../../index.html">
-              <span class="name">com</span>
-            </a>
+        <a title="" href="../../../../index.html"><span class="name">com</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
@@ -101,9 +97,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../../../index.html">
-              <span class="name">spotify</span>
-            </a>
+        <a title="" href="../../../index.html"><span class="name">spotify</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../index.html" class="extype" name="com">com</a></dd></dl></div>
@@ -119,9 +113,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for public APIs." href="../../index.html">
-              <span class="name">scio</span>
-            </a>
+        <a title="Main package for public APIs." href="../../index.html"><span class="name">scio</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for public APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for public APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio._</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../index.html" class="extype" name="com.spotify">spotify</a></dd></dl></div>
@@ -137,9 +129,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../index.html">
-              <span class="name">extra</span>
-            </a>
+        <a title="" href="../index.html"><span class="name">extra</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
@@ -155,9 +145,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for Annoy side input APIs." href="../annoy/index.html">
-              <span class="name">annoy</span>
-            </a>
+        <a title="Main package for Annoy side input APIs." href="../annoy/index.html"><span class="name">annoy</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for Annoy side input APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for Annoy side input APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.extra.annoy._</pre><p>Two metrics are available, Angular and Euclidean.</p><p>To save an <code>SCollection[(Int, Array[Float])]</code> to an Annoy file:</p><pre><span class="kw">val</span> s = sc.parallelize(<span class="std">Seq</span>( <span class="num">1</span>-&gt; <span class="std">Array</span>(<span class="num">1.2</span>f, <span class="num">3.4</span>f), <span class="num">2</span> -&gt; <span class="std">Array</span>(<span class="num">2.2</span>f, <span class="num">1.2</span>f)))</pre><p>Save to a temporary location:</p><pre><span class="kw">val</span> s1 = s.asAnnoy(Angular, <span class="num">40</span>, <span class="num">10</span>)</pre><p>Save to a specific location:</p><pre><span class="kw">val</span> s1 = s.asAnnoy(Angular, <span class="num">40</span>, <span class="num">10</span>, <span class="lit">"gs://<bucket>/<path>"</span>)</pre><p><code>SCollection[AnnoyUri]</code> can be converted into a side input:</p><pre><span class="kw">val</span> s = sc.parallelize(<span class="std">Seq</span>( <span class="num">1</span>-&gt; <span class="std">Array</span>(<span class="num">1.2</span>f, <span class="num">3.4</span>f), <span class="num">2</span> -&gt; <span class="std">Array</span>(<span class="num">2.2</span>f, <span class="num">1.2</span>f)))
@@ -193,9 +181,7 @@ main.keys.withSideInput(side)
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for checkpoint API." href="../checkpoint/index.html">
-              <span class="name">checkpoint</span>
-            </a>
+        <a title="Main package for checkpoint API." href="../checkpoint/index.html"><span class="name">checkpoint</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for checkpoint API.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for checkpoint API. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.extra.checkpoint._</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.spotify.scio.extra">extra</a></dd></dl></div>
@@ -228,27 +214,19 @@ sc.parallelize((<span class="num">1</span> to <span class="num">10</span>).map(x
     </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="package$$DecodeError.html" title="A wrapper for io.circe.Error that also retains the original input string."></a>
-                        <a href="package$$DecodeError.html" title="A wrapper for io.circe.Error that also retains the original input string.">
-                          DecodeError
-                        </a>
+                        <a href="package$$DecodeError.html" title="A wrapper for io.circe.Error that also retains the original input string.">DecodeError</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="package$$JsonIO.html" title=""></a>
-                        <a href="package$$JsonIO.html" title="">
-                          JsonIO
-                        </a>
+                        <a href="package$$JsonIO.html" title="">JsonIO</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="package$$JsonSCollection.html" title="Enhanced version of SCollection with JSON methods."></a>
-                        <a href="package$$JsonSCollection.html" title="Enhanced version of SCollection with JSON methods.">
-                          JsonSCollection
-                        </a>
+                        <a href="package$$JsonSCollection.html" title="Enhanced version of SCollection with JSON methods.">JsonSCollection</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="package$$JsonScioContext.html" title="Enhanced version of ScioContext with JSON methods."></a>
-                        <a href="package$$JsonScioContext.html" title="Enhanced version of ScioContext with JSON methods.">
-                          JsonScioContext
-                        </a>
+                        <a href="package$$JsonScioContext.html" title="Enhanced version of ScioContext with JSON methods.">JsonScioContext</a>
                       </li><li name="com.spotify.scio.extra.libsvm" visbl="pub" class="indented5 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="libsvm"></a><a id="libsvm:libsvm"></a>
       <span class="permalink">
@@ -261,9 +239,7 @@ sc.parallelize((<span class="num">1</span> to <span class="num">10</span>).map(x
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for reading the Lib SVM Format" href="../libsvm/index.html">
-              <span class="name">libsvm</span>
-            </a>
+        <a title="Main package for reading the Lib SVM Format" href="../libsvm/index.html"><span class="name">libsvm</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for reading the Lib SVM Format</p><div class="fullcomment"><div class="comment cmt"><p>Main package for reading the Lib SVM Format</p><pre><span class="kw">import</span> com.spotify.scio.extra.libsvm._
@@ -282,9 +258,7 @@ sc.libSVMFile(<span class="lit">"input.svm"</span>)</pre></div><dl class="attrib
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../nn/index.html">
-              <span class="name">nn</span>
-            </a>
+        <a title="" href="../nn/index.html"><span class="name">nn</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.spotify.scio.extra">extra</a></dd></dl></div>
@@ -300,9 +274,7 @@ sc.libSVMFile(<span class="lit">"input.svm"</span>)</pre></div><dl class="attrib
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for Sparkey side input APIs." href="../sparkey/index.html">
-              <span class="name">sparkey</span>
-            </a>
+        <a title="Main package for Sparkey side input APIs." href="../sparkey/index.html"><span class="name">sparkey</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for Sparkey side input APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for Sparkey side input APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.extra.sparkey._</pre><p>To save an <code>SCollection[(String, String)]</code> to a Sparkey file:</p><pre><span class="kw">val</span> s = sc.parallelize(<span class="std">Seq</span>(<span class="lit">"a"</span> -&gt; <span class="lit">"one"</span>, <span class="lit">"b"</span> -&gt; <span class="lit">"two"</span>))
@@ -335,9 +307,7 @@ main.withSideInputs(side)
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for transforms APIs." href="../transforms/index.html">
-              <span class="name">transforms</span>
-            </a>
+        <a title="Main package for transforms APIs." href="../transforms/index.html"><span class="name">transforms</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for transforms APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for transforms APIs. Import all.
@@ -384,7 +354,7 @@ sc.parallelize((<span class="num">1</span> to <span class="num">10</span>).map(x
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="io.circe.generic.AutoDerivation">AutoDerivation</span>, <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="io.circe.generic.AutoDerivation">AutoDerivation</span>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
         </div></div>
         
 
@@ -444,9 +414,7 @@ sc.parallelize((<span class="num">1</span> to <span class="num">10</span>).map(x
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="A wrapper for io.circe.Error that also retains the original input string." href="package$$DecodeError.html">
-              <span class="name">DecodeError</span>
-            </a><span class="params">(<span name="error">error: <span class="extype" name="io.circe.Error">Error</span></span>, <span name="input">input: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.3/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.3/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <a title="A wrapper for io.circe.Error that also retains the original input string." href="package$$DecodeError.html"><span class="name">DecodeError</span></a><span class="params">(<span name="error">error: <span class="extype" name="io.circe.Error">Error</span></span>, <span name="input">input: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       
       <p class="shortcomment cmt">A wrapper for <span class="extype" name="io.circe.Error">io.circe.Error</span> that also retains the original input string.</p>
@@ -494,9 +462,7 @@ sc.parallelize((<span class="num">1</span> to <span class="num">10</span>).map(x
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="" href="package$$JsonIO.html">
-              <span class="name">JsonIO</span>
-            </a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<span class="extype" name="com.spotify.scio.extra.json.JsonIO.T">T</span>] with <a href="http://www.scala-lang.org/api/2.12.3/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.3/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <a title="" href="package$$JsonIO.html"><span class="name">JsonIO</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="../../testing/TestIO.html" class="extype" name="com.spotify.scio.testing.TestIO">TestIO</a>[<span class="extype" name="com.spotify.scio.extra.json.JsonIO.T">T</span>] with <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       
       
@@ -512,9 +478,7 @@ sc.parallelize((<span class="num">1</span> to <span class="num">10</span>).map(x
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="Enhanced version of SCollection with JSON methods." href="package$$JsonSCollection.html">
-              <span class="name">JsonSCollection</span>
-            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.3/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <a title="Enhanced version of SCollection with JSON methods." href="package$$JsonSCollection.html"><span class="name">JsonSCollection</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       
       <p class="shortcomment cmt">Enhanced version of <span class="extype" name="SCollection">SCollection</span> with JSON methods.</p>
@@ -530,9 +494,7 @@ sc.parallelize((<span class="num">1</span> to <span class="num">10</span>).map(x
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="Enhanced version of ScioContext with JSON methods." href="package$$JsonScioContext.html">
-              <span class="name">JsonScioContext</span>
-            </a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.3/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <a title="Enhanced version of ScioContext with JSON methods." href="package$$JsonScioContext.html"><span class="name">JsonScioContext</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       
       <p class="shortcomment cmt">Enhanced version of <a href="../../ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a> with JSON methods.</p>
@@ -589,9 +551,9 @@ sc.parallelize((<span class="num">1</span> to <span class="num">10</span>).map(x
         <div class="parent" name="io.circe.generic.AutoDerivation">
               <h3>Inherited from <span class="extype" name="io.circe.generic.AutoDerivation">AutoDerivation</span></h3>
             </div><div class="parent" name="scala.AnyRef">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></h3>
             </div>
         
         </div>

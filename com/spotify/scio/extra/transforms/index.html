@@ -65,9 +65,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../../../../../index.html">
-              <span class="name">root</span>
-            </a>
+        <a title="" href="../../../../../index.html"><span class="name">root</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
@@ -83,9 +81,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../../../../index.html">
-              <span class="name">com</span>
-            </a>
+        <a title="" href="../../../../index.html"><span class="name">com</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
@@ -101,9 +97,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../../../index.html">
-              <span class="name">spotify</span>
-            </a>
+        <a title="" href="../../../index.html"><span class="name">spotify</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../index.html" class="extype" name="com">com</a></dd></dl></div>
@@ -119,9 +113,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for public APIs." href="../../index.html">
-              <span class="name">scio</span>
-            </a>
+        <a title="Main package for public APIs." href="../../index.html"><span class="name">scio</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for public APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for public APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio._</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../index.html" class="extype" name="com.spotify">spotify</a></dd></dl></div>
@@ -137,9 +129,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../index.html">
-              <span class="name">extra</span>
-            </a>
+        <a title="" href="../index.html"><span class="name">extra</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
@@ -155,9 +145,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for Annoy side input APIs." href="../annoy/index.html">
-              <span class="name">annoy</span>
-            </a>
+        <a title="Main package for Annoy side input APIs." href="../annoy/index.html"><span class="name">annoy</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for Annoy side input APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for Annoy side input APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.extra.annoy._</pre><p>Two metrics are available, Angular and Euclidean.</p><p>To save an <code>SCollection[(Int, Array[Float])]</code> to an Annoy file:</p><pre><span class="kw">val</span> s = sc.parallelize(<span class="std">Seq</span>( <span class="num">1</span>-&gt; <span class="std">Array</span>(<span class="num">1.2</span>f, <span class="num">3.4</span>f), <span class="num">2</span> -&gt; <span class="std">Array</span>(<span class="num">2.2</span>f, <span class="num">1.2</span>f)))</pre><p>Save to a temporary location:</p><pre><span class="kw">val</span> s1 = s.asAnnoy(Angular, <span class="num">40</span>, <span class="num">10</span>)</pre><p>Save to a specific location:</p><pre><span class="kw">val</span> s1 = s.asAnnoy(Angular, <span class="num">40</span>, <span class="num">10</span>, <span class="lit">"gs://<bucket>/<path>"</span>)</pre><p><code>SCollection[AnnoyUri]</code> can be converted into a side input:</p><pre><span class="kw">val</span> s = sc.parallelize(<span class="std">Seq</span>( <span class="num">1</span>-&gt; <span class="std">Array</span>(<span class="num">1.2</span>f, <span class="num">3.4</span>f), <span class="num">2</span> -&gt; <span class="std">Array</span>(<span class="num">2.2</span>f, <span class="num">1.2</span>f)))
@@ -193,9 +181,7 @@ main.keys.withSideInput(side)
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for checkpoint API." href="../checkpoint/index.html">
-              <span class="name">checkpoint</span>
-            </a>
+        <a title="Main package for checkpoint API." href="../checkpoint/index.html"><span class="name">checkpoint</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for checkpoint API.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for checkpoint API. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.extra.checkpoint._</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.spotify.scio.extra">extra</a></dd></dl></div>
@@ -211,9 +197,7 @@ main.keys.withSideInput(side)
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for JSON APIs." href="../json/index.html">
-              <span class="name">json</span>
-            </a>
+        <a title="Main package for JSON APIs." href="../json/index.html"><span class="name">json</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for JSON APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for JSON APIs. Import all.</p><p>This package uses <a href="https://circe.github.io/circe/" target="_blank">Circe</a> for JSON handling under the hood.</p><pre><span class="kw">import</span> com.spotify.scio.extra.json._
@@ -239,9 +223,7 @@ sc.parallelize((<span class="num">1</span> to <span class="num">10</span>).map(x
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for reading the Lib SVM Format" href="../libsvm/index.html">
-              <span class="name">libsvm</span>
-            </a>
+        <a title="Main package for reading the Lib SVM Format" href="../libsvm/index.html"><span class="name">libsvm</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for reading the Lib SVM Format</p><div class="fullcomment"><div class="comment cmt"><p>Main package for reading the Lib SVM Format</p><pre><span class="kw">import</span> com.spotify.scio.extra.libsvm._
@@ -260,9 +242,7 @@ sc.libSVMFile(<span class="lit">"input.svm"</span>)</pre></div><dl class="attrib
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../nn/index.html">
-              <span class="name">nn</span>
-            </a>
+        <a title="" href="../nn/index.html"><span class="name">nn</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.spotify.scio.extra">extra</a></dd></dl></div>
@@ -278,9 +258,7 @@ sc.libSVMFile(<span class="lit">"input.svm"</span>)</pre></div><dl class="attrib
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for Sparkey side input APIs." href="../sparkey/index.html">
-              <span class="name">sparkey</span>
-            </a>
+        <a title="Main package for Sparkey side input APIs." href="../sparkey/index.html"><span class="name">sparkey</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for Sparkey side input APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for Sparkey side input APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.extra.sparkey._</pre><p>To save an <code>SCollection[(String, String)]</code> to a Sparkey file:</p><pre><span class="kw">val</span> s = sc.parallelize(<span class="std">Seq</span>(<span class="lit">"a"</span> -&gt; <span class="lit">"one"</span>, <span class="lit">"b"</span> -&gt; <span class="lit">"two"</span>))
@@ -321,71 +299,47 @@ main.withSideInputs(side)
     </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="BaseAsyncDoFn.html" title=""></a>
-                        <a href="BaseAsyncDoFn.html" title="">
-                          BaseAsyncDoFn
-                        </a>
+                        <a href="BaseAsyncDoFn.html" title="">BaseAsyncDoFn</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="DoFnWithResource.html" title=""></a>
-                        <a href="DoFnWithResource.html" title="">
-                          DoFnWithResource
-                        </a>
+                        <a href="DoFnWithResource.html" title="">DoFnWithResource</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="FileDownloadDoFn.html" title=""></a>
-                        <a href="FileDownloadDoFn.html" title="">
-                          FileDownloadDoFn
-                        </a>
+                        <a href="FileDownloadDoFn.html" title="">FileDownloadDoFn</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="GuavaAsyncDoFn.html" title=""></a>
-                        <a href="GuavaAsyncDoFn.html" title="">
-                          GuavaAsyncDoFn
-                        </a>
+                        <a href="GuavaAsyncDoFn.html" title="">GuavaAsyncDoFn</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="JavaAsyncDoFn.html" title=""></a>
-                        <a href="JavaAsyncDoFn.html" title="">
-                          JavaAsyncDoFn
-                        </a>
+                        <a href="JavaAsyncDoFn.html" title="">JavaAsyncDoFn</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="PipeDoFn.html" title=""></a>
-                        <a href="PipeDoFn.html" title="">
-                          PipeDoFn
-                        </a>
+                        <a href="PipeDoFn.html" title="">PipeDoFn</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="package$$PipeSCollection.html" title="Enhanced version of SCollection with pipe methods."></a>
-                        <a href="package$$PipeSCollection.html" title="Enhanced version of SCollection with pipe methods.">
-                          PipeSCollection
-                        </a>
+                        <a href="package$$PipeSCollection.html" title="Enhanced version of SCollection with pipe methods.">PipeSCollection</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="RateLimiterDoFn.html" title=""></a>
-                        <a href="RateLimiterDoFn.html" title="">
-                          RateLimiterDoFn
-                        </a>
+                        <a href="RateLimiterDoFn.html" title="">RateLimiterDoFn</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
-                        <a class="class" href="ScalaAsyncDoFn.html" title="A DoFn that handles asynchronous requests to an
-external service that returns Scala Futures."></a>
-                        <a href="ScalaAsyncDoFn.html" title="A DoFn that handles asynchronous requests to an
-external service that returns Scala Futures.">
-                          ScalaAsyncDoFn
-                        </a>
+                        <a class="class" href="ScalaAsyncDoFn.html" title="A DoFn that handles asynchronous requests to an external service that returns Scala Futures."></a>
+                        <a href="ScalaAsyncDoFn.html" title="A DoFn that handles asynchronous requests to an external service that returns Scala Futures.">ScalaAsyncDoFn</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="package$$SpecializedFlatMapSCollection.html" title="Enhanced version of SCollection with specialized versions of flatMap."></a>
-                        <a href="package$$SpecializedFlatMapSCollection.html" title="Enhanced version of SCollection with specialized versions of flatMap.">
-                          SpecializedFlatMapSCollection
-                        </a>
+                        <a href="package$$SpecializedFlatMapSCollection.html" title="Enhanced version of SCollection with specialized versions of flatMap.">SpecializedFlatMapSCollection</a>
                       </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="package$$URISCollection.html" title="Enhanced version of SCollection with URI methods."></a>
-                        <a href="package$$URISCollection.html" title="Enhanced version of SCollection with URI methods.">
-                          URISCollection
-                        </a>
+                        <a href="package$$URISCollection.html" title="Enhanced version of SCollection with URI methods.">URISCollection</a>
                       </li>
               </ul>
             </div>
@@ -419,7 +373,7 @@ external service that returns Scala Futures.">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
         </div></div>
         
 
@@ -443,9 +397,7 @@ external service that returns Scala Futures.">
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="" href="BaseAsyncDoFn.html">
-              <span class="name">BaseAsyncDoFn</span>
-            </a><span class="tparams">[<span name="InputT">InputT</span>, <span name="OutputT">OutputT</span>, <span name="ResourceT">ResourceT</span>, <span name="FutureT">FutureT</span>]</span><span class="result"> extends <a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.ResourceT">ResourceT</span>]</span>
+        <a title="" href="BaseAsyncDoFn.html"><span class="name">BaseAsyncDoFn</span></a><span class="tparams">[<span name="InputT">InputT</span>, <span name="OutputT">OutputT</span>, <span name="ResourceT">ResourceT</span>, <span name="FutureT">FutureT</span>]</span><span class="result"> extends <a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.ResourceT">ResourceT</span>]</span>
       </span>
       
       
@@ -461,9 +413,7 @@ external service that returns Scala Futures.">
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="" href="DoFnWithResource.html">
-              <span class="name">DoFnWithResource</span>
-            </a><span class="tparams">[<span name="InputT">InputT</span>, <span name="OutputT">OutputT</span>, <span name="ResourceT">ResourceT</span>]</span><span class="result"> extends <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource.OutputT">OutputT</span>]</span>
+        <a title="" href="DoFnWithResource.html"><span class="name">DoFnWithResource</span></a><span class="tparams">[<span name="InputT">InputT</span>, <span name="OutputT">OutputT</span>, <span name="ResourceT">ResourceT</span>]</span><span class="result"> extends <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource.OutputT">OutputT</span>]</span>
       </span>
       
       
@@ -479,9 +429,7 @@ external service that returns Scala Futures.">
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="" href="FileDownloadDoFn.html">
-              <span class="name">FileDownloadDoFn</span>
-            </a><span class="tparams">[<span name="OutputT">OutputT</span>]</span><span class="result"> extends <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="java.net.URI">URI</span>, <span class="extype" name="com.spotify.scio.extra.transforms.FileDownloadDoFn.OutputT">OutputT</span>]</span>
+        <a title="" href="FileDownloadDoFn.html"><span class="name">FileDownloadDoFn</span></a><span class="tparams">[<span name="OutputT">OutputT</span>]</span><span class="result"> extends <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="java.net.URI">URI</span>, <span class="extype" name="com.spotify.scio.extra.transforms.FileDownloadDoFn.OutputT">OutputT</span>]</span>
       </span>
       
       
@@ -497,9 +445,7 @@ external service that returns Scala Futures.">
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="" href="GuavaAsyncDoFn.html">
-              <span class="name">GuavaAsyncDoFn</span>
-            </a><span class="tparams">[<span name="InputT">InputT</span>, <span name="OutputT">OutputT</span>, <span name="ResourceT">ResourceT</span>]</span><span class="result"> extends <a href="BaseAsyncDoFn.html" class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn">BaseAsyncDoFn</a>[<span class="extype" name="com.spotify.scio.extra.transforms.GuavaAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.GuavaAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.GuavaAsyncDoFn.ResourceT">ResourceT</span>, <span class="extype" name="com.google.common.util.concurrent.ListenableFuture">ListenableFuture</span>[<span class="extype" name="com.spotify.scio.extra.transforms.GuavaAsyncDoFn.OutputT">OutputT</span>]]</span>
+        <a title="" href="GuavaAsyncDoFn.html"><span class="name">GuavaAsyncDoFn</span></a><span class="tparams">[<span name="InputT">InputT</span>, <span name="OutputT">OutputT</span>, <span name="ResourceT">ResourceT</span>]</span><span class="result"> extends <a href="BaseAsyncDoFn.html" class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn">BaseAsyncDoFn</a>[<span class="extype" name="com.spotify.scio.extra.transforms.GuavaAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.GuavaAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.GuavaAsyncDoFn.ResourceT">ResourceT</span>, <span class="extype" name="com.google.common.util.concurrent.ListenableFuture">ListenableFuture</span>[<span class="extype" name="com.spotify.scio.extra.transforms.GuavaAsyncDoFn.OutputT">OutputT</span>]]</span>
       </span>
       
       
@@ -515,9 +461,7 @@ external service that returns Scala Futures.">
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="" href="JavaAsyncDoFn.html">
-              <span class="name">JavaAsyncDoFn</span>
-            </a><span class="tparams">[<span name="InputT">InputT</span>, <span name="OutputT">OutputT</span>, <span name="ResourceT">ResourceT</span>]</span><span class="result"> extends <a href="BaseAsyncDoFn.html" class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn">BaseAsyncDoFn</a>[<span class="extype" name="com.spotify.scio.extra.transforms.JavaAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.JavaAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.JavaAsyncDoFn.ResourceT">ResourceT</span>, <span class="extype" name="java.util.concurrent.CompletableFuture">CompletableFuture</span>[<span class="extype" name="com.spotify.scio.extra.transforms.JavaAsyncDoFn.OutputT">OutputT</span>]]</span>
+        <a title="" href="JavaAsyncDoFn.html"><span class="name">JavaAsyncDoFn</span></a><span class="tparams">[<span name="InputT">InputT</span>, <span name="OutputT">OutputT</span>, <span name="ResourceT">ResourceT</span>]</span><span class="result"> extends <a href="BaseAsyncDoFn.html" class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn">BaseAsyncDoFn</a>[<span class="extype" name="com.spotify.scio.extra.transforms.JavaAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.JavaAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.JavaAsyncDoFn.ResourceT">ResourceT</span>, <span class="extype" name="java.util.concurrent.CompletableFuture">CompletableFuture</span>[<span class="extype" name="com.spotify.scio.extra.transforms.JavaAsyncDoFn.OutputT">OutputT</span>]]</span>
       </span>
       
       
@@ -533,9 +477,7 @@ external service that returns Scala Futures.">
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="" href="PipeDoFn.html">
-              <span class="name">PipeDoFn</span>
-            </a><span class="result"> extends <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="java.lang.String">String</span>, <span class="extype" name="java.lang.String">String</span>]</span>
+        <a title="" href="PipeDoFn.html"><span class="name">PipeDoFn</span></a><span class="result"> extends <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="java.lang.String">String</span>, <span class="extype" name="java.lang.String">String</span>]</span>
       </span>
       
       
@@ -551,9 +493,7 @@ external service that returns Scala Futures.">
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="Enhanced version of SCollection with pipe methods." href="package$$PipeSCollection.html">
-              <span class="name">PipeSCollection</span>
-            </a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyVal" class="extype" name="scala.collection.immutable.List">AnyVal</a></span>
+        <a title="Enhanced version of SCollection with pipe methods." href="package$$PipeSCollection.html"><span class="name">PipeSCollection</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyVal" class="extype" name="scala.collection.immutable.List">AnyVal</a></span>
       </span>
       
       <p class="shortcomment cmt">Enhanced version of <span class="extype" name="SCollection">SCollection</span> with pipe methods.</p>
@@ -569,9 +509,7 @@ external service that returns Scala Futures.">
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="" href="RateLimiterDoFn.html">
-              <span class="name">RateLimiterDoFn</span>
-            </a><span class="tparams">[<span name="InputT">InputT</span>]</span><span class="result"> extends <a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a>[<span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>, <span class="extype" name="com.google.common.util.concurrent.RateLimiter">RateLimiter</span>]</span>
+        <a title="" href="RateLimiterDoFn.html"><span class="name">RateLimiterDoFn</span></a><span class="tparams">[<span name="InputT">InputT</span>]</span><span class="result"> extends <a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a>[<span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.RateLimiterDoFn.InputT">InputT</span>, <span class="extype" name="com.google.common.util.concurrent.RateLimiter">RateLimiter</span>]</span>
       </span>
       
       
@@ -587,10 +525,7 @@ external service that returns Scala Futures.">
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="A DoFn that handles asynchronous requests to an
-external service that returns Scala Futures." href="ScalaAsyncDoFn.html">
-              <span class="name">ScalaAsyncDoFn</span>
-            </a><span class="tparams">[<span name="I">I</span>, <span name="O">O</span>, <span name="R">R</span>]</span><span class="result"> extends <a href="BaseAsyncDoFn.html" class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn">BaseAsyncDoFn</a>[<span class="extype" name="com.spotify.scio.extra.transforms.ScalaAsyncDoFn.I">I</span>, <span class="extype" name="com.spotify.scio.extra.transforms.ScalaAsyncDoFn.O">O</span>, <span class="extype" name="com.spotify.scio.extra.transforms.ScalaAsyncDoFn.R">R</span>, <a href="http://www.scala-lang.org/api/2.12.3/scala/concurrent/Future.html#scala.concurrent.Future" class="extype" name="scala.concurrent.Future">Future</a>[<span class="extype" name="com.spotify.scio.extra.transforms.ScalaAsyncDoFn.O">O</span>]]</span>
+        <a title="A DoFn that handles asynchronous requests to an external service that returns Scala Futures." href="ScalaAsyncDoFn.html"><span class="name">ScalaAsyncDoFn</span></a><span class="tparams">[<span name="I">I</span>, <span name="O">O</span>, <span name="R">R</span>]</span><span class="result"> extends <a href="BaseAsyncDoFn.html" class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn">BaseAsyncDoFn</a>[<span class="extype" name="com.spotify.scio.extra.transforms.ScalaAsyncDoFn.I">I</span>, <span class="extype" name="com.spotify.scio.extra.transforms.ScalaAsyncDoFn.O">O</span>, <span class="extype" name="com.spotify.scio.extra.transforms.ScalaAsyncDoFn.R">R</span>, <a href="http://www.scala-lang.org/api/2.12.4/scala/concurrent/Future.html#scala.concurrent.Future" class="extype" name="scala.concurrent.Future">Future</a>[<span class="extype" name="com.spotify.scio.extra.transforms.ScalaAsyncDoFn.O">O</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">A <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span> that handles asynchronous requests to an
@@ -607,9 +542,7 @@ external service that returns Scala <span class="extype" name="Future">Future</s
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="Enhanced version of SCollection with specialized versions of flatMap." href="package$$SpecializedFlatMapSCollection.html">
-              <span class="name">SpecializedFlatMapSCollection</span>
-            </a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></span>
+        <a title="Enhanced version of SCollection with specialized versions of flatMap." href="package$$SpecializedFlatMapSCollection.html"><span class="name">SpecializedFlatMapSCollection</span></a><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></span>
       </span>
       
       <p class="shortcomment cmt">Enhanced version of <span class="extype" name="SCollection">SCollection</span> with specialized versions of flatMap.</p>
@@ -625,9 +558,7 @@ external service that returns Scala <span class="extype" name="Future">Future</s
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="Enhanced version of SCollection with URI methods." href="package$$URISCollection.html">
-              <span class="name">URISCollection</span>
-            </a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyVal" class="extype" name="scala.collection.immutable.List">AnyVal</a></span>
+        <a title="Enhanced version of SCollection with URI methods." href="package$$URISCollection.html"><span class="name">URISCollection</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyVal" class="extype" name="scala.collection.immutable.List">AnyVal</a></span>
       </span>
       
       <p class="shortcomment cmt">Enhanced version of <span class="extype" name="SCollection">SCollection</span> with <span class="extype" name="URI">URI</span> methods.</p>
@@ -645,9 +576,9 @@ external service that returns Scala <span class="extype" name="Future">Future</s
 
         <div id="inheritedMembers">
         <div class="parent" name="scala.AnyRef">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></h3>
             </div>
         
         </div>

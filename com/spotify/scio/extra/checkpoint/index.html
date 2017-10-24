@@ -65,9 +65,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../../../../../index.html">
-              <span class="name">root</span>
-            </a>
+        <a title="" href="../../../../../index.html"><span class="name">root</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
@@ -83,9 +81,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../../../../index.html">
-              <span class="name">com</span>
-            </a>
+        <a title="" href="../../../../index.html"><span class="name">com</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../../index.html" class="extype" name="_root_">root</a></dd></dl></div>
@@ -101,9 +97,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../../../index.html">
-              <span class="name">spotify</span>
-            </a>
+        <a title="" href="../../../index.html"><span class="name">spotify</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../../index.html" class="extype" name="com">com</a></dd></dl></div>
@@ -119,9 +113,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for public APIs." href="../../index.html">
-              <span class="name">scio</span>
-            </a>
+        <a title="Main package for public APIs." href="../../index.html"><span class="name">scio</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for public APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for public APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio._</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../../index.html" class="extype" name="com.spotify">spotify</a></dd></dl></div>
@@ -137,9 +129,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../index.html">
-              <span class="name">extra</span>
-            </a>
+        <a title="" href="../index.html"><span class="name">extra</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../../index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
@@ -155,9 +145,7 @@
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for Annoy side input APIs." href="../annoy/index.html">
-              <span class="name">annoy</span>
-            </a>
+        <a title="Main package for Annoy side input APIs." href="../annoy/index.html"><span class="name">annoy</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for Annoy side input APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for Annoy side input APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.extra.annoy._</pre><p>Two metrics are available, Angular and Euclidean.</p><p>To save an <code>SCollection[(Int, Array[Float])]</code> to an Annoy file:</p><pre><span class="kw">val</span> s = sc.parallelize(<span class="std">Seq</span>( <span class="num">1</span>-&gt; <span class="std">Array</span>(<span class="num">1.2</span>f, <span class="num">3.4</span>f), <span class="num">2</span> -&gt; <span class="std">Array</span>(<span class="num">2.2</span>f, <span class="num">1.2</span>f)))</pre><p>Save to a temporary location:</p><pre><span class="kw">val</span> s1 = s.asAnnoy(Angular, <span class="num">40</span>, <span class="num">10</span>)</pre><p>Save to a specific location:</p><pre><span class="kw">val</span> s1 = s.asAnnoy(Angular, <span class="num">40</span>, <span class="num">10</span>, <span class="lit">"gs://<bucket>/<path>"</span>)</pre><p><code>SCollection[AnnoyUri]</code> can be converted into a side input:</p><pre><span class="kw">val</span> s = sc.parallelize(<span class="std">Seq</span>( <span class="num">1</span>-&gt; <span class="std">Array</span>(<span class="num">1.2</span>f, <span class="num">3.4</span>f), <span class="num">2</span> -&gt; <span class="std">Array</span>(<span class="num">2.2</span>f, <span class="num">1.2</span>f)))
@@ -200,9 +188,7 @@ main.keys.withSideInput(side)
     </li><li class="current-entities indented5">
                         <span class="separator"></span>
                         <a class="class" href="package$$CheckpointScioContext.html" title=""></a>
-                        <a href="package$$CheckpointScioContext.html" title="">
-                          CheckpointScioContext
-                        </a>
+                        <a href="package$$CheckpointScioContext.html" title="">CheckpointScioContext</a>
                       </li><li name="com.spotify.scio.extra.json" visbl="pub" class="indented5 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="json"></a><a id="json:json"></a>
       <span class="permalink">
@@ -215,9 +201,7 @@ main.keys.withSideInput(side)
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for JSON APIs." href="../json/index.html">
-              <span class="name">json</span>
-            </a>
+        <a title="Main package for JSON APIs." href="../json/index.html"><span class="name">json</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for JSON APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for JSON APIs. Import all.</p><p>This package uses <a href="https://circe.github.io/circe/" target="_blank">Circe</a> for JSON handling under the hood.</p><pre><span class="kw">import</span> com.spotify.scio.extra.json._
@@ -243,9 +227,7 @@ sc.parallelize((<span class="num">1</span> to <span class="num">10</span>).map(x
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for reading the Lib SVM Format" href="../libsvm/index.html">
-              <span class="name">libsvm</span>
-            </a>
+        <a title="Main package for reading the Lib SVM Format" href="../libsvm/index.html"><span class="name">libsvm</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for reading the Lib SVM Format</p><div class="fullcomment"><div class="comment cmt"><p>Main package for reading the Lib SVM Format</p><pre><span class="kw">import</span> com.spotify.scio.extra.libsvm._
@@ -264,9 +246,7 @@ sc.libSVMFile(<span class="lit">"input.svm"</span>)</pre></div><dl class="attrib
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="" href="../nn/index.html">
-              <span class="name">nn</span>
-            </a>
+        <a title="" href="../nn/index.html"><span class="name">nn</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.spotify.scio.extra">extra</a></dd></dl></div>
@@ -282,9 +262,7 @@ sc.libSVMFile(<span class="lit">"input.svm"</span>)</pre></div><dl class="attrib
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for Sparkey side input APIs." href="../sparkey/index.html">
-              <span class="name">sparkey</span>
-            </a>
+        <a title="Main package for Sparkey side input APIs." href="../sparkey/index.html"><span class="name">sparkey</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for Sparkey side input APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for Sparkey side input APIs. Import all.</p><pre><span class="kw">import</span> com.spotify.scio.extra.sparkey._</pre><p>To save an <code>SCollection[(String, String)]</code> to a Sparkey file:</p><pre><span class="kw">val</span> s = sc.parallelize(<span class="std">Seq</span>(<span class="lit">"a"</span> -&gt; <span class="lit">"one"</span>, <span class="lit">"b"</span> -&gt; <span class="lit">"two"</span>))
@@ -317,9 +295,7 @@ main.withSideInputs(side)
         <span class="kind">package</span>
       </span>
       <span class="symbol">
-        <a title="Main package for transforms APIs." href="../transforms/index.html">
-              <span class="name">transforms</span>
-            </a>
+        <a title="Main package for transforms APIs." href="../transforms/index.html"><span class="name">transforms</span></a>
       </span>
       
       <p class="shortcomment cmt">Main package for transforms APIs.</p><div class="fullcomment"><div class="comment cmt"><p>Main package for transforms APIs. Import all.
@@ -356,7 +332,7 @@ main.withSideInputs(side)
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
         </div></div>
         
 
@@ -416,9 +392,7 @@ main.withSideInputs(side)
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a title="" href="package$$CheckpointScioContext.html">
-              <span class="name">CheckpointScioContext</span>
-            </a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyVal" class="extype" name="scala.collection.immutable.List">AnyVal</a></span>
+        <a title="" href="package$$CheckpointScioContext.html"><span class="name">CheckpointScioContext</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyVal" class="extype" name="scala.collection.immutable.List">AnyVal</a></span>
       </span>
       
       
@@ -457,9 +431,9 @@ main.withSideInputs(side)
 
         <div id="inheritedMembers">
         <div class="parent" name="scala.AnyRef">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.3/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></h3>
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></h3>
             </div>
         
         </div>
