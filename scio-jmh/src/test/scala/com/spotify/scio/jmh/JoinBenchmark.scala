@@ -18,13 +18,12 @@
 package com.spotify.scio.jmh
 
 import java.lang.{Iterable => JIterable}
+import java.util.{ Arrays => JArrays, ArrayList => JArrayList }
 import java.util.concurrent.TimeUnit
 
 import com.google.common.collect.AbstractIterator
-import com.google.common.collect.Lists
 import org.openjdk.jmh.annotations._
-
-import scala.collection.JavaConverters._
+import org.openjdk.jmh.infra.Blackhole
 
 @BenchmarkMode(Array(Mode.AverageTime))
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
@@ -32,76 +31,89 @@ import scala.collection.JavaConverters._
 class JoinBenchmark {
 
   private def genIterable(n: Int): JIterable[Int] = {
-    val l = Lists.newArrayList[Int]()
-    (1 to n).foreach(l.add)
-    l
+    val l = new Array[Int](n)
+    (0 until n).foreach(i => l(i) = i)
+    // ArrayList has specialized implementation of Iterator as opposed to Arrays.ArrayList
+    new JArrayList(JArrays.asList(l: _*))
   }
 
   private val i1 = genIterable(1)
   private val i10 = genIterable(10)
   private val i100 = genIterable(100)
 
-  @Benchmark def forYieldA: Unit = forYield(i1, i10)
-  @Benchmark def forYieldB: Unit = forYield(i10, i1)
-  @Benchmark def forYieldC: Unit = forYield(i10, i100)
-  @Benchmark def forYieldD: Unit = forYield(i100, i10)
+  @Benchmark def forYieldA(blackhole: Blackhole): Unit = forYield(i1, i10, blackhole)
+  @Benchmark def forYieldB(blackhole: Blackhole): Unit = forYield(i10, i1, blackhole)
+  @Benchmark def forYieldC(blackhole: Blackhole): Unit = forYield(i10, i100, blackhole)
+  @Benchmark def forYieldD(blackhole: Blackhole): Unit = forYield(i100, i10, blackhole)
 
-  @Benchmark def artisanA: Unit = artisan(i1, i10)
-  @Benchmark def artisanB: Unit = artisan(i10, i1)
-  @Benchmark def artisanC: Unit = artisan(i10, i100)
-  @Benchmark def artisanD: Unit = artisan(i100, i10)
+  @Benchmark def artisanA(blackhole: Blackhole): Unit = artisan(i1, i10, blackhole)
+  @Benchmark def artisanB(blackhole: Blackhole): Unit = artisan(i10, i1, blackhole)
+  @Benchmark def artisanC(blackhole: Blackhole): Unit = artisan(i10, i100, blackhole)
+  @Benchmark def artisanD(blackhole: Blackhole): Unit = artisan(i100, i10, blackhole)
 
-  @Benchmark def iteratorA: Unit = artisan(i1, i10)
-  @Benchmark def iteratorB: Unit = artisan(i10, i1)
-  @Benchmark def iteratorC: Unit = artisan(i10, i100)
-  @Benchmark def iteratorD: Unit = artisan(i100, i10)
+  @Benchmark def artisan2A(blackhole: Blackhole): Unit = artisan2(i1, i10, blackhole)
+  @Benchmark def artisan2B(blackhole: Blackhole): Unit = artisan2(i10, i1, blackhole)
+  @Benchmark def artisan2C(blackhole: Blackhole): Unit = artisan2(i10, i100, blackhole)
+  @Benchmark def artisan2D(blackhole: Blackhole): Unit = artisan2(i100, i10, blackhole)
 
-  def forYield(as: JIterable[Int], bs: JIterable[Int]): Unit =
-    forYield(as, bs, new NoopContext[(Int, Int)])
+  @Benchmark def iteratorA(blackhole: Blackhole): Unit = iterator(i1, i10, blackhole)
+  @Benchmark def iteratorB(blackhole: Blackhole): Unit = iterator(i10, i1, blackhole)
+  @Benchmark def iteratorC(blackhole: Blackhole): Unit = iterator(i10, i100, blackhole)
+  @Benchmark def iteratorD(blackhole: Blackhole): Unit = iterator(i100, i10, blackhole)
 
-  def forYield(as: JIterable[Int], bs: JIterable[Int], c: Context[(Int, Int)]): Unit = {
+  def forYield(as: JIterable[Int], bs: JIterable[Int], blackhole: Blackhole): Unit = {
+    import scala.collection.JavaConverters._
+
     val xs: TraversableOnce[(Int, Int)] =
       for (a <- as.asScala.iterator; b <- bs.asScala.iterator) yield (a, b)
     val i = xs.toIterator
-    while (i.hasNext) c.output(i.next())
+    while (i.hasNext) blackhole.consume(i.next())
   }
 
-  def artisan(as: JIterable[Int], bs: JIterable[Int]): Unit =
-    artisan(as, bs, new NoopContext[(Int, Int)])
-
-  def artisan(as: JIterable[Int], bs: JIterable[Int], c: Context[(Int, Int)]): Unit = {
+  def artisan(as: JIterable[Int], bs: JIterable[Int], blackhole: Blackhole): Unit = {
     (peak(as), peak(bs)) match {
-      case ((1, a), (1, b)) => c.output(a, b)
+      case ((1, a), (1, b)) => blackhole.consume((a, b))
       case ((1, a), (2, _)) =>
         val i = bs.iterator()
-        while (i.hasNext) c.output(a, i.next())
+        while (i.hasNext) blackhole.consume(i, i.next())
       case ((2, _), (1, b)) =>
         val i = as.iterator()
-        while (i.hasNext) c.output(i.next(), b)
+        while (i.hasNext) blackhole.consume((i.next(), b))
       case ((2, _), (2, _)) =>
         val i = as.iterator()
         while (i.hasNext) {
           val a = i.next()
           val j = bs.iterator()
           while (j.hasNext) {
-            c.output(a, j.next())
+            blackhole.consume((a, j.next()))
           }
         }
       case _ => ()
     }
   }
 
-  def iterator(as: JIterable[Int], bs: JIterable[Int]): Unit =
-    iterator(as, bs, new NoopContext[(Int, Int)])
+  def artisan2(as: JIterable[Int], bs: JIterable[Int], blackhole: Blackhole): Unit = {
+    val ai = as.iterator()
 
-  def iterator(as: JIterable[Int], bs: JIterable[Int], c: Context[(Int, Int)]): Unit = {
-    val i = new CartesianIterator(as, bs)
-    while (i.hasNext) {
-      c.output(i.next())
+    while (ai.hasNext) {
+      val a = ai.next()
+      val bi = bs.iterator()
+
+      while (bi.hasNext) {
+        blackhole.consume((a, bi.next()))
+      }
     }
   }
 
-  @inline private def peak[A](xs: java.lang.Iterable[A]): (Int, A) = {
+  def iterator(as: JIterable[Int], bs: JIterable[Int], blackhole: Blackhole): Unit = {
+    val i = new CartesianIterator(as, bs)
+
+    while (i.hasNext) {
+      blackhole.consume(i.next())
+    }
+  }
+
+  @inline private def peak[A](xs: JIterable[A]): (Int, A) = {
     val i = xs.iterator()
     if (i.hasNext) {
       val a = i.next()
@@ -110,44 +122,6 @@ class JoinBenchmark {
       (0, null.asInstanceOf[A])
     }
   }
-
-  test(i1, i1)
-  test(i1, i10)
-  test(i1, i100)
-  test(i10, i1)
-  test(i10, i10)
-  test(i10, i100)
-  test(i100, i1)
-  test(i100, i10)
-  test(i100, i100)
-
-  private def test(as: JIterable[Int], bs: JIterable[Int]): Unit = {
-    val c1 = new SeqContext[(Int, Int)]
-    forYield(as, bs, c1)
-    val c2 = new SeqContext[(Int, Int)]
-    artisan(as, bs, c2)
-    val c3 = new SeqContext[(Int, Int)]
-    iterator(as, bs, c3)
-    require(c1.result == c2.result)
-    require(c1.result == c3.result)
-  }
-
-  trait Context[T] {
-    def output(x: T): Unit
-    def result: Seq[T]
-  }
-
-  class NoopContext[T] extends Context[T] {
-    override def output(x: T): Unit = Unit
-    override def result: Seq[T] = Nil
-  }
-
-  class SeqContext[T] extends Context[T] {
-    private val b = Seq.newBuilder[T]
-    override def output(x: T): Unit = b += x
-    override def result: Seq[T] = b.result()
-  }
-
 }
 
 private class CartesianIterator[A, B](as: JIterable[A], bs: JIterable[B])
