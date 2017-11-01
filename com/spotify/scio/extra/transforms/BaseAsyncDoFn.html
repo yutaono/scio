@@ -226,7 +226,7 @@
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.ResourceT">ResourceT</span>], <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>], <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/transforms/display/HasDisplayData.html#org.apache.beam.sdk.transforms.display.HasDisplayData" class="extype" name="org.apache.beam.sdk.transforms.display.HasDisplayData">HasDisplayData</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="DoFnWithResource.html" class="extype" name="com.spotify.scio.extra.transforms.DoFnWithResource">DoFnWithResource</a>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.ResourceT">ResourceT</span>], <span class="extype" name="org.apache.beam.sdk.transforms.DoFn">DoFn</span>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.InputT">InputT</span>, <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>], <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/transforms/display/HasDisplayData.html#org.apache.beam.sdk.transforms.display.HasDisplayData" class="extype" name="org.apache.beam.sdk.transforms.display.HasDisplayData">HasDisplayData</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html#java.io.Serializable" class="extype" name="java.io.Serializable">Serializable</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
         </div><div class="toggleContainer block">
             <span class="toggle">
               Known Subclasses
@@ -411,7 +411,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">addCallback</span><span class="params">(<span name="future">future: <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.FutureT">FutureT</span></span>, <span name="onSuccess">onSuccess: <span class="extype" name="java.util.function.Function">Function</span>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>, <span class="extype" name="java.lang.Void">Void</span>]</span>, <span name="onFailure">onFailure: <span class="extype" name="java.util.function.Function">Function</span>[<span class="extype" name="java.lang.Throwable">Throwable</span>, <span class="extype" name="java.lang.Void">Void</span>]</span>)</span><span class="result">: <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.FutureT">FutureT</span></span>
+        <span class="name">addCallback</span><span class="params">(<span name="future">future: <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.FutureT">FutureT</span></span>, <span name="onSuccess">onSuccess: <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html#java.util.function.Function" class="extype" name="java.util.function.Function">Function</a>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.OutputT">OutputT</span>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Void.html#java.lang.Void" class="extype" name="java.lang.Void">Void</a>]</span>, <span name="onFailure">onFailure: <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html#java.util.function.Function" class="extype" name="java.util.function.Function">Function</a>[<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html#java.lang.Throwable" class="extype" name="java.lang.Throwable">Throwable</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Void.html#java.lang.Void" class="extype" name="java.lang.Void">Void</a>]</span>)</span><span class="result">: <span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.FutureT">FutureT</span></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="index.html" class="extype" name="com.spotify.scio.extra.transforms">com.spotify.scio.extra.transforms</a>] </dd></dl></div>
@@ -475,7 +475,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">waitForFutures</span><span class="params">(<span name="futures">futures: <span class="extype" name="java.lang.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.FutureT">FutureT</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.4/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">waitForFutures</span><span class="params">(<span name="futures">futures: <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html#java.lang.Iterable" class="extype" name="java.lang.Iterable">Iterable</a>[<span class="extype" name="com.spotify.scio.extra.transforms.BaseAsyncDoFn.FutureT">FutureT</span>]</span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.4/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="index.html" class="extype" name="com.spotify.scio.extra.transforms">com.spotify.scio.extra.transforms</a>] </dd></dl></div>
@@ -703,7 +703,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#java.lang.Class" class="extype" name="java.lang.Class">Class</a>[_]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
@@ -939,7 +939,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html#java.lang.String" class="extype" name="java.lang.String">String</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -1073,7 +1073,7 @@
             </div><div class="parent" name="org.apache.beam.sdk.transforms.display.HasDisplayData">
               <h3>Inherited from <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/transforms/display/HasDisplayData.html#org.apache.beam.sdk.transforms.display.HasDisplayData" class="extype" name="org.apache.beam.sdk.transforms.display.HasDisplayData">HasDisplayData</a></h3>
             </div><div class="parent" name="java.io.Serializable">
-              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+              <h3>Inherited from <a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html#java.io.Serializable" class="extype" name="java.io.Serializable">Serializable</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">

@@ -222,7 +222,8 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Enhanced version of <span class="extype" name="SCollection">SCollection</span> with specialized versions of flatMap.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Enhanced version of <a href="../../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a> with specialized
+versions of flatMap.
 </p></div><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
@@ -453,7 +454,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#java.lang.Class" class="extype" name="java.lang.Class">Class</a>[_]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
@@ -564,11 +565,14 @@
         <span class="name">safeFlatMap</span><span class="tparams">[<span name="U">U</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="com.spotify.scio.extra.transforms.SpecializedFlatMapSCollection.T">T</span>) ⇒ <span class="extype" name="scala.TraversableOnce">TraversableOnce</span>[<span class="extype" name="com.spotify.scio.extra.transforms.SpecializedFlatMapSCollection.safeFlatMap.U">U</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.4/scala/reflect/ClassTag.html#scala.reflect.ClassTag" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="com.spotify.scio.extra.transforms.SpecializedFlatMapSCollection.safeFlatMap.U">U</span>]</span>)</span><span class="result">: (<a href="../../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[<span class="extype" name="com.spotify.scio.extra.transforms.SpecializedFlatMapSCollection.safeFlatMap.U">U</span>], <a href="../../values/SCollection.html" class="extype" name="com.spotify.scio.values.SCollection">SCollection</a>[(<span class="extype" name="com.spotify.scio.extra.transforms.SpecializedFlatMapSCollection.T">T</span>, <span class="extype" name="scala.Throwable">Throwable</span>)])</span>
       </span>
       
-      <p class="shortcomment cmt">Latency optimized flavor of <span class="extype" name="self.flatMap">self.flatMap</span>, it returns a new SCollection by first
-applying a function to all elements of this SCollection, and then flattening the results.</p><div class="fullcomment"><div class="comment cmt"><p>Latency optimized flavor of <span class="extype" name="self.flatMap">self.flatMap</span>, it returns a new SCollection by first
-applying a function to all elements of this SCollection, and then flattening the results.
-If function throws an exception, instead of retrying, faulty element goes into given error
-side output.
+      <p class="shortcomment cmt">Latency optimized flavor of
+<a href="../../values/SCollection.html#flatMap[U](f:T=&gt;TraversableOnce[U])(implicitevidence$11:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" class="extmbr" name="com.spotify.scio.values.SCollection#flatMap">SCollection.flatMap</a>, it returns a new
+SCollection by first applying a function to all elements of this SCollection, and then
+flattening the results.</p><div class="fullcomment"><div class="comment cmt"><p>Latency optimized flavor of
+<a href="../../values/SCollection.html#flatMap[U](f:T=&gt;TraversableOnce[U])(implicitevidence$11:scala.reflect.ClassTag[U]):com.spotify.scio.values.SCollection[U]" class="extmbr" name="com.spotify.scio.values.SCollection#flatMap">SCollection.flatMap</a>, it returns a new
+SCollection by first applying a function to all elements of this SCollection, and then
+flattening the results. If function throws an exception, instead of retrying, faulty element
+goes into given error side output.
 </p></div></div>
     </li><li name="com.spotify.scio.extra.transforms.SpecializedFlatMapSCollection#self" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="self:com.spotify.scio.values.SCollection[T]"></a><a id="self:SCollection[T]"></a>
@@ -614,7 +618,7 @@ side output.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html#java.lang.String" class="extype" name="java.lang.String">String</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>

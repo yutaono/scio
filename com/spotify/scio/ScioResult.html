@@ -319,6 +319,22 @@ detects the query's dialect. To override this, start the query with either <code
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
+    </li><li name="com.spotify.scio.runners" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="runners"></a><a id="runners:runners"></a>
+      <span class="permalink">
+      <a href="../../../com/spotify/scio/index.html#runners" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="runners/index.html"><span class="name">runners</span></a>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
     </li><li name="com.spotify.scio.tensorflow" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="tensorflow"></a><a id="tensorflow:tensorflow"></a>
       <span class="permalink">
@@ -396,6 +412,14 @@ detects the query's dialect. To override this, start the query with either <code
                         <a class="class" href="DistCacheScioContext.html" title="An enhanced ScioContext with distributed cache features."></a>
                         <a href="DistCacheScioContext.html" title="An enhanced ScioContext with distributed cache features.">DistCacheScioContext</a>
                       </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="RunnerContext.html" title="Runner specific context."></a>
+                        <a href="RunnerContext.html" title="Runner specific context.">RunnerContext</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="RunnerResult.html" title="Represent a Beam runner specific result."></a>
+                        <a href="RunnerResult.html" title="Represent a Beam runner specific result.">RunnerResult</a>
+                      </li><li class="current-entities indented3">
                         <a class="object" href="ScioContext$.html" title="Companion object for ScioContext."></a>
                         <a class="class" href="ScioContext.html" title="Main entry point for Scio functionality."></a>
                         <a href="ScioContext.html" title="Main entry point for Scio functionality.">ScioContext</a>
@@ -434,7 +458,7 @@ detects the query's dialect. To override this, start the query with either <code
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">abstract </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
@@ -495,10 +519,47 @@ detects the query's dialect. To override this, start the query with either <code
 
         
 
-        
+        <div class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="com.spotify.scio.ScioResult#finalState" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="finalState:scala.concurrent.Future[org.apache.beam.sdk.PipelineResult.State]"></a><a id="finalState:Future[State]"></a>
+      <span class="permalink">
+      <a href="../../../com/spotify/scio/ScioResult.html#finalState:scala.concurrent.Future[org.apache.beam.sdk.PipelineResult.State]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalState</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.4/scala/concurrent/Future.html#scala.concurrent.Future" class="extype" name="scala.concurrent.Future">Future</a>[<span class="extype" name="org.apache.beam.sdk.PipelineResult.State">State</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt"><code>Future</code> for pipeline's final state.</p><div class="fullcomment"><div class="comment cmt"><p><code>Future</code> for pipeline's final state. The <code>Future</code> will be completed once the pipeline
+completes successfully.
+</p></div></div>
+    </li><li name="com.spotify.scio.ScioResult#getMetrics" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="getMetrics:com.spotify.scio.metrics.Metrics"></a><a id="getMetrics:Metrics"></a>
+      <span class="permalink">
+      <a href="../../../com/spotify/scio/ScioResult.html#getMetrics:com.spotify.scio.metrics.Metrics" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getMetrics</span><span class="result">: <a href="metrics/package$$Metrics.html" class="extype" name="com.spotify.scio.metrics.Metrics">Metrics</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Get metrics of the finished pipeline.</p>
+    </li></ol>
+            </div>
 
         <div class="values members">
-              <h3>Value Members</h3>
+              <h3>Concrete Value Members</h3>
               <ol>
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
@@ -644,6 +705,22 @@ detects the query's dialect. To override this, start the query with either <code
       </span>
       
       <p class="shortcomment cmt">Retrieve aggregated values of all gauges from the pipeline.</p>
+    </li><li name="com.spotify.scio.ScioResult#as" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="as[T&lt;:com.spotify.scio.RunnerResult](implicitevidence$1:scala.reflect.ClassTag[T]):T"></a><a id="as[T&lt;:RunnerResult](ClassTag[T]):T"></a>
+      <span class="permalink">
+      <a href="../../../com/spotify/scio/ScioResult.html#as[T&lt;:com.spotify.scio.RunnerResult](implicitevidence$1:scala.reflect.ClassTag[T]):T" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">as</span><span class="tparams">[<span name="T">T &lt;: <a href="RunnerResult.html" class="extype" name="com.spotify.scio.RunnerResult">RunnerResult</a></span>]</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.12.4/scala/reflect/ClassTag.html#scala.reflect.ClassTag" class="extype" name="scala.reflect.ClassTag">ClassTag</a>[<span class="extype" name="com.spotify.scio.ScioResult.as.T">T</span>]</span>)</span><span class="result">: <span class="extype" name="com.spotify.scio.ScioResult.as.T">T</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Get a Beam runner specific result.</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -684,22 +761,6 @@ detects the query's dialect. To override this, start the query with either <code
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.spotify.scio.ScioResult#context" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="context:com.spotify.scio.ScioContext"></a><a id="context:ScioContext"></a>
-      <span class="permalink">
-      <a href="../../../com/spotify/scio/ScioResult.html#context:com.spotify.scio.ScioContext" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">context</span><span class="result">: <a href="ScioContext.html" class="extype" name="com.spotify.scio.ScioContext">ScioContext</a></span>
-      </span>
-      
-      
     </li><li name="com.spotify.scio.ScioResult#counter" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="counter(c:org.apache.beam.sdk.metrics.Counter):com.spotify.scio.metrics.MetricValue[Long]"></a><a id="counter(Counter):MetricValue[Long]"></a>
       <span class="permalink">
@@ -796,24 +857,6 @@ detects the query's dialect. To override this, start the query with either <code
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="com.spotify.scio.ScioResult#finalState" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="finalState:scala.concurrent.Future[org.apache.beam.sdk.PipelineResult.State]"></a><a id="finalState:Future[State]"></a>
-      <span class="permalink">
-      <a href="../../../com/spotify/scio/ScioResult.html#finalState:scala.concurrent.Future[org.apache.beam.sdk.PipelineResult.State]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">finalState</span><span class="result">: <a href="http://www.scala-lang.org/api/2.12.4/scala/concurrent/Future.html#scala.concurrent.Future" class="extype" name="scala.concurrent.Future">Future</a>[<span class="extype" name="org.apache.beam.sdk.PipelineResult.State">State</span>]</span>
-      </span>
-      
-      <p class="shortcomment cmt"><code>Future</code> for pipeline's final state.</p><div class="fullcomment"><div class="comment cmt"><p><code>Future</code> for pipeline's final state. The <code>Future</code> will be completed once the pipeline
-completes successfully.
-</p></div></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
@@ -868,6 +911,22 @@ completes successfully.
       </span>
       
       <p class="shortcomment cmt">Retrieve per step values of a single gauge from the pipeline.</p>
+    </li><li name="com.spotify.scio.ScioResult#getBeamMetrics" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getBeamMetrics:com.spotify.scio.metrics.BeamMetrics"></a><a id="getBeamMetrics:BeamMetrics"></a>
+      <span class="permalink">
+      <a href="../../../com/spotify/scio/ScioResult.html#getBeamMetrics:com.spotify.scio.metrics.BeamMetrics" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getBeamMetrics</span><span class="result">: <a href="metrics/package$$BeamMetrics.html" class="extype" name="com.spotify.scio.metrics.BeamMetrics">BeamMetrics</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -880,29 +939,13 @@ completes successfully.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#java.lang.Class" class="extype" name="java.lang.Class">Class</a>[_]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="com.spotify.scio.ScioResult#getMetrics" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="getMetrics:com.spotify.scio.metrics.Metrics"></a><a id="getMetrics:Metrics"></a>
-      <span class="permalink">
-      <a href="../../../com/spotify/scio/ScioResult.html#getMetrics:com.spotify.scio.metrics.Metrics" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">getMetrics</span><span class="result">: <a href="metrics/package$$Metrics.html" class="extype" name="com.spotify.scio.metrics.Metrics">Metrics</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Get metrics of the finished pipeline.</p>
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
@@ -1084,7 +1127,7 @@ completes successfully.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html#java.lang.String" class="extype" name="java.lang.String">String</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>

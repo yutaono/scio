@@ -151,14 +151,6 @@
                         <a href="package$$BeamMetrics.html" title="">BeamMetrics</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="package$$DFMetricName.html" title=""></a>
-                        <a href="package$$DFMetricName.html" title="">DFMetricName</a>
-                      </li><li class="current-entities indented4">
-                        <span class="separator"></span>
-                        <a class="class" href="package$$DFServiceMetrics.html" title=""></a>
-                        <a href="package$$DFServiceMetrics.html" title="">DFServiceMetrics</a>
-                      </li><li class="current-entities indented4">
-                        <span class="separator"></span>
                         <a class="class" href="package$$MetricValue.html" title="Contains the aggregated value of a metric."></a>
                         <a href="package$$MetricValue.html" title="Contains the aggregated value of a metric.">MetricValue</a>
                       </li><li class="current-entities indented4">
@@ -184,11 +176,11 @@
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Metrics</span><span class="params">(<span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="scalaVersion">scalaVersion: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="jobName">jobName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="jobId">jobId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="beamMetrics">beamMetrics: <a href="package$$BeamMetrics.html" class="extype" name="com.spotify.scio.metrics.BeamMetrics">BeamMetrics</a></span>, <span name="cloudMetrics">cloudMetrics: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="package$$DFServiceMetrics.html" class="extype" name="com.spotify.scio.metrics.DFServiceMetrics">DFServiceMetrics</a>]</span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <span class="name">Metrics</span><span class="params">(<span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="scalaVersion">scalaVersion: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="appName">appName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="beamMetrics">beamMetrics: <a href="package$$BeamMetrics.html" class="extype" name="com.spotify.scio.metrics.BeamMetrics">BeamMetrics</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       </h4>
 
@@ -199,7 +191,7 @@
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/Equals.html#scala.Equals" class="extype" name="scala.Equals">Equals</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html#java.io.Serializable" class="extype" name="java.io.Serializable">Serializable</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/Equals.html#scala.Equals" class="extype" name="scala.Equals">Equals</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
         </div></div>
         
 
@@ -246,9 +238,9 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="com.spotify.scio.metrics.Metrics#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(version:String,scalaVersion:String,jobName:String,jobId:String,state:String,beamMetrics:com.spotify.scio.metrics.package.BeamMetrics,cloudMetrics:Iterable[com.spotify.scio.metrics.package.DFServiceMetrics]):com.spotify.scio.metrics.package.Metrics"></a><a id="&lt;init&gt;:Metrics"></a>
+      <a id="&lt;init&gt;(version:String,scalaVersion:String,appName:String,state:String,beamMetrics:com.spotify.scio.metrics.package.BeamMetrics):com.spotify.scio.metrics.package.Metrics"></a><a id="&lt;init&gt;:Metrics"></a>
       <span class="permalink">
-      <a href="../../../../com/spotify/scio/metrics/package$$Metrics.html#&lt;init&gt;(version:String,scalaVersion:String,jobName:String,jobId:String,state:String,beamMetrics:com.spotify.scio.metrics.package.BeamMetrics,cloudMetrics:Iterable[com.spotify.scio.metrics.package.DFServiceMetrics]):com.spotify.scio.metrics.package.Metrics" title="Permalink">
+      <a href="../../../../com/spotify/scio/metrics/package$$Metrics.html#&lt;init&gt;(version:String,scalaVersion:String,appName:String,state:String,beamMetrics:com.spotify.scio.metrics.package.BeamMetrics):com.spotify.scio.metrics.package.Metrics" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -257,7 +249,7 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Metrics</span><span class="params">(<span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="scalaVersion">scalaVersion: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="jobName">jobName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="jobId">jobId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="beamMetrics">beamMetrics: <a href="package$$BeamMetrics.html" class="extype" name="com.spotify.scio.metrics.BeamMetrics">BeamMetrics</a></span>, <span name="cloudMetrics">cloudMetrics: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="package$$DFServiceMetrics.html" class="extype" name="com.spotify.scio.metrics.DFServiceMetrics">DFServiceMetrics</a>]</span>)</span>
+        <span class="name">Metrics</span><span class="params">(<span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="scalaVersion">scalaVersion: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="appName">appName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="beamMetrics">beamMetrics: <a href="package$$BeamMetrics.html" class="extype" name="com.spotify.scio.metrics.BeamMetrics">BeamMetrics</a></span>)</span>
       </span>
       
       
@@ -319,6 +311,22 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="com.spotify.scio.metrics.Metrics#appName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="appName:String"></a>
+      <span class="permalink">
+      <a href="../../../../com/spotify/scio/metrics/package$$Metrics.html#appName:String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">appName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -375,22 +383,6 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="com.spotify.scio.metrics.Metrics#cloudMetrics" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="cloudMetrics:Iterable[com.spotify.scio.metrics.package.DFServiceMetrics]"></a><a id="cloudMetrics:Iterable[DFServiceMetrics]"></a>
-      <span class="permalink">
-      <a href="../../../../com/spotify/scio/metrics/package$$Metrics.html#cloudMetrics:Iterable[com.spotify.scio.metrics.package.DFServiceMetrics]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">cloudMetrics</span><span class="result">: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="package$$DFServiceMetrics.html" class="extype" name="com.spotify.scio.metrics.DFServiceMetrics">DFServiceMetrics</a>]</span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -441,7 +433,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#java.lang.Class" class="extype" name="java.lang.Class">Class</a>[_]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
@@ -464,38 +456,6 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="com.spotify.scio.metrics.Metrics#jobId" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="jobId:String"></a>
-      <span class="permalink">
-      <a href="../../../../com/spotify/scio/metrics/package$$Metrics.html#jobId:String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">jobId</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      
-      
-    </li><li name="com.spotify.scio.metrics.Metrics#jobName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="jobName:String"></a>
-      <span class="permalink">
-      <a href="../../../../com/spotify/scio/metrics/package$$Metrics.html#jobName:String" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">jobName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -695,7 +655,7 @@
         <div class="parent" name="scala.Serializable">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></h3>
             </div><div class="parent" name="java.io.Serializable">
-              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+              <h3>Inherited from <a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html#java.io.Serializable" class="extype" name="java.io.Serializable">Serializable</a></h3>
             </div><div class="parent" name="scala.Product">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a></h3>
             </div><div class="parent" name="scala.Equals">

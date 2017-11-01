@@ -319,6 +319,22 @@ detects the query's dialect. To override this, start the query with either <code
       </span>
       
       
+    </li><li name="com.spotify.scio.runners" visbl="pub" class="indented4 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="runners"></a><a id="runners:runners"></a>
+      <span class="permalink">
+      <a href="../../../com/spotify/scio/index.html#runners" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="runners/index.html"><span class="name">runners</span></a>
+      </span>
+      
+      
     </li><li name="com.spotify.scio.tensorflow" visbl="pub" class="indented4 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="tensorflow"></a><a id="tensorflow:tensorflow"></a>
       <span class="permalink">
@@ -395,6 +411,14 @@ detects the query's dialect. To override this, start the query with either <code
                         <span class="separator"></span>
                         <a class="class" href="DistCacheScioContext.html" title="An enhanced ScioContext with distributed cache features."></a>
                         <a href="DistCacheScioContext.html" title="An enhanced ScioContext with distributed cache features.">DistCacheScioContext</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="RunnerContext.html" title="Runner specific context."></a>
+                        <a href="RunnerContext.html" title="Runner specific context.">RunnerContext</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="RunnerResult.html" title="Represent a Beam runner specific result."></a>
+                        <a href="RunnerResult.html" title="Represent a Beam runner specific result.">RunnerResult</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="ScioContext$.html" title="Companion object for ScioContext."></a>
                         <a class="class" href="ScioContext.html" title="Main entry point for Scio functionality."></a>
@@ -527,6 +551,38 @@ detects the query's dialect. To override this, start the query with either <code
       </span>
       
       <p class="shortcomment cmt">An enhanced ScioContext with distributed cache features.</p>
+    </li><li name="com.spotify.scio.RunnerContext" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RunnerContextextendsAnyRef"></a><a id="RunnerContext:RunnerContext"></a>
+      <span class="permalink">
+      <a href="../../../com/spotify/scio/index.html#RunnerContextextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Runner specific context." href="RunnerContext.html"><span class="name">RunnerContext</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Runner specific context.</p>
+    </li><li name="com.spotify.scio.RunnerResult" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="RunnerResultextendsAnyRef"></a><a id="RunnerResult:RunnerResult"></a>
+      <span class="permalink">
+      <a href="../../../com/spotify/scio/index.html#RunnerResultextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="Represent a Beam runner specific result." href="RunnerResult.html"><span class="name">RunnerResult</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Represent a Beam runner specific result.</p>
     </li><li name="com.spotify.scio.ScioContext" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ScioContextextendsTransformNameable"></a><a id="ScioContext:ScioContext"></a>
       <span class="permalink">
@@ -545,7 +601,7 @@ detects the query's dialect. To override this, start the query with either <code
       <p class="shortcomment cmt">Main entry point for Scio functionality.</p><div class="fullcomment"><div class="comment cmt"><p>Main entry point for Scio functionality. A ScioContext represents a pipeline and can be used to
 create SCollections and distributed caches on that cluster.
 </p></div></div>
-    </li><li name="com.spotify.scio.ScioResult" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="com.spotify.scio.ScioResult" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="ScioResultextendsAnyRef"></a><a id="ScioResult:ScioResult"></a>
       <span class="permalink">
       <a href="../../../com/spotify/scio/index.html#ScioResultextendsAnyRef" title="Permalink">
@@ -553,7 +609,7 @@ create SCollections and distributed caches on that cluster.
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">abstract </span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">

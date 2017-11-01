@@ -239,7 +239,7 @@
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html#java.io.Serializable" class="extype" name="java.io.Serializable">Serializable</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
         </div></div>
         
 
@@ -446,7 +446,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#java.lang.Class" class="extype" name="java.lang.Class">Class</a>[_]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
@@ -570,7 +570,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html#java.lang.String" class="extype" name="java.lang.String">String</a></span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -654,10 +654,10 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wrapIterable</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="view">view: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/PCollectionView.html#org.apache.beam.sdk.values.PCollectionView" class="extype" name="org.apache.beam.sdk.values.PCollectionView">PCollectionView</a>[<span class="extype" name="java.lang.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapIterable.T">T</span>]]</span>)</span><span class="result">: <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>[<span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapIterable.T">T</span>]]</span>
+        <span class="name">wrapIterable</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="view">view: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/PCollectionView.html#org.apache.beam.sdk.values.PCollectionView" class="extype" name="org.apache.beam.sdk.values.PCollectionView">PCollectionView</a>[<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html#java.lang.Iterable" class="extype" name="java.lang.Iterable">Iterable</a>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapIterable.T">T</span>]]</span>)</span><span class="result">: <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>[<span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapIterable.T">T</span>]]</span>
       </span>
       
-      <p class="shortcomment cmt">Wrap a view of a <span class="extype" name="java.lang.Iterable">java.lang.Iterable</span> as a <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Wrap a view of a <span class="extype" name="java.lang.Iterable">java.lang.Iterable</span> as a <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>. In most cases you want to use
+      <p class="shortcomment cmt">Wrap a view of a <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html" class="extype" name="java.lang.Iterable">java.lang.Iterable</a> as a <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Wrap a view of a <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html" class="extype" name="java.lang.Iterable">java.lang.Iterable</a> as a <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>. In most cases you want to use
 <a href="SCollection.html#asIterableSideInput:com.spotify.scio.values.SideInput[Iterable[T]]" class="extmbr" name="com.spotify.scio.values.SCollection#asIterableSideInput">SCollection.asIterableSideInput</a>.
 </p></div></div>
     </li><li name="com.spotify.scio.values.SideInput#wrapList" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -690,10 +690,10 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wrapMap</span><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="params">(<span name="view">view: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/PCollectionView.html#org.apache.beam.sdk.values.PCollectionView" class="extype" name="org.apache.beam.sdk.values.PCollectionView">PCollectionView</a>[<span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapMap.K">K</span>, <span class="extype" name="com.spotify.scio.values.SideInput.wrapMap.V">V</span>]]</span>)</span><span class="result">: <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapMap.K">K</span>, <span class="extype" name="com.spotify.scio.values.SideInput.wrapMap.V">V</span>]]</span>
+        <span class="name">wrapMap</span><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="params">(<span name="view">view: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/PCollectionView.html#org.apache.beam.sdk.values.PCollectionView" class="extype" name="org.apache.beam.sdk.values.PCollectionView">PCollectionView</a>[<a href="http://docs.oracle.com/javase/8/docs/api/java/util/Map.html#java.util.Map" class="extype" name="java.util.Map">Map</a>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapMap.K">K</span>, <span class="extype" name="com.spotify.scio.values.SideInput.wrapMap.V">V</span>]]</span>)</span><span class="result">: <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapMap.K">K</span>, <span class="extype" name="com.spotify.scio.values.SideInput.wrapMap.V">V</span>]]</span>
       </span>
       
-      <p class="shortcomment cmt">Wrap a view of a <span class="extype" name="java.util.Map">java.util.Map</span> as a <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Wrap a view of a <span class="extype" name="java.util.Map">java.util.Map</span> as a <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>. In most cases you want to use
+      <p class="shortcomment cmt">Wrap a view of a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Map.html" class="extype" name="java.util.Map">java.util.Map</a> as a <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Wrap a view of a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Map.html" class="extype" name="java.util.Map">java.util.Map</a> as a <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>. In most cases you want to use
 <a href="PairSCollectionFunctions.html#asMapSideInput:com.spotify.scio.values.SideInput[Map[K,V]]" class="extmbr" name="com.spotify.scio.values.PairSCollectionFunctions#asMapSideInput">PairSCollectionFunctions.asMapSideInput</a>.
 </p></div></div>
     </li><li name="com.spotify.scio.values.SideInput#wrapMultiMap" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -708,7 +708,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wrapMultiMap</span><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="params">(<span name="view">view: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/PCollectionView.html#org.apache.beam.sdk.values.PCollectionView" class="extype" name="org.apache.beam.sdk.values.PCollectionView">PCollectionView</a>[<span class="extype" name="java.util.Map">Map</span>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapMultiMap.K">K</span>, <span class="extype" name="java.lang.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapMultiMap.V">V</span>]]]</span>)</span><span class="result">: <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapMultiMap.K">K</span>, <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapMultiMap.V">V</span>]]]</span>
+        <span class="name">wrapMultiMap</span><span class="tparams">[<span name="K">K</span>, <span name="V">V</span>]</span><span class="params">(<span name="view">view: <a href="https://beam.apache.org/documentation/sdks/javadoc/2.1.0/org/apache/beam/sdk/values/PCollectionView.html#org.apache.beam.sdk.values.PCollectionView" class="extype" name="org.apache.beam.sdk.values.PCollectionView">PCollectionView</a>[<a href="http://docs.oracle.com/javase/8/docs/api/java/util/Map.html#java.util.Map" class="extype" name="java.util.Map">Map</a>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapMultiMap.K">K</span>, <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html#java.lang.Iterable" class="extype" name="java.lang.Iterable">Iterable</a>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapMultiMap.V">V</span>]]]</span>)</span><span class="result">: <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapMultiMap.K">K</span>, <span class="extype" name="scala.Iterable">Iterable</span>[<span class="extype" name="com.spotify.scio.values.SideInput.wrapMultiMap.V">V</span>]]]</span>
       </span>
       
       <p class="shortcomment cmt">Wrap a view of a multi-map as a <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Wrap a view of a multi-map as a <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>. In most cases you want to use
@@ -730,7 +730,7 @@
       </span>
       
       <p class="shortcomment cmt">Wrap a view of a singleton as a <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Wrap a view of a singleton as a <a href="SideInput.html" class="extype" name="com.spotify.scio.values.SideInput">SideInput</a>. In most cases you want to use
-<span class="extype" name="SCollection.asSingletonSideInput(T)">SCollection.asSingletonSideInput(T)</span>.
+<a href="SCollection.html#asSingletonSideInput(defaultValue:T):com.spotify.scio.values.SideInput[T]" class="extmbr" name="com.spotify.scio.values.SCollection#asSingletonSideInput">SCollection.asSingletonSideInput(*</a>.
 </p></div></div>
     </li>
               </ol>
@@ -745,7 +745,7 @@
         <div class="parent" name="scala.Serializable">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></h3>
             </div><div class="parent" name="java.io.Serializable">
-              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+              <h3>Inherited from <a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html#java.io.Serializable" class="extype" name="java.io.Serializable">Serializable</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">

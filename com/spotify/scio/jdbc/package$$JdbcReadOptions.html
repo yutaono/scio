@@ -192,17 +192,17 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">JdbcReadOptions</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="connectionOptions">connectionOptions: <a href="package$$JdbcConnectionOptions.html" class="extype" name="com.spotify.scio.jdbc.JdbcConnectionOptions">JdbcConnectionOptions</a></span>, <span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="statementPreparator">statementPreparator: (<span class="extype" name="java.sql.PreparedStatement">PreparedStatement</span>) ⇒ <a href="http://www.scala-lang.org/api/2.12.4/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a> = <span class="symbol">null</span></span>, <span name="rowMapper">rowMapper: (<span class="extype" name="java.sql.ResultSet">ResultSet</span>) ⇒ <span class="extype" name="com.spotify.scio.jdbc.JdbcReadOptions.T">T</span></span>)</span><span class="result"> extends <a href="package$$JdbcIoOptions.html" class="extype" name="com.spotify.scio.jdbc.JdbcIoOptions">JdbcIoOptions</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <span class="name">JdbcReadOptions</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="connectionOptions">connectionOptions: <a href="package$$JdbcConnectionOptions.html" class="extype" name="com.spotify.scio.jdbc.JdbcConnectionOptions">JdbcConnectionOptions</a></span>, <span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="statementPreparator">statementPreparator: (<a href="http://docs.oracle.com/javase/8/docs/api/java/sql/PreparedStatement.html#java.sql.PreparedStatement" class="extype" name="java.sql.PreparedStatement">PreparedStatement</a>) ⇒ <a href="http://www.scala-lang.org/api/2.12.4/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a> = <span class="symbol">null</span></span>, <span name="rowMapper">rowMapper: (<a href="http://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html#java.sql.ResultSet" class="extype" name="java.sql.ResultSet">ResultSet</a>) ⇒ <span class="extype" name="com.spotify.scio.jdbc.JdbcReadOptions.T">T</span></span>)</span><span class="result"> extends <a href="package$$JdbcIoOptions.html" class="extype" name="com.spotify.scio.jdbc.JdbcIoOptions">JdbcIoOptions</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       </h4>
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Options for reading from a JDBC source.
-</p></div><dl class="paramcmts block"><dt class="param">connectionOptions</dt><dd class="cmt"><p>connection options</p></dd><dt class="param">query</dt><dd class="cmt"><p>query string</p></dd><dt class="param">statementPreparator</dt><dd class="cmt"><p>function to prepare a <span class="extype" name="PreparedStatement">PreparedStatement</span></p></dd><dt class="param">rowMapper</dt><dd class="cmt"><p>function to map from a SQL <span class="extype" name="ResultSet">ResultSet</span> to <code>T</code></p></dd></dl><div class="toggleContainer block">
+</p></div><dl class="paramcmts block"><dt class="param">connectionOptions</dt><dd class="cmt"><p>connection options</p></dd><dt class="param">query</dt><dd class="cmt"><p>query string</p></dd><dt class="param">statementPreparator</dt><dd class="cmt"><p>function to prepare a <a href="http://docs.oracle.com/javase/8/docs/api/java/sql/PreparedStatement.html" class="extype" name="java.sql.PreparedStatement">java.sql.PreparedStatement</a></p></dd><dt class="param">rowMapper</dt><dd class="cmt"><p>function to map from a SQL <a href="http://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html" class="extype" name="java.sql.ResultSet">java.sql.ResultSet</a> to <code>T</code></p></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a>, <span class="extype" name="java.io.Serializable">Serializable</span>, <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/Equals.html#scala.Equals" class="extype" name="scala.Equals">Equals</a>, <a href="package$$JdbcIoOptions.html" class="extype" name="com.spotify.scio.jdbc.JdbcIoOptions">JdbcIoOptions</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a>, <a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html#java.io.Serializable" class="extype" name="java.io.Serializable">Serializable</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/Equals.html#scala.Equals" class="extype" name="scala.Equals">Equals</a>, <a href="package$$JdbcIoOptions.html" class="extype" name="com.spotify.scio.jdbc.JdbcIoOptions">JdbcIoOptions</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.Any" class="extype" name="scala.collection.immutable.List">Any</a></div>
         </div></div>
         
 
@@ -260,10 +260,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">JdbcReadOptions</span><span class="params">(<span name="connectionOptions">connectionOptions: <a href="package$$JdbcConnectionOptions.html" class="extype" name="com.spotify.scio.jdbc.JdbcConnectionOptions">JdbcConnectionOptions</a></span>, <span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="statementPreparator">statementPreparator: (<span class="extype" name="java.sql.PreparedStatement">PreparedStatement</span>) ⇒ <a href="http://www.scala-lang.org/api/2.12.4/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a> = <span class="symbol">null</span></span>, <span name="rowMapper">rowMapper: (<span class="extype" name="java.sql.ResultSet">ResultSet</span>) ⇒ <span class="extype" name="com.spotify.scio.jdbc.JdbcReadOptions.T">T</span></span>)</span>
+        <span class="name">JdbcReadOptions</span><span class="params">(<span name="connectionOptions">connectionOptions: <a href="package$$JdbcConnectionOptions.html" class="extype" name="com.spotify.scio.jdbc.JdbcConnectionOptions">JdbcConnectionOptions</a></span>, <span name="query">query: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="statementPreparator">statementPreparator: (<a href="http://docs.oracle.com/javase/8/docs/api/java/sql/PreparedStatement.html#java.sql.PreparedStatement" class="extype" name="java.sql.PreparedStatement">PreparedStatement</a>) ⇒ <a href="http://www.scala-lang.org/api/2.12.4/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a> = <span class="symbol">null</span></span>, <span name="rowMapper">rowMapper: (<a href="http://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html#java.sql.ResultSet" class="extype" name="java.sql.ResultSet">ResultSet</a>) ⇒ <span class="extype" name="com.spotify.scio.jdbc.JdbcReadOptions.T">T</span></span>)</span>
       </span>
       
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">connectionOptions</dt><dd class="cmt"><p>connection options</p></dd><dt class="param">query</dt><dd class="cmt"><p>query string</p></dd><dt class="param">statementPreparator</dt><dd class="cmt"><p>function to prepare a <span class="extype" name="PreparedStatement">PreparedStatement</span></p></dd><dt class="param">rowMapper</dt><dd class="cmt"><p>function to map from a SQL <span class="extype" name="ResultSet">ResultSet</span> to <code>T</code></p></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">connectionOptions</dt><dd class="cmt"><p>connection options</p></dd><dt class="param">query</dt><dd class="cmt"><p>query string</p></dd><dt class="param">statementPreparator</dt><dd class="cmt"><p>function to prepare a <a href="http://docs.oracle.com/javase/8/docs/api/java/sql/PreparedStatement.html" class="extype" name="java.sql.PreparedStatement">java.sql.PreparedStatement</a></p></dd><dt class="param">rowMapper</dt><dd class="cmt"><p>function to map from a SQL <a href="http://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html" class="extype" name="java.sql.ResultSet">java.sql.ResultSet</a> to <code>T</code></p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -428,7 +428,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#java.lang.Class" class="extype" name="java.lang.Class">Class</a>[_]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd><dt>Annotations</dt><dd>
@@ -533,7 +533,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">rowMapper</span><span class="result">: (<span class="extype" name="java.sql.ResultSet">ResultSet</span>) ⇒ <span class="extype" name="com.spotify.scio.jdbc.JdbcReadOptions.T">T</span></span>
+        <span class="name">rowMapper</span><span class="result">: (<a href="http://docs.oracle.com/javase/8/docs/api/java/sql/ResultSet.html#java.sql.ResultSet" class="extype" name="java.sql.ResultSet">ResultSet</a>) ⇒ <span class="extype" name="com.spotify.scio.jdbc.JdbcReadOptions.T">T</span></span>
       </span>
       
       
@@ -549,7 +549,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">statementPreparator</span><span class="result">: (<span class="extype" name="java.sql.PreparedStatement">PreparedStatement</span>) ⇒ <a href="http://www.scala-lang.org/api/2.12.4/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
+        <span class="name">statementPreparator</span><span class="result">: (<a href="http://docs.oracle.com/javase/8/docs/api/java/sql/PreparedStatement.html#java.sql.PreparedStatement" class="extype" name="java.sql.PreparedStatement">PreparedStatement</a>) ⇒ <a href="http://www.scala-lang.org/api/2.12.4/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a></span>
       </span>
       
       
@@ -650,7 +650,7 @@
         <div class="parent" name="scala.Serializable">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></h3>
             </div><div class="parent" name="java.io.Serializable">
-              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+              <h3>Inherited from <a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html#java.io.Serializable" class="extype" name="java.io.Serializable">Serializable</a></h3>
             </div><div class="parent" name="scala.Product">
               <h3>Inherited from <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a></h3>
             </div><div class="parent" name="scala.Equals">

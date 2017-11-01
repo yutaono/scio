@@ -305,14 +305,6 @@ detects the query's dialect. To override this, start the query with either <code
                         <a href="package$$BeamMetrics.html" title="">BeamMetrics</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="class" href="package$$DFMetricName.html" title=""></a>
-                        <a href="package$$DFMetricName.html" title="">DFMetricName</a>
-                      </li><li class="current-entities indented4">
-                        <span class="separator"></span>
-                        <a class="class" href="package$$DFServiceMetrics.html" title=""></a>
-                        <a href="package$$DFServiceMetrics.html" title="">DFServiceMetrics</a>
-                      </li><li class="current-entities indented4">
-                        <span class="separator"></span>
                         <a class="class" href="package$$MetricValue.html" title="Contains the aggregated value of a metric."></a>
                         <a href="package$$MetricValue.html" title="Contains the aggregated value of a metric.">MetricValue</a>
                       </li><li class="current-entities indented4">
@@ -348,6 +340,22 @@ detects the query's dialect. To override this, start the query with either <code
       </span>
       <span class="symbol">
         <a title="" href="../parquet/index.html"><span class="name">parquet</span></a>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
+    </li><li name="com.spotify.scio.runners" visbl="pub" class="indented4 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="runners"></a><a id="runners:runners"></a>
+      <span class="permalink">
+      <a href="../../../com/spotify/scio/index.html#runners" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="../runners/index.html"><span class="name">runners</span></a>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="com.spotify.scio">scio</a></dd></dl></div>
@@ -467,7 +475,7 @@ detects the query's dialect. To override this, start the query with either <code
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
@@ -483,7 +491,7 @@ detects the query's dialect. To override this, start the query with either <code
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
@@ -499,7 +507,7 @@ detects the query's dialect. To override this, start the query with either <code
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
@@ -515,43 +523,11 @@ detects the query's dialect. To override this, start the query with either <code
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
         <a title="" href="package$$BeamMetrics.html"><span class="name">BeamMetrics</span></a><span class="params">(<span name="counters">counters: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="package$$BeamMetric.html" class="extype" name="com.spotify.scio.metrics.BeamMetric">BeamMetric</a>[<a href="http://www.scala-lang.org/api/2.12.4/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a>]]</span>, <span name="distributions">distributions: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="package$$BeamMetric.html" class="extype" name="com.spotify.scio.metrics.BeamMetric">BeamMetric</a>[<a href="package$$BeamDistribution.html" class="extype" name="com.spotify.scio.metrics.BeamDistribution">BeamDistribution</a>]]</span>, <span name="gauges">gauges: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="package$$BeamMetric.html" class="extype" name="com.spotify.scio.metrics.BeamMetric">BeamMetric</a>[<a href="package$$BeamGauge.html" class="extype" name="com.spotify.scio.metrics.BeamGauge">BeamGauge</a>]]</span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
-      </span>
-      
-      
-    </li><li name="com.spotify.scio.metrics.DFMetricName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="DFMetricNameextendsProductwithSerializable"></a><a id="DFMetricName:DFMetricName"></a>
-      <span class="permalink">
-      <a href="../../../../com/spotify/scio/metrics/index.html#DFMetricNameextendsProductwithSerializable" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">case class</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="package$$DFMetricName.html"><span class="name">DFMetricName</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="origin">origin: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="context">context: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
-      </span>
-      
-      
-    </li><li name="com.spotify.scio.metrics.DFServiceMetrics" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="DFServiceMetricsextendsProductwithSerializable"></a><a id="DFServiceMetrics:DFServiceMetrics"></a>
-      <span class="permalink">
-      <a href="../../../../com/spotify/scio/metrics/index.html#DFServiceMetricsextendsProductwithSerializable" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">case class</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="package$$DFServiceMetrics.html"><span class="name">DFServiceMetrics</span></a><span class="params">(<span name="name">name: <a href="package$$DFMetricName.html" class="extype" name="com.spotify.scio.metrics.DFMetricName">DFMetricName</a></span>, <span name="scalar">scalar: <a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html#scala.AnyRef" class="extype" name="scala.collection.immutable.List">AnyRef</a></span>, <span name="updateTime">updateTime: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       
       
@@ -563,7 +539,7 @@ detects the query's dialect. To override this, start the query with either <code
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
@@ -580,11 +556,11 @@ detects the query's dialect. To override this, start the query with either <code
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="Case class holding metadata and service-level metrics of the job." href="package$$Metrics.html"><span class="name">Metrics</span></a><span class="params">(<span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="scalaVersion">scalaVersion: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="jobName">jobName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="jobId">jobId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="beamMetrics">beamMetrics: <a href="package$$BeamMetrics.html" class="extype" name="com.spotify.scio.metrics.BeamMetrics">BeamMetrics</a></span>, <span name="cloudMetrics">cloudMetrics: <span class="extype" name="scala.Iterable">Iterable</span>[<a href="package$$DFServiceMetrics.html" class="extype" name="com.spotify.scio.metrics.DFServiceMetrics">DFServiceMetrics</a>]</span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <a title="Case class holding metadata and service-level metrics of the job." href="package$$Metrics.html"><span class="name">Metrics</span></a><span class="params">(<span name="version">version: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="scalaVersion">scalaVersion: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="appName">appName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="state">state: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="beamMetrics">beamMetrics: <a href="package$$BeamMetrics.html" class="extype" name="com.spotify.scio.metrics.BeamMetrics">BeamMetrics</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.12.4/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="http://www.scala-lang.org/api/2.12.4/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       
       <p class="shortcomment cmt">Case class holding metadata and service-level metrics of the job.</p><div class="fullcomment"><div class="comment cmt"><p>Case class holding metadata and service-level metrics of the job. See
