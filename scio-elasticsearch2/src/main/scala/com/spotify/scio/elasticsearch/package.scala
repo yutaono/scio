@@ -27,10 +27,12 @@ import org.apache.beam.sdk.io.elasticsearch.ElasticsearchIO.Write.BulkExecutionE
 import org.apache.beam.sdk.io.{elasticsearch => esio}
 import org.apache.beam.sdk.transforms.SerializableFunction
 import org.elasticsearch.action.ActionRequest
+import org.elasticsearch.action.admin.indices.create.CreateIndexResponse
 import org.joda.time.Duration
 
 import scala.collection.JavaConverters._
 import scala.concurrent.Future
+import scala.util.{Failure, Try}
 
 /**
  * Main package for Elasticsearch APIs. Import all.
