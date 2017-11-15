@@ -30,7 +30,7 @@ import org.scalatest._
 object ParquetAvroJob {
   def main(cmdlineArgs: Array[String]): Unit = {
     val (sc, args) = ContextAndArgs(cmdlineArgs)
-    sc.parquetAvroFile[TestRecord](args("input"))
+    sc.parquetAvroFile[TestRecord](args("input")).map(identity)
       .saveAsParquetAvroFile(args("output"))
     sc.close()
   }
@@ -62,7 +62,7 @@ class ParquetAvroTest extends TapSpec with BeforeAndAfterAll {
   "ParquetAvro" should "read specific records" in {
     val sc = ScioContext()
     val data = sc.parquetAvroFile[TestRecord](dir + "/*.parquet")
-    data should containInAnyOrder (specificRecords)
+    data.map(identity) should containInAnyOrder (specificRecords)
     sc.close()
   }
 
@@ -71,7 +71,7 @@ class ParquetAvroTest extends TapSpec with BeforeAndAfterAll {
     val projection = Projection[TestRecord](_.getIntField)
     val data = sc.parquetAvroFile[TestRecord](dir + "/*.parquet", projection = projection)
     data.map(_.getIntField.toInt) should containInAnyOrder (1 to 10)
-    data should forAll[TestRecord] { r =>
+    data.map(identity) should forAll[TestRecord] { r =>
       r.getLongField == null && r.getFloatField == null && r.getDoubleField == null &&
         r.getBooleanField == null && r.getStringField == null
     }
@@ -82,7 +82,7 @@ class ParquetAvroTest extends TapSpec with BeforeAndAfterAll {
     val sc = ScioContext()
     val predicate = Predicate[TestRecord](_.getIntField <= 5)
     val data = sc.parquetAvroFile[TestRecord](dir + "/*.parquet", predicate = predicate)
-    data should containInAnyOrder (specificRecords.filter(_.getIntField <= 5))
+    data.map(identity) should containInAnyOrder (specificRecords.filter(_.getIntField <= 5))
     sc.close()
   }
 
@@ -92,7 +92,7 @@ class ParquetAvroTest extends TapSpec with BeforeAndAfterAll {
     val predicate = Predicate[TestRecord](_.getIntField <= 5)
     val data = sc.parquetAvroFile[TestRecord](dir + "/*.parquet", projection, predicate)
     data.map(_.getIntField.toInt) should containInAnyOrder (1 to 5)
-    data should forAll[TestRecord] { r =>
+    data.map(identity) should forAll[TestRecord] { r =>
       r.getLongField == null && r.getFloatField == null && r.getDoubleField == null &&
         r.getBooleanField == null && r.getStringField == null
     }

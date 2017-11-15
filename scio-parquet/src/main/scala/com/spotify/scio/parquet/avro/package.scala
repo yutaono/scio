@@ -22,7 +22,7 @@ import java.lang.{Boolean => JBoolean}
 import com.spotify.scio.ScioContext
 import com.spotify.scio.io.Tap
 import com.spotify.scio.testing.AvroIO
-import com.spotify.scio.util.ScioUtil
+import com.spotify.scio.util.{ClosureCleaner, ScioUtil}
 import com.spotify.scio.values.SCollection
 import org.apache.avro.Schema
 import org.apache.avro.reflect.ReflectData
@@ -31,6 +31,7 @@ import org.apache.beam.sdk.io.hadoop.inputformat.HadoopInputFormatIO
 import org.apache.beam.sdk.io.{DefaultFilenamePolicy, FileBasedSink, HadoopWriteFiles}
 import org.apache.beam.sdk.options.ValueProvider.StaticValueProvider
 import org.apache.beam.sdk.transforms.SimpleFunction
+import org.apache.beam.sdk.values.TypeDescriptor
 import org.apache.hadoop.mapreduce.Job
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat
 import org.apache.parquet.avro.AvroParquetInputFormat
@@ -38,6 +39,7 @@ import org.apache.parquet.filter2.predicate.FilterPredicate
 import org.apache.parquet.hadoop.ParquetInputFormat
 
 import scala.concurrent.Future
+import scala.language.implicitConversions
 import scala.reflect.ClassTag
 
 /**
@@ -59,9 +61,11 @@ package object avro {
   implicit class ParquetAvroScioContext(val self: ScioContext) extends AnyVal {
 
     /**
-     * Get an SCollection for a Parquet file as Avro records.
+     * Get an SCollection for a Parquet file as Avro records. Since Avro records produced by
+     * Parquet column projection may be incomplete and may fail serialization, you must
+     * [[ParquetAvroFile.map map]] the result to extract projected fields from the Avro records.
      *
-     * Note that due to limitations of the underlying `HadoopInputFormatIO`,
+     * Note that due to limitations of the underlying HadoopInputFormatIO`,
      * Avro [[org.apache.avro.generic.GenericRecord GenericRecord]] and dynamic work rebalancing
      * are not supported. Without the latter, pipelines may not autoscale up or down during the
      * initial read and subsequent fused transforms.
@@ -71,36 +75,55 @@ package object avro {
     def parquetAvroFile[T <: SpecificRecordBase : ClassTag](path: String,
                                                             projection: Schema = null,
                                                             predicate: FilterPredicate = null)
-    : SCollection[T] = self.requireNotClosed {
-      if (self.isTest) {
-        self.getTestInput(AvroIO[T](path))
-      } else {
-        val cls = ScioUtil.classOf[T]
-        val readSchema = cls.getMethod("getClassSchema").invoke(null).asInstanceOf[Schema]
+    : ParquetAvroFile[T] = self.requireNotClosed {
+      new ParquetAvroFile[T](self, path, projection, predicate)
+    }
 
-        val job = Job.getInstance()
-        setInputPaths(job, path)
-        job.setInputFormatClass(classOf[AvroParquetInputFormat[T]])
-        job.getConfiguration.setClass("key.class", classOf[Void], classOf[Void])
-        job.getConfiguration.setClass("value.class", cls, cls)
+  }
 
-        AvroParquetInputFormat.setAvroReadSchema(job, readSchema)
-        if (projection != null) {
-          AvroParquetInputFormat.setRequestedProjection(job, projection)
-        }
-        if (predicate != null) {
-          ParquetInputFormat.setFilterPredicate(job.getConfiguration, predicate)
-        }
+  class ParquetAvroFile[T: ClassTag] private[avro](self: ScioContext,
+                                                   path: String,
+                                                   projection: Schema,
+                                                   predicate: FilterPredicate) {
+    /**
+     * Get an SCollection by applying a function to all Parquet Avro records of this Parquet file.
+     */
+    def map[U: ClassTag](f: T => U): SCollection[U] = if (self.isTest) {
+      self.getTestInput(AvroIO[U](path))
+    } else {
+      val cls = ScioUtil.classOf[T]
+      val readSchema = cls.getMethod("getClassSchema").invoke(null).asInstanceOf[Schema]
 
-        val source = HadoopInputFormatIO.read[JBoolean, T]()
-          .withConfiguration(job.getConfiguration)
-          .withKeyTranslation(new SimpleFunction[Void, JBoolean]() {
-            override def apply(input: Void): JBoolean = true // workaround for NPE
-          })
-        self
-          .wrap(self.applyInternal(source))
-          .map(_.getValue)
+      val job = Job.getInstance()
+      setInputPaths(job, path)
+      job.setInputFormatClass(classOf[AvroParquetInputFormat[T]])
+      job.getConfiguration.setClass("key.class", classOf[Void], classOf[Void])
+      job.getConfiguration.setClass("value.class", cls, cls)
+
+      AvroParquetInputFormat.setAvroReadSchema(job, readSchema)
+      if (projection != null) {
+        AvroParquetInputFormat.setRequestedProjection(job, projection)
       }
+      if (predicate != null) {
+        ParquetInputFormat.setFilterPredicate(job.getConfiguration, predicate)
+      }
+
+      val uCls = ScioUtil.classOf[U]
+      val source = HadoopInputFormatIO.read[JBoolean, U]()
+        .withConfiguration(job.getConfiguration)
+        .withKeyTranslation(new SimpleFunction[Void, JBoolean]() {
+          override def apply(input: Void): JBoolean = true // workaround for NPE
+        })
+        .withValueTranslation(new SimpleFunction[T, U]() {
+          // workaround for incomplete Avro objects
+          val g = ClosureCleaner(f)  // defeat closure
+          override def apply(input: T): U = g(input)
+          override def getInputTypeDescriptor = TypeDescriptor.of(cls)
+          override def getOutputTypeDescriptor = TypeDescriptor.of(uCls)
+        })
+      self
+        .wrap(self.applyInternal(source))
+        .map(_.getValue)
     }
 
     private def setInputPaths(job: Job, path: String): Unit = {
@@ -115,15 +138,13 @@ package object avro {
         GcsConnectorUtil.unsetCredentials(job)
       }
     }
-
   }
 
   /**
    * Enhanced version of [[com.spotify.scio.values.SCollection SCollection]] with Parquet Avro
    * methods.
    */
-  implicit class ParquetAvroSCollection[T : ClassTag]
-  (val self: SCollection[T]) {
+  implicit class ParquetAvroSCollection[T : ClassTag](val self: SCollection[T]) {
     /**
      * Save this SCollection of Avro records as a Parquet file.
      * @param schema must be not null if `T` is of type
